@@ -1,0 +1,1 @@
+https://github.com/dronekit/dronekit-python/blob/master/dronekit/__init__.py
