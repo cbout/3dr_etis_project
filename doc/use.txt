@@ -1,0 +1,19 @@
+Connection to the Solo WiFi network :
+
+name : SoloLink-###
+password : sololink
+
+
+Access to Solo :
+
+ssh root@10.1.1.10
+		 // 10.1.1.1 — Controller
+		 // 10.1.1.10 — Solo
+		 // 10.1.1.100–10.1.1.255 — Computers, phones, or other devices on the network
+	
+	
+Connecting Solo to the Internet:	
+	 
+solo wifi --name=<ssid> --password=<password>
+
+
