@@ -1,0 +1,53 @@
+\hypertarget{struct____mavlink__status}{}\section{\+\_\+\+\_\+mavlink\+\_\+status Struct Reference}
+\label{struct____mavlink__status}\index{\+\_\+\+\_\+mavlink\+\_\+status@{\+\_\+\+\_\+mavlink\+\_\+status}}
+
+
+Collaboration diagram for \+\_\+\+\_\+mavlink\+\_\+status\+:
+% FIG 0
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct____mavlink__status_ab029d89ac450568aed34a07d20c748d7}{msg\+\_\+received}\hypertarget{struct____mavlink__status_ab029d89ac450568aed34a07d20c748d7}{}\label{struct____mavlink__status_ab029d89ac450568aed34a07d20c748d7}
+
+\begin{DoxyCompactList}\small\item\em Number of received messages. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{struct____mavlink__status_a46645179d13142df11bbf65dd46e3763}{buffer\+\_\+overrun}\hypertarget{struct____mavlink__status_a46645179d13142df11bbf65dd46e3763}{}\label{struct____mavlink__status_a46645179d13142df11bbf65dd46e3763}
+
+\begin{DoxyCompactList}\small\item\em Number of buffer overruns. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{struct____mavlink__status_a00f0bf638777ef02791bdb2d21209d75}{parse\+\_\+error}\hypertarget{struct____mavlink__status_a00f0bf638777ef02791bdb2d21209d75}{}\label{struct____mavlink__status_a00f0bf638777ef02791bdb2d21209d75}
+
+\begin{DoxyCompactList}\small\item\em Number of parse errors. \end{DoxyCompactList}\item 
+mavlink\+\_\+parse\+\_\+state\+\_\+t \hyperlink{struct____mavlink__status_a55340ddbc135478dc09ae22ba9d254b2}{parse\+\_\+state}\hypertarget{struct____mavlink__status_a55340ddbc135478dc09ae22ba9d254b2}{}\label{struct____mavlink__status_a55340ddbc135478dc09ae22ba9d254b2}
+
+\begin{DoxyCompactList}\small\item\em Parsing state machine. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{struct____mavlink__status_adbc7ba6354e62de69b8312b2ecc6a98f}{packet\+\_\+idx}\hypertarget{struct____mavlink__status_adbc7ba6354e62de69b8312b2ecc6a98f}{}\label{struct____mavlink__status_adbc7ba6354e62de69b8312b2ecc6a98f}
+
+\begin{DoxyCompactList}\small\item\em Index in current packet. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{struct____mavlink__status_adbf19b3f1f3bbabeac55dc07dc7ec421}{current\+\_\+rx\+\_\+seq}\hypertarget{struct____mavlink__status_adbf19b3f1f3bbabeac55dc07dc7ec421}{}\label{struct____mavlink__status_adbf19b3f1f3bbabeac55dc07dc7ec421}
+
+\begin{DoxyCompactList}\small\item\em Sequence number of last packet received. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{struct____mavlink__status_ab9f64a07cb96598f8f5775fed387a038}{current\+\_\+tx\+\_\+seq}\hypertarget{struct____mavlink__status_ab9f64a07cb96598f8f5775fed387a038}{}\label{struct____mavlink__status_ab9f64a07cb96598f8f5775fed387a038}
+
+\begin{DoxyCompactList}\small\item\em Sequence number of last packet sent. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{struct____mavlink__status_a35104ed155d69237557f75df44e8c875}{packet\+\_\+rx\+\_\+success\+\_\+count}\hypertarget{struct____mavlink__status_a35104ed155d69237557f75df44e8c875}{}\label{struct____mavlink__status_a35104ed155d69237557f75df44e8c875}
+
+\begin{DoxyCompactList}\small\item\em Received packets. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{struct____mavlink__status_aaba220c7b044ea14cc2a303d60202be5}{packet\+\_\+rx\+\_\+drop\+\_\+count}\hypertarget{struct____mavlink__status_aaba220c7b044ea14cc2a303d60202be5}{}\label{struct____mavlink__status_aaba220c7b044ea14cc2a303d60202be5}
+
+\begin{DoxyCompactList}\small\item\em Number of packet drops. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{struct____mavlink__status_aa2585d779da0ab21273a8d92de9a0ebe}{flags}\hypertarget{struct____mavlink__status_aa2585d779da0ab21273a8d92de9a0ebe}{}\label{struct____mavlink__status_aa2585d779da0ab21273a8d92de9a0ebe}
+
+\begin{DoxyCompactList}\small\item\em M\+A\+V\+L\+I\+N\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+L\+A\+G\+\_\+$\ast$. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{struct____mavlink__status_ad2437d42e6e096c1b4d50d78fce7ee1a}{signature\+\_\+wait}\hypertarget{struct____mavlink__status_ad2437d42e6e096c1b4d50d78fce7ee1a}{}\label{struct____mavlink__status_ad2437d42e6e096c1b4d50d78fce7ee1a}
+
+\begin{DoxyCompactList}\small\item\em number of signature bytes left to receive \end{DoxyCompactList}\item 
+struct \hyperlink{struct____mavlink__signing}{\+\_\+\+\_\+mavlink\+\_\+signing} $\ast$ \hyperlink{struct____mavlink__status_aed24a8983aa3f005c04eca07c8403635}{signing}\hypertarget{struct____mavlink__status_aed24a8983aa3f005c04eca07c8403635}{}\label{struct____mavlink__status_aed24a8983aa3f005c04eca07c8403635}
+
+\begin{DoxyCompactList}\small\item\em optional signing state \end{DoxyCompactList}\item 
+struct \hyperlink{struct____mavlink__signing__streams}{\+\_\+\+\_\+mavlink\+\_\+signing\+\_\+streams} $\ast$ \hyperlink{struct____mavlink__status_a2f0ebcf65eac8fa5f0d2430d39663ac2}{signing\+\_\+streams}\hypertarget{struct____mavlink__status_a2f0ebcf65eac8fa5f0d2430d39663ac2}{}\label{struct____mavlink__status_a2f0ebcf65eac8fa5f0d2430d39663ac2}
+
+\begin{DoxyCompactList}\small\item\em global record of stream timestamps \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/mavlink\+\_\+types.\+h\end{DoxyCompactItemize}
