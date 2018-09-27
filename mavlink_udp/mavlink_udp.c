@@ -52,8 +52,7 @@
 /* This assumes you have the mavlink headers on your include path
  or in the same folder as this source file */
 #include <mavlink.h>
-#include <mavlink_msg_decoder.h>
-#include <mavlink_msg_pack.h>
+#include "mavlink_perso_lib.h"
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
@@ -67,7 +66,6 @@ int main(int argc, char* argv[])
 
 	char target_ip[100];
 
-	float position[6] = {};
 	int sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
 	struct sockaddr_in gcAddr;
 	struct sockaddr_in locAddr;
@@ -90,13 +88,13 @@ int main(int argc, char* argv[])
 		printf("\t");
 		printf("%s", argv[0]);
 		printf(" <ip address of QGroundControl>\n");
-		printf("\tDefault for localhost: udp-server 127.0.0.1\n\n");
+		printf("\tDefault for localhost: udp-server 10.1.1.10\n\n");
 		exit(EXIT_FAILURE);
     }
 
 
 	// Change the target ip if parameter was given
-	strcpy(target_ip, "127.0.0.1");
+	strcpy(target_ip, "10.1.1.10");
 	if (argc == 2)
     {
 		strcpy(target_ip, argv[1]);
@@ -141,13 +139,19 @@ int main(int argc, char* argv[])
     {
 		//Sending
 		int rep;
-		//TO DO MENU
-		printf("Menu choice");
-		scanf("%d", &rep);
+		do{
+			printf("%%%%%%%%%%%%%%%%%%MENU%%%%%%%%%%%%%%%%%%\n");
+			printf("Action choice :\n");
+			printf("1 : heartbeat\n");
+			printf("2 : system status\n");
+			printf("3 : local position\n");
+			printf("4 : attitude\n");
+			scanf("%d", &rep);
+		} while(mavlink_msg_pack(rep, &msg)==-1);
 
-		mavlink_msg_pack(int rep, mavlink_message_t *msg);
 		len = mavlink_msg_to_send_buffer(buf, &msg);
 		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&gcAddr, sizeof(struct sockaddr_in));
+		sleep(2); // Waiting two second
 
 
 		//Reception
@@ -176,7 +180,7 @@ int main(int argc, char* argv[])
 			printf("\n");
 		}
 		memset(buf, 0, BUFFER_LENGTH);
-		sleep(3); // Sleep one second
+		sleep(1); // Waiting one second
     }
 }
 
