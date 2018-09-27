@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
 	locAddr.sin_addr.s_addr = INADDR_ANY;
 	locAddr.sin_port = htons(14550);
 
-	/* Bind the socket to port 14551 - necessary to receive packets from qgroundcontrol */
+	/* Bind the socket to port 14550 - necessary to receive packets from qgroundcontrol */
 	if (-1 == bind(sock,(struct sockaddr *)&locAddr, sizeof(struct sockaddr)))
     {
 		perror("error bind failed");
@@ -146,6 +146,8 @@ int main(int argc, char* argv[])
 			printf("2 : system status\n");
 			printf("3 : local position\n");
 			printf("4 : attitude\n");
+			printf("5 : camera image\n");
+			printf("6 : manual control\n");
 			scanf("%d", &rep);
 		} while(mavlink_msg_pack(rep, &msg)==-1);
 

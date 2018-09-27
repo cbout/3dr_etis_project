@@ -43,6 +43,20 @@ int mavlink_msg_pack(int rep, mavlink_message_t *msg){
 			mavlink_msg_attitude_pack(1, 200, msg, 0, 1.2, 1.7, 3.14, 0.01, 0.02, 0.03);
 			return 0;
 		}
+		
+		case 5 :
+		{
+			/* Send camera image */
+			mavlink_msg_camera_image_captured_pack(1, 200, msg, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, NULL);
+			return 0;
+		}
+		
+		case 6 :
+		{
+			/* Send manual control */
+			mavlink_msg_manual_control_pack(1, 200, msg, 1, 10, 10, 10, 10, 1);
+			return 0;
+		}
 			
 		default :
 			printf("incorrect order\n");

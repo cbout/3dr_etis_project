@@ -46,6 +46,21 @@ void mavlink_msg_decode(mavlink_message_t msg){
 			break;
 		}
 			
+		case MAVLINK_MSG_ID_CAMERA_IMAGE_CAPTURED:
+		{
+			mavlink_camera_image_captured_t camera_image_captured;
+			mavlink_msg_camera_image_captured_decode(&msg, &camera_image_captured);
+			printf("URL of image : %s\n", camera_image_captured.file_url);
+			break;
+		}
+		
+		case MAVLINK_MSG_ID_MANUAL_CONTROL:
+		{
+			mavlink_manual_control_t manual_control;
+			mavlink_msg_manual_control_decode(&msg, &manual_control);
+			printf("x : %d, y : %d, z %d, r : %d\n", manual_control.x, manual_control.y, manual_control.z, manual_control.r);
+			break;
+		}
 			
 			
 			
