@@ -52,6 +52,8 @@
 /* This assumes you have the mavlink headers on your include path
  or in the same folder as this source file */
 #include <mavlink.h>
+#include <mavlink_msg_decoder.h>
+#include <mavlink_msg_pack.h>
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
@@ -137,62 +139,38 @@ int main(int argc, char* argv[])
 
 	for (;;)
     {
+		//Sending
+		int rep;
+		//TO DO MENU
+		printf("Menu choice");
+		scanf("%d", &rep);
 
-		/*Send Heartbeat */
-		mavlink_msg_heartbeat_pack(1, 200, &msg, MAV_TYPE_HELICOPTER, MAV_AUTOPILOT_GENERIC, MAV_MODE_GUIDED_ARMED, 0, MAV_STATE_ACTIVE);
-		len = mavlink_msg_to_send_buffer(buf, &msg);
-		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&gcAddr, sizeof(struct sockaddr_in));
-
-		/* Send Status */
-		mavlink_msg_sys_status_pack(1, 200, &msg, 0, 0, 0, 500, 11000, -1, -1, 0, 0, 0, 0, 0, 0);
-		len = mavlink_msg_to_send_buffer(buf, &msg);
-		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&gcAddr, sizeof (struct sockaddr_in));
-
-		/* Send Local Position */
-		mavlink_msg_local_position_ned_pack(1, 200, &msg, microsSinceEpoch(),
-										position[0], position[1], position[2],
-										position[3], position[4], position[5]);
-		len = mavlink_msg_to_send_buffer(buf, &msg);
-		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&gcAddr, sizeof(struct sockaddr_in));
-
-		/* Send attitude */
-		mavlink_msg_attitude_pack(1, 200, &msg, microsSinceEpoch(), 1.2, 1.7, 3.14, 0.01, 0.02, 0.03);
+		mavlink_msg_pack(int rep, mavlink_message_t *msg);
 		len = mavlink_msg_to_send_buffer(buf, &msg);
 		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&gcAddr, sizeof(struct sockaddr_in));
 
 
+		//Reception
 		memset(buf, 0, BUFFER_LENGTH);
 		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&gcAddr, &fromlen);
+		
+		
 		if (recsize > 0)
       	{
 			// Something received - print out all bytes and parse packet
 			mavlink_message_t msg;
 			mavlink_status_t status;
 
-			printf("Bytes Received: %d\nDatagram: ", (int)recsize);
+			//printf("Bytes Received: %d\nDatagram: ", (int)recsize);
 			for (i = 0; i < recsize; ++i)
 			{
-				temp = buf[i];
+				//temp = buf[i];
 				// printf("%02x ", (unsigned char)temp);
 				if (mavlink_parse_char(MAVLINK_COMM_0, buf[i], &msg, &status))
 				{
 					// Packet received
 					printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
-					mavlink_heartbeat_t heartbeat;
-					mavlink_attitude_t attitude;
-					switch (msg.msgid) {
-						case MAVLINK_MSG_ID_HEARTBEAT:
-							mavlink_msg_heartbeat_decode(&msg,&heartbeat);
-							printf("This is a heartbeat of type : %d\n", heartbeat.type);
-							break;
-						case MAVLINK_MSG_ID_ATTITUDE:
-							mavlink_msg_attitude_decode(&msg,&attitude);
-							printf("This is a atitude of roll : %f\n", attitude.roll);
-							break;
-						default :
-							printf("this is an other type of message\n");
-					}
-
+					mavlink_msg_decode(msg);
 				}
 			}
 			printf("\n");
