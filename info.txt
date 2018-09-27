@@ -1,8 +1,0 @@
-https://github.com/dronekit/dronekit-python/blob/master/dronekit/__init__.py
-http://ardupilot.org/plane/docs/common-camera-control-and-auto-missions-in-mission-planner.html
-https://discuss.ardupilot.org/t/mavlink-step-by-step/9629
-https://mavlink.io/en/
-https://github.com/mavlink/mavlink
-https://mavlink.io/en/examples/c_udp.html
-//MAVLINK msg ids
-https://groups.google.com/forum/#!topic/mavlink/1zgHUM67E-A

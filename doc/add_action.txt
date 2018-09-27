@@ -2,11 +2,11 @@ Steps to add a new action to send to the drone solo 3DR :
 
 1) Actualize the menu in the "mavlink_udp.c" file by adding a new line with a short description and a order id.
 
-2) In the "mavlink_msg_pack.h" file, add a new "case" corresponding to the order id selected previously, then
+2) In the "mavlink_msg_pack.c" file, add a new "case" corresponding to the order id selected previously, then
 call the corresponding "pack function" with the right parameters. To have more informations about parameters to put, 
 you may find them in the corresponding pack file with the file's prototype.
 
-3) To finish, in the "mavlink_msg_decoder.h", add a new "case" with the id defined on the corresponding "pack file",
+3) To finish, in the "mavlink_msg_decoder.c", add a new "case" with the id defined on the corresponding "pack file",
 then create a variable of the type of the action, call the "decode function" and print the required informations with 
 the fields of the structure.
 
