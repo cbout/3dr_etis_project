@@ -47,7 +47,8 @@ int mavlink_msg_pack(int rep, mavlink_message_t *msg){
 		case 5 :
 		{
 			/* Send camera image */
-			mavlink_msg_camera_image_captured_pack(1, 200, msg, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, NULL);
+			float q[4] = {0, 0, 0, 0};
+			mavlink_msg_camera_image_captured_pack(1, 200, msg, 0, 0, 0, 0, 0, 0, 0, q, -1, 1, "http://foo.jpg");
 			return 0;
 		}
 		

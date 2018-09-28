@@ -104,7 +104,7 @@ int main(int argc, char* argv[])
 	memset(&locAddr, 0, sizeof(locAddr));
 	locAddr.sin_family = AF_INET;
 	locAddr.sin_addr.s_addr = INADDR_ANY;
-	locAddr.sin_port = htons(14551);
+	locAddr.sin_port = htons(14550);
 
 	/* Bind the socket to port 14550 - necessary to receive packets from qgroundcontrol */
 	if (-1 == bind(sock,(struct sockaddr *)&locAddr, sizeof(struct sockaddr)))
@@ -131,7 +131,7 @@ int main(int argc, char* argv[])
 	memset(&gcAddr, 0, sizeof(gcAddr));
 	gcAddr.sin_family = AF_INET;
 	gcAddr.sin_addr.s_addr = inet_addr(target_ip);
-	gcAddr.sin_port = htons(14551);
+	gcAddr.sin_port = htons(14550);
 
 
 
@@ -184,6 +184,8 @@ int main(int argc, char* argv[])
 		memset(buf, 0, BUFFER_LENGTH);
 		sleep(1); // Waiting one second
     }
+	
+	close (sock);
 }
 
 
