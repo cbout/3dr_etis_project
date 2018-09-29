@@ -23,3 +23,8 @@ http://kouky.org/blog/2015/11/09/decoding-mavlink-messages-with-swift.html
 //To buy
 https://www.amazon.fr/3DR-BT11A-Batterie-Intelligent-Quadricopt%C3%A8re/dp/B00X97EXEU/ref=sr_1_1?ie=UTF8&qid=1538032193&sr=8-1&keywords=batterie+3dr+solo#productDetails
 https://www.amazon.fr/C%C3%A2ble-Data-GoPro-Black-Session/dp/B01N95YMWQ
+
+//New helping documentations for next time :
+https://unix.stackexchange.com/questions/320640/3dr-solo-drone-wifi-communication : informations about WIFI communication
+https://github.com/PX4/Devguide/issues/357 :informations about UDP and ports
+https://github.com/proto3/MAVkit : UDP server/client in c++
