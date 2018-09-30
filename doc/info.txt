@@ -1,6 +1,8 @@
 //Lib :
 https://github.com/dronekit/dronekit-python/blob/master/dronekit/__init__.py
 https://github.com/mavlink/c_library_v2
+https://github.com/mavlink/c_library_v1
+
 
 //Site :
 https://dev.3dr.com/index.html
@@ -8,9 +10,8 @@ https://docs.px4.io/en/
 https://mavlink.io/en/
 https://discuss.ardupilot.org/t/mavlink-step-by-step/9629
 http://ardupilot.org/plane/docs/common-camera-control-and-auto-missions-in-mission-planner.html
-
-//MAVLINK msg ids :
 https://groups.google.com/forum/#!topic/mavlink/1zgHUM67E-A
+
 
 //Some examples : 
 https://github.com/3drobotics/solodevguide
@@ -20,11 +21,17 @@ https://kazkojima.github.io/mavlink-howto.html
 http://docs.ros.org/jade/api/mavlink/html/main_8c_source.html
 http://kouky.org/blog/2015/11/09/decoding-mavlink-messages-with-swift.html
 
+
 //To buy
 https://www.amazon.fr/3DR-BT11A-Batterie-Intelligent-Quadricopt%C3%A8re/dp/B00X97EXEU/ref=sr_1_1?ie=UTF8&qid=1538032193&sr=8-1&keywords=batterie+3dr+solo#productDetails
 https://www.amazon.fr/C%C3%A2ble-Data-GoPro-Black-Session/dp/B01N95YMWQ
+
 
 //New helping documentations for next time :
 https://unix.stackexchange.com/questions/320640/3dr-solo-drone-wifi-communication : informations about WIFI communication
 https://github.com/PX4/Devguide/issues/357 :informations about UDP and ports
 https://github.com/proto3/MAVkit : UDP server/client in c++
+https://github.com/dronefleet/mavlink : UDP server/client in java
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! We recommend that you use MAVLink 1.0 headers as some ground control software may not yet support MAVLink 2.0. 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
