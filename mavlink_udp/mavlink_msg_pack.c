@@ -46,12 +46,18 @@ int mavlink_msg_pack(int rep, mavlink_message_t *msg){
 
 		case 5 :
 		{
+<<<<<<< Updated upstream
 			// /* Send camera image */
 			// float q[4] = {0, 0, 0, 0};
 			// mavlink_msg_camera_image_captured_pack(1, 200, msg, 0, 0, 0, 0, 0, 0, 0, q, -1, 1, "http://foo.jpg");
 			// return 0;
 			/* Try to request with mav protocol a data stream */
 			mavlink_msg_param_request_read_pack(1,1,msg,1,1,"SYSID_SW_TYPE",-1);
+=======
+			/* Send camera image */
+			float q[4] = {0, 0, 0, 0};
+			//mavlink_msg_camera_image_captured_pack(1, 200, msg, 0, 0, 0, 0, 0, 0, 0, q, -1, 1, "http://foo.jpg");
+>>>>>>> Stashed changes
 			return 0;
 		}
 

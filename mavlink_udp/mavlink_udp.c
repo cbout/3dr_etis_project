@@ -94,7 +94,7 @@ int main(int argc, char* argv[])
 
 
 	// Change the target ip if parameter was given
-	strcpy(target_ip, "10.1.1.10");
+	strcpy(target_ip, "10.1.1.1");
 	if (argc == 2)
     {
 		strcpy(target_ip, argv[1]);
@@ -131,7 +131,7 @@ int main(int argc, char* argv[])
 	memset(&gcAddr, 0, sizeof(gcAddr));
 	gcAddr.sin_family = AF_INET;
 	gcAddr.sin_addr.s_addr = inet_addr(target_ip);
-	gcAddr.sin_port = htons(14550);
+	gcAddr.sin_port = htons(56321);
 
 
 

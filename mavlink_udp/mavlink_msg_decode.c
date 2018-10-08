@@ -64,6 +64,7 @@ void mavlink_msg_decode(mavlink_message_t msg){
 			printf("This is a atitude of roll : %f\n", attitude.roll);
 			break;
 		}
+<<<<<<< Updated upstream
 		//
 		// case MAVLINK_MSG_ID_CAMERA_IMAGE_CAPTURED:
 		// {
@@ -73,6 +74,17 @@ void mavlink_msg_decode(mavlink_message_t msg){
 		// 	break;
 		// }
 
+=======
+		/*	
+		case MAVLINK_MSG_ID_CAMERA_IMAGE_CAPTURED:
+		{
+			mavlink_camera_image_captured_t camera_image_captured;
+			mavlink_msg_camera_image_captured_decode(&msg, &camera_image_captured);
+			printf("URL of image : %s\n", camera_image_captured.file_url);
+			break;
+		}
+		*/
+>>>>>>> Stashed changes
 		case MAVLINK_MSG_ID_MANUAL_CONTROL:
 		{
 			mavlink_manual_control_t manual_control;
