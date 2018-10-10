@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
 		printf("\t");
 		printf("%s", argv[0]);
 		printf(" <ip address of QGroundControl>\n");
-		printf("\tDefault for localhost: udp-server 10.1.1.10\n\n");
+		printf("\tDefault for localhost: udp-server 10.1.1.1\n\n");
 		exit(EXIT_FAILURE);
     }
 
@@ -131,7 +131,7 @@ int main(int argc, char* argv[])
 	memset(&gcAddr, 0, sizeof(gcAddr));
 	gcAddr.sin_family = AF_INET;
 	gcAddr.sin_addr.s_addr = inet_addr(target_ip);
-	gcAddr.sin_port = htons(56321);
+	gcAddr.sin_port = htons(14550);
 
 
 
@@ -139,6 +139,9 @@ int main(int argc, char* argv[])
     {
 		//Sending
 		int rep;
+		//Example
+		char *param="SYSID_SW_TYPE";
+		
 		do{
 			printf("%%%%%%%%%%%%%%%%%%MENU%%%%%%%%%%%%%%%%%%\n");
 			printf("Action choice :\n");
@@ -148,10 +151,23 @@ int main(int argc, char* argv[])
 			printf("4 : attitude\n");
 			printf("5 : camera image\n");
 			printf("6 : manual control\n");
+			//...
 			scanf("%d", &rep);
-		} while(mavlink_msg_pack(rep, &msg)==-1);
-
+		} while(mavlink_msg_param(rep, param)==-1);
+		
+		mavlink_msg_param_request_read_pack(1, 1, &msg, 1, 1, param, -1);
 		len = mavlink_msg_to_send_buffer(buf, &msg);
+		
+		//Buf send
+		/*
+		for (i = 0; i < len; ++i)
+		{
+			temp = buf[i];
+			printf("%02x ", (unsigned char)temp);
+		}
+		printf("\n");
+		*/
+		
 		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&gcAddr, sizeof(struct sockaddr_in));
 		sleep(2); // Waiting two second
 
@@ -171,7 +187,7 @@ int main(int argc, char* argv[])
 			for (i = 0; i < recsize; ++i)
 			{
 				//temp = buf[i];
-				// printf("%02x ", (unsigned char)temp);
+				//printf("%02x ", (unsigned char)temp);
 				if (mavlink_parse_char(MAVLINK_COMM_0, buf[i], &msg, &status))
 				{
 					// Packet received
