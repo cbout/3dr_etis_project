@@ -18,21 +18,21 @@ int mavlink_msg_param(int rep, char *param){
 		case 1 :
 		{
 			/*Send Heartbeat */
-			param="";
+			param="MAVLINK_MSG_ID_HEARTBEAT";
 			return 0;
 		}
 
 		case 2 :
 		{
 			/* Send Status */
-			param="A";
+			param="SR0_EXT_STAT";
 			return 0;
 		}
 
 		case 3 :
 		{
 			/* Send Local Position */
-			param="";
+			param="SR0_POSITION";
 			return 0;
 		}
 

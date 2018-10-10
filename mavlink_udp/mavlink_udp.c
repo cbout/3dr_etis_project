@@ -137,6 +137,7 @@ int main(int argc, char* argv[])
 
 	for (;;)
     {
+		
 		//Sending
 		int rep;
 		//Example
@@ -155,8 +156,20 @@ int main(int argc, char* argv[])
 			scanf("%d", &rep);
 		} while(mavlink_msg_param(rep, param)==-1);
 		
-		mavlink_msg_param_request_read_pack(1, 1, &msg, 1, 1, param, -1);
+		mavlink_msg_param_request_read_pack(255, 0, &msg, 1, 0, param, -1);
+		
+		//(Research)
+		//msg.checksum = ?; ///< sent at end of packet
+		//msg.magic = ?;   ///< protocol magic marker
+		//msg.len = ?;     ///< Length of payload
+		//msg.seq = ?;     ///< Sequence of packet
+		//msg.sysid = 255 ;   ///< ID of message sender system/aircraft
+		//msg.compid = 0;  ///< ID of the message sender component
+		//msg.msgid = MAVLINK_MSG_ID_REQUEST_DATA_STREAM;   ///< ID of message in payload
+		//msg.payload64 = ;
+		
 		len = mavlink_msg_to_send_buffer(buf, &msg);
+		
 		
 		//Buf send
 		/*

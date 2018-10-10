@@ -12,7 +12,7 @@
 
 void mavlink_msg_decode(mavlink_message_t msg){
 
-	//!!!!!!!!!!!!!!!!!TO DO!!!!!!!!!!!!!!!!!!!!!!!!
+	//!!!!!!!!!!!!!!!!!TO FINSIH!!!!!!!!!!!!!!!!!!!!!!!!
 	switch (msg.msgid) {
 
 		case MAVLINK_MSG_ID_HEARTBEAT:
