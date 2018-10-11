@@ -21,6 +21,6 @@ solo wifi --name=<ssid> --password=<password>
 
 Compilate and execute :
 
-gcc -std=c99 -I include_v1/common -o mavlink_udp mavlink_udp.c mavlink_msg_param.c mavlink_msg_decode.c
+gcc -std=c99 -I include/common -o mavlink_udp mavlink_udp.c mavlink_msg_param.c mavlink_msg_decode.c
 
 ./mavlink_udp
