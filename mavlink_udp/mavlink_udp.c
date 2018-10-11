@@ -1,32 +1,32 @@
 /*******************************************************************************
- Copyright (C) 2010  Bryan Godbolt godbolt ( a t ) ualberta.ca
+Copyright (C) 2010  Bryan Godbolt godbolt ( a t ) ualberta.ca
 
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
- ****************************************************************************/
+****************************************************************************/
 /*
- This program sends some data to qgroundcontrol using the mavlink protocol.  The sent packets
- cause qgroundcontrol to respond with heartbeats.  Any settings or custom commands sent from
- qgroundcontrol are printed by this program along with the heartbeats.
+This program sends some data to qgroundcontrol using the mavlink protocol.  The sent packets
+cause qgroundcontrol to respond with heartbeats.  Any settings or custom commands sent from
+qgroundcontrol are printed by this program along with the heartbeats.
 
 
- I compiled this program sucessfully on Ubuntu 10.04 with the following command
+I compiled this program sucessfully on Ubuntu 10.04 with the following command
 
- gcc -I ../../pixhawk/mavlink/include -o udp-server udp-server-test.c
+gcc -I ../../pixhawk/mavlink/include -o udp-server udp-server-test.c
 
- the rt library is needed for the clock_gettime on linux
- */
+the rt library is needed for the clock_gettime on linux
+*/
 /* These headers are for QNX, but should all be standard on unix/linux */
 #include <stdio.h>
 #include <errno.h>
@@ -50,13 +50,15 @@
 #endif
 
 /* This assumes you have the mavlink headers on your include path
- or in the same folder as this source file */
+or in the same folder as this source file */
 #include <mavlink.h>
 #include "mavlink_perso_lib.h"
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
 uint64_t microsSinceEpoch();
+mavlink_status_t* mavlink_analyse_status(uint8_t chan);
+void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip, int target_port);
 
 int main(int argc, char* argv[])
 {
@@ -65,10 +67,8 @@ int main(int argc, char* argv[])
 
 
 	char target_ip[100];
+	int target_port=14551, local_port=14550;
 
-	int sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
-	struct sockaddr_in gcAddr;
-	struct sockaddr_in locAddr;
 	//struct sockaddr_in fromAddr;
 	uint8_t buf[BUFFER_LENGTH];
 	ssize_t recsize;
@@ -82,126 +82,94 @@ int main(int argc, char* argv[])
 
 	// Check if --help flag was used
 	if ((argc == 2) && (strcmp(argv[1], help) == 0))
-    {
+	{
 		printf("\n");
 		printf("\tUsage:\n\n");
 		printf("\t");
 		printf("%s", argv[0]);
-		printf(" <ip address of QGroundControl>\n");
-		printf("\tDefault for localhost: udp-server 10.1.1.1\n\n");
+		printf(" <ip address of QGroundControl> [<port on the QGroundControl> <Listening port>]\n");
+		printf("\tDefault for localhost: udp-server 10.1.1.1, it refer to 3DR controller\n\n");
 		exit(EXIT_FAILURE);
-    }
+	}
 
 
 	// Change the target ip if parameter was given
 	strcpy(target_ip, "10.1.1.1");
 	if (argc == 2)
-    {
+	{
 		strcpy(target_ip, argv[1]);
-    }
+	}
+	else if (argc == 3)
+	{
+		strcpy(target_ip, argv[1]);
+		target_port = atoi(argv[2]);
+	}
+	else if (argc == 4)
+	{
+		strcpy(target_ip, argv[1]);
+		target_port = atoi(argv[2]);
+		local_port = atoi(argv[3]);
+	}
 
+	int sock;
+	struct sockaddr_in targetAddr;
+	struct sockaddr_in locAddr;
 
-	memset(&locAddr, 0, sizeof(locAddr));
-	locAddr.sin_family = AF_INET;
-	locAddr.sin_addr.s_addr = INADDR_ANY;
-	locAddr.sin_port = htons(14550);
+	init_connection(&sock, &locAddr, local_port, &targetAddr, target_ip, target_port);
+	mavlink_channel_t chan = MAVLINK_COMM_0;
 
-	/* Bind the socket to port 14550 - necessary to receive packets from qgroundcontrol */
-	if (-1 == bind(sock,(struct sockaddr *)&locAddr, sizeof(struct sockaddr)))
-    {
-		perror("error bind failed");
-		close(sock);
+	// Sending an heartbeat : mean we are the ground control (cf. param : 255)
+	mavlink_msg_heartbeat_pack(255,0,&msg,MAV_TYPE_GCS,MAV_AUTOPILOT_INVALID,MAV_MODE_MANUAL_ARMED,0x0,MAV_STATE_ACTIVE);
+	len = mavlink_msg_to_send_buffer(buf, &msg);
+	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+	if (bytes_sent==-1) {
+		perror("Sending data stream");
 		exit(EXIT_FAILURE);
-    }
+	}
 
-	/* Attempt to make it non blocking */
-#if (defined __QNX__) | (defined __QNXNTO__)
-	if (fcntl(sock, F_SETFL, O_NONBLOCK | FASYNC) < 0)
-#else
-	if (fcntl(sock, F_SETFL, O_NONBLOCK | O_ASYNC) < 0)
-#endif
-
-    {
-		fprintf(stderr, "error setting nonblocking: %s\n", strerror(errno));
-		close(sock);
+	// Request param list : expected a MAVLINK_MSG_ID_PARAM_VALUE
+	mavlink_msg_param_request_list_pack(255,0,&msg,1,0);
+	len = mavlink_msg_to_send_buffer(buf, &msg);
+	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+	if (bytes_sent==-1) {
+		perror("Sending data stream");
 		exit(EXIT_FAILURE);
-    }
-
-
-	memset(&gcAddr, 0, sizeof(gcAddr));
-	gcAddr.sin_family = AF_INET;
-	gcAddr.sin_addr.s_addr = inet_addr(target_ip);
-	gcAddr.sin_port = htons(14550);
-
+	}
 
 
 	for (;;)
-    {
-		//Sending
-		int rep;
-		//Example
-		char *param="SYSID_SW_TYPE";
-		
-		do{
-			printf("%%%%%%%%%%%%%%%%%%MENU%%%%%%%%%%%%%%%%%%\n");
-			printf("Action choice :\n");
-			printf("1 : heartbeat\n");
-			printf("2 : system status\n");
-			printf("3 : local position\n");
-			printf("4 : attitude\n");
-			printf("5 : camera image\n");
-			printf("6 : manual control\n");
-			//...
-			scanf("%d", &rep);
-		} while(mavlink_msg_param(rep, param)==-1);
-		
-		mavlink_msg_param_request_read_pack(1, 1, &msg, 1, 1, param, -1);
-		len = mavlink_msg_to_send_buffer(buf, &msg);
-		
-		//Buf send
-		/*
-		for (i = 0; i < len; ++i)
-		{
-			temp = buf[i];
-			printf("%02x ", (unsigned char)temp);
-		}
-		printf("\n");
-		*/
-		
-		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&gcAddr, sizeof(struct sockaddr_in));
-		sleep(2); // Waiting two second
-
-
-		//Reception
+	{
 		memset(buf, 0, BUFFER_LENGTH);
-		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&gcAddr, &fromlen);
 
-
+		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
 		if (recsize > 0)
-      	{
+		{
 			// Something received - print out all bytes and parse packet
 			mavlink_message_t msg;
 			mavlink_status_t status;
 
-			//printf("Bytes Received: %d\nDatagram: ", (int)recsize);
+			printf("Bytes Received: %d\nDatagram: ", (int)recsize);
 			for (i = 0; i < recsize; ++i)
 			{
-				//temp = buf[i];
-				//printf("%02x ", (unsigned char)temp);
-				if (mavlink_parse_char(MAVLINK_COMM_0, buf[i], &msg, &status))
+				temp = buf[i];
+				printf("%02x ", (unsigned char)temp);
+				if (mavlink_parse_char(chan, buf[i], &msg, &status))
 				{
 					// Packet received
 					printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
-					mavlink_msg_decode(msg);
+					if (msg.msgid == 22) {
+						printf("PARAM REQUEST RESPONSE RECEIVED : SUCCESS\n");
+						close(sock);
+						exit(EXIT_SUCCESS);
+					}
+					// mavlink_msg_decode(msg);
 				}
 			}
 			printf("\n");
 		}
-		memset(buf, 0, BUFFER_LENGTH);
-		sleep(1); // Waiting one second
-    }
-	
-	close (sock);
+		sleep(1); // Sleep one second
+	}
+	close(sock);
 }
 
 
@@ -232,4 +200,57 @@ uint64_t microsSinceEpoch()
 
 	return micros;
 }
+//Analyse a channel and print his state
+mavlink_status_t* mavlink_analyse_status(uint8_t chan)
+{
+	//Status of the channel
+	mavlink_status_t *status = mavlink_get_channel_status(chan);
+	//Print actual status :
+	printf("Our mavlink status for chan %d is :\n", chan);
+	printf("Number of message received : %d\n", status->msg_received);
+	printf("Number of parse error : %d\n", status->parse_error);
+	printf("Parsing state : %d\n", status->parse_state);
+	printf("Number of packet recevied : %d\n", status->packet_rx_success_count);
+	printf("Number of packet drop : %d\n", status->packet_rx_drop_count);
+	return status;
+}
+
+void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip, int target_port)
+{
+	*sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
+
+	memset(locAddr, 0, sizeof(*locAddr));
+	locAddr->sin_family = AF_INET;
+	locAddr->sin_addr.s_addr = INADDR_ANY;
+	locAddr->sin_port = htons(local_port);
+
+	if (-1 == bind(*sock,(struct sockaddr *)locAddr, sizeof(struct sockaddr)))
+	{
+		perror("error bind failed");
+		close(*sock);
+		exit(EXIT_FAILURE);
+	}
+	printf("INIT listenning :\nUdpin: 0.0.0.0:%d\n", local_port);
+	/* Attempt to make it non blocking */
+	#if (defined __QNX__) | (defined __QNXNTO__)
+	if (fcntl(*sock, F_SETFL, O_NONBLOCK | FASYNC) < 0)
+	#else
+	if (fcntl(*sock, F_SETFL, O_NONBLOCK | O_ASYNC) < 0)
+	#endif
+
+	{
+		fprintf(stderr, "error setting nonblocking: %s\n", strerror(errno));
+		close(*sock);
+		exit(EXIT_FAILURE);
+	}
+
+
+	memset(targetAddr, 0, sizeof(*targetAddr));
+	targetAddr->sin_family = AF_INET;
+	targetAddr->sin_addr.s_addr = inet_addr(target_ip);
+	targetAddr->sin_port = htons(target_port);
+	printf("INIT target :\nUdpout: %s:%d",target_ip,target_port);
+	return;
+}
+
 #endif
