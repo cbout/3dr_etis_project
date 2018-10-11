@@ -34,10 +34,12 @@ the rt library is needed for the clock_gettime on linux
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
+#include <netdb.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <time.h>
+#include <arpa/inet.h>
 #if (defined __QNX__) | (defined __QNXNTO__)
 /* QNX specific headers */
 #include <unix.h>
@@ -58,7 +60,7 @@ or in the same folder as this source file */
 
 uint64_t microsSinceEpoch();
 mavlink_status_t* mavlink_analyse_status(uint8_t chan);
-void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip, int target_port);
+void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip);
 
 int main(int argc, char* argv[])
 {
@@ -67,7 +69,7 @@ int main(int argc, char* argv[])
 
 
 	char target_ip[100];
-	int target_port=14551, local_port=14550;
+	int local_port=14550;
 
 	//struct sockaddr_in fromAddr;
 	uint8_t buf[BUFFER_LENGTH];
@@ -87,7 +89,7 @@ int main(int argc, char* argv[])
 		printf("\tUsage:\n\n");
 		printf("\t");
 		printf("%s", argv[0]);
-		printf(" <ip address of QGroundControl> [<port on the QGroundControl> <Listening port>]\n");
+		printf(" <ip address of QGroundControl> [<Listening port>]\n");
 		printf("\tDefault for localhost: udp-server 10.1.1.1, it refer to 3DR controller\n\n");
 		exit(EXIT_FAILURE);
 	}
@@ -102,20 +104,14 @@ int main(int argc, char* argv[])
 	else if (argc == 3)
 	{
 		strcpy(target_ip, argv[1]);
-		target_port = atoi(argv[2]);
-	}
-	else if (argc == 4)
-	{
-		strcpy(target_ip, argv[1]);
-		target_port = atoi(argv[2]);
-		local_port = atoi(argv[3]);
+		local_port = atoi(argv[2]);
 	}
 
 	int sock;
 	struct sockaddr_in targetAddr;
 	struct sockaddr_in locAddr;
 
-	init_connection(&sock, &locAddr, local_port, &targetAddr, target_ip, target_port);
+	init_connection(&sock, &locAddr, local_port, &targetAddr, target_ip);
 	mavlink_channel_t chan = MAVLINK_COMM_0;
 
 	// Sending an heartbeat : mean we are the ground control (cf. param : 255)
@@ -200,22 +196,8 @@ uint64_t microsSinceEpoch()
 
 	return micros;
 }
-//Analyse a channel and print his state
-mavlink_status_t* mavlink_analyse_status(uint8_t chan)
-{
-	//Status of the channel
-	mavlink_status_t *status = mavlink_get_channel_status(chan);
-	//Print actual status :
-	printf("Our mavlink status for chan %d is :\n", chan);
-	printf("Number of message received : %d\n", status->msg_received);
-	printf("Number of parse error : %d\n", status->parse_error);
-	printf("Parsing state : %d\n", status->parse_state);
-	printf("Number of packet recevied : %d\n", status->packet_rx_success_count);
-	printf("Number of packet drop : %d\n", status->packet_rx_drop_count);
-	return status;
-}
 
-void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip, int target_port)
+void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip)
 {
 	*sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
 
@@ -230,7 +212,7 @@ void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, str
 		close(*sock);
 		exit(EXIT_FAILURE);
 	}
-	printf("INIT listenning :\nUdpin: 0.0.0.0:%d\n", local_port);
+	printf("INIT listenning :\nUdpin: 0.0.0.0:%d\n", ntohs(locAddr->sin_port));
 	/* Attempt to make it non blocking */
 	#if (defined __QNX__) | (defined __QNXNTO__)
 	if (fcntl(*sock, F_SETFL, O_NONBLOCK | FASYNC) < 0)
@@ -244,12 +226,21 @@ void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, str
 		exit(EXIT_FAILURE);
 	}
 
+	char buf[256];
+	memset(buf,0,256);
+	struct sockaddr_in possibleTarget;
+  socklen_t possibleTargetLen = sizeof(possibleTarget);
+	while (recvfrom(*sock, buf, sizeof(buf), 0, (struct sockaddr*)(&possibleTarget), &possibleTargetLen)<=0
+				|| possibleTarget.sin_addr.s_addr != inet_addr(target_ip)) {
+		memset(buf,0,256);
+	}
 
 	memset(targetAddr, 0, sizeof(*targetAddr));
 	targetAddr->sin_family = AF_INET;
 	targetAddr->sin_addr.s_addr = inet_addr(target_ip);
-	targetAddr->sin_port = htons(target_port);
-	printf("INIT target :\nUdpout: %s:%d",target_ip,target_port);
+	targetAddr->sin_port = possibleTarget.sin_port;
+
+	printf("INIT target :\nUdpout: %s:%d\n",target_ip,ntohs(targetAddr->sin_port));
 	return;
 }
 
