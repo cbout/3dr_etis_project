@@ -2,17 +2,45 @@
 
 ## Qu'est-ce que MAVLink ? ##
 
-MAVLink (Micro Air Vehicle Link) est un protocole de communication pour les petits véhicules autonome. Il est principalement utilisé dans les communications GCS <-> Unmanned Vehicule.
+MAVLink (Micro Air Vehicle Link) est un protocole de communication pour les petits véhicules autonomes. Il est principalement utilisé dans les communications GCS <-> Unmanned Vehicule.
 
 ## Comment utiliser ce protocole dans ce projet ? ##
 
-Nous avons décider d'utiliser une librairie C appelé *c_library_v2* [Github page](https://github.com/mavlink/c_library_v2.git) ou [fichier compressé](ressources/c_library_v2-master.zip) et d'utiliser la partie *common* qui référence les commandes et les messages standardisés par MAVLink 2.
+Nous avons décider d'utiliser une librairie C appelée *c_library_v1* [Github page](https://github.com/mavlink/c_library_v1.git) ou [fichier compressé](ressources/c_library_v1-master.zip) et d'utiliser la partie *common* qui référence les commandes et les messages standardisés par MAVLink 2 version 1.
 
-### Lire un message ###
+## Composition d'une trame MAVLINK ##
 
-Cette librairie fournie un ensemble de fonction capable de décoder un type de message spécifique, identifié par son `MAVLINK_MSG_ID`
+![Décomposition d'une trame MAVLink](ressources/mavlink_v1_trame.png)
 
-Protocole de lecture d'un message en supposant que nous avons demandé le heartbeat de l'appareil:
+## Protocole de communication ##
+
+MAVLink utilise le protocole UDP pour effectuer ses envoies de données
+
+### Réception des données ###
+
+Pour recevoir un message de la part du serveur SOLO 3DR, il suffit de se connecter au réseau wifi (par défaut SoloLink_###, mdp: sololink) et d'ouvrir une **socket UDP** pour écouter sur le port : **14550**, qui est le port que le serveur utilise.
+Exemple de code pour initialiser :
+```C
+  //Socket UDP
+  int sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
+  //Adresse d'écoute
+  struct sockaddr_in locAddr;
+  memset(&locAddr, 0, sizeof(locAddr));
+  locAddr.sin_family = AF_INET;
+  locAddr.sin_addr.s_addr = INADDR_ANY;
+  locAddr.sin_port = htons(listenning_port);
+
+  // Bind the socket to port 14550 - necessary to receive packets from qgroundcontrol
+  if (-1 == bind(sock,(struct sockaddr* )&locAddr, sizeof(struct sockaddr)))
+  {
+    perror("error bind failed");
+    close(sock);
+    exit(EXIT_FAILURE);
+  }
+
+```
+
+Ainsi, une fois la socket effective il faut récupérer dans un buffer les messages envoyés par le serveur.
 
 ```C
 //Reception du(des) message(s)
@@ -21,8 +49,7 @@ recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&gcAd
 
 if (recsize > 0)
   {
-  // Something received - print out all bytes and parse packet
-
+  // Quelque chose est reçu, on affiche la taille et sa contenance
   mavlink_message_t msg;
   mavlink_status_t status;
 
@@ -31,14 +58,16 @@ if (recsize > 0)
   {
     temp = buf[i];
     printf("%02x ", (unsigned char)temp);
-    //Si nous avons réussi à parser le message
+
+    // Si nous avons réussi à parser le message hexa -> struct mavlink_message_t
     if (mavlink_parse_char(MAVLINK_COMM_0, buf[i], &msg, &status))
     {
       // Structure d'un heartbeat (voir mavlink_udp/include/common/mavlink_msg_heartbeat.h)
       mavlink_heartbeat_t heartbeat_info;
-      // Packet received
+      // Packet reçu
       printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
 
+      // Réaction en fonction du type de message
       switch (msg.msgid) {
         case MAVLINK_MSG_ID_HEARTBEAT:
           printf("This is a heartbeat message");
@@ -55,8 +84,12 @@ if (recsize > 0)
   }
 }
 ```
+Il existe plusieurs types de messages identifiés par un ID unique (MAVLINK_MSG_ID_###), dans la librairie il y a pour chaque message une structure de données (mavlink_###\_t), d'une fonction de décodage (mavlink_msg_###\_decode()) et d'une fonction pour faire le paquet UDP (mavlink_msg_###\_pack()).
+
+Exemple: le message heartbeat nous avons : msgid = MAVLINK_MSG_ID_HEARTBEAT et les fonctions mavlink_msg_heartbeat_decode(), mavlink_msg_heartbeat_pack() et de la structure mavlink_heartbeat_t.
 
 
+### Envoie des données ###
 
 
 
