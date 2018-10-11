@@ -16,6 +16,11 @@ Nous avons décider d'utiliser une librairie C appelée *c_library_v1* [Github p
 
 MAVLink utilise le protocole UDP pour effectuer ses envoies de données
 
+### Connexion ###
+
+Pour pouvoir dialoguer avec le controller il faut selectionner le bon port d'écoute et le bon port d'envoie.
+Pour ce faire, la fonction `init_mavlink_udp_connect()` cherche dynamiquement le port d'écoute du serveur et créé les bonnes `sockaddr_in` pour mettre en place la communication.
+
 ### Réception des données ###
 
 Pour recevoir un message de la part du serveur SOLO 3DR, il suffit de se connecter au réseau wifi (par défaut SoloLink_###, mdp: sololink) et d'ouvrir une **socket UDP** pour écouter sur le port : **14550**, qui est le port que le serveur utilise.

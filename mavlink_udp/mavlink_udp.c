@@ -59,8 +59,7 @@ or in the same folder as this source file */
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
 uint64_t microsSinceEpoch();
-mavlink_status_t* mavlink_analyse_status(uint8_t chan);
-void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip);
+void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip);
 
 int main(int argc, char* argv[])
 {
@@ -111,7 +110,7 @@ int main(int argc, char* argv[])
 	struct sockaddr_in targetAddr;
 	struct sockaddr_in locAddr;
 
-	init_connection(&sock, &locAddr, local_port, &targetAddr, target_ip);
+	init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip);
 	mavlink_channel_t chan = MAVLINK_COMM_0;
 
 	// Sending an heartbeat : mean we are the ground control (cf. param : 255)
@@ -197,7 +196,7 @@ uint64_t microsSinceEpoch()
 	return micros;
 }
 
-void init_connection(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip)
+void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip)
 {
 	*sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
 
