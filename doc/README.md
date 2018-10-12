@@ -96,8 +96,10 @@ Exemple: le message heartbeat nous avons : msgid = MAVLINK_MSG_ID_HEARTBEAT et l
 
 ### Envoie des données ###
 
+0:00 1:01 2:02 24:18 27:1b 29:1d 30:1e 33:21 35:23 36:24 42:2a 62:3e 74:4a 109:6d 116:74 125:7d 129:81 133:85 136:88 137:89 252:fc 253:fd
 
 
+Nb message 22
 
 
 MAVLINK MANUAL CONTROL
