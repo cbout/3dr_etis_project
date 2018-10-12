@@ -78,8 +78,6 @@ int main(int argc, char* argv[])
 	mavlink_message_t msg;
 	uint16_t len;
 	int i = 0;
-	//int success = 0;
-	unsigned int temp = 0;
 
 	// Check if --help flag was used
 	if ((argc == 2) && (strcmp(argv[1], help) == 0))
@@ -118,65 +116,51 @@ int main(int argc, char* argv[])
 	len = mavlink_msg_to_send_buffer(buf, &msg);
 	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
 	if (bytes_sent==-1) {
-		perror("Sending data stream");
+		perror("Sending Heartbeat");
 		exit(EXIT_FAILURE);
 	}
+	memset(buf, 0, BUFFER_LENGTH);
 
 	// Request param list : expected a MAVLINK_MSG_ID_PARAM_VALUE
-	// mavlink_msg_param_request_list_pack(255,0,&msg,1,0);
-	// len = mavlink_msg_to_send_buffer(buf, &msg);
-	// bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
-	// if (bytes_sent==-1) {
-	// 	perror("Sending data stream");
-	// 	exit(EXIT_FAILURE);
-	// }
-	//
-	// mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_REQUEST_PROTOCOL_VERSION,0,1,0,0,0,0,0,0);
-	// len = mavlink_msg_to_send_buffer(buf, &msg);
-	// for (int j = 0; j < len; j++) {
-	// 	printf("%02x ", buf[j]);
-	// }
-	// bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
-	// if (bytes_sent==-1) {
-	// 	perror("Sending data stream");
-	// 	exit(EXIT_FAILURE);
-	// }
-
-	// mavlink_msg_set_mode_pack(255,0,&msg,1,MAV_MODE_MANUAL_ARMED,MAV_MODE_FLAG_MANUAL_INPUT_ENABLED);
-	mavlink_msg_command_long_pack(255,0,&msg,1,1,MAV_CMD_DO_SET_MODE,0,MAV_MODE_MANUAL_ARMED,11,19,0,0,0,0);
+	mavlink_msg_param_request_list_pack(255,0,&msg,1,0);
 	len = mavlink_msg_to_send_buffer(buf, &msg);
-	for (int j = 0; j < len; j++) {
-		printf("%02x ", buf[j]);
+	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+	if (bytes_sent==-1) {
+		perror("Sending param list");
+		exit(EXIT_FAILURE);
 	}
-	// exit(0);
+	memset(buf, 0, BUFFER_LENGTH);
+
+	// Request protocol version : expected COMMAND_ACK
+	mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_REQUEST_PROTOCOL_VERSION,4,1,0,0,0,0,0,0);
+	len = mavlink_msg_to_send_buffer(buf, &msg);
 	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
 	if (bytes_sent==-1) {
 		perror("Sending data stream");
 		exit(EXIT_FAILURE);
 	}
 	memset(buf, 0, BUFFER_LENGTH);
+
+	// Request arm motor : expected COMMAND_ACK
+	mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_COMPONENT_ARM_DISARM,0,1,0,0,0,0,0,0);
+	len = mavlink_msg_to_send_buffer(buf, &msg);
+	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+	if (bytes_sent==-1) {
+		perror("Sending data stream");
+		exit(EXIT_FAILURE);
+	}
 	printf("\n");
 	sleep(4);
 
-	memset(buf, 0, BUFFER_LENGTH);
-	mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_COMPONENT_ARM_DISARM,0,1,0,0,0,0,0,0);
-	// exit(0);
+	// Request disarm motors : expected COMMAND_ACK
+	mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_COMPONENT_ARM_DISARM,0,0,0,0,0,0,0,0);
+	len = mavlink_msg_to_send_buffer(buf, &msg);
 	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
 	if (bytes_sent==-1) {
 		perror("Sending data stream");
 		exit(EXIT_FAILURE);
 	}
-	printf("\n");
 
-	// mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_COMPONENT_ARM_DISARM,255,0,0,0,0,0,0,0);
-	// len = mavlink_msg_to_send_buffer(buf, &msg);
-	// for (int j = 0; j < len; j++) {
-	// 	printf("%02x ", buf[j]);
-	// }
-	// printf("\n");
-	// memset(buf, 0, BUFFER_LENGTH);
-	// close(sock);
-	// exit(EXIT_SUCCESS);
 	int messagesReceived[255];
 	for (int j = 0; j < 255; j++) {
 		messagesReceived[j] = 0;
@@ -192,41 +176,37 @@ int main(int argc, char* argv[])
 			mavlink_message_t msg;
 			mavlink_status_t status;
 
-			printf("Bytes Received: %d\nDatagram: ", (int)recsize);
 			for (i = 0; i < recsize; ++i)
 			{
-				// temp = buf[i];
-				// printf("%02x ", (unsigned char)temp);
 				if (mavlink_parse_char(chan, buf[i], &msg, &status))
 				{
 					// Packet received
-					printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
-					// #ifndef TEST
-					// if (msg.msgid == 22) {
-					// 	printf("PARAM REQUEST RESPONSE RECEIVED : SUCCESS\n");
-					// 	close(sock);
-					// 	exit(EXIT_SUCCESS);
-					// }
-					// #endif
+
 					if (msg.msgid < 255) {
 						messagesReceived[msg.msgid]=1;
 					}
-					mavlink_msg_decode(msg);
+					if (msg.msgid == MAVLINK_MSG_ID_COMMAND_ACK) {
+						printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
+						mavlink_msg_decode(msg);
+					}
 				}
 			}
-			printf("\n");
 		}
 		sleep(1); // Sleep one second
 	}
+
 	int count =0;
 	for (int j = 0; j < 255; j++) {
 		if (messagesReceived[j] > 0) {
 			printf("%d:%02x ", j, j);
 			count += 1;
 		}
+
 	}
 	printf("\nNb message %d\n", count);
+
 	close(sock);
+	exit(EXIT_SUCCESS);
 }
 
 
