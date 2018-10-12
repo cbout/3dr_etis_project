@@ -1,30 +1,22 @@
 /*******************************************************************************
 Copyright (C) 2010  Bryan Godbolt godbolt ( a t ) ualberta.ca
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
-
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 ****************************************************************************/
 /*
 This program sends some data to qgroundcontrol using the mavlink protocol.  The sent packets
 cause qgroundcontrol to respond with heartbeats.  Any settings or custom commands sent from
 qgroundcontrol are printed by this program along with the heartbeats.
-
-
 I compiled this program sucessfully on Ubuntu 10.04 with the following command
-
 gcc -I ../../pixhawk/mavlink/include -o udp-server udp-server-test.c
-
 the rt library is needed for the clock_gettime on linux
 */
 /* These headers are for QNX, but should all be standard on unix/linux */
@@ -69,6 +61,9 @@ int main(int argc, char* argv[])
 
 	char target_ip[100];
 	int local_port=14550;
+	
+	//Struct of the vehicle
+	Vehicle *vehicle;
 
 	//struct sockaddr_in fromAddr;
 	uint8_t buf[BUFFER_LENGTH];
@@ -187,7 +182,7 @@ int main(int argc, char* argv[])
 					}
 					if (msg.msgid == MAVLINK_MSG_ID_COMMAND_ACK) {
 						printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
-						mavlink_msg_decode(msg);
+						mavlink_msg_decode_broadcast(msg, &vehicle);
 					}
 				}
 			}
@@ -270,7 +265,7 @@ void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_
 	char buf[256];
 	memset(buf,0,256);
 	struct sockaddr_in possibleTarget;
-  socklen_t possibleTargetLen = sizeof(possibleTarget);
+  	socklen_t possibleTargetLen = sizeof(possibleTarget);
 	while (recvfrom(*sock, buf, sizeof(buf), 0, (struct sockaddr*)(&possibleTarget), &possibleTargetLen)<=0
 				|| possibleTarget.sin_addr.s_addr != inet_addr(target_ip)) {
 		memset(buf,0,256);

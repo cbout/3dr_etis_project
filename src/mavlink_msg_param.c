@@ -9,10 +9,11 @@
 #include <fcntl.h>
 #include <time.h>
 #include <mavlink.h>
+#include "mavlink_perso_types.h"
 
 int mavlink_msg_param(int rep, char *param){
 
-	//!!!!!!!!!!!!!!!!!!!TO DO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	//!!!!!!!!!!!!!!!!!!!USELESS FOR THE MOMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	switch (rep) {
 
 		case 1 :

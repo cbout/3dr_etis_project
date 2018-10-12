@@ -34,6 +34,7 @@ https://discuss.ardupilot.org/t/mavlink-and-arduino-step-by-step/25566 communica
 //To buy
 https://www.amazon.fr/3DR-BT11A-Batterie-Intelligent-Quadricopt%C3%A8re/dp/B00X97EXEU/ref=sr_1_1?ie=UTF8&qid=1538032193&sr=8-1&keywords=batterie+3dr+solo#productDetails
 https://www.amazon.fr/C%C3%A2ble-Data-GoPro-Black-Session/dp/B01N95YMWQ
+https://www.amazon.fr/3DR-GB11A-Support-3-Axes-Quadricopt%C3%A8re/dp/B00X97F4R0
 
 
 
