@@ -14,6 +14,8 @@ https://groups.google.com/forum/#!topic/mavlink/1zgHUM67E-A
 https://github.com/PX4/Devguide/issues/357 :informations about UDP and ports
 https://unix.stackexchange.com/questions/320640/3dr-solo-drone-wifi-communication : informations about WIFI communication
 http://ardupilot.org/copter/docs/parameters.html : complete Parameter List
+https://www.ardusub.com/ : ardusub
+https://dev.qgroundcontrol.com/en/ : QGroundControl dev doc
 
 //Some examples : 
 https://github.com/3drobotics/solodevguide
