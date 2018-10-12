@@ -74,11 +74,28 @@ void mavlink_msg_decode(mavlink_message_t msg){
 			break;
 		}
 
+		case MAVLINK_MSG_ID_STATUSTEXT:
+		{
+			mavlink_statustext_t statustext;
+			mavlink_msg_statustext_decode(&msg, &statustext);
+			printf("Severity :%d\nText: %s\n", statustext.severity, statustext.text);
+			// exit(EXIT_SUCCESS);
+			break;
+		}
 		//...
+		case MAVLINK_MSG_ID_COMMAND_ACK:
+		{
 
+				mavlink_command_ack_t cmdAck;
+				mavlink_msg_command_ack_decode(&msg, &cmdAck);
+				printf("\n\nCommande :%d:%02X\nResult: %d\n\n", cmdAck.command, cmdAck.command, cmdAck.result);
+				// exit(EXIT_SUCCESS);
+				break;
+		}
 
 		default :
 			printf("This is an other type of message\n");
+			break;
 	}
 
 }
