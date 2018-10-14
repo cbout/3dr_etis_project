@@ -1,24 +1,3 @@
-/*******************************************************************************
-Copyright (C) 2010  Bryan Godbolt godbolt ( a t ) ualberta.ca
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-****************************************************************************/
-/*
-This program sends some data to qgroundcontrol using the mavlink protocol.  The sent packets
-cause qgroundcontrol to respond with heartbeats.  Any settings or custom commands sent from
-qgroundcontrol are printed by this program along with the heartbeats.
-I compiled this program sucessfully on Ubuntu 10.04 with the following command
-gcc -I ../../pixhawk/mavlink/include -o udp-server udp-server-test.c
-the rt library is needed for the clock_gettime on linux
-*/
 /* These headers are for QNX, but should all be standard on unix/linux */
 #include <stdio.h>
 #include <errno.h>
@@ -50,9 +29,15 @@ or in the same folder as this source file */
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
-uint64_t microsSinceEpoch();
+
 void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip);
 
+
+/**
+* Main
+*
+*
+*/
 int main(int argc, char* argv[])
 {
 
@@ -63,7 +48,7 @@ int main(int argc, char* argv[])
 	int local_port=14550;
 	
 	//Struct of the vehicle
-	Vehicle *vehicle;
+	Vehicle vehicle;
 
 	//struct sockaddr_in fromAddr;
 	uint8_t buf[BUFFER_LENGTH];
@@ -103,9 +88,12 @@ int main(int argc, char* argv[])
 	struct sockaddr_in targetAddr;
 	struct sockaddr_in locAddr;
 
+	//Connection
 	init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip);
+	
 	mavlink_channel_t chan = MAVLINK_COMM_0;
 
+	//Initialization order
 	// Sending an heartbeat : mean we are the ground control (cf. param : 255)
 	mavlink_msg_heartbeat_pack(255,0,&msg,MAV_TYPE_GCS,MAV_AUTOPILOT_INVALID,MAV_MODE_MANUAL_ARMED,0x0,MAV_STATE_ACTIVE);
 	len = mavlink_msg_to_send_buffer(buf, &msg);
@@ -135,39 +123,18 @@ int main(int argc, char* argv[])
 		exit(EXIT_FAILURE);
 	}
 	memset(buf, 0, BUFFER_LENGTH);
+	//End initialization order
 
-	// Request arm motor : expected COMMAND_ACK
-	mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_COMPONENT_ARM_DISARM,0,1,0,0,0,0,0,0);
-	len = mavlink_msg_to_send_buffer(buf, &msg);
-	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
-	if (bytes_sent==-1) {
-		perror("Sending data stream");
-		exit(EXIT_FAILURE);
-	}
-	printf("\n");
-	sleep(4);
-
-	// Request disarm motors : expected COMMAND_ACK
-	mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_COMPONENT_ARM_DISARM,0,0,0,0,0,0,0,0);
-	len = mavlink_msg_to_send_buffer(buf, &msg);
-	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
-	if (bytes_sent==-1) {
-		perror("Sending data stream");
-		exit(EXIT_FAILURE);
-	}
-
-	int messagesReceived[255];
-	for (int j = 0; j < 255; j++) {
-		messagesReceived[j] = 0;
-	}
-	for (int j=0;j<50;j++)
+	
+	//Process
+	for (;;)
 	{
-		memset(buf, 0, BUFFER_LENGTH);
-
+		
+		//Receiving message
 		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
 		if (recsize > 0)
 		{
-			// Something received - print out all bytes and parse packet
+			// Something received
 			mavlink_message_t msg;
 			mavlink_status_t status;
 
@@ -176,63 +143,49 @@ int main(int argc, char* argv[])
 				if (mavlink_parse_char(chan, buf[i], &msg, &status))
 				{
 					// Packet received
-
-					if (msg.msgid < 255) {
-						messagesReceived[msg.msgid]=1;
-					}
-					if (msg.msgid == MAVLINK_MSG_ID_COMMAND_ACK) {
-						printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
-						mavlink_msg_decode_broadcast(msg, &vehicle);
+					//printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
+					//Broadcast message
+					if(mavlink_msg_decode_broadcast(msg, &vehicle)==-1){
+						//If this is not a broadcast message
+						mavlink_msg_decode_answer(msg);
 					}
 				}
 			}
 		}
+		
+		
+		//Sending message
+		int order;
+		do{
+			printf("Temporary menu : \n");
+			printf("1 : arm motors\n");
+			printf("2 : disarm motors\n");
+			scanf("%d", &order);
+		}
+		while(mavlink_msg_order(order, &msg)==-1);
+		len = mavlink_msg_to_send_buffer(buf, &msg);
+		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+		if (bytes_sent==-1) {
+			perror("Sending data stream");
+			exit(EXIT_FAILURE);
+		}
+		memset(buf, 0, BUFFER_LENGTH);
+		
 		sleep(1); // Sleep one second
 	}
 
-	int count =0;
-	for (int j = 0; j < 255; j++) {
-		if (messagesReceived[j] > 0) {
-			printf("%d:%02x ", j, j);
-			count += 1;
-		}
-
-	}
-	printf("\nNb message %d\n", count);
-
+	
 	close(sock);
 	exit(EXIT_SUCCESS);
 }
 
 
-/* QNX timer version */
-#if (defined __QNX__) | (defined __QNXNTO__)
-uint64_t microsSinceEpoch()
-{
 
-	struct timespec time;
-
-	uint64_t micros = 0;
-
-	clock_gettime(CLOCK_REALTIME, &time);
-	micros = (uint64_t)time.tv_sec * 1000000 + time.tv_nsec/1000;
-
-	return micros;
-}
-#else
-uint64_t microsSinceEpoch()
-{
-
-	struct timeval tv;
-
-	uint64_t micros = 0;
-
-	gettimeofday(&tv, NULL);
-	micros =  ((uint64_t)tv.tv_sec) * 1000000 + tv.tv_usec;
-
-	return micros;
-}
-
+/**
+* To create the connection
+*
+*
+*/
 void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip)
 {
 	*sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
@@ -280,4 +233,4 @@ void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_
 	return;
 }
 
-#endif
+
