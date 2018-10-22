@@ -30,8 +30,6 @@ or in the same folder as this source file */
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
-
-void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip);
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 void* threadReciving (void* arg);
 void* threadSending (void* arg);
@@ -95,7 +93,7 @@ int main(int argc, char* argv[])
 	
 
 	//Connection
-	init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip);
+	init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip, 0);
 
 
 	//Initialization order
@@ -197,6 +195,12 @@ void* threadSending (void* arg){
 	int bytes_sent;
 	mavlink_message_t msg;
 	uint16_t len;
+	mavlink_system_t localSysId;
+	localSysId.sysid = 255;
+	localSysId.compid = 0;
+	mavlink_system_t targetSysId;
+	localSysId.sysid = 1;
+	localSysId.compid = 0;
 	
 	while(1){
 		memset(buf, 0, BUFFER_LENGTH);
