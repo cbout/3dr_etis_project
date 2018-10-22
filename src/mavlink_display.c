@@ -210,3 +210,28 @@ void mavlink_display_info_vehicle_all(Vehicle vehicle){
 	mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_NAMED_VALUE_INT, vehicle);
 	mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_STATUSTEXT, vehicle);
 }
+
+
+/**
+* Display the main menu
+*
+*
+*/
+void mavlink_display_main_menu(){
+	printf("---------------------------Main menu-----------------------\n");
+	printf("1 : arm motors\n");
+	printf("2 : disarm motors\n");
+	printf("p : display informations\n");
+	printf("c : control drone\n");
+}
+
+/**
+* Display the display menu
+*
+*
+*/
+void mavlink_display_display_menu(){
+	printf("---------------------------Display menu-----------------------\n");
+	printf("a : display all\n");
+	
+}

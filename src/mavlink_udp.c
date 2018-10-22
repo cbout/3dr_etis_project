@@ -205,20 +205,23 @@ void* threadSending (void* arg){
 	while(1){
 		memset(buf, 0, BUFFER_LENGTH);
 		char order;
+		
+		pthread_mutex_lock (&mutex);
 		do{
-			printf("Temporary menu : \n");
-			printf("1 : arm motors\n");
-			printf("2 : disarm motors\n");
-			printf("3 : get vehicle informations\n");
+			pthread_mutex_unlock (&mutex);
+			mavlink_display_main_menu();
 			scanf("%s", &order);
-			if(order == '3'){
-				pthread_mutex_lock (&mutex);
-				mavlink_display_info_vehicle_all(vehicle);
-				pthread_mutex_unlock (&mutex);
+			if(order == 'p'){
+				mavlink_display_display_menu();
+				scanf("%s", &order);
 			}
+			else if(order == 'c'){
+				
+			}
+			pthread_mutex_lock (&mutex);
 		}
-
-		while(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1);
+		while(mavlink_msg_order(order, vehicle, localSysId, targetSysId, &msg)==-1);
+		pthread_mutex_unlock (&mutex);
 
 		len = mavlink_msg_to_send_buffer(buf, &msg);
 		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));

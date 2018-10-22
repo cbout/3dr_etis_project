@@ -18,7 +18,7 @@ mavlink_udp.o :  mavlink_udp.c mavlink_perso_lib.h mavlink_perso_types.h
 
 
 mavlink_udp : mavlink_msg_order.o mavlink_msg_decode.o mavlink_display.o mavlink_init_udp.o mavlink_udp.o
-	gcc -std=c99 -I include/common -o mavlink_udp $^
+	gcc -std=c99 -I include/common -o mavlink_udp $^ -lpthread
 
 clean :
 	rm -f  mavlink_udp *.o
