@@ -115,25 +115,29 @@ void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
 		
 		case MAVLINK_MSG_ID_VFR_HUD:
 		{
-			
+			mavlink_vfr_hud_t vfr_hud = vehicle.vfr_hud;
+			printf("VFR_HUD :\nAirspeed : %f, Groundspeed : %f, Alt : %f, Climb : %f, Heading : %d, Throttle : %d\n", vfr_hud.airspeed, vfr_hud.groundspeed, vfr_hud.alt, vfr_hud.climb, vfr_hud.heading,  vfr_hud.throttle);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_RADIO_STATUS:
 		{
-			
+			mavlink_radio_status_t radio_status = vehicle.radio_status;
+			printf("RADIO_STATUS :\nRxerrors : %d, Fixed : %d, Rssi : %d, Remrssi : %d, Txbuf : %d, Noise : %d, Remnoise : %d\n", radio_status.rxerrors, radio_status.fixed, radio_status.rssi, radio_status.remrssi, radio_status.txbuf,  radio_status.noise,  radio_status.remnoise);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_SCALED_IMU2:
 		{
-			
+			mavlink_scaled_imu2_t scaled_imu2 = vehicle.scaled_imu2;
+			printf("SCALED_IMU2 :\nTime_boot_ms : %d, Xacc : %d, Yacc : %d, Zacc : %d, Xgyro : %d, Ygyro : %d, Zgyro : %d, Xmag : %d, Ymag : %d, Zmag : %d\n", scaled_imu2.time_boot_ms, scaled_imu2.xacc, scaled_imu2.yacc, scaled_imu2.zacc, scaled_imu2.xgyro, scaled_imu2.ygyro, scaled_imu2.zgyro, scaled_imu2.xmag, scaled_imu2.ymag, scaled_imu2.zmag);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_POWER_STATUS:
 		{
-			
+			mavlink_power_status_t power_status = vehicle.power_status;
+			printf("POWER_STATUS :\nVcc : %d, Vservo : %d, Flags : %d\n", power_status.Vcc, power_status.Vservo, power_status.flags);
 			break;
 		}
 		
@@ -147,7 +151,7 @@ void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
 		case MAVLINK_MSG_ID_TERRAIN_REQUEST:
 		{
 			mavlink_terrain_request_t terrain_request = vehicle.terrain_request;
-			printf("TERRAIN_REQUEST :\nMask : %d, Lat : %d, Lon : %d, Grid_spacing : %d\n", terrain_request.mask, terrain_request.lat, terrain_request.lon, terrain_request.grid_spacing);
+			printf("TERRAIN_REQUEST :\nMask : %llu, Lat : %d, Lon : %d, Grid_spacing : %d\n", terrain_request.mask, terrain_request.lat, terrain_request.lon, terrain_request.grid_spacing);
 			break;
 		}
 		
