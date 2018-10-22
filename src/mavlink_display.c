@@ -225,6 +225,7 @@ void mavlink_display_main_menu(){
 	printf("c : control drone\n");
 }
 
+
 /**
 * Display the display menu
 *
@@ -233,5 +234,24 @@ void mavlink_display_main_menu(){
 void mavlink_display_display_menu(){
 	printf("---------------------------Display menu-----------------------\n");
 	printf("a : display all\n");
-	
+	//...
+}
+
+
+/**
+* Display the control menu
+*
+*
+*/
+void mavlink_display_control_menu(){
+	printf("---------------------------Control menu-----------------------\n");
+	printf("z : move forward\n");
+	printf("s : move back\n");
+	printf("q : move left\n");
+	printf("d : move right\n");
+	printf("i : go up\n");
+	printf("k : go down\n");
+	printf("j : rotate left\n");
+	printf("l : rotate right\n");
+	//...
 }

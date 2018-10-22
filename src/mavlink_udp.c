@@ -7,6 +7,7 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <termios.h> 
 #include <stdlib.h>
 #include <fcntl.h>
 #include <time.h>
@@ -29,6 +30,8 @@ or in the same folder as this source file */
 #include "mavlink_perso_lib.h"
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
+
+void mode_raw(int activate);
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 void* threadReciving (void* arg);
@@ -216,7 +219,14 @@ void* threadSending (void* arg){
 				scanf("%s", &order);
 			}
 			else if(order == 'c'){
-				
+				mavlink_display_control_menu();
+				mode_raw(1);
+				do{
+				    order = getchar();
+					//printf("%c\n",order);
+					mavlink_msg_order(order, vehicle, localSysId, targetSysId, &msg);
+				}while(order!=' ');
+				mode_raw(0);
 			}
 			pthread_mutex_lock (&mutex);
 		}
@@ -234,4 +244,34 @@ void* threadSending (void* arg){
 	}
 	
 	pthread_exit(NULL); /* End of the thread */
+}
+
+
+/**
+* Change keyboard entry
+*
+*
+*/
+void mode_raw(int activate)
+{ 
+    static struct termios cooked; 
+    static int raw_activate = 0; 
+  
+    if (raw_activate == activate) 
+        return; 
+  
+    if (activate) 
+    { 
+        struct termios raw; 
+  
+        tcgetattr(STDIN_FILENO, &cooked); 
+  
+        raw = cooked; 
+        cfmakeraw(&raw); 
+        tcsetattr(STDIN_FILENO, TCSANOW, &raw); 
+    } 
+    else 
+        tcsetattr(STDIN_FILENO, TCSANOW, &cooked); 
+  
+    raw_activate = activate; 
 }

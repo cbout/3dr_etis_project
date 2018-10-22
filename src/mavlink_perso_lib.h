@@ -67,4 +67,6 @@ void mavlink_display_main_menu();
 
 void mavlink_display_display_menu();
 
+void mavlink_display_control_menu();
+
 #endif /* __MAVLINK_PERSO_LIB_H_ */
