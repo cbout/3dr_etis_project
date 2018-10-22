@@ -210,24 +210,30 @@ void* threadSending (void* arg){
 		char order;
 		
 		pthread_mutex_lock (&mutex);
+		//Main menu
 		do{
 			pthread_mutex_unlock (&mutex);
 			mavlink_display_main_menu();
 			scanf("%s", &order);
+			
+			//Print menu
 			if(order == 'p'){
 				mavlink_display_display_menu();
 				scanf("%s", &order);
 			}
+			
+			//Control menu
 			else if(order == 'c'){
 				mavlink_display_control_menu();
 				mode_raw(1);
 				do{
 				    order = getchar();
-					//printf("%c\n",order);
 					mavlink_msg_order(order, vehicle, localSysId, targetSysId, &msg);
 				}while(order!=' ');
 				mode_raw(0);
 			}
+			
+			//To protect the vehicule global variable
 			pthread_mutex_lock (&mutex);
 		}
 		while(mavlink_msg_order(order, vehicle, localSysId, targetSysId, &msg)==-1);

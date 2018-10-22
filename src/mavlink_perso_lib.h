@@ -63,10 +63,25 @@ void mavlink_display_info_vehicle_all(Vehicle vehicle);
  */
 int init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip, int timeout);
 
+
+/**
+ * @brief      Print the main menu
+ *
+ */
 void mavlink_display_main_menu();
 
+
+/**
+ * @brief      Print the display menu
+ *
+ */
 void mavlink_display_display_menu();
 
+
+/**
+ * @brief      Print the control menu
+ *
+ */
 void mavlink_display_control_menu();
 
 #endif /* __MAVLINK_PERSO_LIB_H_ */
