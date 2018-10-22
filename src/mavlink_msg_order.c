@@ -11,7 +11,7 @@
 #include <mavlink.h>
 #include "mavlink_perso_types.h"
 
-int mavlink_msg_order(char order, mavlink_message_t *msg){
+int mavlink_msg_order(int order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
 
 	//!!!!!!!!!!!! To complete!!!!!!!!!!!!!!
 	switch (order) {
@@ -19,21 +19,25 @@ int mavlink_msg_order(char order, mavlink_message_t *msg){
 		case '1' :
 		{
 			// Request arm motors : expected COMMAND_ACK
-			mavlink_msg_command_long_pack(255, 0, msg, 1, 0, MAV_CMD_COMPONENT_ARM_DISARM, 0, 1, 0, 0, 0, 0, 0, 0);
-			
+			mavlink_msg_command_long_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid, target_sys.compid, MAV_CMD_COMPONENT_ARM_DISARM, 0, 1, 0, 0, 0, 0, 0, 0);
+
 			return 0;
 		}
 
 		case '2' :
 		{
 			// Request disarm motors : expected COMMAND_ACK
-			mavlink_msg_command_long_pack(255, 0, msg, 1, 0, MAV_CMD_COMPONENT_ARM_DISARM, 0, 0, 0, 0, 0, 0, 0, 0);
-			
+			mavlink_msg_command_long_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid, target_sys.compid, MAV_CMD_COMPONENT_ARM_DISARM, 0, 0, 0, 0, 0, 0, 0, 0);
+
 			return 0;
 		}
-		
+
+		case 3:
+		{
+			// Request test armed
+		}
 		//...
-		
+
 		default :
 			//printf("Incorrect order\n");
 			return -1;

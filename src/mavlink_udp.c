@@ -213,7 +213,9 @@ void* threadSending (void* arg){
 				pthread_mutex_unlock (&mutex);
 			}
 		}
-		while(mavlink_msg_order(order, &msg)==-1);
+
+		while(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1);
+
 		len = mavlink_msg_to_send_buffer(buf, &msg);
 		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
 		if (bytes_sent==-1) {
@@ -226,59 +228,3 @@ void* threadSending (void* arg){
 	
 	pthread_exit(NULL); /* End of the thread */
 }
-
-
-
-/**
-* To create the connection
-*
-*
-*/
-void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip)
-{
-	*sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
-
-	memset(locAddr, 0, sizeof(*locAddr));
-	locAddr->sin_family = AF_INET;
-	locAddr->sin_addr.s_addr = INADDR_ANY;
-	locAddr->sin_port = htons(local_port);
-
-	if (-1 == bind(*sock,(struct sockaddr *)locAddr, sizeof(struct sockaddr)))
-	{
-		perror("error bind failed");
-		close(*sock);
-		exit(EXIT_FAILURE);
-	}
-	printf("INIT listenning :\nUdpin: 0.0.0.0:%d\n", ntohs(locAddr->sin_port));
-	/* Attempt to make it non blocking */
-	#if (defined __QNX__) | (defined __QNXNTO__)
-	if (fcntl(*sock, F_SETFL, O_NONBLOCK | FASYNC) < 0)
-	#else
-	if (fcntl(*sock, F_SETFL, O_NONBLOCK | O_ASYNC) < 0)
-	#endif
-
-	{
-		fprintf(stderr, "error setting nonblocking: %s\n", strerror(errno));
-		close(*sock);
-		exit(EXIT_FAILURE);
-	}
-
-	char buf[256];
-	memset(buf,0,256);
-	struct sockaddr_in possibleTarget;
-  	socklen_t possibleTargetLen = sizeof(possibleTarget);
-	while (recvfrom(*sock, buf, sizeof(buf), 0, (struct sockaddr*)(&possibleTarget), &possibleTargetLen)<=0
-				|| possibleTarget.sin_addr.s_addr != inet_addr(target_ip)) {
-		memset(buf,0,256);
-	}
-
-	memset(targetAddr, 0, sizeof(*targetAddr));
-	targetAddr->sin_family = AF_INET;
-	targetAddr->sin_addr.s_addr = inet_addr(target_ip);
-	targetAddr->sin_port = possibleTarget.sin_port;
-
-	printf("INIT target :\nUdpout: %s:%d\n",target_ip,ntohs(targetAddr->sin_port));
-	return;
-}
-
-
