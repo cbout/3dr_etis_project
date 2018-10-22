@@ -11,12 +11,12 @@
 #include <mavlink.h>
 #include "mavlink_perso_types.h"
 
-int mavlink_msg_order(int order, mavlink_message_t *msg){
+int mavlink_msg_order(char order, mavlink_message_t *msg){
 
 	//!!!!!!!!!!!! To complete!!!!!!!!!!!!!!
 	switch (order) {
 
-		case 1 :
+		case '1' :
 		{
 			// Request arm motors : expected COMMAND_ACK
 			mavlink_msg_command_long_pack(255, 0, msg, 1, 0, MAV_CMD_COMPONENT_ARM_DISARM, 0, 1, 0, 0, 0, 0, 0, 0);
@@ -24,7 +24,7 @@ int mavlink_msg_order(int order, mavlink_message_t *msg){
 			return 0;
 		}
 
-		case 2 :
+		case '2' :
 		{
 			// Request disarm motors : expected COMMAND_ACK
 			mavlink_msg_command_long_pack(255, 0, msg, 1, 0, MAV_CMD_COMPONENT_ARM_DISARM, 0, 0, 0, 0, 0, 0, 0, 0);

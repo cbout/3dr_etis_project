@@ -11,6 +11,7 @@
 #include <fcntl.h>
 #include <time.h>
 #include <arpa/inet.h>
+#include <pthread.h>
 #if (defined __QNX__) | (defined __QNXNTO__)
 /* QNX specific headers */
 #include <unix.h>
@@ -31,6 +32,18 @@ or in the same folder as this source file */
 
 
 void init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip);
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+void* threadReciving (void* arg);
+void* threadSending (void* arg);
+
+
+//Struct of the vehicle
+Vehicle vehicle;
+
+//Connect
+int sock;
+struct sockaddr_in targetAddr;
+struct sockaddr_in locAddr;
 
 
 /**
@@ -47,13 +60,9 @@ int main(int argc, char* argv[])
 	char target_ip[100];
 	int local_port=14550;
 	
-	//Struct of the vehicle
-	Vehicle vehicle;
 
 	//struct sockaddr_in fromAddr;
 	uint8_t buf[BUFFER_LENGTH];
-	ssize_t recsize;
-	socklen_t fromlen;
 	int bytes_sent;
 	mavlink_message_t msg;
 	uint16_t len;
@@ -83,15 +92,11 @@ int main(int argc, char* argv[])
 		strcpy(target_ip, argv[1]);
 		local_port = atoi(argv[2]);
 	}
-
-	int sock;
-	struct sockaddr_in targetAddr;
-	struct sockaddr_in locAddr;
+	
 
 	//Connection
 	init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip);
-	
-	mavlink_channel_t chan = MAVLINK_COMM_0;
+
 
 	//Initialization order
 	// Sending an heartbeat : mean we are the ground control (cf. param : 255)
@@ -126,18 +131,42 @@ int main(int argc, char* argv[])
 	//End initialization order
 
 	
-	//Process
-	for (;;)
-	{
+	pthread_t myThreadReciving;
+	pthread_t myThreadSending;
+
+	//Create threads
+	pthread_create (&myThreadReciving, NULL, threadReciving, (void*)NULL);
+	pthread_create (&myThreadSending, NULL, threadSending, (void*)NULL);
+
+	//Wait threads
+	pthread_join (myThreadReciving, NULL);
+	pthread_join (myThreadSending, NULL);
+	
+	close(sock);
+	exit(EXIT_SUCCESS);
+}
+
+
+//Receiving message
+void* threadReciving (void* arg){
+	
+	uint8_t buf[BUFFER_LENGTH];
+	ssize_t recsize;
+	socklen_t fromlen;
+	mavlink_channel_t chan = MAVLINK_COMM_0;
+	
+	while (1){
+		memset(buf, 0, BUFFER_LENGTH);
 		
-		//Receiving message
 		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
 		if (recsize > 0)
 		{
 			// Something received
 			mavlink_message_t msg;
 			mavlink_status_t status;
+			int i;
 
+			pthread_mutex_lock (&mutex);
 			for (i = 0; i < recsize; ++i)
 			{
 				if (mavlink_parse_char(chan, buf[i], &msg, &status))
@@ -151,16 +180,38 @@ int main(int argc, char* argv[])
 					}
 				}
 			}
+			pthread_mutex_unlock (&mutex);
 		}
 		
-		
-		//Sending message
-		int order;
+		sleep(1); // Sleep one second
+	}
+	
+	pthread_exit(NULL); /* End of the thread */
+}
+
+
+//Sending message
+void* threadSending (void* arg){
+	
+	uint8_t buf[BUFFER_LENGTH];
+	int bytes_sent;
+	mavlink_message_t msg;
+	uint16_t len;
+	
+	while(1){
+		memset(buf, 0, BUFFER_LENGTH);
+		char order;
 		do{
 			printf("Temporary menu : \n");
 			printf("1 : arm motors\n");
 			printf("2 : disarm motors\n");
-			scanf("%d", &order);
+			printf("3 : get vehicle informations\n");
+			scanf("%s", &order);
+			if(order == '3'){
+				pthread_mutex_lock (&mutex);
+				mavlink_display_info_vehicle_all(vehicle);
+				pthread_mutex_unlock (&mutex);
+			}
 		}
 		while(mavlink_msg_order(order, &msg)==-1);
 		len = mavlink_msg_to_send_buffer(buf, &msg);
@@ -169,14 +220,11 @@ int main(int argc, char* argv[])
 			perror("Sending data stream");
 			exit(EXIT_FAILURE);
 		}
-		memset(buf, 0, BUFFER_LENGTH);
-		
+	
 		sleep(1); // Sleep one second
 	}
-
 	
-	close(sock);
-	exit(EXIT_SUCCESS);
+	pthread_exit(NULL); /* End of the thread */
 }
 
 
