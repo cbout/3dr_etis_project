@@ -11,7 +11,7 @@
 #include <mavlink.h>
 #include "mavlink_perso_types.h"
 
-int mavlink_msg_order(int order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
+int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
 
 	//!!!!!!!!!!!! To complete!!!!!!!!!!!!!!
 	switch (order) {
