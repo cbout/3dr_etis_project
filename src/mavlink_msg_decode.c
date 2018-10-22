@@ -240,7 +240,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 		{
 			mavlink_param_value_t param_value;
 			mavlink_msg_param_value_decode(&msg, &param_value);
-			printf("Param_value : %f, param_count : %d, param_index : %d, param_id : %s, param_type : %d\n", param_value.param_value, param_value.param_count, param_value.param_index, param_value.param_id, param_value.param_type);
+			//printf("Param_value : %f, param_count : %d, param_index : %d, param_id : %s, param_type : %d\n", param_value.param_value, param_value.param_count, param_value.param_index, param_value.param_id, param_value.param_type);
 			break;
 		}
 
@@ -248,7 +248,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 		{
 			mavlink_command_int_t command_int;
 			mavlink_msg_command_int_decode(&msg, &command_int);
-			printf("Param1 : %f, param2 : %f, param3 : %f, param4 : %f, x : %d, y : %d, z : %f, command : %d:%02X, target_system : %d, target_component : %d, frame : %d, current : %d, autocontinue : %d\n", command_int.param1, command_int.param2, command_int.param3, command_int.param4, command_int.x, command_int.y, command_int.z, command_int.command, command_int.command, command_int.target_system, command_int.target_component, command_int.frame, command_int.current, command_int.autocontinue);
+			//printf("Param1 : %f, param2 : %f, param3 : %f, param4 : %f, x : %d, y : %d, z : %f, command : %d:%02X, target_system : %d, target_component : %d, frame : %d, current : %d, autocontinue : %d\n", command_int.param1, command_int.param2, command_int.param3, command_int.param4, command_int.x, command_int.y, command_int.z, command_int.command, command_int.command, command_int.target_system, command_int.target_component, command_int.frame, command_int.current, command_int.autocontinue);
 			break;
 		}
 
@@ -256,7 +256,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 		{
 			mavlink_command_long_t command_long;
 			mavlink_msg_command_long_decode(&msg, &command_long);
-			printf("Param1 : %f, param2 : %f, param3 : %f, param4 : %f, param5 : %f, param6 : %f, param7 : %f, command : %d:%02X, target_system : %d, target_component : %d, confirmation : %d\n", command_long.param1, command_long.param2, command_long.param3, command_long.param4,  command_long.param5,  command_long.param6,  command_long.param7, command_long.command, command_long.command, command_long.target_system, command_long.target_component, command_long.confirmation);
+			//printf("Param1 : %f, param2 : %f, param3 : %f, param4 : %f, param5 : %f, param6 : %f, param7 : %f, command : %d:%02X, target_system : %d, target_component : %d, confirmation : %d\n", command_long.param1, command_long.param2, command_long.param3, command_long.param4,  command_long.param5,  command_long.param6,  command_long.param7, command_long.command, command_long.command, command_long.target_system, command_long.target_component, command_long.confirmation);
 			break;
 		}
 
@@ -265,12 +265,12 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 		{
 			mavlink_command_ack_t command_ack;
 			mavlink_msg_command_ack_decode(&msg, &command_ack);
-			printf("\n\nCommand : %d:%02X, result: %d\n", command_ack.command, command_ack.command, command_ack.result);
+			//printf("\n\nCommand : %d:%02X, result: %d\n", command_ack.command, command_ack.command, command_ack.result);
 			break;
 		}
 
 		default :
-			printf("Unknow answer\n");
+			//printf("Unknow answer\n");
 			break;
 	}
 

@@ -20,6 +20,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle);
  */
 void mavlink_msg_decode_answer(mavlink_message_t msg);
 
+
 /**
  * @brief      { function_description }
  *
@@ -30,7 +31,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg);
  *
  * @return     { description_of_the_return_value }
  */
-int mavlink_msg_order(int order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg);
+int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg);
 
 /**
  * @brief      Print a field by his id
