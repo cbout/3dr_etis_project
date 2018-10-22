@@ -10,6 +10,7 @@
 
 
 typedef struct vehicle {
+	mavlink_system_t system_ids;
 	mavlink_heartbeat_t heartbeat;
 	mavlink_sys_status_t sys_status;
 	mavlink_system_time_t system_time;
@@ -32,5 +33,5 @@ typedef struct vehicle {
 	mavlink_scaled_pressure2_t scaled_pressure2;
 	mavlink_named_value_int_t named_value_int;
 	mavlink_statustext_t statustext;
-	
+
 } Vehicle;

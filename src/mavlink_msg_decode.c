@@ -19,6 +19,8 @@
 */
 int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 
+	vehicle->system_ids.sysid = msg.sysid;
+	vehicle->system_ids.compid = msg.compid;
 	switch (msg.msgid) {
 
 		case MAVLINK_MSG_ID_HEARTBEAT:
@@ -38,7 +40,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->sys_status = sys_status;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_SYSTEM_TIME:
 		{
 			//printf("System_time update\n");
@@ -47,7 +49,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->system_time = system_time;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_GPS_RAW_INT:
 		{
 			//printf("Gps_raw_int update\n");
@@ -56,7 +58,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->gps_raw_int = gps_raw_int;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_RAW_IMU:
 		{
 			//printf("Raw_imu update\n");
@@ -65,7 +67,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->raw_imu = raw_imu;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_SCALED_PRESSURE:
 		{
 			//printf("Scaled_pressure update\n");
@@ -74,7 +76,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->scaled_pressure = scaled_pressure;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_ATTITUDE:
 		{
 			//printf("Attitude update\n");
@@ -83,7 +85,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->attitude = attitude;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_GLOBAL_POSITION_INT:
 		{
 			//printf("Global_position_int update\n");
@@ -92,7 +94,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->global_position_int = global_position_int;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_RC_CHANNELS_RAW:
 		{
 			//printf("Rc_channels_raw update\n");
@@ -101,7 +103,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->rc_channels_raw = rc_channels_raw;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_SERVO_OUTPUT_RAW:
 		{
 			//printf("Servo_output_raw update\n");
@@ -110,7 +112,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->servo_output_raw = servo_output_raw;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_MISSION_CURRENT:
 		{
 			//printf("Mission_current update\n");
@@ -119,7 +121,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->mission_current = mission_current;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_NAV_CONTROLLER_OUTPUT:
 		{
 			//printf("Nav_controller_output update\n");
@@ -128,7 +130,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->nav_controller_output = nav_controller_output;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_VFR_HUD:
 		{
 			//printf("Vfr_hud update\n");
@@ -137,7 +139,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->vfr_hud = vfr_hud;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_RADIO_STATUS:
 		{
 			//printf("Radio_status update\n");
@@ -146,7 +148,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->radio_status = radio_status;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_SCALED_IMU2:
 		{
 			//printf("Scaled_imu2 update\n");
@@ -155,7 +157,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->scaled_imu2 = scaled_imu2;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_POWER_STATUS:
 		{
 			//printf("Power_status update\n");
@@ -164,7 +166,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->power_status = power_status;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_SCALED_IMU3:
 		{
 			//printf("Scaled_imu3 update\n");
@@ -173,7 +175,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->scaled_imu3 = scaled_imu3;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_TERRAIN_REQUEST:
 		{
 			//printf("Terrain_request update\n");
@@ -182,7 +184,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->terrain_request = terrain_request;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_TERRAIN_REPORT:
 		{
 			//printf("Terrain_report update\n");
@@ -191,7 +193,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->terrain_report = terrain_report;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_SCALED_PRESSURE2:
 		{
 			//printf("Scaled_pressure2 update\n");
@@ -200,7 +202,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->scaled_pressure2 = scaled_pressure2;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_NAMED_VALUE_INT:
 		{
 			//printf("Named_value_int update\n");
@@ -209,7 +211,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->named_value_int = named_value_int;
 			return 0;
 		}
-		
+
 		case MAVLINK_MSG_ID_STATUSTEXT:
 		{
 			//printf("Statustext update\n");
@@ -218,7 +220,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 			vehicle->statustext = statustext;
 			return 0;
 		}
-		
+
 		default :
 			//printf("This is not a broadcast message\n");
 			return -1;
@@ -231,7 +233,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 *
 */
 void mavlink_msg_decode_answer(mavlink_message_t msg){
-	
+
 	switch (msg.msgid) {
 
 		case MAVLINK_MSG_ID_PARAM_VALUE:
@@ -241,7 +243,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 			printf("Param_value : %f, param_count : %d, param_index : %d, param_id : %s, param_type : %d\n", param_value.param_value, param_value.param_count, param_value.param_index, param_value.param_id, param_value.param_type);
 			break;
 		}
-		
+
 		case MAVLINK_MSG_ID_COMMAND_INT:
 		{
 			mavlink_command_int_t command_int;
@@ -249,7 +251,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 			printf("Param1 : %f, param2 : %f, param3 : %f, param4 : %f, x : %d, y : %d, z : %f, command : %d:%02X, target_system : %d, target_component : %d, frame : %d, current : %d, autocontinue : %d\n", command_int.param1, command_int.param2, command_int.param3, command_int.param4, command_int.x, command_int.y, command_int.z, command_int.command, command_int.command, command_int.target_system, command_int.target_component, command_int.frame, command_int.current, command_int.autocontinue);
 			break;
 		}
-		
+
 		case MAVLINK_MSG_ID_COMMAND_LONG:
 		{
 			mavlink_command_long_t command_long;
@@ -258,7 +260,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 			break;
 		}
 
-		
+
 		case MAVLINK_MSG_ID_COMMAND_ACK:
 		{
 			mavlink_command_ack_t command_ack;
