@@ -139,38 +139,43 @@ void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
 		
 		case MAVLINK_MSG_ID_SCALED_IMU3:
 		{
-			
+			mavlink_scaled_imu3_t scaled_imu3 = vehicle.scaled_imu3;
+			printf("SCALED_IMU3 :\nTime_boot_ms : %d, Xacc : %d, Yacc : %d, Zacc : %d, Xgyro : %d, Ygyro : %d, Zgyro : %d, Xmag : %d, Ymag : %d, Zmag : %d\n", scaled_imu3.time_boot_ms, scaled_imu3.xacc, scaled_imu3.yacc, scaled_imu3.zacc, scaled_imu3.xgyro, scaled_imu3.ygyro, scaled_imu3.zgyro, scaled_imu3.xmag, scaled_imu3.ymag, scaled_imu3.zmag);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_TERRAIN_REQUEST:
 		{
-			
+			mavlink_terrain_request_t terrain_request = vehicle.terrain_request;
+			printf("TERRAIN_REQUEST :\nMask : %d, Lat : %d, Lon : %d, Grid_spacing : %d\n", terrain_request.mask, terrain_request.lat, terrain_request.lon, terrain_request.grid_spacing);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_TERRAIN_REPORT:
 		{
-			
+			mavlink_terrain_report_t terrain_report = vehicle.terrain_report;
+			printf("TERRAIN_REPORT :\nLat : %d, Lon : %d, Terrain_height : %f, Current_height : %f, Spacing : %d, Pending : %d, Loaded : %d\n", terrain_report.lat, terrain_report.lon, terrain_report.terrain_height, terrain_report.current_height, terrain_report.spacing, terrain_report.pending, terrain_report.loaded);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_SCALED_PRESSURE2:
 		{
-			
+			mavlink_scaled_pressure2_t scaled_pressure2 = vehicle.scaled_pressure2;
+			printf("SCALED_PRESSURE2 :\nTime_boot_ms : %d, Press_abs : %f, Press_diff : %f, Temperature : %d\n", scaled_pressure2.time_boot_ms, scaled_pressure2.press_abs, scaled_pressure2.press_diff, scaled_pressure2.temperature);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_NAMED_VALUE_INT:
 		{
-			
+			mavlink_named_value_int_t named_value_int = vehicle.named_value_int;
+			printf("NAMED_VALUE_INT :\nTime_boot_ms : %d, Value : %d, Name : %s\n", named_value_int.time_boot_ms, named_value_int.value, named_value_int.name);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_STATUSTEXT:
 		{
 			mavlink_statustext_t statustext = vehicle.statustext;
-			printf("Severity :%d\n Text: %s\n", statustext.severity, statustext.text);
+			printf("STATUSTEXT :\nSeverity : %d, Text : %s\n", statustext.severity, statustext.text);
 			break;
 		}
 		
