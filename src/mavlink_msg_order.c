@@ -34,7 +34,9 @@ int mavlink_msg_order(int order, mavlink_system_t source_sys, mavlink_system_t t
 
 		case 3:
 		{
-			// Request test armed
+			// Request test armed : expected COMMAND_ACK
+			mavlink_msg_command_long_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid, target_sys.compid, MAV_CMD_DO_SET_MODE, 0, MAV_MODE_MANUAL_ARMED, 0, 0, 0, 0, 0,0);
+			return 0;
 		}
 		//...
 
