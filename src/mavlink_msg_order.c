@@ -108,22 +108,174 @@ int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t 
 }
 
 
-int mavlink_display_order(char order, Vehicle vehicle){
+int mavlink_display_order(int order, Vehicle vehicle){
 
 	//!!!!!!!!!!!! To complete!!!!!!!!!!!!!!
 	switch (order) {
 
-		case 'a':
+		case 1:
 		{
 			// Order to display all informations of the vehicule
 			mavlink_display_info_vehicle_all(vehicle);
 			return 0;
 		}
 		
-		//... others displays
+		case 2:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_HEARTBEAT, vehicle);
+			return 0;
+		}
+		
+		case 3:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SYS_STATUS, vehicle);
+			return 0;
+		}
+		
+		case 4:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SYSTEM_TIME, vehicle);
+			return 0;
+		}
+		
+		case 5:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_GPS_RAW_INT, vehicle);
+			return 0;
+		}
+		
+		case 6:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_RAW_IMU, vehicle);
+			return 0;
+		}
+		
+		case 7:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SCALED_PRESSURE, vehicle);
+			return 0;
+		}
+		
+		case 8:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_ATTITUDE, vehicle);
+			return 0;
+		}
+		
+		case 9:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_GLOBAL_POSITION_INT, vehicle);
+			return 0;
+		}
+		
+		case 10:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_RC_CHANNELS_RAW, vehicle);
+			return 0;
+		}
+		
+		case 11:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SERVO_OUTPUT_RAW, vehicle);
+			return 0;
+		}
+		
+		case 12:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_MISSION_CURRENT, vehicle);
+			return 0;
+		}
+		
+		case 13:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_NAV_CONTROLLER_OUTPUT, vehicle);
+			return 0;
+		}
+		
+		case 14:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_VFR_HUD, vehicle);
+			return 0;
+		}
+		
+		case 15:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_RADIO_STATUS, vehicle);
+			return 0;
+		}
+		
+		case 16:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SCALED_IMU2, vehicle);
+			return 0;
+		}
+		
+		case 17:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_POWER_STATUS, vehicle);
+			return 0;
+		}
+		
+		case 18:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SCALED_IMU3, vehicle);
+			return 0;
+		}
+		
+		case 19:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_TERRAIN_REQUEST, vehicle);
+			return 0;
+		}
+		
+		case 20:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_TERRAIN_REPORT, vehicle);
+			return 0;
+		}
+		
+		case 21:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SCALED_PRESSURE2, vehicle);
+			return 0;
+		}
+		
+		case 22:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_NAMED_VALUE_INT, vehicle);
+			return 0;
+		}
+		
+		case 23:
+		{
+			// Order to display 
+			mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_STATUSTEXT, vehicle);
+			return 0;
+		}
 
 		default :
-			//printf("Incorrect order\n");
+			//printf("Incorrect type of display\n");
 			return -1;
 	}
 
