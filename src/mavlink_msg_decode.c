@@ -11,6 +11,70 @@
 #include <mavlink.h>
 #include "mavlink_perso_types.h"
 
+char* mavlink_enum_to_string(MAV_ENUM enumType, int value)
+{
+	switch(enumType)
+	{
+		case ENUM_MAV_CMD_ACK:
+			switch(value)
+			{
+				case 0:
+					return "CMD_ACK value 0";
+				case 1:
+					return "MAV_CMD_ACK_OK";
+				case 2:
+					return "MAV_CMD_ACK_ERR_FAIL";
+				case 3:
+					return "MAV_CMD_ACK_ERR_ACCESS_DENIED";
+				case 4:
+					return "MAV_CMD_ACK_ERR_NOT_SUPPORTED";
+				case 5:
+					return "MAV_CMD_ACK_ERR_COORDINATE_FRAME_NOT_SUPPORTED";
+				case 6:
+					return "MAV_CMD_ACK_ERR_COORDINATES_OUT_OF_RANGE";
+				case 7:
+					return "MAV_CMD_ACK_ERR_X_LAT_OUT_OF_RANGE";
+				case 8:
+					return "MAV_CMD_ACK_ERR_Y_LON_OUT_OF_RANGE";
+				case 9:
+					return "MAV_CMD_ACK_ERR_Z_ALT_OUT_OF_RANGE";
+				case 10:
+					return "MAV_CMD_ACK_ENUM_END";
+				default:
+					return "UNKNOWN_MAV_CMD_ACK";
+			}
+		case ENUM_MAV_CMD:
+			switch(value)
+			{
+				case 16:
+					return "MAV_CMD_NAV_WAYPOINT";
+				case 21:
+					return "MAV_CMD_NAV_LAND";
+				case 22:
+					return "MAV_CMD_NAV_TAKEOFF";
+				case 23:
+					return "MAV_CMD_NAV_LAND_LOCAL";
+				case 24:
+					return "MAV_CMD_NAV_TAKEOFF_LOCAL";
+				case 30:
+					return "MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT";
+				case 176:
+					return "MAV_CMD_DO_SET_MODE";
+				case 186:
+					return "MAV_CMD_DO_CHANGE_ALTITUDE";
+				case 400:
+					return "MAV_CMD_COMPONENT_ARM_DISARM";
+				case 519:
+					return "MAV_CMD_REQUEST_PROTOCOL_VERSION";
+				case 3001:
+					return "MAV_CMD_ARM_AUTHORIZATION_REQUEST";
+				default:
+					return "OTHER TYPE OF MAV_CMD";
+			}
+		default:
+			return "Unknow type";
+	}
+}
 
 /**
 * Decode broadcast messages and update the corresponding parameter of the vehicle
@@ -233,7 +297,6 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 *
 */
 void mavlink_msg_decode_answer(mavlink_message_t msg){
-
 	switch (msg.msgid) {
 
 		case MAVLINK_MSG_ID_PARAM_VALUE:
@@ -265,7 +328,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 		{
 			mavlink_command_ack_t command_ack;
 			mavlink_msg_command_ack_decode(&msg, &command_ack);
-			//printf("\n\nCommand : %d:%02X, result: %d\n", command_ack.command, command_ack.command, command_ack.result);
+			printf("\n\nCommand : %d:%02X:%s, result: %d:%s\n", command_ack.command, command_ack.command, mavlink_enum_to_string(ENUM_MAV_CMD, command_ack.command), command_ack.result, mavlink_enum_to_string(ENUM_MAV_CMD_ACK, command_ack.result));
 			break;
 		}
 
