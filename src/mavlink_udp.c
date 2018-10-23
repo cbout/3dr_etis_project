@@ -70,7 +70,6 @@ int main(int argc, char* argv[])
 	int bytes_sent;
 	mavlink_message_t msg;
 	uint16_t len;
-	int i = 0;
 
 	// Check if --help flag was used
 	if ((argc == 2) && (strcmp(argv[1], help) == 0))
@@ -205,8 +204,8 @@ void* threadSending (void* arg){
 	localSysId.sysid = 255;
 	localSysId.compid = 0;
 	mavlink_system_t targetSysId;
-	localSysId.sysid = 1;
-	localSysId.compid = 0;
+	targetSysId.sysid = 1;
+	targetSysId.compid = 0;
 	char order;
 	
 	while(run){
