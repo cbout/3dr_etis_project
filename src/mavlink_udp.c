@@ -67,7 +67,6 @@ int main(int argc, char* argv[])
 	int bytes_sent;
 	mavlink_message_t msg;
 	uint16_t len;
-	int i = 0;
 
 	// Check if --help flag was used
 	if ((argc == 2) && (strcmp(argv[1], help) == 0))
