@@ -18,105 +18,97 @@
 */
 void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
 	
-	//!!!!!!!!!!!!!!!!!TO FINSIH!!!!!!!!!!!!!!!!!!!!!!!!
+
 	switch (id) {
 
 		case MAVLINK_MSG_ID_HEARTBEAT:
 		{
 			mavlink_heartbeat_t heartbeat = vehicle.heartbeat;
-			printf("Custom mode : %d\n", heartbeat.custom_mode);
-			printf("type : %d\n", heartbeat.type);
-			printf("autopilot : %d\n", heartbeat.autopilot);
-			printf("base_mode : %d\n", heartbeat.base_mode);
-			printf("system_status : %d\n", heartbeat.system_status);
-			printf("mavlink_version : %d\n", heartbeat.mavlink_version);
+			printf("HEARTBEAT :\nCustom_mode : %d, Type : %d, Autopilot : %d, Base_mode : %d, System_status : %d, Mavlink_version : %d\n", heartbeat.custom_mode, heartbeat.type, heartbeat.autopilot, heartbeat.base_mode, heartbeat.system_status, heartbeat.mavlink_version);
 			break;
 		}
 
 		case MAVLINK_MSG_ID_SYS_STATUS:
 		{
 			mavlink_sys_status_t sys_status = vehicle.sys_status;
-			printf("onboard_control_sensors_present : %d\n", sys_status.onboard_control_sensors_present);
-			printf("onboard_control_sensors_enabled : %d\n", sys_status.onboard_control_sensors_enabled);
-			printf("onboard_control_sensors_health : %d\n", sys_status.onboard_control_sensors_health);
-			printf("load : %d%%\n", sys_status.load);
-			printf("voltage_battery : %dmV\n", sys_status.voltage_battery);
-			printf("current_battery : %dcA\n", sys_status.current_battery);
-			printf("drop_rate_comm : %d%%\n", sys_status.drop_rate_comm);
-			printf("errors_comm : %d\n", sys_status.errors_comm);
-			printf("errors_count1 : %d\n", sys_status.errors_count1);
-			printf("errors_count2 : %d\n", sys_status.errors_count2);
-			printf("errors_count3 : %d\n", sys_status.errors_count3);
-			printf("errors_count4 : %d\n", sys_status.errors_count4);
-			printf("battery_remaining : %d%%\n", sys_status.battery_remaining);
+			printf("SYS_STATUS :\n Onboard_control_sensors_present : %d, Onboard_control_sensors_enabled : %d, Onboard_control_sensors_health : %d, Load : %d, Voltage_battery : %d, Current_battery : %d, Drop_rate_comm : %d, Errors_comm : %d, Errors_count1 : %d, Errors_count2 : %d, Errors_count3 : %d, Errors_count4 : %d, Battery_remaining : %d\n", sys_status.onboard_control_sensors_present, sys_status.onboard_control_sensors_enabled, sys_status.onboard_control_sensors_health, sys_status.load, sys_status.voltage_battery, sys_status.current_battery, sys_status.drop_rate_comm, sys_status.errors_comm, sys_status.errors_count1, sys_status.errors_count2, sys_status.errors_count3, sys_status.errors_count4, sys_status.battery_remaining);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_SYSTEM_TIME:
 		{
-			
+			mavlink_system_time_t system_time = vehicle.system_time;
+			printf("SYSTEM_TIME :\nTime_unix_usec : %llu, Time_boot_ms : %d\n", system_time.time_unix_usec, system_time.time_boot_ms);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_GPS_RAW_INT:
 		{
-			
+			mavlink_gps_raw_int_t gps_raw_int = vehicle.gps_raw_int;
+			printf("GPS_RAW_INT :\nTime_usec : %llu, Lat : %d, Lon : %d, Alt : %d, Eph : %d, Epv : %d, Vel : %d, Cog : %d, Fix_type : %d, Satellites_visible : %d\n", gps_raw_int.time_usec, gps_raw_int.lat, gps_raw_int.lon, gps_raw_int.alt, gps_raw_int.eph, gps_raw_int.epv, gps_raw_int.vel, gps_raw_int.cog, gps_raw_int.fix_type, gps_raw_int.satellites_visible);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_RAW_IMU:
 		{
-			
+			mavlink_raw_imu_t raw_imu = vehicle.raw_imu;
+			printf("RAW_IMU :\nTime_usec : %llu, Xacc : %d, Yacc : %d, Zacc : %d, Xgyro : %d, Ygyro : %d, Zgyro : %d, Xmag : %d, Ymag : %d, Zmag : %d\n", raw_imu.time_usec, raw_imu.xacc, raw_imu.yacc, raw_imu.zacc, raw_imu.xgyro, raw_imu.ygyro, raw_imu.zgyro, raw_imu.xmag, raw_imu.ymag, raw_imu.zmag);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_SCALED_PRESSURE:
 		{
-			
+			mavlink_scaled_pressure_t scaled_pressure = vehicle.scaled_pressure;
+			printf("SCALED_PRESSURE :\nTime_boot_ms : %d, Press_abs : %f, Press_diff : %f, Temperature : %d\n", scaled_pressure.time_boot_ms, scaled_pressure.press_abs, scaled_pressure.press_diff, scaled_pressure.temperature);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_ATTITUDE:
 		{
 			mavlink_attitude_t attitude = vehicle.attitude;
-			printf("The roll : %f\n", attitude.roll);
+			printf("ATTITUDE :\nTime_boot_ms : %d, Roll : %f, Pitch : %f, Yaw : %f, Rollspeed : %f, Pitchspeed : %f, Yawspeed : %f\n", attitude.time_boot_ms, attitude.roll, attitude.pitch, attitude.yaw, attitude.rollspeed, attitude.pitchspeed,  attitude.yawspeed);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_GLOBAL_POSITION_INT:
 		{
-			
+			mavlink_global_position_int_t global_position_int = vehicle.global_position_int;
+			printf("GLOBAL_POSITION_INT :\nTime_boot_ms : %d, Lat : %d, Lon : %d, Alt : %d, Relative_alt : %d, Vx : %d, Vy : %d, Vz : %d, Hdg : %d\n", global_position_int.time_boot_ms, global_position_int.lat, global_position_int.lon, global_position_int.alt, global_position_int.relative_alt, global_position_int.vx, global_position_int.vy, global_position_int.vz, global_position_int.hdg);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_RC_CHANNELS_RAW:
 		{
-			
+			mavlink_rc_channels_raw_t rc_channels_raw = vehicle.rc_channels_raw;
+			printf("RC_CHANNELS_RAW :\nTime_boot_ms : %d, Chan1_raw : %d, Chan2_raw : %d, Chan3_raw : %d, Chan4_raw : %d, Chan5_raw : %d, Chan6_raw : %d, Chan7_raw : %d, Chan8_raw : %d, Port : %d, Rssi : %d\n", rc_channels_raw.time_boot_ms, rc_channels_raw.chan1_raw, rc_channels_raw.chan2_raw, rc_channels_raw.chan3_raw, rc_channels_raw.chan4_raw, rc_channels_raw.chan5_raw, rc_channels_raw.chan6_raw, rc_channels_raw.chan7_raw, rc_channels_raw.chan8_raw, rc_channels_raw.port, rc_channels_raw.rssi);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_SERVO_OUTPUT_RAW:
 		{
-			
+			mavlink_servo_output_raw_t servo_output_raw = vehicle.servo_output_raw;
+			printf("SERVO_OUTPUT_RAW :\nTime_usec : %d, Servo1_raw : %d, Servo2_raw : %d, Servo3_raw : %d, Servo4_raw : %d, Servo5_raw : %d, Servo6_raw : %d, Servo7_raw : %d, Servo8_raw : %d, Port : %d\n", servo_output_raw.time_usec, servo_output_raw.servo1_raw, servo_output_raw.servo2_raw, servo_output_raw.servo3_raw, servo_output_raw.servo4_raw, servo_output_raw.servo5_raw, servo_output_raw.servo6_raw, servo_output_raw.servo7_raw, servo_output_raw.servo8_raw, servo_output_raw.port);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_MISSION_CURRENT:
 		{
-			
+			mavlink_mission_current_t mission_current = vehicle.mission_current;
+			printf("MISSION_CURRENT :\nSeq : %d\n", mission_current.seq);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_NAV_CONTROLLER_OUTPUT:
 		{
-			
+			mavlink_nav_controller_output_t nav_controller_output = vehicle.nav_controller_output;
+			printf("NAV_CONTROLLER_OUTPUT :\nNav_roll : %f, Nav_pitch : %f, Alt_error : %f, Aspd_error : %f, Xtrack_error : %f, Nav_bearing : %d, Target_bearing : %d, Wp_dist : %d\n", nav_controller_output.nav_roll, nav_controller_output.nav_pitch, nav_controller_output.alt_error, nav_controller_output.aspd_error, nav_controller_output.xtrack_error,  nav_controller_output.nav_bearing, nav_controller_output.target_bearing, nav_controller_output.wp_dist);
 			break;
 		}
 		
 		case MAVLINK_MSG_ID_VFR_HUD:
 		{
 			mavlink_vfr_hud_t vfr_hud = vehicle.vfr_hud;
-			printf("VFR_HUD :\nAirspeed : %f, Groundspeed : %f, Alt : %f, Climb : %f, Heading : %d, Throttle : %d\n", vfr_hud.airspeed, vfr_hud.groundspeed, vfr_hud.alt, vfr_hud.climb, vfr_hud.heading,  vfr_hud.throttle);
+			printf("VFR_HUD :\nAirspeed : %f, Groundspeed : %f, Alt : %f, Climb : %f, Heading : %d, Throttle : %d\n", vfr_hud.airspeed, vfr_hud.groundspeed, vfr_hud.alt, vfr_hud.climb, vfr_hud.heading, vfr_hud.throttle);
 			break;
 		}
 		
@@ -232,6 +224,7 @@ void mavlink_display_main_menu(){
 	printf("2 : disarm motors\n");
 	printf("p : display informations\n");
 	printf("c : control drone\n");
+	printf("e : to exit\n");
 }
 
 
@@ -243,6 +236,7 @@ void mavlink_display_main_menu(){
 void mavlink_display_display_menu(){
 	printf("---------------------------Display menu-----------------------\n");
 	printf("a : display all\n");
+	printf("q : to exit this menu\n");
 	//...
 }
 
@@ -262,5 +256,6 @@ void mavlink_display_control_menu(){
 	printf("k : go down\n");
 	printf("j : rotate left\n");
 	printf("l : rotate right\n");
+	printf("' ' : to exit this menu\n");
 	//...
 }

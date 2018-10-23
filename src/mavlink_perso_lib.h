@@ -25,14 +25,24 @@ void mavlink_msg_decode_answer(mavlink_message_t msg);
  * @brief      { function_description }
  *
  * @param[in]  order       The order
- * @param[in]  vehicle     The vehicle
  * @param[in]  source_sys  The source system
  * @param[in]  target_sys  The target system
  * @param      msg         The message
  *
  * @return     { description_of_the_return_value }
  */
-int mavlink_msg_order(char order, Vehicle vehicle, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg);
+int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg);
+
+
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  order       The order
+ * @param[in]  vehicle     The vehicle
+ *
+ * @return     { description_of_the_return_value }
+ */
+int mavlink_display_order(char order, Vehicle vehicle);
 
 /**
  * @brief      Print a field by his id

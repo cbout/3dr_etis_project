@@ -46,6 +46,9 @@ int sock;
 struct sockaddr_in targetAddr;
 struct sockaddr_in locAddr;
 
+//The prog is running
+int run = 1;
+
 
 /**
 * Main
@@ -156,7 +159,7 @@ void* threadReciving (void* arg){
 	socklen_t fromlen;
 	mavlink_channel_t chan = MAVLINK_COMM_0;
 	
-	while (1){
+	while (run){
 		memset(buf, 0, BUFFER_LENGTH);
 		
 		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
@@ -204,41 +207,62 @@ void* threadSending (void* arg){
 	mavlink_system_t targetSysId;
 	localSysId.sysid = 1;
 	localSysId.compid = 0;
+	char order;
 	
-	while(1){
+	while(run){
 		memset(buf, 0, BUFFER_LENGTH);
-		char order;
 		
-		pthread_mutex_lock (&mutex);
 		//Main menu
-		do{
-			pthread_mutex_unlock (&mutex);
-			mavlink_display_main_menu();
-			scanf("%s", &order);
+		mavlink_display_main_menu();
+		scanf("%s", &order);
 			
-			//Print menu
-			if(order == 'p'){
+		//Print menu
+		if(order == 'p'){
+			do{
 				mavlink_display_display_menu();
-				scanf("%s", &order);
-			}
-			
-			//Control menu
-			else if(order == 'c'){
-				mavlink_display_control_menu();
-				mode_raw(1);
-				do{
-				    order = getchar();
-					mavlink_msg_order(order, vehicle, localSysId, targetSysId, &msg);
-				}while(order!=' ');
-				mode_raw(0);
-			}
-			
-			//To protect the vehicule global variable
-			pthread_mutex_lock (&mutex);
+				scanf("%s", &order);	
+				//To protect the vehicule global variable
+				pthread_mutex_lock (&mutex);
+				mavlink_display_order(order, vehicle);
+				pthread_mutex_unlock (&mutex);
+			}while(order!='q');
+			continue;
 		}
-		while(mavlink_msg_order(order, vehicle, localSysId, targetSysId, &msg)==-1);
-		pthread_mutex_unlock (&mutex);
+			
+		//Control menu
+		else if(order == 'c'){
+			mavlink_display_control_menu();
+			mode_raw(1);
+			do{
+				memset(buf, 0, BUFFER_LENGTH);
+				order = getchar();
+				if(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1){
+					continue;
+				}
+				//Sending order by UDP
+				len = mavlink_msg_to_send_buffer(buf, &msg);
+				bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+				if (bytes_sent==-1) {
+					perror("Sending data stream");
+					exit(EXIT_FAILURE);
+				}
+			}while(order!=' ');
+			mode_raw(0);
+			continue;
+		}
+		
+		//Quit the prog
+		if(order == 'e'){
+			run = 0;
+			break;
+		}
+			
+		//If the order doesn't exist
+		if(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1){
+			continue;
+		}
 
+		//Sending order by UDP
 		len = mavlink_msg_to_send_buffer(buf, &msg);
 		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
 		if (bytes_sent==-1) {
@@ -246,10 +270,12 @@ void* threadSending (void* arg){
 			exit(EXIT_FAILURE);
 		}
 	
-		sleep(1); // Sleep one second
+		// Sleep one second
+		sleep(1);
 	}
 	
-	pthread_exit(NULL); /* End of the thread */
+	//End of the thread
+	pthread_exit(NULL);
 }
 
 
