@@ -1,24 +1,20 @@
-all : mavlink_udp
+CC=gcc
+CFLAGS=-std=c99 -Wall -I include/common
+LDFLAGS=-lpthread
+EXEC=mavlink_udp
+SRC= $(wildcard *.c)
+LIB= $(wildcard *.h)
+OBJ= $(SRC:.c=.o)
 
+all : $(EXEC)
 
-mavlink_msg_order.o : mavlink_msg_order.c mavlink_perso_lib.h mavlink_perso_types.h
-	gcc -std=c99 -I include/common -c mavlink_msg_order.c
+%.o:%.c  $(LIB)
+	$(CC) $(CFLAGS) -c $< 
 
-mavlink_init_udp.o : mavlink_init_udp.c mavlink_perso_lib.h mavlink_perso_types.h
-		gcc -std=c99 -I include/common -c mavlink_init_udp.c
+$(EXEC) : $(SRC)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-mavlink_msg_decode.o : mavlink_msg_decode.c mavlink_perso_lib.h mavlink_perso_types.h
-	gcc -std=c99 -I include/common -c mavlink_msg_decode.c
-
-mavlink_display.o : mavlink_display.c mavlink_perso_lib.h mavlink_perso_types.h
-	gcc -std=c99 -I include/common -c mavlink_display.c
-
-mavlink_udp.o :  mavlink_udp.c mavlink_perso_lib.h mavlink_perso_types.h
-	gcc -std=c99 -I include/common -c mavlink_udp.c
-
-
-mavlink_udp : mavlink_msg_order.o mavlink_msg_decode.o mavlink_display.o mavlink_init_udp.o mavlink_udp.o
-	gcc -std=c99 -I include/common -o mavlink_udp $^ -lpthread
+.PHONY: clean
 
 clean :
 	rm -f  mavlink_udp *.o
