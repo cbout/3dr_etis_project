@@ -214,6 +214,7 @@ void* threadSending (void* arg){
 	targetSysId.sysid = 1;
 	targetSysId.compid = 0;
 	char order;
+	int print;
 	
 	while(run){
 		memset(buf, 0, BUFFER_LENGTH);
@@ -226,12 +227,12 @@ void* threadSending (void* arg){
 		if(order == 'p'){
 			do{
 				mavlink_display_display_menu();
-				scanf("%s", &order);	
+				scanf("%d", &print);
 				//To protect the vehicule global variable
 				pthread_mutex_lock (&mutex);
-				mavlink_display_order(order, vehicle);
+				mavlink_display_order(print, vehicle);
 				pthread_mutex_unlock (&mutex);
-			}while(order!='q');
+			}while(print!=0);
 			continue;
 		}
 			

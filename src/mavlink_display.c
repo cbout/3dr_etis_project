@@ -219,7 +219,7 @@ void mavlink_display_info_vehicle_all(Vehicle vehicle){
 *
 */
 void mavlink_display_main_menu(){
-	printf("---------------------------Main menu-----------------------\n");
+	printf("\n-------------------------------------------------------------------------------------Main menu-------------------------------------------------------------------------------------\n");
 	printf("1 : arm motors\n");
 	printf("2 : disarm motors\n");
 	printf("p : display informations\n");
@@ -234,10 +234,31 @@ void mavlink_display_main_menu(){
 *
 */
 void mavlink_display_display_menu(){
-	printf("---------------------------Display menu-----------------------\n");
-	printf("a : display all\n");
-	printf("q : to exit this menu\n");
-	//...
+	printf("\n-------------------------------------------------------------------------------------Display menu-------------------------------------------------------------------------------------\n");
+	printf("1 : display all\n\n");
+	printf("2 : display heartbeat");
+	printf("	3 : display sys_status");
+	printf("	4 : display system_time");
+	printf("	5 : display gps_raw_int\n");
+	printf("6 : display raw_imu");
+	printf("	7 : display scaled_pressure");
+	printf("	8 : display attitude");
+	printf("	9 : display global_position_int\n");
+	printf("10 : display rc_channels_raw");
+	printf("	11 : display servo_output_raw");
+	printf("	12 : display mission_current");
+	printf("	13 : display nav_controller_output\n");
+	printf("14 : display vfr_hud");
+	printf("	15 : display radio_status");
+	printf("	16 : display scaled_imu2");
+	printf("	17 : display power_status\n");
+	printf("18 : display scaled_imu3");
+	printf("	19 : display terrain_request");
+	printf("	20 : display terrain_report");
+	printf("	21 : display scaled_pressure2\n");
+	printf("22 : display named_value_int");
+	printf("	23 : display statustext\n\n");	
+	printf("0 : to quit this menu\n\n");
 }
 
 
@@ -247,7 +268,7 @@ void mavlink_display_display_menu(){
 *
 */
 void mavlink_display_control_menu(){
-	printf("---------------------------Control menu-----------------------\n");
+	printf("\n-------------------------------------------------------------------------------------Control menu-------------------------------------------------------------------------------------\n");
 	printf("z : move forward\n");
 	printf("s : move back\n");
 	printf("q : move left\n");
@@ -255,7 +276,7 @@ void mavlink_display_control_menu(){
 	printf("i : go up\n");
 	printf("k : go down\n");
 	printf("j : rotate left\n");
-	printf("l : rotate right\n");
-	printf("' ' : to exit this menu\n");
+	printf("l : rotate right\n\n");
+	printf("' ' : to exit this menu\n\n");
 	//...
 }

@@ -42,7 +42,7 @@ int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t 
  *
  * @return     { description_of_the_return_value }
  */
-int mavlink_display_order(char order, Vehicle vehicle);
+int mavlink_display_order(int order, Vehicle vehicle);
 
 /**
  * @brief      Print a field by his id
