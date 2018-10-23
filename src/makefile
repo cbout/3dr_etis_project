@@ -9,7 +9,7 @@ OBJ= $(SRC:.c=.o)
 all : $(EXEC)
 
 %.o:%.c  $(LIB)
-	$(CC) $(CFLAGS) -c $< 
+	$(CC) $(CFLAGS) -c $<
 
 $(EXEC) : $(SRC)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)

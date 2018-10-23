@@ -7,7 +7,7 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <unistd.h>
-#include <termios.h> 
+#include <termios.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <time.h>
@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
 
 	char target_ip[100];
 	int local_port=14550;
-	
+
 
 	//struct sockaddr_in fromAddr;
 	uint8_t buf[BUFFER_LENGTH];
@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
 		strcpy(target_ip, argv[1]);
 		local_port = atoi(argv[2]);
 	}
-	
+
 
 	//Connection
 	init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip, 0);
@@ -123,17 +123,19 @@ int main(int argc, char* argv[])
 	memset(buf, 0, BUFFER_LENGTH);
 
 	// Request protocol version : expected COMMAND_ACK
-	mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_REQUEST_PROTOCOL_VERSION,4,1,0,0,0,0,0,0);
+	mavlink_msg_command_long_pack(255,0,&msg,1,0,MAV_CMD_REQUEST_PROTOCOL_VERSION,0,1,0,0,0,0,0,0);
 	len = mavlink_msg_to_send_buffer(buf, &msg);
+
 	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
 	if (bytes_sent==-1) {
 		perror("Sending data stream");
 		exit(EXIT_FAILURE);
 	}
+	printf("\n");
 	memset(buf, 0, BUFFER_LENGTH);
 	//End initialization order
 
-	
+
 	pthread_t myThreadReciving;
 	pthread_t myThreadSending;
 
@@ -144,7 +146,7 @@ int main(int argc, char* argv[])
 	//Wait threads
 	pthread_join (myThreadReciving, NULL);
 	pthread_join (myThreadSending, NULL);
-	
+
 	close(sock);
 	exit(EXIT_SUCCESS);
 }
@@ -152,7 +154,7 @@ int main(int argc, char* argv[])
 
 //Receiving message
 void* threadReciving (void* arg){
-	
+
 	uint8_t buf[BUFFER_LENGTH];
 	ssize_t recsize;
 	socklen_t fromlen;
@@ -160,7 +162,7 @@ void* threadReciving (void* arg){
 	
 	while (run){
 		memset(buf, 0, BUFFER_LENGTH);
-		
+
 		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
 		if (recsize > 0)
 		{
@@ -168,12 +170,17 @@ void* threadReciving (void* arg){
 			mavlink_message_t msg;
 			mavlink_status_t status;
 			int i;
-
 			pthread_mutex_lock (&mutex);
 			for (i = 0; i < recsize; ++i)
 			{
 				if (mavlink_parse_char(chan, buf[i], &msg, &status))
 				{
+
+					if (msg.msgid == MAVLINK_MSG_ID_COMMAND_ACK) {
+						printf("%02x ", buf[i]);
+						printf("\n");
+						/* code */
+					}
 					// Packet received
 					//printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
 					//Broadcast message
@@ -185,17 +192,17 @@ void* threadReciving (void* arg){
 			}
 			pthread_mutex_unlock (&mutex);
 		}
-		
+
 		sleep(1); // Sleep one second
 	}
-	
+
 	pthread_exit(NULL); /* End of the thread */
 }
 
 
 //Sending message
 void* threadSending (void* arg){
-	
+
 	uint8_t buf[BUFFER_LENGTH];
 	int bytes_sent;
 	mavlink_message_t msg;
@@ -284,25 +291,25 @@ void* threadSending (void* arg){
 *
 */
 void mode_raw(int activate)
-{ 
-    static struct termios cooked; 
-    static int raw_activate = 0; 
-  
-    if (raw_activate == activate) 
-        return; 
-  
-    if (activate) 
-    { 
-        struct termios raw; 
-  
-        tcgetattr(STDIN_FILENO, &cooked); 
-  
-        raw = cooked; 
-        cfmakeraw(&raw); 
-        tcsetattr(STDIN_FILENO, TCSANOW, &raw); 
-    } 
-    else 
-        tcsetattr(STDIN_FILENO, TCSANOW, &cooked); 
-  
-    raw_activate = activate; 
+{
+    static struct termios cooked;
+    static int raw_activate = 0;
+
+    if (raw_activate == activate)
+        return;
+
+    if (activate)
+    {
+        struct termios raw;
+
+        tcgetattr(STDIN_FILENO, &cooked);
+
+        raw = cooked;
+        cfmakeraw(&raw);
+        tcsetattr(STDIN_FILENO, TCSANOW, &raw);
+    }
+    else
+        tcsetattr(STDIN_FILENO, TCSANOW, &cooked);
+
+    raw_activate = activate;
 }

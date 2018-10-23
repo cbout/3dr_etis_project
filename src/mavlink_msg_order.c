@@ -44,60 +44,60 @@ int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t 
 		case 'z':
 		{
 			// Request move forward
-			
+
 			return 0;
 		}
-		
+
 		case 's':
 		{
 			// Request move back
-			
+
 			return 0;
 		}
-		
+
 		case 'q':
 		{
 			// Request move left
-			
+
 			return 0;
 		}
-		
+
 		case 'd':
 		{
 			// Request move right
-			
+
 			return 0;
 		}
-		
+
 		case 'i':
 		{
 			// Request go up
-			
+
 			return 0;
 		}
-		
+
 		case 'k':
 		{
 			// Request go down
-			
+
 			return 0;
 		}
-		
+
 		case 'j':
 		{
 			// Request rotate left
-			
+
 			return 0;
 		}
-		
+
 		case 'l':
 		{
 			// Request rotate right
-			
+
 			return 0;
 		}
-		
-		
+
+
 		//...
 
 		default :
