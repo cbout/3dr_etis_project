@@ -11,7 +11,7 @@
 #include <mavlink.h>
 #include "mavlink_perso_lib.h"
 
-int mavlink_msg_order(char order, Vehicle vehicle, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
+int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
 
 	//!!!!!!!!!!!! To complete!!!!!!!!!!!!!!
 	switch (order) {
@@ -32,22 +32,13 @@ int mavlink_msg_order(char order, Vehicle vehicle, mavlink_system_t source_sys, 
 			return 0;
 		}
 		
+		//Test
 		case '3':
 		{
 			// Request test armed : expected COMMAND_ACK
 			mavlink_msg_command_long_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid, target_sys.compid, MAV_CMD_DO_SET_MODE, 0, MAV_MODE_MANUAL_ARMED, 0, 0, 0, 0, 0,0);
 			return 0;
 		}
-		
-		case 'a':
-		{
-			// Order to display all informations of the vehicule
-			mavlink_display_info_vehicle_all(vehicle);
-			return 0;
-		}
-		
-		//... others displays
-		
 		
 		//TO DO add mavlink command
 		case 'z':
@@ -108,6 +99,28 @@ int mavlink_msg_order(char order, Vehicle vehicle, mavlink_system_t source_sys, 
 		
 		
 		//...
+
+		default :
+			//printf("Incorrect order\n");
+			return -1;
+	}
+
+}
+
+
+int mavlink_display_order(char order, Vehicle vehicle){
+
+	//!!!!!!!!!!!! To complete!!!!!!!!!!!!!!
+	switch (order) {
+
+		case 'a':
+		{
+			// Order to display all informations of the vehicule
+			mavlink_display_info_vehicle_all(vehicle);
+			return 0;
+		}
+		
+		//... others displays
 
 		default :
 			//printf("Incorrect order\n");
