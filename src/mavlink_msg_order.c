@@ -9,9 +9,9 @@
 #include <fcntl.h>
 #include <time.h>
 #include <mavlink.h>
-#include "mavlink_perso_types.h"
+#include "mavlink_perso_lib.h"
 
-int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
+int mavlink_msg_order(char order, Vehicle vehicle, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
 
 	//!!!!!!!!!!!! To complete!!!!!!!!!!!!!!
 	switch (order) {
@@ -31,13 +31,82 @@ int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t 
 
 			return 0;
 		}
-
-		case '4':
+		
+		case '3':
 		{
 			// Request test armed : expected COMMAND_ACK
 			mavlink_msg_command_long_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid, target_sys.compid, MAV_CMD_DO_SET_MODE, 0, MAV_MODE_MANUAL_ARMED, 0, 0, 0, 0, 0,0);
 			return 0;
 		}
+		
+		case 'a':
+		{
+			// Order to display all informations of the vehicule
+			mavlink_display_info_vehicle_all(vehicle);
+			return 0;
+		}
+		
+		//... others displays
+		
+		
+		//TO DO add mavlink command
+		case 'z':
+		{
+			// Request move forward
+			
+			return 0;
+		}
+		
+		case 's':
+		{
+			// Request move back
+			
+			return 0;
+		}
+		
+		case 'q':
+		{
+			// Request move left
+			
+			return 0;
+		}
+		
+		case 'd':
+		{
+			// Request move right
+			
+			return 0;
+		}
+		
+		case 'i':
+		{
+			// Request go up
+			
+			return 0;
+		}
+		
+		case 'k':
+		{
+			// Request go down
+			
+			return 0;
+		}
+		
+		case 'j':
+		{
+			// Request rotate left
+			
+			return 0;
+		}
+		
+		case 'l':
+		{
+			// Request rotate right
+			
+			return 0;
+		}
+		
+		
 		//...
 
 		default :

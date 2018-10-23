@@ -7,6 +7,7 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <termios.h> 
 #include <stdlib.h>
 #include <fcntl.h>
 #include <time.h>
@@ -29,6 +30,8 @@ or in the same folder as this source file */
 #include "mavlink_perso_lib.h"
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
+
+void mode_raw(int activate);
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 void* threadReciving (void* arg);
@@ -205,20 +208,36 @@ void* threadSending (void* arg){
 	while(1){
 		memset(buf, 0, BUFFER_LENGTH);
 		char order;
+		
+		pthread_mutex_lock (&mutex);
+		//Main menu
 		do{
-			printf("Temporary menu : \n");
-			printf("1 : arm motors\n");
-			printf("2 : disarm motors\n");
-			printf("3 : get vehicle informations\n");
+			pthread_mutex_unlock (&mutex);
+			mavlink_display_main_menu();
 			scanf("%s", &order);
-			if(order == '3'){
-				pthread_mutex_lock (&mutex);
-				mavlink_display_info_vehicle_all(vehicle);
-				pthread_mutex_unlock (&mutex);
+			
+			//Print menu
+			if(order == 'p'){
+				mavlink_display_display_menu();
+				scanf("%s", &order);
 			}
+			
+			//Control menu
+			else if(order == 'c'){
+				mavlink_display_control_menu();
+				mode_raw(1);
+				do{
+				    order = getchar();
+					mavlink_msg_order(order, vehicle, localSysId, targetSysId, &msg);
+				}while(order!=' ');
+				mode_raw(0);
+			}
+			
+			//To protect the vehicule global variable
+			pthread_mutex_lock (&mutex);
 		}
-
-		while(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1);
+		while(mavlink_msg_order(order, vehicle, localSysId, targetSysId, &msg)==-1);
+		pthread_mutex_unlock (&mutex);
 
 		len = mavlink_msg_to_send_buffer(buf, &msg);
 		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
@@ -231,4 +250,34 @@ void* threadSending (void* arg){
 	}
 	
 	pthread_exit(NULL); /* End of the thread */
+}
+
+
+/**
+* Change keyboard entry
+*
+*
+*/
+void mode_raw(int activate)
+{ 
+    static struct termios cooked; 
+    static int raw_activate = 0; 
+  
+    if (raw_activate == activate) 
+        return; 
+  
+    if (activate) 
+    { 
+        struct termios raw; 
+  
+        tcgetattr(STDIN_FILENO, &cooked); 
+  
+        raw = cooked; 
+        cfmakeraw(&raw); 
+        tcsetattr(STDIN_FILENO, TCSANOW, &raw); 
+    } 
+    else 
+        tcsetattr(STDIN_FILENO, TCSANOW, &cooked); 
+  
+    raw_activate = activate; 
 }
