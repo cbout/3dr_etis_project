@@ -100,7 +100,6 @@ int main(int argc, char* argv[])
 	//Connection
 	init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip, 0);
 
-
 	//Initialization order
 	// Sending an heartbeat : mean we are the ground control (cf. param : 255)
 	mavlink_msg_heartbeat_pack(255,0,&msg,MAV_TYPE_GCS,MAV_AUTOPILOT_INVALID,MAV_MODE_MANUAL_ARMED,0x0,MAV_STATE_ACTIVE);
@@ -250,6 +249,24 @@ void* threadSending (void* arg){
 			}while(order!=' ');
 			mode_raw(0);
 			continue;
+		}
+
+		//Change mode menu
+		else if (order == 'm') {
+			do {
+				mavlink_display_mode_menu();
+				scanf("%s\n", &order);
+				if ((print=mavlink_order_select_mode(order, localSysId, targetSysId, &msg))==-1) {
+					continue;
+				}
+				//Sending order by UDP
+				len = mavlink_msg_to_send_buffer(buf, &msg);
+				bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+				if (bytes_sent==-1) {
+					perror("Sending data stream");
+					exit(EXIT_FAILURE);
+				}
+			} while(print!=0);
 		}
 
 		//Quit the prog

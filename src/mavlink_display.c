@@ -222,6 +222,8 @@ void mavlink_display_main_menu(){
 	printf("\n-------------------------------------------------------------------------------------Main menu-------------------------------------------------------------------------------------\n");
 	printf("1 : arm motors\n");
 	printf("2 : disarm motors\n");
+	printf("3 : press fly button\n");
+	printf("m : Select a fly mode\n");
 	printf("p : display informations\n");
 	printf("c : control drone\n");
 	printf("e : to exit\n");
@@ -279,4 +281,14 @@ void mavlink_display_control_menu(){
 	printf("l : rotate right\n\n");
 	printf("' ' : to exit this menu\n\n");
 	//...
+}
+
+/**
+* Display the mode menu
+*
+*
+*/
+void mavlink_display_mode_menu(){
+	printf("\n-------------------------------------------------------------------------------------Control menu-------------------------------------------------------------------------------------\n");
+	printf("G : Guided MODE\n");
 }
