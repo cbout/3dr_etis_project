@@ -56,6 +56,13 @@ void* threadReciving (void* arg);
 void* threadSending (void* arg);
 
 
+/**
+ * @brief      Thread where we get the video stream from the GoPro
+ *
+ */
+void* threadGoPro (void* arg);
+
+
 //Struct of the vehicle
 Vehicle vehicle;
 
@@ -159,14 +166,17 @@ int main(int argc, char* argv[])
 
 	pthread_t myThreadReciving;
 	pthread_t myThreadSending;
+	pthread_t myThreadGoPro;
 
 	//Create threads
 	pthread_create (&myThreadReciving, NULL, threadReciving, (void*)NULL);
 	pthread_create (&myThreadSending, NULL, threadSending, (void*)NULL);
+	pthread_create (&myThreadGoPro, NULL, threadGoPro, (void*)NULL);
 
 	//Wait threads
 	pthread_join (myThreadReciving, NULL);
 	pthread_join (myThreadSending, NULL);
+	pthread_join (myThreadGoPro, NULL);
 
 	close(sock);
 	exit(EXIT_SUCCESS);
@@ -305,6 +315,43 @@ void* threadSending (void* arg){
 	//End of the thread
 	pthread_exit(NULL);
 }
+
+
+/**
+ * @brief      Thread where we get the video stream from the GoPro
+ *
+ */
+void* threadGoPro (void* arg){
+
+	uint8_t buf[BUFFER_LENGTH];
+	ssize_t recsize;
+	socklen_t fromlen;
+	
+	int s;
+	struct sockaddr_in locAddr, targetAddr ;
+
+	locAddr.sin_family = AF_INET ;
+	locAddr.sin_addr.s_addr = INADDR_ANY ;
+	locAddr.sin_port = htons (5600) ;
+	memset (&locAddr.sin_zero, 0, sizeof(locAddr.sin_zero));
+	s = socket (PF_INET, SOCK_DGRAM, 0) ;
+	bind (s, (struct sockaddr *)&locAddr, sizeof locAddr) ;
+
+	while(run){
+		memset(buf, 0, BUFFER_LENGTH);
+
+		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
+		if (recsize > 0)
+		{
+			
+			
+		}
+	}
+
+	//End of the thread
+	pthread_exit(NULL);
+}	
+
 
 
 /**
