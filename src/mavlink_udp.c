@@ -165,17 +165,17 @@ int main(int argc, char* argv[])
 
 	pthread_t myThreadReciving;
 	pthread_t myThreadSending;
-	pthread_t myThreadGoPro;
+	// pthread_t myThreadGoPro;
 
 	//Create threads
 	pthread_create (&myThreadReciving, NULL, threadReciving, (void*)NULL);
 	pthread_create (&myThreadSending, NULL, threadSending, (void*)NULL);
-	pthread_create (&myThreadGoPro, NULL, threadGoPro, (void*)NULL);
+	// pthread_create (&myThreadGoPro, NULL, threadGoPro, (void*)NULL);
 
 	//Wait threads
 	pthread_join (myThreadReciving, NULL);
 	pthread_join (myThreadSending, NULL);
-	pthread_join (myThreadGoPro, NULL);
+	// pthread_join (myThreadGoPro, NULL);
 
 	close(sock);
 	exit(EXIT_SUCCESS);
