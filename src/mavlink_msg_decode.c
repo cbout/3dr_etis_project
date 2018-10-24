@@ -11,6 +11,15 @@
 #include <mavlink.h>
 #include "mavlink_perso_types.h"
 
+
+/**
+ * @brief      Decode the name of the command
+ *
+ * @param[in]  enumType      The type of command
+ * @param[in]  value  		 The value of the command
+ *
+ * @return     the corresponding string name of the command
+ */
 char* mavlink_enum_to_string(MAV_ENUM enumType, int value)
 {
 	switch(enumType)
@@ -76,11 +85,15 @@ char* mavlink_enum_to_string(MAV_ENUM enumType, int value)
 	}
 }
 
+
 /**
-* Decode broadcast messages and update the corresponding parameter of the vehicle
-*
-* return 0 if the message has been identified and decoded, else -1
-*/
+ * @brief      Decode broadcast mavlink messages and update the corresponding parameter of the vehicle
+ *
+ * @param[in]  msg      The message
+ * @param      vehicle  The vehicle
+ *
+ * @return     0 if the message has been identified and decoded, else -1
+ */
 int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 
 	vehicle->system_ids.sysid = msg.sysid;
@@ -293,9 +306,10 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 
 
 /**
-* Decode a answer message and print informations of it
-*
-*/
+ * @brief      Decode a answer Mavlink message
+ *
+ * @param[in]  msg   The message
+ */
 void mavlink_msg_decode_answer(mavlink_message_t msg){
 	switch (msg.msgid) {
 

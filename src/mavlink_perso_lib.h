@@ -3,18 +3,31 @@
 #ifndef __MAVLINK_PERSO_LIB_H_
 #define __MAVLINK_PERSO_LIB_H_
 
+
 /**
- * @brief      Decode default mavlink messages
+ * @brief      Decode the name of the command
+ *
+ * @param[in]  enumType      The type of command
+ * @param[in]  value  		 The value of the command
+ *
+ * @return     the corresponding string name of the command
+ */
+char* mavlink_enum_to_string(MAV_ENUM enumType, int value);
+
+
+/**
+ * @brief      Decode broadcast mavlink messages and update the corresponding parameter of the vehicle
  *
  * @param[in]  msg      The message
  * @param      vehicle  The vehicle
  *
- * @return     { description_of_the_return_value }
+ * @return     0 if the message has been identified and decoded, else -1
  */
 int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle);
 
+
 /**
- * @brief      Decode a mavlink message
+ * @brief      Decode a answer Mavlink message
  *
  * @param[in]  msg   The message
  */
@@ -22,42 +35,45 @@ void mavlink_msg_decode_answer(mavlink_message_t msg);
 
 
 /**
- * @brief      { function_description }
+ * @brief      Order for the drone
  *
  * @param[in]  order       The order
  * @param[in]  source_sys  The source system
  * @param[in]  target_sys  The target system
  * @param      msg         The message
  *
- * @return     { description_of_the_return_value }
+ * @return     0 if the exist -1 else
  */
-int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg);
+int mavlink_msg_order_drone(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg);
 
 
 /**
- * @brief      { function_description }
+ * @brief      Order for displaying informations of the vehicle
  *
  * @param[in]  order       The order
  * @param[in]  vehicle     The vehicle
  *
- * @return     { description_of_the_return_value }
+ * @return     0 if the exist -1 else
  */
 int mavlink_display_order(int order, Vehicle vehicle);
 
+
 /**
- * @brief      Print a field by his id
+ * @brief      Display an information from the vehicle with the id
  *
  * @param[in]  id       The identifier
  * @param[in]  vehicle  The vehicle
  */
 void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle);
 
+
 /**
- * @brief      Print all the vehicle informations
+ * @brief      Display all informations from the vehicle
  *
  * @param[in]  vehicle  The vehicle
  */
 void mavlink_display_info_vehicle_all(Vehicle vehicle);
+
 
 /**
  * @brief      Init a UDP connection between groundControl and a MAV
@@ -75,23 +91,24 @@ int init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_p
 
 
 /**
- * @brief      Print the main menu
+ * @brief      Display the main menu
  *
  */
 void mavlink_display_main_menu();
 
 
 /**
- * @brief      Print the display menu
+ * @brief      Display the display menu
  *
  */
 void mavlink_display_display_menu();
 
 
 /**
- * @brief      Print the control menu
+ * @brief      Display the control menu
  *
  */
 void mavlink_display_control_menu();
+
 
 #endif /* __MAVLINK_PERSO_LIB_H_ */

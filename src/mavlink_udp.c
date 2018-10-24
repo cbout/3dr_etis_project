@@ -31,10 +31,28 @@ or in the same folder as this source file */
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
+
+/**
+ * @brief      Change keyboard entry
+ *
+ * @param[in]  activate  1 to activate the mode, 0 deactivate it
+ */
 void mode_raw(int activate);
 
+
+//Mutex to protect vehicle
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+/**
+ * @brief      Thread where we receive message
+ *
+ */
 void* threadReciving (void* arg);
+
+/**
+ * @brief      Thread where user send message
+ *
+ */
 void* threadSending (void* arg);
 
 
@@ -51,10 +69,13 @@ int run = 1;
 
 
 /**
-* Main
-*
-*
-*/
+ * @brief      Main
+ *
+ * @param][in]      argc        number of argemnt
+ * @param [in]     argv        help and port
+ *
+ * @return     0
+ */
 int main(int argc, char* argv[])
 {
 
@@ -152,7 +173,10 @@ int main(int argc, char* argv[])
 }
 
 
-//Receiving message
+/**
+ * @brief      Thread where we receive message
+ *
+ */
 void* threadReciving (void* arg){
 
 	uint8_t buf[BUFFER_LENGTH];
@@ -194,7 +218,10 @@ void* threadReciving (void* arg){
 }
 
 
-//Sending message
+/**
+ * @brief      Thread where user send message
+ *
+ */
 void* threadSending (void* arg){
 
 	uint8_t buf[BUFFER_LENGTH];
@@ -237,7 +264,7 @@ void* threadSending (void* arg){
 			do{
 				memset(buf, 0, BUFFER_LENGTH);
 				order = getchar();
-				if(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1){
+				if(mavlink_msg_order_drone(order, localSysId, targetSysId, &msg)==-1){
 					continue;
 				}
 				//Sending order by UDP
@@ -259,7 +286,7 @@ void* threadSending (void* arg){
 		}
 
 		//If the order doesn't exist
-		if(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1){
+		if(mavlink_msg_order_drone(order, localSysId, targetSysId, &msg)==-1){
 			continue;
 		}
 
@@ -281,10 +308,10 @@ void* threadSending (void* arg){
 
 
 /**
-* Change keyboard entry
-*
-*
-*/
+ * @brief      Change keyboard entry
+ *
+ * @param[in]  activate  1 to activate the mode, 0 deactivate it
+ */
 void mode_raw(int activate)
 {
     static struct termios cooked;
