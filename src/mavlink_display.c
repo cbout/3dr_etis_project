@@ -17,7 +17,7 @@
 *
 */
 void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
-	
+
 
 	switch (id) {
 
@@ -38,21 +38,21 @@ void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
 		case MAVLINK_MSG_ID_SYSTEM_TIME:
 		{
 			mavlink_system_time_t system_time = vehicle.system_time;
-			printf("SYSTEM_TIME :\nTime_unix_usec : %llu, Time_boot_ms : %d\n", system_time.time_unix_usec, system_time.time_boot_ms);
+			printf("SYSTEM_TIME :\nTime_unix_usec : %lu, Time_boot_ms : %d\n", system_time.time_unix_usec, system_time.time_boot_ms);
 			break;
 		}
 
 		case MAVLINK_MSG_ID_GPS_RAW_INT:
 		{
 			mavlink_gps_raw_int_t gps_raw_int = vehicle.gps_raw_int;
-			printf("GPS_RAW_INT :\nTime_usec : %llu, Lat : %d, Lon : %d, Alt : %d, Eph : %d, Epv : %d, Vel : %d, Cog : %d, Fix_type : %d, Satellites_visible : %d\n", gps_raw_int.time_usec, gps_raw_int.lat, gps_raw_int.lon, gps_raw_int.alt, gps_raw_int.eph, gps_raw_int.epv, gps_raw_int.vel, gps_raw_int.cog, gps_raw_int.fix_type, gps_raw_int.satellites_visible);
+			printf("GPS_RAW_INT :\nTime_usec : %lu, Lat : %d, Lon : %d, Alt : %d, Eph : %d, Epv : %d, Vel : %d, Cog : %d, Fix_type : %d, Satellites_visible : %d\n", gps_raw_int.time_usec, gps_raw_int.lat, gps_raw_int.lon, gps_raw_int.alt, gps_raw_int.eph, gps_raw_int.epv, gps_raw_int.vel, gps_raw_int.cog, gps_raw_int.fix_type, gps_raw_int.satellites_visible);
 			break;
 		}
 
 		case MAVLINK_MSG_ID_RAW_IMU:
 		{
 			mavlink_raw_imu_t raw_imu = vehicle.raw_imu;
-			printf("RAW_IMU :\nTime_usec : %llu, Xacc : %d, Yacc : %d, Zacc : %d, Xgyro : %d, Ygyro : %d, Zgyro : %d, Xmag : %d, Ymag : %d, Zmag : %d\n", raw_imu.time_usec, raw_imu.xacc, raw_imu.yacc, raw_imu.zacc, raw_imu.xgyro, raw_imu.ygyro, raw_imu.zgyro, raw_imu.xmag, raw_imu.ymag, raw_imu.zmag);
+			printf("RAW_IMU :\nTime_usec : %lu, Xacc : %d, Yacc : %d, Zacc : %d, Xgyro : %d, Ygyro : %d, Zgyro : %d, Xmag : %d, Ymag : %d, Zmag : %d\n", raw_imu.time_usec, raw_imu.xacc, raw_imu.yacc, raw_imu.zacc, raw_imu.xgyro, raw_imu.ygyro, raw_imu.zgyro, raw_imu.xmag, raw_imu.ymag, raw_imu.zmag);
 			break;
 		}
 
@@ -257,7 +257,7 @@ void mavlink_display_display_menu(){
 	printf("	20 : display terrain_report");
 	printf("	21 : display scaled_pressure2\n");
 	printf("22 : display named_value_int");
-	printf("	23 : display statustext\n\n");	
+	printf("	23 : display statustext\n\n");
 	printf("0 : to quit this menu\n\n");
 }
 
