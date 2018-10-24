@@ -22,12 +22,10 @@
  *
  * @return     0 if the exist -1 else
  */
-int mavlink_msg_order_drone(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
-
 int mavlinkCmdCounter[31016];
 int count = 0;
 
-int mavlink_msg_order(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
+int mavlink_msg_order_drone(char order, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg){
 	if (count==0) {
 		memset(mavlinkCmdCounter, 0, 31016*sizeof(int));
 	}
@@ -312,11 +310,17 @@ int mavlink_order_select_mode(char selectedMode, mavlink_system_t source_sys, ma
 {
 	switch (selectedMode) {
 		case 'G':
-			mavlink_msg_command_long_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid, target_sys.compid, MAV_CMD_DO_SET_MODE, 0, MAV_MODE_GUIDED_ARMED, COPTER_MODE_GUIDED, 0, 0, 0, 0,0);
-			mavlinkCmdCounter[MAV_CMD_DO_CHANGE_SPEED]+=1;
-			printf("Move forward asked\n");
+		{
+			mavlink_msg_set_mode_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid,MAV_MODE_GUIDED_ARMED+MAV_MODE_FLAG_CUSTOM_MODE_ENABLED,COPTER_MODE_GUIDED);
 			return 0;
+		}
+		case 'A':
+		{
+			mavlink_msg_set_mode_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid,MAV_MODE_MANUAL_ARMED+MAV_MODE_FLAG_CUSTOM_MODE_ENABLED,COPTER_MODE_ALT_HOLD);
+			return 0;
+		}
 		default:
 			return -1;
 	}
+	return -1;
 }

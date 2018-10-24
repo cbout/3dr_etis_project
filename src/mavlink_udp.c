@@ -252,9 +252,29 @@ void* threadSending (void* arg){
 		//Main menu
 		mavlink_display_main_menu();
 		scanf("%s", &order);
-
+		//arming
+		if (order == '1') {
+			// Activate alt_hold mode to launch
+			mavlink_order_select_mode('A', localSysId, targetSysId, &msg);
+			len = mavlink_msg_to_send_buffer(buf, &msg);
+			bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+			if (bytes_sent==-1) {
+				perror("Sending data stream");
+				exit(EXIT_FAILURE);
+			}
+			memset(buf, 0, BUFFER_LENGTH);
+			// Activate mortors
+			mavlink_msg_order_drone(order, localSysId, targetSysId, &msg);
+			len = mavlink_msg_to_send_buffer(buf, &msg);
+			bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+			if (bytes_sent==-1) {
+				perror("Sending data stream");
+				exit(EXIT_FAILURE);
+			}
+			continue;
+		}
 		//Print menu
-		if(order == 'p'){
+		else if(order == 'p'){
 			do{
 				mavlink_display_display_menu();
 				scanf("%d", &print);
@@ -304,6 +324,7 @@ void* threadSending (void* arg){
 					exit(EXIT_FAILURE);
 				}
 			} while(print!=0);
+			continue;
 		}
 
 		//Quit the prog
@@ -343,7 +364,7 @@ void* threadGoPro (void* arg){
 	uint8_t buf[BUFFER_LENGTH];
 	ssize_t recsize;
 	socklen_t fromlen;
-	
+
 	int s;
 	struct sockaddr_in locAddr, targetAddr ;
 
@@ -360,14 +381,14 @@ void* threadGoPro (void* arg){
 		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
 		if (recsize > 0)
 		{
-			
-			
+
+
 		}
 	}
 
 	//End of the thread
 	pthread_exit(NULL);
-}	
+}
 
 
 
