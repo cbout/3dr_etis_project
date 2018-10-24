@@ -113,4 +113,12 @@ void mavlink_display_display_menu();
 void mavlink_display_control_menu();
 
 
+/**
+* Display the mode menu
+*
+*
+*/
+void mavlink_display_mode_menu();
+
+
 #endif /* __MAVLINK_PERSO_LIB_H_ */

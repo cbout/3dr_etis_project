@@ -55,7 +55,6 @@ void* threadReciving (void* arg);
  */
 void* threadSending (void* arg);
 
-
 /**
  * @brief      Thread where we get the video stream from the GoPro
  *
@@ -165,17 +164,17 @@ int main(int argc, char* argv[])
 
 	pthread_t myThreadReciving;
 	pthread_t myThreadSending;
-	// pthread_t myThreadGoPro;
+	//pthread_t myThreadGoPro;
 
 	//Create threads
 	pthread_create (&myThreadReciving, NULL, threadReciving, (void*)NULL);
 	pthread_create (&myThreadSending, NULL, threadSending, (void*)NULL);
-	// pthread_create (&myThreadGoPro, NULL, threadGoPro, (void*)NULL);
+	//pthread_create (&myThreadGoPro, NULL, threadGoPro, (void*)NULL);
 
 	//Wait threads
 	pthread_join (myThreadReciving, NULL);
 	pthread_join (myThreadSending, NULL);
-	// pthread_join (myThreadGoPro, NULL);
+	//pthread_join (myThreadGoPro, NULL);
 
 	close(sock);
 	exit(EXIT_SUCCESS);
@@ -273,6 +272,7 @@ void* threadSending (void* arg){
 			}
 			continue;
 		}
+		
 		//Print menu
 		else if(order == 'p'){
 			do{
@@ -308,12 +308,12 @@ void* threadSending (void* arg){
 			continue;
 		}
 
-		//Change mode menu
+		//Mode menu
 		else if (order == 'm') {
 			do {
 				mavlink_display_mode_menu();
 				scanf("%s\n", &order);
-				if ((print=mavlink_order_select_mode(order, localSysId, targetSysId, &msg))==-1) {
+				if (mavlink_order_select_mode(order, localSysId, targetSysId, &msg)==-1) {
 					continue;
 				}
 				//Sending order by UDP
@@ -323,7 +323,7 @@ void* threadSending (void* arg){
 					perror("Sending data stream");
 					exit(EXIT_FAILURE);
 				}
-			} while(print!=0);
+			} while(order!='0');
 			continue;
 		}
 
@@ -366,19 +366,19 @@ void* threadGoPro (void* arg){
 	socklen_t fromlen;
 
 	int s;
-	struct sockaddr_in locAddr, targetAddr ;
+	struct sockaddr_in locAddr2, targetAddr2;
 
-	locAddr.sin_family = AF_INET ;
-	locAddr.sin_addr.s_addr = INADDR_ANY ;
-	locAddr.sin_port = htons (5600) ;
-	memset (&locAddr.sin_zero, 0, sizeof(locAddr.sin_zero));
+	locAddr2.sin_family = AF_INET ;
+	locAddr2.sin_addr.s_addr = INADDR_ANY ;
+	locAddr2.sin_port = htons (5600) ;
+	memset (&locAddr2.sin_zero, 0, sizeof(locAddr2.sin_zero));
 	s = socket (PF_INET, SOCK_DGRAM, 0) ;
-	bind (s, (struct sockaddr *)&locAddr, sizeof locAddr) ;
+	bind (s, (struct sockaddr *)&locAddr2, sizeof locAddr2) ;
 
 	while(run){
 		memset(buf, 0, BUFFER_LENGTH);
 
-		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
+		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr2, &fromlen);
 		if (recsize > 0)
 		{
 

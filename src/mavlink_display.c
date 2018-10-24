@@ -281,6 +281,7 @@ void mavlink_display_control_menu(){
 	printf("' ' : to exit this menu\n\n");
 }
 
+
 /**
 * Display the mode menu
 *
@@ -289,4 +290,6 @@ void mavlink_display_control_menu(){
 void mavlink_display_mode_menu(){
 	printf("\n-------------------------------------------------------------------------------------Control menu-------------------------------------------------------------------------------------\n");
 	printf("G : Guided MODE\n");
+	
+	printf("0 : to exit this menu\n");
 }
