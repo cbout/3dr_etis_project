@@ -8,6 +8,11 @@
 #include <time.h>
 #include <mavlink.h>
 
+
+/**
+ * @brief      mavlink enumeration
+ *
+ */
 typedef enum MAV_ENUM
 {
 	ENUM_MAV_CMD_ACK=0,
@@ -15,6 +20,11 @@ typedef enum MAV_ENUM
 	ENUM_MAV_PARAM_TYPE
 } MAV_ENUM;
 
+
+/**
+ * @brief      Contains all informations of the vehicle
+ *
+ */
 typedef struct vehicle {
 	mavlink_system_t system_ids;
 	mavlink_heartbeat_t heartbeat;
@@ -39,5 +49,4 @@ typedef struct vehicle {
 	mavlink_scaled_pressure2_t scaled_pressure2;
 	mavlink_named_value_int_t named_value_int;
 	mavlink_statustext_t statustext;
-
 } Vehicle;

@@ -31,11 +31,36 @@ or in the same folder as this source file */
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
+
+/**
+ * @brief      Change keyboard entry
+ *
+ * @param[in]  activate  1 to activate the mode, 0 deactivate it
+ */
 void mode_raw(int activate);
 
+
+//Mutex to protect vehicle
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+/**
+ * @brief      Thread where we receive message
+ *
+ */
 void* threadReciving (void* arg);
+
+/**
+ * @brief      Thread where user send message
+ *
+ */
 void* threadSending (void* arg);
+
+
+/**
+ * @brief      Thread where we get the video stream from the GoPro
+ *
+ */
+void* threadGoPro (void* arg);
 
 
 //Struct of the vehicle
@@ -51,10 +76,13 @@ int run = 1;
 
 
 /**
-* Main
-*
-*
-*/
+ * @brief      Main
+ *
+ * @param][in]      argc        number of argemnt
+ * @param [in]     argv        help and port
+ *
+ * @return     0
+ */
 int main(int argc, char* argv[])
 {
 
@@ -137,21 +165,27 @@ int main(int argc, char* argv[])
 
 	pthread_t myThreadReciving;
 	pthread_t myThreadSending;
+	pthread_t myThreadGoPro;
 
 	//Create threads
 	pthread_create (&myThreadReciving, NULL, threadReciving, (void*)NULL);
 	pthread_create (&myThreadSending, NULL, threadSending, (void*)NULL);
+	pthread_create (&myThreadGoPro, NULL, threadGoPro, (void*)NULL);
 
 	//Wait threads
 	pthread_join (myThreadReciving, NULL);
 	pthread_join (myThreadSending, NULL);
+	pthread_join (myThreadGoPro, NULL);
 
 	close(sock);
 	exit(EXIT_SUCCESS);
 }
 
 
-//Receiving message
+/**
+ * @brief      Thread where we receive message
+ *
+ */
 void* threadReciving (void* arg){
 
 	uint8_t buf[BUFFER_LENGTH];
@@ -193,7 +227,10 @@ void* threadReciving (void* arg){
 }
 
 
-//Sending message
+/**
+ * @brief      Thread where user send message
+ *
+ */
 void* threadSending (void* arg){
 
 	uint8_t buf[BUFFER_LENGTH];
@@ -236,7 +273,7 @@ void* threadSending (void* arg){
 			do{
 				memset(buf, 0, BUFFER_LENGTH);
 				order = getchar();
-				if(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1){
+				if(mavlink_msg_order_drone(order, localSysId, targetSysId, &msg)==-1){
 					continue;
 				}
 				//Sending order by UDP
@@ -276,7 +313,7 @@ void* threadSending (void* arg){
 		}
 
 		//If the order doesn't exist
-		if(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1){
+		if(mavlink_msg_order_drone(order, localSysId, targetSysId, &msg)==-1){
 			continue;
 		}
 
@@ -298,10 +335,47 @@ void* threadSending (void* arg){
 
 
 /**
-* Change keyboard entry
-*
-*
-*/
+ * @brief      Thread where we get the video stream from the GoPro
+ *
+ */
+void* threadGoPro (void* arg){
+
+	uint8_t buf[BUFFER_LENGTH];
+	ssize_t recsize;
+	socklen_t fromlen;
+	
+	int s;
+	struct sockaddr_in locAddr, targetAddr ;
+
+	locAddr.sin_family = AF_INET ;
+	locAddr.sin_addr.s_addr = INADDR_ANY ;
+	locAddr.sin_port = htons (5600) ;
+	memset (&locAddr.sin_zero, 0, sizeof(locAddr.sin_zero));
+	s = socket (PF_INET, SOCK_DGRAM, 0) ;
+	bind (s, (struct sockaddr *)&locAddr, sizeof locAddr) ;
+
+	while(run){
+		memset(buf, 0, BUFFER_LENGTH);
+
+		recsize = recvfrom(sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr, &fromlen);
+		if (recsize > 0)
+		{
+			
+			
+		}
+	}
+
+	//End of the thread
+	pthread_exit(NULL);
+}	
+
+
+
+/**
+ * @brief      Change keyboard entry
+ *
+ * @param[in]  activate  1 to activate the mode, 0 deactivate it
+ */
 void mode_raw(int activate)
 {
     static struct termios cooked;

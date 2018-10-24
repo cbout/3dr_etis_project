@@ -1,4 +1,16 @@
-Steps to add a new action to send to the drone solo 3DR :
+Steps to add a new action in our interface for the drone solo 3DR :
 
-!!!!!!!!!!!!!!!!!!!!!!TO CREATE!!!!!!!!!!!!!!!!!!!!!!
+0) First of all we have actually two types of orders : 
+	- order for displaying informations of the vehicle
+	- order to be sent directly to the drone
 
+1) Thus the first step is to write on the file "mavlink_msg_order.c", in the corresponding function, a new case with a new char/int where the action function is call. 
+	- for a display you can call a already-made or yourself-made function from the
+	  file "mavlink_display.c" with vehicle variable in parameter
+	- for a order to the drone you may call a mavlink_msg pack function to encode the
+	  right informations in the msg pointer, to find more informations about 
+	  mavlink_msg we advice to refer you to the "mavlink-devguide.pdf"
+
+2) The next step is to add the new command in the corresponding menu in the file "mavlink_display.c" with the char/int selected previously and a short description of the action.
+
+3) To finish if an answer is expected, on the file "mavlink_msg_decode.c" in the function mavlink_msg_decode_answer, add a case with the type of the answer expected, create a variable of this type, initialize it with the right decode function and do the processing that you want.

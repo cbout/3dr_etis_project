@@ -12,13 +12,13 @@
 
 
 /**
-* Display an information from the vehicle with the id
-*
-*
-*/
+ * @brief      Display an information from the vehicle with the id
+ *
+ * @param[in]  id       The identifier
+ * @param[in]  vehicle  The vehicle
+ */
 void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
-
-
+	
 	switch (id) {
 
 		case MAVLINK_MSG_ID_HEARTBEAT:
@@ -183,10 +183,10 @@ void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
 
 
 /**
-* Display all informations from the vehicle
-*
-*
-*/
+ * @brief      Display all informations from the vehicle
+ *
+ * @param[in]  vehicle  The vehicle
+ */
 void mavlink_display_info_vehicle_all(Vehicle vehicle){
 	mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_HEARTBEAT, vehicle);
 	mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SYS_STATUS, vehicle);
@@ -214,10 +214,9 @@ void mavlink_display_info_vehicle_all(Vehicle vehicle){
 
 
 /**
-* Display the main menu
-*
-*
-*/
+ * @brief      Display the main menu
+ *
+ */
 void mavlink_display_main_menu(){
 	printf("\n-------------------------------------------------------------------------------------Main menu-------------------------------------------------------------------------------------\n");
 	printf("1 : arm motors\n");
@@ -231,10 +230,9 @@ void mavlink_display_main_menu(){
 
 
 /**
-* Display the display menu
-*
-*
-*/
+ * @brief      Display the display menu
+ *
+ */
 void mavlink_display_display_menu(){
 	printf("\n-------------------------------------------------------------------------------------Display menu-------------------------------------------------------------------------------------\n");
 	printf("1 : display all\n\n");
@@ -265,10 +263,9 @@ void mavlink_display_display_menu(){
 
 
 /**
-* Display the control menu
-*
-*
-*/
+ * @brief      Display the control menu
+ *
+ */
 void mavlink_display_control_menu(){
 	printf("\n-------------------------------------------------------------------------------------Control menu-------------------------------------------------------------------------------------\n");
 	printf("z : move forward\n");
@@ -279,8 +276,9 @@ void mavlink_display_control_menu(){
 	printf("k : go down\n");
 	printf("j : rotate left\n");
 	printf("l : rotate right\n\n");
-	printf("' ' : to exit this menu\n\n");
 	//...
+	
+	printf("' ' : to exit this menu\n\n");
 }
 
 /**
