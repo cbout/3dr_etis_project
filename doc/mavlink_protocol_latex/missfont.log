@@ -1,0 +1,8 @@
+mktexpk --mfmode / --bdpi 600 --mag 1+59/600 --dpi 659 mdugmri8t
+mktexpk --mfmode / --bdpi 600 --mag 1+59/600 --dpi 659 cmr10
+mktextfm mdugmri8t
+mktextfm cmr10
+mktexpk --mfmode / --bdpi 600 --mag 1+59/600 --dpi 659 mdugmri8t
+mktexpk --mfmode / --bdpi 600 --mag 1+59/600 --dpi 659 cmr10
+mktextfm mdugmri8t
+mktextfm cmr10
