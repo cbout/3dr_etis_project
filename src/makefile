@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-std=c99 -Wall -I include/common
+CFLAGS=-std=c99 -Wall -I include/ardupilotmega
 LDFLAGS=-lpthread
 EXEC=mavlink_udp
 SRC= $(wildcard *.c)

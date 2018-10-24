@@ -159,7 +159,7 @@ void* threadReciving (void* arg){
 	ssize_t recsize;
 	socklen_t fromlen;
 	mavlink_channel_t chan = MAVLINK_COMM_0;
-	
+
 	while (run){
 		memset(buf, 0, BUFFER_LENGTH);
 
@@ -175,12 +175,6 @@ void* threadReciving (void* arg){
 			{
 				if (mavlink_parse_char(chan, buf[i], &msg, &status))
 				{
-
-					if (msg.msgid == MAVLINK_MSG_ID_COMMAND_ACK) {
-						printf("%02x ", buf[i]);
-						printf("\n");
-						/* code */
-					}
 					// Packet received
 					//printf("\nReceived packet: SYS: %d, COMP: %d, LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
 					//Broadcast message
@@ -215,14 +209,14 @@ void* threadSending (void* arg){
 	targetSysId.compid = 0;
 	char order;
 	int print;
-	
+
 	while(run){
 		memset(buf, 0, BUFFER_LENGTH);
-		
+
 		//Main menu
 		mavlink_display_main_menu();
 		scanf("%s", &order);
-			
+
 		//Print menu
 		if(order == 'p'){
 			do{
@@ -235,7 +229,7 @@ void* threadSending (void* arg){
 			}while(print!=0);
 			continue;
 		}
-			
+
 		//Control menu
 		else if(order == 'c'){
 			mavlink_display_control_menu();
@@ -257,13 +251,13 @@ void* threadSending (void* arg){
 			mode_raw(0);
 			continue;
 		}
-		
+
 		//Quit the prog
 		if(order == 'e'){
 			run = 0;
 			break;
 		}
-			
+
 		//If the order doesn't exist
 		if(mavlink_msg_order(order, localSysId, targetSysId, &msg)==-1){
 			continue;
@@ -276,11 +270,11 @@ void* threadSending (void* arg){
 			perror("Sending data stream");
 			exit(EXIT_FAILURE);
 		}
-	
+
 		// Sleep one second
 		sleep(1);
 	}
-	
+
 	//End of the thread
 	pthread_exit(NULL);
 }
