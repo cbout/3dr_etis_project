@@ -342,7 +342,7 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 		{
 			mavlink_command_ack_t command_ack;
 			mavlink_msg_command_ack_decode(&msg, &command_ack);
-			printf("\n\nCommand : %d:%02X:%s, result: %d:%s\n", command_ack.command, command_ack.command, mavlink_enum_to_string(ENUM_MAV_CMD, command_ack.command), command_ack.result, mavlink_enum_to_string(ENUM_MAV_CMD_ACK, command_ack.result));
+			//printf("\n\nCommand : %d:%02X:%s, result: %d:%s\n", command_ack.command, command_ack.command, mavlink_enum_to_string(ENUM_MAV_CMD, command_ack.command), command_ack.result, mavlink_enum_to_string(ENUM_MAV_CMD_ACK, command_ack.result));
 			break;
 		}
 
