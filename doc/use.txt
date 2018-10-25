@@ -11,7 +11,12 @@ ssh root@10.1.1.10
 		 // 10.1.1.10 — Solo
 		 // 10.1.1.100–10.1.1.255 — Computers, phones, or other devices on the network
 		Password : TjSDBkAu
-		Port : 14550
+		
+
+Communication in UDP :	
+		
+		Port : 14550 for mavlink communication
+		Port : 5600 for video stream
 	
 	
 Connecting Solo to the Internet:	
@@ -21,7 +26,7 @@ solo wifi --name=<ssid> --password=<password>
 
 Compilate and execute :
 
-gcc -std=c99 -I include/common *c -o mavlink_udp
+gcc -std=c99 -Wall -lpthread -I include/ardupilotmega *c -o mavlink_udp
 
 or 
 
