@@ -21,7 +21,7 @@
  * @param[in]  local_port  The local port
  * @param      targetAddr  The target address
  * @param      target_ip   The target ip
- * @param[in]  timeout     The timeout
+ * @param[in]  timeout     The timeout (if timeout<0 it's take default value 30 secs)
  *
  * @return     0 if connection is done, -1 otherwise
  */
@@ -63,10 +63,24 @@ int init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_p
 	// The possible socket which will received our messages
 	struct sockaddr_in possibleTarget;
   	socklen_t possibleTargetLen = sizeof(possibleTarget);
+
+  	time_t currentTime;
+  	time_t startTime = time(&currentTime);
+  	double timeLeft = 0;
+
   	// While we don't find a packet which can indicate sending port we read all messages received on our port
 	while (recvfrom(*sock, buf, sizeof(buf), 0, (struct sockaddr*)(&possibleTarget), &possibleTargetLen)<=0
 				|| possibleTarget.sin_addr.s_addr != inet_addr(target_ip)) {
+		
 		memset(buf,0,256);
+		time(&currentTime);
+		timeLeft = difftime(currentTime, startTime);
+		if (timeLeft > timeout)
+		{
+			perror("Connection time out");
+			close(*sock);
+			return -1;	
+		}
 	}
 
 	memset(targetAddr, 0, sizeof(*targetAddr));
