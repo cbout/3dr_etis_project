@@ -18,7 +18,7 @@
  * @param[in]  vehicle  The vehicle
  */
 void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
-	
+
 	switch (id) {
 
 		case MAVLINK_MSG_ID_HEARTBEAT:
@@ -277,19 +277,19 @@ void mavlink_display_control_menu(){
 	printf("j : rotate left\n");
 	printf("l : rotate right\n\n");
 	//...
-	
+
 	printf("' ' : to exit this menu\n\n");
 }
 
 
 /**
-* Display the mode menu
+* @brief			Display the mode menu
 *
 *
 */
 void mavlink_display_mode_menu(){
-	printf("\n-------------------------------------------------------------------------------------Control menu-------------------------------------------------------------------------------------\n");
+	printf("\n-------------------------------------------------------------------------------------Mode menu----------------------------------------------------------------------------------------\n");
 	printf("G : Guided MODE\n");
-	
+	printf("A : Altitude Hold MODE\n", );
 	printf("0 : to exit this menu\n");
 }
