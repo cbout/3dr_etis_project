@@ -165,6 +165,20 @@ int main(int argc, char* argv[])
 	}
 	printf("\n");
 	memset(buf, 0, BUFFER_LENGTH);
+	
+	
+	//Init TCP connection to get video stream
+	int s;
+	struct sockaddr_in serv_addr;
+
+	s = socket(PF_INET, SOCK_STREAM, 0);
+
+	serv_addr.sin_family = AF_INET;
+	serv_addr.sin_addr.s_addr = inet_addr ("10.1.1.1") ;
+	serv_addr.sin_port = htons (5502) ;
+	memset (&serv_addr.sin_zero, 0, sizeof(serv_addr.sin_zero));
+
+	connect (s, (struct sockaddr *)&serv_addr, sizeof serv_addr);
 	//End initialization order
 
 
@@ -186,6 +200,7 @@ int main(int argc, char* argv[])
 	pthread_join (myThreadGoPro, NULL);
 
 	close(sock);
+	close(s);
 	exit(EXIT_SUCCESS);
 }
 
@@ -293,7 +308,6 @@ void* threadSending (void* arg){
 		//Main menu
 		mavlink_display_main_menu();
 		scanf("%s", &order);
-		
 		//arming
 		if (order == '1') {
 			// Activate alt_hold mode to launch
@@ -421,13 +435,15 @@ void* threadGoPro (void* arg){
 	while(run){
 		memset(buf, 0, BUFFER_LENGTH);
 
-		/*recsize = recvfrom(s, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr2, &fromlen);
+		recsize = recvfrom(s, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr2, &fromlen);
 		if (recsize > 0)
 		{
-			
-
-		}*/
+			//Mat frame;
+			//VideoCapture vid("rtp://10.1.1.1:5600");
+		}
 	}
+	
+	close(s);
 
 	//End of the thread
 	pthread_exit(NULL);
