@@ -11,11 +11,12 @@
 #include <arpa/inet.h>
 #include <string.h>
 
+//TODO: Set timer to timeout
 
 /**
  * @brief      Init a UDP connection between groundControl and a MAV
  *
- * @param      sock        The sock
+ * @param      sock        The soket to bind
  * @param      locAddr     The location address
  * @param[in]  local_port  The local port
  * @param      targetAddr  The target address
@@ -26,6 +27,7 @@
  */
 int init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip, int timeout)
 {
+	// Init the socket to receive datagram and support UDP protocol
 	*sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
 
 	memset(locAddr, 0, sizeof(*locAddr));
@@ -39,24 +41,29 @@ int init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_p
 		close(*sock);
     return -1;
 	}
+
 	printf("INIT listenning :\nUdpin: 0.0.0.0:%d\n", ntohs(locAddr->sin_port));
+	
 	/* Attempt to make it non blocking */
 	#if (defined __QNX__) | (defined __QNXNTO__)
 	if (fcntl(*sock, F_SETFL, O_NONBLOCK | FASYNC) < 0)
 	#else
 	if (fcntl(*sock, F_SETFL, O_NONBLOCK | O_ASYNC) < 0)
 	#endif
-
 	{
 		fprintf(stderr, "error setting nonblocking: %s\n", strerror(errno));
 		close(*sock);
-    return -1;
+    	return -1;
 	}
 
+	// Receiving buffer
 	char buf[256];
 	memset(buf,0,256);
+
+	// The possible socket which will received our messages
 	struct sockaddr_in possibleTarget;
   	socklen_t possibleTargetLen = sizeof(possibleTarget);
+  	// While we don't find a packet which can indicate sending port we read all messages received on our port
 	while (recvfrom(*sock, buf, sizeof(buf), 0, (struct sockaddr*)(&possibleTarget), &possibleTargetLen)<=0
 				|| possibleTarget.sin_addr.s_addr != inet_addr(target_ip)) {
 		memset(buf,0,256);

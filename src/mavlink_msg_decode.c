@@ -15,8 +15,8 @@
 /**
  * @brief      Decode the name of the command
  *
- * @param[in]  enumType      The type of command
- * @param[in]  value  		 The value of the command
+ * @param[in]  enumType  The type of command
+ * @param[in]  value     The value of the command
  *
  * @return     the corresponding string name of the command
  */
@@ -87,7 +87,8 @@ char* mavlink_enum_to_string(MAV_ENUM enumType, int value)
 
 
 /**
- * @brief      Decode broadcast mavlink messages and update the corresponding parameter of the vehicle
+ * @brief      Decode broadcast mavlink messages and update the corresponding
+ *             parameter of the vehicle
  *
  * @param[in]  msg      The message
  * @param      vehicle  The vehicle
@@ -307,7 +308,7 @@ int mavlink_msg_decode_broadcast(mavlink_message_t msg, Vehicle *vehicle){
 
 /**
  * @brief      Decode a answer Mavlink message
- *
+ *				Do nothing for the moment
  * @param[in]  msg   The message
  */
 void mavlink_msg_decode_answer(mavlink_message_t msg){
@@ -350,5 +351,4 @@ void mavlink_msg_decode_answer(mavlink_message_t msg){
 			//printf("Unknow answer\n");
 			break;
 	}
-
 }

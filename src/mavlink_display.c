@@ -215,7 +215,6 @@ void mavlink_display_info_vehicle_all(Vehicle vehicle){
 
 /**
  * @brief      Display the main menu
- *
  */
 void mavlink_display_main_menu(){
 	printf("\n------------------------------------------------------------------------------------Main menu------------------------------------------------------------------------------------\n");
@@ -231,7 +230,6 @@ void mavlink_display_main_menu(){
 
 /**
  * @brief      Display the display menu
- *
  */
 void mavlink_display_display_menu(){
 	printf("\n------------------------------------------------------------------------------------Display menu------------------------------------------------------------------------------------\n");
@@ -264,7 +262,6 @@ void mavlink_display_display_menu(){
 
 /**
  * @brief      Display the control menu
- *
  */
 void mavlink_display_control_menu(){
 	printf("\n------------------------------------------------------------------------------------Control menu------------------------------------------------------------------------------------\n");
@@ -283,13 +280,11 @@ void mavlink_display_control_menu(){
 
 
 /**
-* @brief			Display the mode menu
-*
-*
-*/
+ * @brief      Display the mode menu
+ */
 void mavlink_display_mode_menu(){
 	printf("\n-------------------------------------------------------------------------------------Mode menu----------------------------------------------------------------------------------------\n");
 	printf("G : Guided MODE\n");
-	printf("A : Altitude Hold MODE\n", );
+	printf("A : Altitude Hold MODE\n");
 	printf("0 : to exit this menu\n");
 }

@@ -297,6 +297,17 @@ int mavlink_display_order(int order, Vehicle vehicle){
 
 }
 
+
+/**
+ * @brief      Possibles order to change the mode
+ *
+ * @param[in]  selectedMode  The selected mode
+ * @param[in]  source_sys    The source system
+ * @param[in]  target_sys    The target system
+ * @param      msg           The message
+ *
+ * @return     0 if succes, -1 otherwise
+ */
 int mavlink_order_select_mode(char selectedMode, mavlink_system_t source_sys, mavlink_system_t target_sys, mavlink_message_t *msg)
 {
 	switch (selectedMode) {
