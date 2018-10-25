@@ -135,4 +135,35 @@ void mavlink_display_control_menu();
 void mavlink_display_mode_menu();
 
 
+/**
+ * @brief      Change keyboard entry
+ *
+ * @param[in]  activate  1 to activate the mode, 0 deactivate it
+ */
+void mode_raw(int activate);
+
+/**
+ * @brief      Thread where we receive message
+ *
+ */
+void* threadReciving (void* arg);
+
+/**
+ * @brief      Thread which send heartbeat to drone
+ *
+ */
+void* threadHeartbeatPing (void* arg);
+
+/**
+ * @brief      Thread where user send message
+ *
+ */
+void* threadSending (void* arg);
+
+/**
+ * @brief      Thread where we get the video stream from the GoPro
+ *
+ */
+void* threadGoPro (void* arg);
+
 #endif /* __MAVLINK_PERSO_LIB_H_ */

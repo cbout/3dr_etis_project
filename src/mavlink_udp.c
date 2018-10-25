@@ -125,17 +125,23 @@ int main(int argc, char* argv[])
 
 
 	//Connection
-	init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip, 0);
+	int rep = init_mavlink_udp_connect(&sock, &locAddr, local_port, &targetAddr, target_ip, 10);
+	if (rep == -1)
+	{
+		perror("");
+		exit(EXIT_FAILURE);
+	}
 
 	//Initialization order
 	// Sending an heartbeat : mean we are the ground control (cf. param : 255)
-	mavlink_msg_heartbeat_pack(255,0,&msg,MAV_TYPE_GCS,MAV_AUTOPILOT_INVALID,MAV_MODE_MANUAL_ARMED,0x0,MAV_STATE_ACTIVE);
+	mavlink_msg_heartbeat_pack(255,0,&msg,MAV_TYPE_GCS,MAV_AUTOPILOT_ARDUPILOTMEGA,0xc0,0x0,MAV_STATE_ACTIVE);
 	len = mavlink_msg_to_send_buffer(buf, &msg);
 	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
 	if (bytes_sent==-1) {
 		perror("Sending Heartbeat");
 		exit(EXIT_FAILURE);
 	}
+
 	memset(buf, 0, BUFFER_LENGTH);
 
 	// Request param list : expected a MAVLINK_MSG_ID_PARAM_VALUE
@@ -163,16 +169,19 @@ int main(int argc, char* argv[])
 
 
 	pthread_t myThreadReciving;
+	pthread_t myThreadHeartbeatPing;
 	pthread_t myThreadSending;
 	pthread_t myThreadGoPro;
 
 	//Create threads
 	pthread_create (&myThreadReciving, NULL, threadReciving, (void*)NULL);
+	pthread_create (&myThreadHeartbeatPing, NULL, threadHeartbeatPing, (void*)NULL);
 	pthread_create (&myThreadSending, NULL, threadSending, (void*)NULL);
 	pthread_create (&myThreadGoPro, NULL, threadGoPro, (void*)NULL);
 
 	//Wait threads
 	pthread_join (myThreadReciving, NULL);
+	pthread_join (myThreadHeartbeatPing, NULL);
 	pthread_join (myThreadSending, NULL);
 	pthread_join (myThreadGoPro, NULL);
 
@@ -225,6 +234,39 @@ void* threadReciving (void* arg){
 	pthread_exit(NULL); /* End of the thread */
 }
 
+/**
+ * @brief      Ping heartbeat
+ *
+ * @param      arg   The arguments
+ *
+ * @return     { description_of_the_return_value }
+ */
+void* threadHeartbeatPing(void* arg){
+
+	uint8_t buf[BUFFER_LENGTH];
+	int bytes_sent;
+	mavlink_message_t msg;
+	uint16_t len;
+	mavlink_system_t localSysId;
+	localSysId.sysid = 255;
+	localSysId.compid = 0;
+	
+	while(run){
+		mavlink_msg_heartbeat_pack(localSysId.sysid,localSysId.compid,&msg,MAV_TYPE_GCS,MAV_AUTOPILOT_ARDUPILOTMEGA,0xc0,0x0,MAV_STATE_ACTIVE);
+		len = mavlink_msg_to_send_buffer(buf, &msg);
+		bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+		if (bytes_sent==-1) {
+			perror("Sending Heartbeat in thread");
+			exit(EXIT_FAILURE);
+		}
+		
+		memset(buf, 0, BUFFER_LENGTH);
+		sleep(1);
+	}
+
+	//End of the thread
+	pthread_exit(NULL);
+}
 
 /**
  * @brief      Thread where user send message
