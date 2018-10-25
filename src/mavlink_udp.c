@@ -312,8 +312,8 @@ void* threadSending (void* arg){
 		else if (order == 'm') {
 			do {
 				mavlink_display_mode_menu();
-				scanf("%s\n", &order);
-				if ((print=mavlink_order_select_mode(order, localSysId, targetSysId, &msg))==-1) {
+				scanf("%c\n", &order);
+				if ((print=mavlink_order_select_mode(order, localSysId, targetSysId, &msg))!=0) {
 					continue;
 				}
 				//Sending order by UDP
