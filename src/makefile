@@ -11,7 +11,7 @@ all : $(EXEC)
 %.o:%.c  $(LIB)
 	$(CC) $(CFLAGS) -c $<
 
-$(EXEC) : $(SRC)
+$(EXEC) : $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 .PHONY: clean
