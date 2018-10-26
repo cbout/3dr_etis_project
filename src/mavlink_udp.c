@@ -31,36 +31,8 @@ or in the same folder as this source file */
 
 #define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
 
-
-/**
- * @brief      Change keyboard entry
- *
- * @param[in]  activate  1 to activate the mode, 0 deactivate it
- */
-void mode_raw(int activate);
-
-
 //Mutex to protect vehicle
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-
-/**
- * @brief      Thread where we receive message
- *
- */
-void* threadReciving (void* arg);
-
-/**
- * @brief      Thread where user send message
- *
- */
-void* threadSending (void* arg);
-
-/**
- * @brief      Thread where we get the video stream from the GoPro
- *
- */
-void* threadGoPro (void* arg);
-
 
 //Struct of the vehicle
 Vehicle vehicle;
@@ -165,8 +137,8 @@ int main(int argc, char* argv[])
 	}
 	printf("\n");
 	memset(buf, 0, BUFFER_LENGTH);
-	
-	
+
+
 	//Init TCP connection to get video stream
 	int s;
 	struct sockaddr_in serv_addr;
@@ -265,7 +237,7 @@ void* threadHeartbeatPing(void* arg){
 	mavlink_system_t localSysId;
 	localSysId.sysid = 255;
 	localSysId.compid = 0;
-	
+
 	while(run){
 		mavlink_msg_heartbeat_pack(localSysId.sysid,localSysId.compid,&msg,MAV_TYPE_GCS,MAV_AUTOPILOT_ARDUPILOTMEGA,0xc0,0x0,MAV_STATE_ACTIVE);
 		len = mavlink_msg_to_send_buffer(buf, &msg);
@@ -274,7 +246,7 @@ void* threadHeartbeatPing(void* arg){
 			perror("Sending Heartbeat in thread");
 			exit(EXIT_FAILURE);
 		}
-		
+
 		memset(buf, 0, BUFFER_LENGTH);
 		sleep(1);
 	}
@@ -309,7 +281,7 @@ void* threadSending (void* arg){
 		mavlink_display_main_menu();
 		scanf("%s", &order);
 		//arming
-		if (order == '1') {
+		if (strcmp(&order, "1") == 0){
 			// Activate alt_hold mode to launch
 			mavlink_order_select_mode('A', localSysId, targetSysId, &msg);
 			len = mavlink_msg_to_send_buffer(buf, &msg);
@@ -329,9 +301,9 @@ void* threadSending (void* arg){
 			}
 			continue;
 		}
-		
+
 		//Print menu
-		else if(order == 'p'){
+		else if(strcmp(&order, "p") == 0){
 			do{
 				mavlink_display_display_menu();
 				scanf("%d", &print);
@@ -344,7 +316,7 @@ void* threadSending (void* arg){
 		}
 
 		//Control menu
-		else if(order == 'c'){
+		else if(strcmp(&order, "c") == 0){
 			mavlink_display_control_menu();
 			mode_raw(1);
 			do{
@@ -366,10 +338,10 @@ void* threadSending (void* arg){
 		}
 
 		//Mode menu
-		else if (order == 'm') {
+		else if (strcmp(&order, "m") == 0){
 			do {
 				mavlink_display_mode_menu();
-				scanf("%s\n", &order);
+				scanf("%s", &order);
 				if (mavlink_order_select_mode(order, localSysId, targetSysId, &msg)==-1) {
 					continue;
 				}
@@ -380,12 +352,12 @@ void* threadSending (void* arg){
 					perror("Sending data stream");
 					exit(EXIT_FAILURE);
 				}
-			} while(order!='0');
+			} while(strcmp(&order,"0") != 0);
 			continue;
 		}
 
 		//Quit the prog
-		if(order == 'e'){
+		if(strcmp(&order, "e") == 0){
 			run = 0;
 			break;
 		}
@@ -442,7 +414,7 @@ void* threadGoPro (void* arg){
 			//VideoCapture vid("rtp://10.1.1.1:5600");
 		}
 	}
-	
+
 	close(s);
 
 	//End of the thread
