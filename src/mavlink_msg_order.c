@@ -45,7 +45,7 @@ int mavlink_msg_order_drone(char order, mavlink_system_t source_sys, mavlink_sys
 		case '3':
 		{
 			// Request test armed : expected COMMAND_ACK
-			mavlink_msg_command_long_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid, target_sys.compid, MAV_CMD_SOLO_BTN_FLY_HOLD, 0, 0.5, 0, 0, 0, 0, 0,0);
+			mavlink_msg_command_long_pack(source_sys.sysid, source_sys.compid, msg, target_sys.sysid, target_sys.compid, MAV_CMD_SOLO_BTN_FLY_HOLD, 0, 1, 0, 0, 0, 0, 0,0);
 			return 0;
 		}
 		
