@@ -13,6 +13,7 @@
 \usepackage{macro}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{listings}
 %\usepackage{algorithm2e}
 
 
@@ -40,6 +41,27 @@
 
 \paragraph{Request} First of all to request the data stream, you have to connect to the WiFi network of the drone and you need to initialize a TCP connection to the controller in order that it know the host.
 
+\paragraph{WiFi} To connect to the WiFi network, you only have to turn on the drone and the controller, after that connect your device to WiFi named "SoloLink-\_\_\_\_\_\_" and enter the  password "sololink".
+
+\paragraph{TCP} To initialize the TCP connection you have two possibility : simulate it with an utility like netcat or open a socket with an handmade program. In both cases you have to connect to the port 5502 and the address "10.1.1.1" (IP address of the controller)
+
+
+\subsection*{Get video stream}
+\label{sec:stream}
+
+\paragraph{} To get the video stream you have two possibility again :
+
+\paragraph{.} You can directly get it with a software like VLC, opening a file named "sololink.sdp" with the following lines :
+
+\begin{lstlisting}
+c=IN IP4 10.1.1.1
+m=video 5600 RTP/AVP 96
+a=rtpmap:96 H264/90000
+t=0 0
+\end{lstlisting}
+
+\paragraph{.} The other way is to create a UDP server in an handmade program, listening on the port 5600. The interpretation of the received frames will be described in the next part.
+
 
 \subsection*{Protocol}
 \label{sec:Protocol}
@@ -47,14 +69,6 @@
 \paragraph{} 
 
 
-\begin{figure}[H]
-	\centering
-		\includegraphics[scale=0.6]{./images/frame.png}
-		\caption{The fields' names}
-	\label{fig:frame}
-\end{figure}
-
-\paragraph{} 
 
 
 
