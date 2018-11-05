@@ -220,6 +220,7 @@ void* threadReciving (void* arg){
 	pthread_exit(NULL); /* End of the thread */
 }
 
+
 /**
  * @brief      Ping heartbeat
  *
@@ -253,6 +254,7 @@ void* threadHeartbeatPing(void* arg){
 	//End of the thread
 	pthread_exit(NULL);
 }
+
 
 /**
  * @brief      Thread where user send message
