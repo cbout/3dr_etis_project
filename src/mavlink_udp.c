@@ -29,7 +29,7 @@ or in the same folder as this source file */
 #include <mavlink.h>
 #include "mavlink_perso_lib.h"
 
-#define BUFFER_LENGTH 2041 // minimum buffer size that can be used with qnx (I don't know why)
+#define BUFFER_LENGTH 2041
 
 //Mutex to protect vehicle
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -49,7 +49,7 @@ int run = 1;
 /**
  * @brief      Main
  *
- * @param][in]      argc        number of argemnt
+ * @param][in]      argc        number of argement
  * @param [in]     argv        help and port
  *
  * @return     0
@@ -149,7 +149,6 @@ int main(int argc, char* argv[])
 	serv_addr.sin_addr.s_addr = inet_addr ("10.1.1.1") ;
 	serv_addr.sin_port = htons (5502) ;
 	memset (&serv_addr.sin_zero, 0, sizeof(serv_addr.sin_zero));
-
 	connect (s, (struct sockaddr *)&serv_addr, sizeof serv_addr);
 	//End initialization order
 
