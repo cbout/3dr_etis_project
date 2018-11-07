@@ -137,6 +137,19 @@ int main(int argc, char* argv[])
 	}
 	printf("\n");
 	memset(buf, 0, BUFFER_LENGTH);
+	
+	/*// Request change type video stream												  
+	mavlink_msg_request_data_stream_pack(255, 0, &msg, 1, 0, MAVLINK_DATA_STREAM_IMG_RAW8U, 2, 1);
+	len = mavlink_msg_to_send_buffer(buf, &msg);
+
+	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+	if (bytes_sent==-1) {
+		perror("Sending data stream");
+		exit(EXIT_FAILURE);
+	}
+	printf("\n");
+	memset(buf, 0, BUFFER_LENGTH);*/
+	
 
 
 	//Init TCP connection to get video stream
@@ -411,8 +424,7 @@ void* threadGoPro (void* arg){
 		recsize = recvfrom(s, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr2, &fromlen);
 		if (recsize > 0)
 		{
-			//Mat frame;
-			//VideoCapture vid("rtp://10.1.1.1:5600");
+			
 		}
 	}
 

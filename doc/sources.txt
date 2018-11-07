@@ -2,6 +2,9 @@
 https://github.com/dronekit/dronekit-python/blob/master/dronekit/__init__.py
 https://github.com/mavlink/c_library_v2
 https://github.com/mavlink/c_library_v1
+https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html#InstallingonMacOSX-Build	GStreamer for OSX
+https://gstreamer.freedesktop.org/documentation/installing/on-linux.html	GStreamer for Linux
+https://gstreamer.freedesktop.org/documentation/tutorials/basic/hello-world.html	Example
 
 
 //Documentation :
