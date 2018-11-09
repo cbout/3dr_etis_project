@@ -11,7 +11,11 @@ ssh root@10.1.1.10
 		 // 10.1.1.10 — Solo
 		 // 10.1.1.100–10.1.1.255 — Computers, phones, or other devices on the network
 		Password : TjSDBkAu
+
+Communication in TCP :	
 		
+		Port : 5502 for mavlink communication
+
 
 Communication in UDP :	
 		
@@ -26,7 +30,7 @@ solo wifi --name=<ssid> --password=<password>
 
 Compilate and execute :
 
-gcc -std=c99 -Wall -lpthread -I include/ardupilotmega *c -o mavlink_udp
+gcc -std=c99 -Wall -lpthread -I include/ardupilotmega *c -o mavlink_udp `pkg-config --cflags --libs gstreamer-1.0`
 
 or 
 

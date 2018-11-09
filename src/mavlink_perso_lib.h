@@ -161,9 +161,10 @@ void* threadHeartbeatPing (void* arg);
 void* threadSending (void* arg);
 
 /**
- * @brief      Thread where we get the video stream from the GoPro
- *
+ * @brief	 Function where we get and display the video stream from the GoPro with GStreamer library
+ * 
+ * @return 0 if it finishes normally, else -1
  */
-void* threadGoPro (void* arg);
+int goProVideoStream ();
 
 #endif /* __MAVLINK_PERSO_LIB_H_ */
