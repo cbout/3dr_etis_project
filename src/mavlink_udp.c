@@ -29,6 +29,11 @@ or in the same folder as this source file */
 #include <mavlink.h>
 #include "mavlink_perso_lib.h"
 
+/* This assumes you have the GStreamer headers on your include path
+or in the same folder as this source file */
+#include <gst/gst.h>
+
+
 #define BUFFER_LENGTH 2041
 
 //Mutex to protect vehicle
@@ -44,6 +49,9 @@ struct sockaddr_in locAddr;
 
 //The prog is running
 int run = 1;
+
+//Loop of the video stream
+GMainLoop *loop;
 
 
 /**
@@ -137,6 +145,19 @@ int main(int argc, char* argv[])
 	}
 	printf("\n");
 	memset(buf, 0, BUFFER_LENGTH);
+	
+	/*// Request change type video stream		!!!!!TO DO!!!!!										  
+	mavlink_msg_request_data_stream_pack(255, 0, &msg, 1, 0, MAVLINK_DATA_STREAM_IMG_RAW8U, 2, 1);
+	len = mavlink_msg_to_send_buffer(buf, &msg);
+
+	bytes_sent = sendto(sock, buf, len, 0, (struct sockaddr*)&targetAddr, sizeof(struct sockaddr_in));
+	if (bytes_sent==-1) {
+		perror("Sending data stream");
+		exit(EXIT_FAILURE);
+	}
+	printf("\n");
+	memset(buf, 0, BUFFER_LENGTH);*/
+	
 
 
 	//Init TCP connection to get video stream
@@ -156,19 +177,20 @@ int main(int argc, char* argv[])
 	pthread_t myThreadReciving;
 	pthread_t myThreadHeartbeatPing;
 	pthread_t myThreadSending;
-	pthread_t myThreadGoPro;
 
 	//Create threads
 	pthread_create (&myThreadReciving, NULL, threadReciving, (void*)NULL);
 	pthread_create (&myThreadHeartbeatPing, NULL, threadHeartbeatPing, (void*)NULL);
 	pthread_create (&myThreadSending, NULL, threadSending, (void*)NULL);
-	pthread_create (&myThreadGoPro, NULL, threadGoPro, (void*)NULL);
+	
+	//Create and wait video stream receiver
+	goProVideoStream ();
 
 	//Wait threads
+	pthread_join (myThreadSending, NULL);
 	pthread_join (myThreadReciving, NULL);
 	pthread_join (myThreadHeartbeatPing, NULL);
-	pthread_join (myThreadSending, NULL);
-	pthread_join (myThreadGoPro, NULL);
+	
 
 	close(sock);
 	close(s);
@@ -220,6 +242,7 @@ void* threadReciving (void* arg){
 	pthread_exit(NULL); /* End of the thread */
 }
 
+
 /**
  * @brief      Ping heartbeat
  *
@@ -253,6 +276,7 @@ void* threadHeartbeatPing(void* arg){
 	//End of the thread
 	pthread_exit(NULL);
 }
+
 
 /**
  * @brief      Thread where user send message
@@ -358,6 +382,7 @@ void* threadSending (void* arg){
 		//Quit the prog
 		if(strcmp(&order, "e") == 0){
 			run = 0;
+			g_main_loop_quit(loop); 
 			break;
 		}
 
@@ -384,40 +409,45 @@ void* threadSending (void* arg){
 
 
 /**
- * @brief      Thread where we get the video stream from the GoPro
- *
+ * @brief	 Function where we get and display the video stream from the GoPro with GStreamer library
+ * 
+ * @return 0 if it finishes normally, else -1
  */
-void* threadGoPro (void* arg){
+int goProVideoStream (){
 
-	uint8_t buf[BUFFER_LENGTH];
-	ssize_t recsize;
-	socklen_t fromlen;
+	GstElement *pipeline;
+    GstBus *bus;
+	GstStateChangeReturn ret;
+	
+	
+	/* Initialize GStreamer */
+    gst_init(NULL, NULL);
 
-	int s;
-	struct sockaddr_in locAddr2, targetAddr2;
-
-	locAddr2.sin_family = AF_INET ;
-	locAddr2.sin_addr.s_addr = INADDR_ANY ;
-	locAddr2.sin_port = htons (5600) ;
-	memset (&locAddr2.sin_zero, 0, sizeof(locAddr2.sin_zero));
-	s = socket (PF_INET, SOCK_DGRAM, 0) ;
-	bind (s, (struct sockaddr *)&locAddr2, sizeof locAddr2) ;
-
-	while(run){
-		memset(buf, 0, BUFFER_LENGTH);
-
-		recsize = recvfrom(s, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&targetAddr2, &fromlen);
-		if (recsize > 0)
-		{
-			//Mat frame;
-			//VideoCapture vid("rtp://10.1.1.1:5600");
-		}
-	}
-
-	close(s);
-
-	//End of the thread
-	pthread_exit(NULL);
+	/* Build the pipeline */
+    pipeline = gst_parse_launch("-v udpsrc port=5600 caps = \"application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96\" ! rtph264depay ! decodebin ! videoconvert ! autovideosink", NULL);
+	bus = gst_element_get_bus(pipeline);
+	
+	/* Start playing */
+	ret = gst_element_set_state(pipeline, GST_STATE_PLAYING);
+    if (ret == GST_STATE_CHANGE_FAILURE) {
+      g_printerr ("Unable to set the pipeline to the playing state.\n");
+      gst_object_unref (pipeline);
+      run = 0;
+	  return -1;
+    }
+	
+	/* Loop */
+	loop = g_main_loop_new(NULL, FALSE);
+    g_main_loop_run(loop);
+	
+	/* Free resources */
+	g_main_loop_unref (loop);
+	gst_object_unref (bus);
+	gst_element_set_state (pipeline, GST_STATE_NULL);
+	gst_object_unref (pipeline);
+	
+	
+	return 0;
 }
 
 
