@@ -28,4 +28,4 @@ $(EXEC) : $(OBJ)
 .PHONY: clean
 
 clean :
-	rm -f  mavlink_udp *.o
+	rm -f  $(EXEC) $(OBJ)

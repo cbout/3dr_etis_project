@@ -1,0 +1,43 @@
+//Lib :
+https://github.com/dronekit/dronekit-python/blob/master/dronekit/__init__.py
+https://github.com/mavlink/c_library_v2
+https://github.com/mavlink/c_library_v1
+
+
+//Documentation :
+https://dev.3dr.com/index.html
+https://docs.px4.io/en/
+https://mavlink.io/en/
+https://discuss.ardupilot.org/t/mavlink-step-by-step/9629
+http://ardupilot.org/plane/docs/common-camera-control-and-auto-missions-in-mission-planner.html
+https://groups.google.com/forum/#!topic/mavlink/1zgHUM67E-A
+https://github.com/PX4/Devguide/issues/357 :informations about UDP and ports
+https://unix.stackexchange.com/questions/320640/3dr-solo-drone-wifi-communication : informations about WIFI communication
+http://ardupilot.org/copter/docs/parameters.html : complete Parameter List
+https://www.ardusub.com/ : ardusub
+https://dev.qgroundcontrol.com/en/ : QGroundControl dev doc
+http://api.ning.com/files/i*tFWQTF2R*7Mmw7hksAU-u9IABKNDO9apguOiSOCfvi2znk1tXhur0Bt00jTOldFvob-Sczg3*lDcgChG26QaHZpzEcISM5/MAVLINK_FOR_DUMMIESPart1_v.1.1.pdf : tutorial for absolute dummies
+
+//Some examples : 
+https://github.com/3drobotics/solodevguide
+https://mavlink.io/en/examples/c_udp.html
+https://github.com/mavlink/mavlink
+https://kazkojima.github.io/mavlink-howto.html
+http://docs.ros.org/jade/api/mavlink/html/main_8c_source.html
+http://kouky.org/blog/2015/11/09/decoding-mavlink-messages-with-swift.html
+https://github.com/proto3/MAVkit : UDP server/client in c++
+https://github.com/dronefleet/mavlink : UDP server/client in java
+https://www.youtube.com/watch?v=vdfnssPs3Gw to mod GPS
+https://www.youtube.com/watch?v=cdp_to0RVnA to mod GPS
+https://discuss.ardupilot.org/t/mavlink-and-arduino-step-by-step/25566 communication with arduino using lib c
+https://www.sfml-dev.org/index-fr.php : library for streaming video in c
+https://www.markturner.net/2017/02/06/streaming-live-video-from-the-3dr-solo/ get video stream with VLC
+
+//To buy
+https://www.amazon.fr/3DR-BT11A-Batterie-Intelligent-Quadricopt%C3%A8re/dp/B00X97EXEU/ref=sr_1_1?ie=UTF8&qid=1538032193&sr=8-1&keywords=batterie+3dr+solo#productDetails
+https://www.amazon.fr/C%C3%A2ble-Data-GoPro-Black-Session/dp/B01N95YMWQ
+https://www.amazon.fr/3DR-GB11A-Support-3-Axes-Quadricopt%C3%A8re/dp/B00X97F4R0
+https://www.amazon.fr/Gaddrt-Nouveaux-H%C3%A9lices-Paire-Drone/dp/B074Z2W57Z/ref=sr_1_1?ie=UTF8&qid=1540398864&sr=8-1&keywords=H%C3%A9lices+drone+3DR
+
+
+
