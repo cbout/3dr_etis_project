@@ -13,7 +13,7 @@ https://mavlink.io/en/
 https://discuss.ardupilot.org/t/mavlink-step-by-step/9629
 http://ardupilot.org/plane/docs/common-camera-control-and-auto-missions-in-mission-planner.html
 https://groups.google.com/forum/#!topic/mavlink/1zgHUM67E-A
-https://github.com/PX4/Devguide/issues/357 :informations about UDP and ports
+https://github.com/PX4/Devguide/issues/357 : informations about UDP and ports
 https://unix.stackexchange.com/questions/320640/3dr-solo-drone-wifi-communication : informations about WIFI communication
 http://ardupilot.org/copter/docs/parameters.html : complete Parameter List
 https://www.ardusub.com/ : ardusub
