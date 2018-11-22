@@ -1,0 +1,104 @@
+Nov 21 14:29:00 3dr_controller local1.info stm32: stm32 update starting
+Nov 21 14:29:00 3dr_controller local1.info stm32: no firmware available for update
+Nov 21 14:29:00 3dr_controller local1.info stm32: requesting stm32 version
+Nov 21 14:29:00 3dr_controller local1.info stm32: running version: 1.2.11
+Nov 21 14:29:00 3dr_controller local1.info stm32: not updating (no new firmware)
+Nov 21 14:29:00 3dr_controller local1.info stm32: writing STM_VERSION with running version 1.2.11
+Nov 21 14:29:00 3dr_controller local1.info stm32: no screen update (READY exists)
+Nov 21 14:29:02 3dr_controller local1.info net: hostapdconfig.py starting
+Nov 21 14:29:02 3dr_controller local1.info net: --channel wlan0
+Nov 21 14:29:02 3dr_controller local1.info net: can't get wlan0 frequency; defaulting to channel 0
+Nov 21 14:29:02 3dr_controller local1.info net: changing channel in /etc/hostapd.conf from 0 to 0
+Nov 21 14:29:03 3dr_controller local1.info pair: pair_server starting
+Nov 21 14:29:03 3dr_controller local1.info pair: using default check_versions=True
+Nov 21 14:29:03 3dr_controller local1.info pair: sololink version "2.4.2"
+Nov 21 14:29:03 3dr_controller local1.info pair: firmware version "1.2.11"
+
+acs_num_scans=8
+wlan0-ap:
+   Freq   Noise   OnChan   ChBusy  ExtBusy    Rxing    Txing
+Ch  MHz     dBm     msec     msec     msec     msec     msec
+ 1 2412     -64      955      209                98        0
+ 2 2417     -69      108       43                 0        0
+ 3 2422     -68      108       41                 1        0
+ 4 2427 *   -67      367      205               177        6
+ 5 2432     -92      108       99                80        0
+ 6 2437     -93      108      102                94        0
+ 7 2442     -93      108      103                84        0
+ 8 2447     -92      108      103                87        0
+ 9 2452     -91      108       90                72        0
+10 2457     -95      108       94                82        0
+11 2462              108      102                94        0
+
+Nov 21 14:29:16 3dr_controller local1.info pair: connection request from known solo: send CONN_ACK (yes)
+Nov 21 14:29:16 3dr_controller local1.info pair: solo version "2.4.2"; firmware "1.3.1"
+Nov 21 14:29:16 3dr_controller local1.info pair: IDLE -> CONNECTED
+Nov 21 14:29:16 3dr_controller local1.info pair: connected with ('10.1.1.10', 55271)
+Nov 21 14:29:16 3dr_controller local1.info pair: switching to runlevel.READY
+Nov 21 14:29:16 3dr_controller local1.info +206 tlm: telem_ctrl starting: built Sep 22 2016 15:31:04
+Nov 21 14:29:16 3dr_controller local1.info +209 tlm: stm32 @ 127.0.0.1:5015
+Nov 21 14:29:16 3dr_controller local1.info +219 tlm: tlog @ 127.0.0.1:14583
+Nov 21 14:29:16 3dr_controller local1.info +219 tlm: telem_dest_port = 14550
+Nov 21 14:29:16 3dr_controller local1.info +220 tlm: use_gps_time = 1
+Nov 21 14:29:16 3dr_controller local1.info +220 tlm: uplink_tos = 0x00
+Nov 21 14:29:16 3dr_controller local1.info +220 tlm: gcs_tos = 0x00
+Nov 21 14:29:16 3dr_controller local1.info app: starting
+Nov 21 14:29:16 3dr_controller local1.info app: waiting for connection
+Nov 21 14:29:26 3dr_controller local1.info +239 tlm: dn:0 up:0
+Nov 21 14:29:36 3dr_controller local1.info +241 tlm: dn:0 up:0
+Nov 21 14:29:37 3dr_controller local1.info +118 tlm: solo @ 10.1.1.10:14560
+Nov 21 14:29:46 3dr_controller local1.info +319 tlm: dn:9 (10,0)10/0 up:0
+Nov 21 14:29:56 3dr_controller local1.info +395 tlm: dn:8 (10,0)9/0 up:0
+Nov 21 14:30:06 3dr_controller local1.info +397 tlm: dn:0 up:0
+Nov 21 14:30:16 3dr_controller local1.info +398 tlm: dn:0 up:0
+Nov 21 14:30:26 3dr_controller local1.info +400 tlm: dn:0 up:0
+Nov 21 14:30:27 3dr_controller local1.err +062 tlm: dropped 4294967279 downlink packets
+Nov 21 14:30:36 3dr_controller local1.info +394 tlm: dn:46 (1,1)1016/0 (10,0)9/0 up:0
+Nov 21 14:30:46 3dr_controller local1.info +390 tlm: dn:19 (1,1)15/0 (10,0)10/0 up:0
+Nov 21 14:30:56 3dr_controller local1.info +397 tlm: dn:18 (1,1)12/0 (10,0)10/0 up:0
+Nov 21 14:31:06 3dr_controller local1.info +292 tlm: dn:23 (1,1)77/0 (10,0)10/0 up:0
+Nov 21 14:31:16 3dr_controller local1.info +242 tlm: dn:98 (1,1)758/0 (10,0)10/0 up:0
+Nov 21 14:31:24 3dr_controller local1.info +856 tlm: gps time 2018-11-21 14:39:04,808
+Nov 21 14:39:04 3dr_controller local1.info +808 tlm: system time set from gps time
+Nov 21 14:39:06 3dr_controller local1.info +260 tlm: dn:99 (1,1)845/0 (10,0)10/0 up:0
+Nov 21 14:39:11 3dr_controller local1.info +228 tlm: adding telem dest @ 10.1.1.114:14550
+Nov 21 14:39:16 3dr_controller local1.info +228 tlm: dn:99 (1,1)890/0 (10,0)10/0 up:0
+Nov 21 14:39:26 3dr_controller local1.info +217 tlm: dn:98 (1,1)891/0 (10,0)10/0 up:0
+Nov 21 14:39:36 3dr_controller local1.info +226 tlm: dn:99 (1,1)874/0 (10,0)10/0 up:0
+Nov 21 14:39:46 3dr_controller local1.info +279 tlm: dn:99 (1,1)904/0 (10,0)10/0 up:2
+Nov 21 14:39:56 3dr_controller local1.info +198 tlm: dn:98 (1,1)892/0 (10,0)10/0 up:0
+Nov 21 14:40:06 3dr_controller local1.info +232 tlm: dn:99 (1,1)895/0 (10,0)10/0 up:0
+Nov 21 14:40:16 3dr_controller local1.info +221 tlm: dn:98 (1,1)873/0 (10,0)10/0 up:0
+Nov 21 14:40:16 3dr_controller local1.info +247 tlm: adding telem dest @ 10.1.1.174:14550
+Nov 21 14:40:26 3dr_controller local1.info +272 tlm: dn:99 (1,1)898/0 (10,0)10/0 up:10
+Nov 21 14:40:36 3dr_controller local1.info +192 tlm: dn:98 (1,1)890/0 (10,0)10/0 up:5
+Nov 21 14:40:46 3dr_controller local1.info +239 tlm: dn:99 (1,1)875/0 (10,0)10/0 up:0
+Nov 21 14:40:53 3dr_controller local1.info app: connection from ('10.1.1.174', 33276)
+Nov 21 14:40:53 3dr_controller local1.info app: app IP is 10.1.1.174
+Nov 21 14:40:54 3dr_controller local1.info logger: /usr/bin/sololink_config --get-wifi-country
+Nov 21 14:40:54 3dr_controller local1.info logger: /usr/bin/sololink_config --get-wifi-ssid
+Nov 21 14:40:55 3dr_controller local1.info logger: /usr/bin/sololink_config --get-ui-units
+Nov 21 14:40:55 3dr_controller local1.info logger: /usr/bin/sololink_config --get-ui-mode
+Nov 21 14:40:55 3dr_controller local1.info logger: /usr/bin/sololink_config --set-ui-units metric
+Nov 21 14:40:55 3dr_controller local1.info logger: /usr/bin/sololink_config --set-ui-units metric
+Nov 21 14:40:55 3dr_controller local1.info logger: /usr/bin/sololink_config --get-wifi-password
+Nov 21 14:40:56 3dr_controller local1.info +213 tlm: dn:98 (1,1)896/0 (10,0)10/0 up:7
+Nov 21 14:41:06 3dr_controller local1.info logger: /usr/bin/sololink_config --set-ui-units metric
+Nov 21 14:41:06 3dr_controller local1.info +265 tlm: dn:99 (1,1)1170/0 (10,0)10/0 up:11
+Nov 21 14:41:16 3dr_controller local1.info +197 tlm: dn:98 (1,1)932/0 (10,0)10/0 up:10
+Nov 21 14:41:26 3dr_controller local1.info +248 tlm: dn:99 (1,1)896/0 (10,0)10/0 up:10
+Nov 21 14:41:36 3dr_controller local1.info +213 tlm: dn:98 (1,1)891/0 (10,0)10/0 up:10
+Nov 21 14:41:46 3dr_controller local1.info +251 tlm: dn:99 (1,1)898/0 (10,0)10/0 up:10
+Nov 21 14:41:56 3dr_controller local1.info +238 tlm: dn:99 (1,1)873/0 (10,0)10/0 up:10
+Nov 21 14:42:06 3dr_controller local1.info +233 tlm: dn:99 (1,1)916/3 (10,0)10/0 up:11
+Nov 21 14:42:16 3dr_controller local1.info +210 tlm: dn:98 (1,1)929/3 (10,0)10/0 up:10
+Nov 21 14:42:26 3dr_controller local1.info +209 tlm: dn:98 (1,1)903/3 (10,0)10/0 up:10
+Nov 21 14:42:36 3dr_controller local1.info +205 tlm: dn:94 (1,1)848/4 (10,0)10/0 up:10
+Nov 21 14:42:46 3dr_controller local1.info +253 tlm: dn:98 (1,1)921/5 (10,0)10/0 up:10
+Nov 21 14:42:56 3dr_controller local1.info +230 tlm: dn:97 (1,1)862/4 (10,0)10/0 up:10
+Nov 21 14:43:06 3dr_controller local1.info +245 tlm: dn:93 (1,1)837/4 (10,0)10/0 up:10
+Nov 21 14:43:16 3dr_controller local1.info +343 tlm: dn:72 (1,1)652/3 (10,0)10/0 (116,1)1/0 (184,1)1/0 (252,1)1/0 up:12
+Nov 21 14:43:26 3dr_controller local1.info +375 tlm: dn:12 (1,1)3/0 (10,0)10/0 up:10
+Nov 21 14:43:36 3dr_controller local1.info +243 tlm: dn:19 (1,1)15/0 (10,0)10/0 up:9
+Nov 21 14:43:46 3dr_controller local1.info +248 tlm: dn:20 (1,1)12/0 (10,0)10/0 up:0
+Nov 21 14:43:56 3dr_controller local1.info +250 tlm: dn:96 (1,1)779/0 (10,0)10/0 up:0

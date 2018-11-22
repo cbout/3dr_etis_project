@@ -1,0 +1,19 @@
+Nov 19 15:25:11 3dr_solo local0.info +676 pixrc: main: built Sep 22 2016 15:30:53
+Nov 19 15:25:11 3dr_solo local0.info +709 pixrc: main: rcSourceIps: 10.1.1.1,127.0.0.1
+Nov 19 15:25:11 3dr_solo local0.info +709 pixrc: main: rcDestPort:  5005
+Nov 19 15:25:11 3dr_solo local0.info +709 pixrc: main: rcDsmDev:    /dev/ttymxc2
+Nov 19 15:25:11 3dr_solo local0.info +709 pixrc: main: Throttle PWM in  1000...2000
+Nov 19 15:25:11 3dr_solo local0.info +709 pixrc: main:          PWM out 1000...1900
+Nov 19 15:25:11 3dr_solo local0.info +709 pixrc: main: Other    PWM in  1000...2000
+Nov 19 15:25:11 3dr_solo local0.info +709 pixrc: main:          PWM out 1000...2000
+Nov 19 15:25:11 3dr_solo local0.info +709 pixrc: udp: listening on port 5005
+Nov 19 15:25:12 3dr_solo local0.info +062 pixrc: serial: started
+Nov 19 15:25:17 3dr_solo local0.info +138 pixrc: cmd: uplink attached
+Nov 19 15:25:21 3dr_solo local0.info +739 pixrc: a:21,m:323,n:485,u:0,d:0,o:0,q:0,udp=50045,ser=21985
+Nov 19 15:25:31 3dr_solo local0.info +740 pixrc: a:20,m:135,n:500,u:0,d:0,o:0,q:2,udp=50015,ser=21527
+Nov 19 15:25:41 3dr_solo local0.info +739 pixrc: a:20,m:31,n:500,u:0,d:0,o:0,q:0,udp=30935,ser=21126
+Nov 19 15:25:51 3dr_solo local0.info +739 pixrc: a:20,m:54,n:499,u:0,d:1,o:0,q:1,udp=46820,ser=22120
+Nov 19 15:26:01 3dr_solo local0.info +740 pixrc: a:20,m:135,n:489,u:0,d:4,o:0,q:2,udp=50083,ser=21640
+Nov 19 15:26:11 3dr_solo local0.info +742 pixrc: a:20,m:93,n:497,u:0,d:3,o:0,q:2,udp=47051,ser=21318
+Nov 19 15:26:21 3dr_solo local0.info +740 pixrc: a:20,m:80,n:495,u:0,d:4,o:0,q:1,udp=46853,ser=20829
+Nov 19 15:26:31 3dr_solo local0.info +740 pixrc: a:20,m:37,n:500,u:0,d:0,o:0,q:0,udp=36872,ser=21702

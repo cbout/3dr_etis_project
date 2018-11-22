@@ -1,0 +1,62 @@
+Nov 19 15:06:30 3dr_solo local2.info shot: +-+-+-+-+-+-+ Starting up v2.4.1-1 +-+-+-+-+-+-+
+Nov 19 15:06:30 3dr_solo local2.info shot: [RC] Disabling stick remapping
+Nov 19 15:06:30 3dr_solo local2.info shot: [app]: Ready for connections from app.
+Nov 19 15:06:30 3dr_solo local2.info shot: [button]: Creating a new thread to connect to Artoo.
+Nov 19 15:06:30 3dr_solo local2.info shot: [button]: read in button mappings
+Nov 19 15:06:30 3dr_solo local2.info shot: [button]: Button A - shot FLY, mode Stabilize
+Nov 19 15:06:30 3dr_solo local2.info shot: [button]: Button B - shot FLY, mode FLY
+Nov 19 15:06:30 3dr_solo local2.info shot: [gopro]: read enabled value from settings of 1.
+Nov 19 15:06:30 3dr_solo local2.info shot: [gopro]: sending gimbal enabled param (GMB_GP_CTRL) to 1.000000
+Nov 19 15:06:30 3dr_solo local2.info shot: [gopro]: Inited GoProManager
+Nov 19 15:06:30 3dr_solo local2.info shot: [RewindManager] Init
+Nov 19 15:06:30 3dr_solo local2.info shot: [shot]: No gimbal detected.
+Nov 19 15:06:32 3dr_solo local2.info shot: [button]: Connected to Artoo.
+Nov 19 15:06:32 3dr_solo local2.info shot: [button]: sending FLY to Artoo as mode
+Nov 19 15:07:06 3dr_solo local2.info shot: [callback]: Mode changed from LOITER -> ALT_HOLD
+Nov 19 15:07:06 3dr_solo local2.info shot: [button]: sending FLY: MANUAL to Artoo as mode
+Nov 19 15:07:22 3dr_solo local2.info shot: [callback]: Mode changed from ALT_HOLD -> GUIDED
+Nov 19 15:07:44 3dr_solo local2.info shot: [callback]: Mode changed from GUIDED -> ALT_HOLD
+Nov 19 15:07:44 3dr_solo local2.info shot: [button]: sending FLY: MANUAL to Artoo as mode
+Nov 19 15:10:02 3dr_solo local2.info shot: [shot]: Vehicle EKF quality is poor, shot entry into Return Home disallowed.
+Nov 19 15:10:02 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 19 15:10:02 3dr_solo local2.info shot: [shot]: Already in shot FLY.
+Nov 19 15:10:02 3dr_solo local2.info shot: [button]: sending FLY to Artoo as shot
+Nov 19 15:10:05 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to FLY.
+Nov 19 15:10:05 3dr_solo local2.info shot: [callback]: Mode changed from ALT_HOLD -> LOITER
+Nov 19 15:10:05 3dr_solo local2.info shot: [button]: sending FLY to Artoo as mode
+Nov 19 15:10:05 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to Stabilize.
+Nov 19 15:10:05 3dr_solo local2.info shot: [callback]: Mode changed from LOITER -> STABILIZE
+Nov 19 15:10:05 3dr_solo local2.info shot: [button]: sending STABILIZE to Artoo as mode
+Nov 19 15:10:08 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to Stabilize.
+Nov 19 15:10:08 3dr_solo local2.info shot: [shot]: Vehicle EKF quality is poor, shot entry into Return Home disallowed.
+Nov 19 15:10:08 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 19 15:10:08 3dr_solo local2.info shot: [shot]: Already in shot FLY.
+Nov 19 15:10:08 3dr_solo local2.info shot: [button]: sending FLY to Artoo as shot
+Nov 19 15:10:09 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to FLY.
+Nov 19 15:10:09 3dr_solo local2.info shot: [callback]: Mode changed from STABILIZE -> LOITER
+Nov 19 15:10:09 3dr_solo local2.info shot: [button]: sending FLY to Artoo as mode
+Nov 19 15:10:09 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to FLY.
+Nov 19 15:10:14 3dr_solo local2.info shot: [shot]: Vehicle EKF quality is poor, shot entry into Return Home disallowed.
+Nov 19 15:10:14 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 19 15:10:14 3dr_solo local2.info shot: [shot]: Already in shot FLY.
+Nov 19 15:10:14 3dr_solo local2.info shot: [button]: sending FLY to Artoo as shot
+Nov 19 15:10:14 3dr_solo local2.info shot: [shot]: Vehicle EKF quality is poor, shot entry into Return Home disallowed.
+Nov 19 15:10:14 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 19 15:10:14 3dr_solo local2.info shot: [shot]: Already in shot FLY.
+Nov 19 15:10:14 3dr_solo local2.info shot: [button]: sending FLY to Artoo as shot
+Nov 19 15:10:15 3dr_solo local2.info shot: [shot]: Vehicle EKF quality is poor, shot entry into Return Home disallowed.
+Nov 19 15:10:15 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 19 15:10:15 3dr_solo local2.info shot: [shot]: Already in shot FLY.
+Nov 19 15:10:15 3dr_solo local2.info shot: [button]: sending FLY to Artoo as shot
+Nov 19 15:10:15 3dr_solo local2.info shot: [shot]: Vehicle EKF quality is poor, shot entry into Return Home disallowed.
+Nov 19 15:10:15 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 19 15:10:15 3dr_solo local2.info shot: [shot]: Already in shot FLY.
+Nov 19 15:10:15 3dr_solo local2.info shot: [button]: sending FLY to Artoo as shot
+Nov 19 15:10:16 3dr_solo local2.info shot: [shot]: Vehicle EKF quality is poor, shot entry into Return Home disallowed.
+Nov 19 15:10:16 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 19 15:10:16 3dr_solo local2.info shot: [shot]: Already in shot FLY.
+Nov 19 15:10:16 3dr_solo local2.info shot: [button]: sending FLY to Artoo as shot
+Nov 19 15:10:16 3dr_solo local2.info shot: [shot]: Vehicle EKF quality is poor, shot entry into Return Home disallowed.
+Nov 19 15:10:16 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 19 15:10:16 3dr_solo local2.info shot: [shot]: Already in shot FLY.
+Nov 19 15:10:16 3dr_solo local2.info shot: [button]: sending FLY to Artoo as shot

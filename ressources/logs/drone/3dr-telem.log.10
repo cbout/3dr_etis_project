@@ -1,0 +1,35 @@
+Nov 21 14:05:24 3dr_solo local4.info +951 tlm: Installing SIGQUIT signal handler
+Nov 21 14:05:24 3dr_solo local4.info +977 tlm: telem_forwarder starting: built Sep 22 2016 15:31:01
+Nov 21 14:05:25 3dr_solo local4.info +008 tlm: serial port: /dev/ttymxc1
+Nov 21 14:05:25 3dr_solo local4.info +008 tlm: serial baudrate: 921600
+Nov 21 14:05:25 3dr_solo local4.info +008 tlm: serial hw flow: true
+Nov 21 14:05:25 3dr_solo local4.info +008 tlm: UDP dest port: 14550
+Nov 21 14:05:25 3dr_solo local4.info +008 tlm: use GPS time: true
+Nov 21 14:05:25 3dr_solo local4.info +008 tlm: tos: 0x7f
+Nov 21 14:05:25 3dr_solo local4.info +009 tlm: opened port 14560
+Nov 21 14:05:25 3dr_solo local4.info +013 tlm: opened serial port /dev/ttymxc1
+Nov 21 14:05:25 3dr_solo local4.err +174 tlm: poll returned zero
+Nov 21 14:05:25 3dr_solo local4.info +207 tlm: adding new client 10.1.1.10:45958
+Nov 21 14:05:25 3dr_solo local4.info +207 tlm: ARP: Seen (254/17) from 10.1.1.10:45958 client=0x762fdc44
+Nov 21 14:05:25 3dr_solo local4.info +207 tlm: ARP: Seen (57/57) from 10.1.1.10:45958 client=0x762fdc44
+Nov 21 14:05:27 3dr_solo local4.info +003 tlm: GPS time: 2018-11-21 14:06:38.772000
+Nov 21 14:06:38 3dr_solo local4.info +772 tlm: clock set from GPS
+Nov 21 14:06:40 3dr_solo local4.info +263 tlm: adding new client 127.0.0.1:52733
+Nov 21 14:06:40 3dr_solo local4.info +263 tlm: ARP: Seen (255/0) from 127.0.0.1:52733 client=0x762fdc44
+Nov 21 14:06:41 3dr_solo local4.info +422 tlm: SET_MODE: from 127.0.0.1:52733
+Nov 21 14:06:41 3dr_solo local4.info +422 tlm: SET_MODE: len=6 src_sys=255 src_comp=0
+Nov 21 14:06:41 3dr_solo local4.info +422 tlm: SET_MODE: custom_mode=0.0.0.5 target_system=1 base_mode=1
+Nov 21 14:06:46 3dr_solo local4.info +793 tlm: down: 227 m/s, 19740 b/s, 21%; up: 71 m/s, 1088 b/s, 1%
+Nov 21 14:06:56 3dr_solo local4.info +794 tlm: down: 151 m/s, 16130 b/s, 17%; up: 64 m/s, 973 b/s, 1%
+Nov 21 14:07:06 3dr_solo local4.info +795 tlm: down: 153 m/s, 16120 b/s, 17%; up: 64 m/s, 966 b/s, 1%
+Nov 21 14:07:16 3dr_solo local4.info +795 tlm: down: 153 m/s, 16150 b/s, 17%; up: 64 m/s, 968 b/s, 1%
+Nov 21 14:07:26 3dr_solo local4.info +796 tlm: down: 151 m/s, 16096 b/s, 17%; up: 64 m/s, 969 b/s, 1%
+Nov 21 14:07:36 3dr_solo local4.info +797 tlm: down: 153 m/s, 16175 b/s, 17%; up: 64 m/s, 978 b/s, 1%
+Nov 21 14:07:46 3dr_solo local4.info +797 tlm: down: 178 m/s, 17048 b/s, 18%; up: 64 m/s, 971 b/s, 1%
+Nov 21 14:07:56 3dr_solo local4.info +798 tlm: down: 153 m/s, 16170 b/s, 17%; up: 64 m/s, 971 b/s, 1%
+Nov 21 14:08:06 3dr_solo local4.info +799 tlm: down: 153 m/s, 16121 b/s, 17%; up: 64 m/s, 966 b/s, 1%
+Nov 21 14:08:16 3dr_solo local4.info +800 tlm: down: 151 m/s, 16106 b/s, 17%; up: 64 m/s, 969 b/s, 1%
+Nov 21 14:08:26 3dr_solo local4.info +800 tlm: down: 153 m/s, 16120 b/s, 17%; up: 64 m/s, 966 b/s, 1%
+Nov 21 14:08:36 3dr_solo local4.info +801 tlm: down: 153 m/s, 16180 b/s, 17%; up: 64 m/s, 969 b/s, 1%
+Nov 21 14:08:46 3dr_solo local4.info +802 tlm: down: 152 m/s, 16133 b/s, 17%; up: 65 m/s, 1002 b/s, 1%
+Nov 21 14:08:56 3dr_solo local4.info +802 tlm: down: 153 m/s, 16158 b/s, 17%; up: 64 m/s, 972 b/s, 1%

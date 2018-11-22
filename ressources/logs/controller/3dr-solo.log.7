@@ -1,0 +1,81 @@
+Nov 21 14:12:00 3dr_controller local1.info stm32: stm32 update starting
+Nov 21 14:12:00 3dr_controller local1.info stm32: no firmware available for update
+Nov 21 14:12:00 3dr_controller local1.info stm32: requesting stm32 version
+Nov 21 14:12:00 3dr_controller local1.info stm32: running version: 1.2.11
+Nov 21 14:12:00 3dr_controller local1.info stm32: not updating (no new firmware)
+Nov 21 14:12:00 3dr_controller local1.info stm32: writing STM_VERSION with running version 1.2.11
+Nov 21 14:12:00 3dr_controller local1.info stm32: no screen update (READY exists)
+Nov 21 14:12:02 3dr_controller local1.info net: hostapdconfig.py starting
+Nov 21 14:12:02 3dr_controller local1.info net: --channel wlan0
+Nov 21 14:12:02 3dr_controller local1.info net: can't get wlan0 frequency; defaulting to channel 0
+Nov 21 14:12:02 3dr_controller local1.info net: changing channel in /etc/hostapd.conf from 0 to 0
+Nov 21 14:12:03 3dr_controller local1.info pair: pair_server starting
+Nov 21 14:12:03 3dr_controller local1.info pair: using default check_versions=True
+Nov 21 14:12:03 3dr_controller local1.info pair: sololink version "2.4.2"
+Nov 21 14:12:03 3dr_controller local1.info pair: firmware version "1.2.11"
+
+acs_num_scans=8
+wlan0-ap:
+   Freq   Noise   OnChan   ChBusy  ExtBusy    Rxing    Txing
+Ch  MHz     dBm     msec     msec     msec     msec     msec
+ 1 2412             1073     1005               893        0
+ 2 2417     -82      108       90                85        0
+ 3 2422     -82      108       38                36        0
+ 4 2427     -87      108       32                25        0
+ 5 2432     -89      108       46                43        0
+ 6 2437     -83      108       90                84        0
+ 7 2442 *   -77      390       36                24        8
+ 8 2447     -77      108        7                 7        0
+ 9 2452     -75      108       17                14        0
+10 2457     -74      108       67                61        0
+11 2462              108      104                99        0
+
+Nov 21 14:12:18 3dr_controller local1.info pair: connection request from known solo: send CONN_ACK (yes)
+Nov 21 14:12:18 3dr_controller local1.info pair: solo version "2.4.2"; firmware "1.3.1"
+Nov 21 14:12:18 3dr_controller local1.info pair: IDLE -> CONNECTED
+Nov 21 14:12:18 3dr_controller local1.info pair: connected with ('10.1.1.10', 37155)
+Nov 21 14:12:18 3dr_controller local1.info pair: switching to runlevel.READY
+Nov 21 14:12:18 3dr_controller local1.info +980 tlm: telem_ctrl starting: built Sep 22 2016 15:31:04
+Nov 21 14:12:19 3dr_controller local1.info +016 tlm: stm32 @ 127.0.0.1:5015
+Nov 21 14:12:19 3dr_controller local1.info +020 tlm: tlog @ 127.0.0.1:14583
+Nov 21 14:12:19 3dr_controller local1.info +020 tlm: telem_dest_port = 14550
+Nov 21 14:12:19 3dr_controller local1.info +020 tlm: use_gps_time = 1
+Nov 21 14:12:19 3dr_controller local1.info +020 tlm: uplink_tos = 0x00
+Nov 21 14:12:19 3dr_controller local1.info +020 tlm: gcs_tos = 0x00
+Nov 21 14:12:19 3dr_controller local1.info +377 tlm: solo @ 10.1.1.10:14560
+Nov 21 14:12:19 3dr_controller local1.info app: starting
+Nov 21 14:12:19 3dr_controller local1.info app: waiting for connection
+Nov 21 14:12:29 3dr_controller local1.info +177 tlm: dn:10 (10,0)10/0 up:0
+Nov 21 14:12:39 3dr_controller local1.info +177 tlm: dn:9 (10,0)10/0 up:0
+Nov 21 14:12:49 3dr_controller local1.info +179 tlm: dn:1 (10,0)1/0 up:0
+Nov 21 14:12:59 3dr_controller local1.info +181 tlm: dn:0 up:0
+Nov 21 14:13:09 3dr_controller local1.info +183 tlm: dn:0 up:0
+Nov 21 14:13:09 3dr_controller local1.err +391 tlm: dropped 4294967034 downlink packets
+Nov 21 14:13:14 3dr_controller local1.info +064 tlm: adding telem dest @ 10.1.1.114:14550
+Nov 21 14:13:19 3dr_controller local1.info +122 tlm: dn:47 (1,1)1008/0 (10,0)9/0 up:0
+Nov 21 14:13:20 3dr_controller local1.info app: connection from ('10.1.1.114', 2195)
+Nov 21 14:13:20 3dr_controller local1.info app: app IP is 10.1.1.114
+Nov 21 14:13:23 3dr_controller local1.info +874 tlm: gps time 2018-11-21 14:13:24,601
+Nov 21 14:13:24 3dr_controller local1.info +601 tlm: system time set from gps time
+Nov 21 14:13:29 3dr_controller local1.info +853 tlm: dn:78 (1,1)945/0 (10,0)10/0 up:6
+Nov 21 14:13:32 3dr_controller local1.info app: socket.error: [Errno 104] Connection reset by peer
+Nov 21 14:13:32 3dr_controller local1.info app: closing connection
+Nov 21 14:13:32 3dr_controller local1.info app: socket.error: [Errno 107] Transport endpoint is not connected
+Nov 21 14:13:32 3dr_controller local1.info app: waiting for connection
+Nov 21 14:13:39 3dr_controller local1.info +793 tlm: dn:98 (1,1)841/0 (10,0)10/0 up:0
+Nov 21 14:13:49 3dr_controller local1.info +772 tlm: dn:99 (1,1)881/0 (10,0)10/0 up:1
+Nov 21 14:13:59 3dr_controller local1.info +935 tlm: dn:90 (0,0)1/0 (1,1)813/0 (10,0)9/0 up:0
+Nov 21 14:14:09 3dr_controller local1.info +937 tlm: dn:0 up:0
+Nov 21 14:14:19 3dr_controller local1.info +939 tlm: dn:0 up:0
+Nov 21 14:14:29 3dr_controller local1.info +941 tlm: dn:0 up:0
+Nov 21 14:14:35 3dr_controller local1.err +160 tlm: dropped 4294966884 downlink packets
+Nov 21 14:14:39 3dr_controller local1.info +843 tlm: dn:36 (1,1)951/0 (10,0)4/0 up:0
+Nov 21 14:14:49 3dr_controller local1.info +947 tlm: dn:23 (1,1)61/0 (10,0)10/0 up:0
+Nov 21 14:14:52 3dr_controller local1.info app: connection from ('10.1.1.114', 2196)
+Nov 21 14:14:52 3dr_controller local1.info app: app IP is 10.1.1.114
+Nov 21 14:14:59 3dr_controller local1.info +785 tlm: dn:33 (1,1)524/0 (10,0)10/0 up:13
+Nov 21 14:15:09 3dr_controller local1.info +846 tlm: dn:19 (1,1)12/0 (10,0)10/0 up:10
+Nov 21 14:15:11 3dr_controller local1.info app: closing connection
+Nov 21 14:15:11 3dr_controller local1.info app: waiting for connection
+Nov 21 14:15:19 3dr_controller local1.info +846 tlm: dn:21 (1,1)12/0 (10,0)10/0 up:1
+Nov 21 14:15:29 3dr_controller local1.info +874 tlm: dn:20 (1,1)12/0 (10,0)10/0 up:0

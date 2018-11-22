@@ -1,0 +1,50 @@
+Jan  1 00:00:06 3dr_controller syslog.info syslogd started: BusyBox v1.21.1
+Jan  1 00:00:06 3dr_controller daemon.info kernel: udevd[141]: starting version 182
+Nov 19 15:31:01 3dr_controller daemon.info init: Entering runlevel: 3
+Nov 19 15:31:01 3dr_controller auth.info sshd[785]: Server listening on 0.0.0.0 port 22.
+Nov 19 15:31:01 3dr_controller auth.info sshd[785]: Server listening on :: port 22.
+Nov 19 15:31:01 3dr_controller daemon.info dnsmasq[790]: started, version 2.72 cachesize 150
+Nov 19 15:31:01 3dr_controller daemon.info dnsmasq[790]: compile time options: IPv6 GNU-getopt no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth no-DNSSEC loop-detect
+Nov 19 15:31:01 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCP, IP range 10.1.1.100 -- 10.1.1.199, lease time 2h
+Nov 19 15:31:01 3dr_controller daemon.warn dnsmasq[790]: no servers found in /etc/resolv.conf, will retry
+Nov 19 15:31:01 3dr_controller daemon.info dnsmasq[790]: read /etc/hosts - 1 addresses
+Nov 19 15:31:13 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: authenticated
+Nov 19 15:31:13 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: associated (aid 1)
+Nov 19 15:31:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 RADIUS: starting accounting session 5BF2D740-00000000
+Nov 19 15:31:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 WPA: pairwise key handshake completed (RSN)
+Nov 19 15:31:14 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCPDISCOVER(wlan0-ap) 88:dc:96:3b:69:c3 
+Nov 19 15:31:14 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCPOFFER(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 
+Nov 19 15:31:14 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCPREQUEST(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 
+Nov 19 15:31:14 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCPACK(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 solo
+Nov 19 15:31:14 3dr_controller daemon.info init: Switching to runlevel: 4
+Nov 19 15:32:06 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:07 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:08 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:09 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:10 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:11 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:12 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:13 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:15 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:16 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:17 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:18 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:19 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:20 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:21 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:22 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:23 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:24 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: Would disassoc but solo addr
+Nov 19 15:32:44 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: authenticated
+Nov 19 15:32:44 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: associated (aid 1)
+Nov 19 15:32:44 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 RADIUS: starting accounting session 5BF2D740-00000000
+Nov 19 15:32:44 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 WPA: pairwise key handshake completed (RSN)
+Nov 19 15:32:45 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCPDISCOVER(wlan0-ap) 88:dc:96:3b:69:c3 
+Nov 19 15:32:45 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCPOFFER(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 
+Nov 19 15:32:45 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCPREQUEST(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 
+Nov 19 15:32:45 3dr_controller daemon.info dnsmasq-dhcp[790]: DHCPACK(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 solo
+Nov 19 15:33:12 3dr_controller daemon.info init: Switching to runlevel: 0
+Nov 19 15:33:13 3dr_controller auth.info sshd[785]: Received signal 15; terminating.
+Nov 19 15:33:13 3dr_controller daemon.info dnsmasq[790]: exiting on receipt of SIGTERM
+Nov 19 15:33:14 3dr_controller syslog.info syslogd exiting

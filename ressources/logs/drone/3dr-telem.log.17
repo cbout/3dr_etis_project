@@ -1,0 +1,24 @@
+Nov 19 15:25:19 3dr_solo local4.info +276 tlm: Installing SIGQUIT signal handler
+Nov 19 15:25:19 3dr_solo local4.info +326 tlm: telem_forwarder starting: built Sep 22 2016 15:31:01
+Nov 19 15:25:19 3dr_solo local4.info +328 tlm: serial port: /dev/ttymxc1
+Nov 19 15:25:19 3dr_solo local4.info +328 tlm: serial baudrate: 921600
+Nov 19 15:25:19 3dr_solo local4.info +328 tlm: serial hw flow: true
+Nov 19 15:25:19 3dr_solo local4.info +328 tlm: UDP dest port: 14550
+Nov 19 15:25:19 3dr_solo local4.info +328 tlm: use GPS time: true
+Nov 19 15:25:19 3dr_solo local4.info +330 tlm: tos: 0x7f
+Nov 19 15:25:19 3dr_solo local4.info +330 tlm: opened port 14560
+Nov 19 15:25:19 3dr_solo local4.info +340 tlm: opened serial port /dev/ttymxc1
+Nov 19 15:25:19 3dr_solo local4.err +506 tlm: poll returned zero
+Nov 19 15:25:19 3dr_solo local4.info +552 tlm: adding new client 10.1.1.10:54212
+Nov 19 15:25:19 3dr_solo local4.info +552 tlm: ARP: Seen (254/17) from 10.1.1.10:54212 client=0x762fdc44
+Nov 19 15:25:19 3dr_solo local4.info +552 tlm: ARP: Seen (57/57) from 10.1.1.10:54212 client=0x762fdc44
+Nov 19 15:25:23 3dr_solo local4.info +111 tlm: adding new client 127.0.0.1:58823
+Nov 19 15:25:23 3dr_solo local4.info +111 tlm: ARP: Seen (255/0) from 127.0.0.1:58823 client=0x762fdc44
+Nov 19 15:25:24 3dr_solo local4.info +006 tlm: SET_MODE: from 127.0.0.1:58823
+Nov 19 15:25:24 3dr_solo local4.info +007 tlm: SET_MODE: len=6 src_sys=255 src_comp=0
+Nov 19 15:25:24 3dr_solo local4.info +007 tlm: SET_MODE: custom_mode=0.0.0.5 target_system=1 base_mode=1
+Nov 19 15:25:29 3dr_solo local4.info +353 tlm: down: 215 m/s, 19182 b/s, 20%; up: 70 m/s, 1067 b/s, 1%
+Nov 19 15:25:29 3dr_solo local4.info +354 tlm: seq errs: (1,1):1
+Nov 19 15:25:39 3dr_solo local4.info +354 tlm: down: 147 m/s, 15645 b/s, 16%; up: 62 m/s, 946 b/s, 1%
+Nov 19 15:25:49 3dr_solo local4.info +355 tlm: down: 145 m/s, 15604 b/s, 16%; up: 62 m/s, 944 b/s, 1%
+Nov 19 15:25:59 3dr_solo local4.info +356 tlm: down: 147 m/s, 15637 b/s, 16%; up: 62 m/s, 942 b/s, 1%

@@ -1,0 +1,30 @@
+Jan  1 00:00:07 3dr_solo syslog.info syslogd started: BusyBox v1.21.1
+Jan  1 00:00:07 3dr_solo daemon.info kernel: udevd[142]: starting version 182
+Nov 21 13:07:09 3dr_solo daemon.info init: Entering runlevel: 3
+Nov 21 13:07:09 3dr_solo auth.info sshd[799]: Server listening on 0.0.0.0 port 22.
+Nov 21 13:07:09 3dr_solo auth.info sshd[799]: Server listening on :: port 22.
+Nov 21 13:07:09 3dr_solo daemon.info dnsmasq[803]: started, version 2.72 cachesize 150
+Nov 21 13:07:09 3dr_solo daemon.info dnsmasq[803]: compile time options: IPv6 GNU-getopt no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth no-DNSSEC loop-detect
+Nov 21 13:07:09 3dr_solo daemon.warn dnsmasq[803]: warning: interface wlan0-ap does not currently exist
+Nov 21 13:07:09 3dr_solo daemon.info dnsmasq-dhcp[803]: DHCP, IP range 10.1.1.100 -- 10.1.1.199, lease time 2h
+Nov 21 13:07:09 3dr_solo daemon.warn dnsmasq[803]: no servers found in /etc/resolv.conf, will retry
+Nov 21 13:07:09 3dr_solo daemon.info dnsmasq[803]: read /etc/hosts - 1 addresses
+Nov 21 13:07:24 3dr_solo daemon.info init: Switching to runlevel: 4
+Nov 21 13:08:07 3dr_solo daemon.info dnsmasq[803]: reading /etc/resolv.conf
+Nov 21 13:08:07 3dr_solo daemon.info dnsmasq[803]: using nameserver 8.8.8.8#53
+Nov 21 13:09:01 3dr_solo auth.info sshd[945]: Accepted password for root from 10.1.1.187 port 37608 ssh2
+Nov 21 13:09:01 3dr_solo auth.info sshd[942]: Accepted password for root from 10.1.1.187 port 37604 ssh2
+Nov 21 13:09:01 3dr_solo auth.info sshd[946]: Accepted password for root from 10.1.1.187 port 37610 ssh2
+Nov 21 13:09:01 3dr_solo auth.info sshd[944]: Accepted password for root from 10.1.1.187 port 37606 ssh2
+Nov 21 13:52:40 3dr_solo auth.info sshd[1075]: Accepted password for root from 10.1.1.174 port 45590 ssh2
+Nov 21 13:52:40 3dr_solo auth.info sshd[1078]: Accepted password for root from 10.1.1.174 port 45596 ssh2
+Nov 21 13:52:40 3dr_solo auth.info sshd[1076]: Accepted password for root from 10.1.1.174 port 45592 ssh2
+Nov 21 13:52:40 3dr_solo auth.info sshd[1077]: Accepted password for root from 10.1.1.174 port 45594 ssh2
+Nov 21 13:56:25 3dr_solo auth.info sshd[1198]: Accepted password for root from 10.1.1.174 port 45648 ssh2
+Nov 21 13:56:25 3dr_solo auth.info sshd[1204]: Accepted password for root from 10.1.1.174 port 45658 ssh2
+Nov 21 13:56:25 3dr_solo auth.info sshd[1200]: Accepted password for root from 10.1.1.174 port 45656 ssh2
+Nov 21 13:56:25 3dr_solo auth.info sshd[1199]: Accepted password for root from 10.1.1.174 port 45654 ssh2
+Nov 21 13:56:29 3dr_solo auth.info sshd[1209]: Accepted password for root from 10.1.1.174 port 45702 ssh2
+Nov 21 13:56:29 3dr_solo auth.info sshd[1210]: Accepted password for root from 10.1.1.174 port 45703 ssh2
+Nov 21 13:56:29 3dr_solo auth.info sshd[1211]: Accepted password for root from 10.1.1.174 port 45706 ssh2
+Nov 21 13:56:29 3dr_solo auth.info sshd[1212]: Accepted password for root from 10.1.1.174 port 45708 ssh2

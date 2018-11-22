@@ -1,0 +1,50 @@
+Jan  1 00:00:05 3dr_controller syslog.info syslogd started: BusyBox v1.21.1
+Jan  1 00:00:05 3dr_controller daemon.info kernel: udevd[141]: starting version 182
+Nov 19 14:51:00 3dr_controller daemon.info init: Entering runlevel: 3
+Nov 19 14:51:01 3dr_controller auth.info sshd[723]: Server listening on 0.0.0.0 port 22.
+Nov 19 14:51:01 3dr_controller auth.info sshd[723]: Server listening on :: port 22.
+Nov 19 14:51:01 3dr_controller daemon.info dnsmasq[728]: started, version 2.72 cachesize 150
+Nov 19 14:51:01 3dr_controller daemon.info dnsmasq[728]: compile time options: IPv6 GNU-getopt no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth no-DNSSEC loop-detect
+Nov 19 14:51:01 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCP, IP range 10.1.1.100 -- 10.1.1.199, lease time 2h
+Nov 19 14:51:01 3dr_controller daemon.warn dnsmasq[728]: no servers found in /etc/resolv.conf, will retry
+Nov 19 14:51:01 3dr_controller daemon.info dnsmasq[728]: read /etc/hosts - 1 addresses
+Nov 19 14:51:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: authenticated
+Nov 19 14:51:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: associated (aid 1)
+Nov 19 14:51:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 RADIUS: starting accounting session 5BF2CDE0-00000000
+Nov 19 14:51:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 WPA: pairwise key handshake completed (RSN)
+Nov 19 14:51:15 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: authenticated
+Nov 19 14:51:15 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: associated (aid 1)
+Nov 19 14:51:15 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 RADIUS: starting accounting session 5BF2CDE0-00000001
+Nov 19 14:51:15 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 WPA: pairwise key handshake completed (RSN)
+Nov 19 14:51:15 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPDISCOVER(wlan0-ap) 88:dc:96:3b:69:c3 
+Nov 19 14:51:15 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPOFFER(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 
+Nov 19 14:51:15 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPREQUEST(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 
+Nov 19 14:51:15 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPACK(wlan0-ap) 10.1.1.10 88:dc:96:3b:69:c3 solo
+Nov 19 14:51:16 3dr_controller daemon.info init: Switching to runlevel: 4
+Nov 19 14:51:37 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 IEEE 802.11: authenticated
+Nov 19 14:51:37 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 IEEE 802.11: associated (aid 2)
+Nov 19 14:51:37 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 RADIUS: starting accounting session 5BF2CDE0-00000002
+Nov 19 14:51:37 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 WPA: pairwise key handshake completed (RSN)
+Nov 19 14:52:04 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPDISCOVER(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 
+Nov 19 14:52:04 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPOFFER(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 
+Nov 19 14:52:04 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPREQUEST(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 
+Nov 19 14:52:04 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPACK(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 neuro
+Nov 19 14:52:31 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a IEEE 802.11: authenticated
+Nov 19 14:52:36 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a IEEE 802.11: authenticated
+Nov 19 14:52:36 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a IEEE 802.11: associated (aid 3)
+Nov 19 14:52:36 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a RADIUS: starting accounting session 5BF2CDE0-00000003
+Nov 19 14:52:36 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a WPA: pairwise key handshake completed (RSN)
+Nov 19 14:52:51 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a IEEE 802.11: authenticated
+Nov 19 14:52:51 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a IEEE 802.11: associated (aid 3)
+Nov 19 14:52:51 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a RADIUS: starting accounting session 5BF2CDE0-00000003
+Nov 19 14:52:51 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a WPA: pairwise key handshake completed (RSN)
+Nov 19 14:53:03 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPDISCOVER(wlan0-ap) 78:31:c1:b7:4b:8a 
+Nov 19 14:53:03 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPOFFER(wlan0-ap) 10.1.1.114 78:31:c1:b7:4b:8a 
+Nov 19 14:53:03 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPDISCOVER(wlan0-ap) 78:31:c1:b7:4b:8a 
+Nov 19 14:53:03 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPOFFER(wlan0-ap) 10.1.1.114 78:31:c1:b7:4b:8a 
+Nov 19 14:53:05 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPREQUEST(wlan0-ap) 10.1.1.114 78:31:c1:b7:4b:8a 
+Nov 19 14:53:05 3dr_controller daemon.info dnsmasq-dhcp[728]: DHCPACK(wlan0-ap) 10.1.1.114 78:31:c1:b7:4b:8a MBP-de-Raphael
+Nov 19 14:57:44 3dr_controller daemon.info init: Switching to runlevel: 0
+Nov 19 14:57:45 3dr_controller auth.info sshd[723]: Received signal 15; terminating.
+Nov 19 14:57:45 3dr_controller daemon.info dnsmasq[728]: exiting on receipt of SIGTERM
+Nov 19 14:57:45 3dr_controller syslog.info syslogd exiting

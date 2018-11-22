@@ -1,0 +1,27 @@
+
+2018-11-19 15:25:09,147 proc_top starting
+
+2018-11-19 15:25:19,148
+   pid name                  utime  stime  pct
+    64 (kworker/0:2)             0     54   5%
+   853 (python)                 32      8   4%
+    71 (mmcqd/0)                 0      9   1%
+    24 (ipu1_task)               0      5   1%
+   106 (loop0)                   0      5   1%
+
+2018-11-19 15:25:29,148
+   pid name                  utime  stime  pct
+   891 (telem_down)             19     78  10%
+   907 (python)                 77     11   9%
+   910 (python)                 39     21   6%
+    64 (kworker/0:2)             0     57   6%
+   908 (python)                 36      8   4%
+   903 (vidsrc:src)             17     13   3%
+   895 (pixrc_udp)               3     20   2%
+   890 (python)                 12      9   2%
+   879 (dataflash_logge)         5      8   1%
+    24 (ipu1_task)               0      9   1%
+    71 (mmcqd/0)                 0      8   1%
+   897 (pixrc_ser)               0      5   1%
+   881 (vidlaunch)               0      5   1%
+   909 (python)                  3      2   1%

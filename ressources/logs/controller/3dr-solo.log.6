@@ -1,0 +1,105 @@
+Nov 21 14:15:00 3dr_controller local1.info stm32: stm32 update starting
+Nov 21 14:15:00 3dr_controller local1.info stm32: no firmware available for update
+Nov 21 14:15:00 3dr_controller local1.info stm32: requesting stm32 version
+Nov 21 14:15:00 3dr_controller local1.info stm32: running version: 1.2.11
+Nov 21 14:15:00 3dr_controller local1.info stm32: not updating (no new firmware)
+Nov 21 14:15:00 3dr_controller local1.info stm32: writing STM_VERSION with running version 1.2.11
+Nov 21 14:15:00 3dr_controller local1.info stm32: no screen update (READY exists)
+Nov 21 14:15:02 3dr_controller local1.info net: hostapdconfig.py starting
+Nov 21 14:15:02 3dr_controller local1.info net: --channel wlan0
+Nov 21 14:15:02 3dr_controller local1.info net: can't get wlan0 frequency; defaulting to channel 0
+Nov 21 14:15:02 3dr_controller local1.info net: changing channel in /etc/hostapd.conf from 0 to 0
+Nov 21 14:15:02 3dr_controller local1.info pair: pair_server starting
+Nov 21 14:15:02 3dr_controller local1.info pair: using default check_versions=True
+Nov 21 14:15:02 3dr_controller local1.info pair: sololink version "2.4.2"
+Nov 21 14:15:02 3dr_controller local1.info pair: firmware version "1.2.11"
+
+acs_num_scans=8
+wlan0-ap:
+   Freq   Noise   OnChan   ChBusy  ExtBusy    Rxing    Txing
+Ch  MHz     dBm     msec     msec     msec     msec     msec
+ 1 2412     -89     4116     3893              3674        0
+ 2 2417              108       93                92        0
+ 3 2422     -89      108       82                79        0
+ 4 2427     -87      108       75                68        0
+ 5 2432     -81      108       90                86        0
+ 6 2437     -65      108      102                97        0
+ 7 2442     -81      108       97                93        0
+ 8 2447 *   -80      359      153               124       11
+ 9 2452     -82      108       91                86        0
+10 2457     -79      108      100                96        0
+11 2462              108      104               100        0
+
+Nov 21 14:15:18 3dr_controller local1.info pair: connection request from known solo: send CONN_ACK (yes)
+Nov 21 14:15:18 3dr_controller local1.info pair: solo version "2.4.2"; firmware "1.3.1"
+Nov 21 14:15:18 3dr_controller local1.info pair: IDLE -> CONNECTED
+Nov 21 14:15:18 3dr_controller local1.info pair: connected with ('10.1.1.10', 39392)
+Nov 21 14:15:18 3dr_controller local1.info pair: switching to runlevel.READY
+Nov 21 14:15:18 3dr_controller local1.info +514 tlm: telem_ctrl starting: built Sep 22 2016 15:31:04
+Nov 21 14:15:18 3dr_controller local1.info +533 tlm: stm32 @ 127.0.0.1:5015
+Nov 21 14:15:18 3dr_controller local1.info +533 tlm: tlog @ 127.0.0.1:14583
+Nov 21 14:15:18 3dr_controller local1.info +533 tlm: telem_dest_port = 14550
+Nov 21 14:15:18 3dr_controller local1.info +533 tlm: use_gps_time = 1
+Nov 21 14:15:18 3dr_controller local1.info +534 tlm: uplink_tos = 0x00
+Nov 21 14:15:18 3dr_controller local1.info +534 tlm: gcs_tos = 0x00
+Nov 21 14:15:18 3dr_controller local1.info +928 tlm: solo @ 10.1.1.10:14560
+Nov 21 14:15:19 3dr_controller local1.info app: starting
+Nov 21 14:15:19 3dr_controller local1.info app: waiting for connection
+Nov 21 14:15:28 3dr_controller local1.info +727 tlm: dn:9 (10,0)10/0 up:0
+Nov 21 14:15:38 3dr_controller local1.info +728 tlm: dn:10 (10,0)10/0 up:0
+Nov 21 14:15:48 3dr_controller local1.info +627 tlm: dn:10 (10,0)10/0 up:0
+Nov 21 14:15:58 3dr_controller local1.info +729 tlm: dn:7 (10,0)7/0 up:0
+Nov 21 14:16:08 3dr_controller local1.info +732 tlm: dn:0 up:0
+Nov 21 14:16:18 3dr_controller local1.info +734 tlm: dn:0 up:0
+Nov 21 14:16:25 3dr_controller local1.err +928 tlm: dropped 4294967036 downlink packets
+Nov 21 14:16:28 3dr_controller local1.info +728 tlm: dn:3 (10,0)3/0 up:0
+Nov 21 14:16:38 3dr_controller local1.info +728 tlm: dn:9 (10,0)10/0 up:0
+Nov 21 14:16:48 3dr_controller local1.info +728 tlm: dn:10 (10,0)10/0 up:0
+Nov 21 14:16:58 3dr_controller local1.info +729 tlm: dn:9 (10,0)10/0 up:0
+Nov 21 14:17:08 3dr_controller local1.info +728 tlm: dn:10 (10,0)10/0 up:0
+Nov 21 14:17:18 3dr_controller local1.info +730 tlm: dn:2 (10,0)2/0 up:0
+Nov 21 14:17:28 3dr_controller local1.info +732 tlm: dn:0 up:0
+Nov 21 14:17:38 3dr_controller local1.info +734 tlm: dn:0 up:0
+Nov 21 14:17:48 3dr_controller local1.info +736 tlm: dn:0 up:0
+Nov 21 14:17:58 3dr_controller local1.info +737 tlm: dn:0 up:0
+Nov 21 14:18:08 3dr_controller local1.info +739 tlm: dn:0 up:0
+Nov 21 14:18:18 3dr_controller local1.info +741 tlm: dn:0 up:0
+Nov 21 14:18:28 3dr_controller local1.info +745 tlm: dn:0 up:0
+Nov 21 14:18:38 3dr_controller local1.info +746 tlm: dn:0 up:0
+Nov 21 14:18:48 3dr_controller local1.info +748 tlm: dn:0 up:0
+Nov 21 14:18:58 3dr_controller local1.info +550 tlm: dn:0 up:0
+Nov 21 14:19:08 3dr_controller local1.info +551 tlm: dn:0 up:0
+Nov 21 14:19:18 3dr_controller local1.info +555 tlm: dn:0 up:0
+Nov 21 14:19:28 3dr_controller local1.info +557 tlm: dn:0 up:0
+Nov 21 14:19:38 3dr_controller local1.info +558 tlm: dn:0 up:0
+Nov 21 14:19:48 3dr_controller local1.info +560 tlm: dn:0 up:0
+Nov 21 14:19:58 3dr_controller local1.info +562 tlm: dn:0 up:0
+Nov 21 14:20:08 3dr_controller local1.info +564 tlm: dn:0 up:0
+Nov 21 14:20:18 3dr_controller local1.info +565 tlm: dn:0 up:0
+Nov 21 14:20:28 3dr_controller local1.info +567 tlm: dn:0 up:0
+Nov 21 14:20:38 3dr_controller local1.info +569 tlm: dn:0 up:0
+Nov 21 14:20:48 3dr_controller local1.info +571 tlm: dn:0 up:0
+Nov 21 14:20:58 3dr_controller local1.info +573 tlm: dn:0 up:0
+Nov 21 14:21:08 3dr_controller local1.info +574 tlm: dn:0 up:0
+Nov 21 14:21:18 3dr_controller local1.info +576 tlm: dn:0 up:0
+Nov 21 14:21:28 3dr_controller local1.info +578 tlm: dn:0 up:0
+Nov 21 14:21:38 3dr_controller local1.info +580 tlm: dn:0 up:0
+Nov 21 14:21:48 3dr_controller local1.info +582 tlm: dn:0 up:0
+Nov 21 14:21:58 3dr_controller local1.info +584 tlm: dn:0 up:0
+Nov 21 14:22:08 3dr_controller local1.info +586 tlm: dn:0 up:0
+Nov 21 14:22:18 3dr_controller local1.info +588 tlm: dn:0 up:0
+Nov 21 14:22:28 3dr_controller local1.info +589 tlm: dn:0 up:0
+Nov 21 14:22:38 3dr_controller local1.info +591 tlm: dn:0 up:0
+Nov 21 14:22:48 3dr_controller local1.info +593 tlm: dn:0 up:0
+Nov 21 14:22:58 3dr_controller local1.info +595 tlm: dn:0 up:0
+Nov 21 14:23:08 3dr_controller local1.info +597 tlm: dn:0 up:0
+Nov 21 14:23:18 3dr_controller local1.info +599 tlm: dn:0 up:0
+Nov 21 14:23:28 3dr_controller local1.info +600 tlm: dn:0 up:0
+Nov 21 14:23:38 3dr_controller local1.info +602 tlm: dn:0 up:0
+Nov 21 14:23:48 3dr_controller local1.info +604 tlm: dn:0 up:0
+Nov 21 14:23:58 3dr_controller local1.info +606 tlm: dn:0 up:0
+Nov 21 14:24:08 3dr_controller local1.info +608 tlm: dn:0 up:0
+Nov 21 14:24:18 3dr_controller local1.info +610 tlm: dn:0 up:0
+Nov 21 14:24:28 3dr_controller local1.info +612 tlm: dn:0 up:0
+Nov 21 14:24:38 3dr_controller local1.info +613 tlm: dn:0 up:0
+Nov 21 14:24:48 3dr_controller local1.info +615 tlm: dn:0 up:0

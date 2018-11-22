@@ -1,0 +1,52 @@
+Nov 21 14:46:00 3dr_controller local1.info stm32: stm32 update starting
+Nov 21 14:46:00 3dr_controller local1.info stm32: no firmware available for update
+Nov 21 14:46:00 3dr_controller local1.info stm32: requesting stm32 version
+Nov 21 14:46:00 3dr_controller local1.info stm32: running version: 1.2.11
+Nov 21 14:46:00 3dr_controller local1.info stm32: not updating (no new firmware)
+Nov 21 14:46:00 3dr_controller local1.info stm32: writing STM_VERSION with running version 1.2.11
+Nov 21 14:46:00 3dr_controller local1.info stm32: no screen update (READY exists)
+Nov 21 14:46:02 3dr_controller local1.info net: hostapdconfig.py starting
+Nov 21 14:46:02 3dr_controller local1.info net: --channel wlan0
+Nov 21 14:46:02 3dr_controller local1.info net: can't get wlan0 frequency; defaulting to channel 0
+Nov 21 14:46:02 3dr_controller local1.info net: changing channel in /etc/hostapd.conf from 0 to 0
+Nov 21 14:46:02 3dr_controller local1.info pair: pair_server starting
+Nov 21 14:46:02 3dr_controller local1.info pair: using default check_versions=True
+Nov 21 14:46:02 3dr_controller local1.info pair: sololink version "2.4.2"
+Nov 21 14:46:02 3dr_controller local1.info pair: firmware version "1.2.11"
+
+acs_num_scans=8
+wlan0-ap:
+   Freq   Noise   OnChan   ChBusy  ExtBusy    Rxing    Txing
+Ch  MHz     dBm     msec     msec     msec     msec     msec
+ 1 2412     -67      957      198               107        0
+ 2 2417     -64      108       25                 4        0
+ 3 2422     -64      108       23                 2        0
+ 4 2427     -64      108       20                 0        0
+ 5 2432     -91      108       92                90        0
+ 6 2437     -92      108      105               103        0
+ 7 2442     -91      108      104               102        0
+ 8 2447 *   -91      360      141               105        6
+ 9 2452     -91      108       82                74        0
+10 2457     -92      108       93                89        0
+11 2462     -93      108      103                99        0
+
+Nov 21 14:46:18 3dr_controller local1.info pair: connection request from known solo: send CONN_ACK (yes)
+Nov 21 14:46:18 3dr_controller local1.info pair: solo version "2.4.2"; firmware "1.3.1"
+Nov 21 14:46:18 3dr_controller local1.info pair: IDLE -> CONNECTED
+Nov 21 14:46:18 3dr_controller local1.info pair: connected with ('10.1.1.10', 58553)
+Nov 21 14:46:18 3dr_controller local1.info pair: switching to runlevel.READY
+Nov 21 14:46:18 3dr_controller local1.info +298 tlm: telem_ctrl starting: built Sep 22 2016 15:31:04
+Nov 21 14:46:18 3dr_controller local1.info +320 tlm: stm32 @ 127.0.0.1:5015
+Nov 21 14:46:18 3dr_controller local1.info +320 tlm: tlog @ 127.0.0.1:14583
+Nov 21 14:46:18 3dr_controller local1.info +320 tlm: telem_dest_port = 14550
+Nov 21 14:46:18 3dr_controller local1.info +320 tlm: use_gps_time = 1
+Nov 21 14:46:18 3dr_controller local1.info +320 tlm: uplink_tos = 0x00
+Nov 21 14:46:18 3dr_controller local1.info +320 tlm: gcs_tos = 0x00
+Nov 21 14:46:18 3dr_controller local1.info +362 tlm: solo @ 10.1.1.10:14560
+Nov 21 14:46:18 3dr_controller local1.info app: starting
+Nov 21 14:46:18 3dr_controller local1.info app: waiting for connection
+Nov 21 14:46:28 3dr_controller local1.info +382 tlm: dn:100 (1,1)1470/1 (10,0)10/0 (168,1)1/0 up:0
+Nov 21 14:46:38 3dr_controller local1.info +399 tlm: dn:97 (1,1)865/0 (10,0)10/0 up:0
+Nov 21 14:46:48 3dr_controller local1.info +370 tlm: dn:96 (1,1)861/0 (10,0)10/0 up:0
+Nov 21 14:46:58 3dr_controller local1.info +421 tlm: dn:99 (1,1)863/0 (10,0)10/0 up:0
+Nov 21 14:47:08 3dr_controller local1.info +353 tlm: dn:98 (1,1)836/0 (10,0)10/0 up:0
