@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <time.h>
-#include <mavlink.h>
+#include "./include/ardupilotmega/mavlink.h"
 #include "mavlink_perso_types.h"
 
 

@@ -26,7 +26,7 @@
 
 /* This assumes you have the mavlink headers on your include path
 or in the same folder as this source file */
-#include <mavlink.h>
+#include "./include/ardupilotmega/mavlink.h"
 #include "mavlink_perso_lib.h"
 
 /* This assumes you have the GStreamer headers on your include path

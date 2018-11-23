@@ -2,9 +2,9 @@ DEBUG=yes
 CC=gcc
 
 ifeq ($(DEBUG),yes)
-	CFLAGS=-std=c99 -Wall -g -I./include/ardupilotmega
+	CFLAGS=-std=c99 -Wall -g 
 else
-	CFLAGS=-std=c99 -Wall -I./include/ardupilotmega
+	CFLAGS=-std=c99 -Wall 
 endif
 
 CFLAGS+= `pkg-config --cflags gstreamer-1.0`
@@ -24,7 +24,7 @@ else
 	@echo "Génération en mode release"
 endif
 
-$(OBJ):$(SRC) $(LIB)
+$(OBJ):$(SRC)
 	$(CC) $(CFLAGS) -c $^
 
 $(EXEC) : $(OBJ)
@@ -33,4 +33,4 @@ $(EXEC) : $(OBJ)
 .PHONY: clean
 
 clean :
-	rm -f  $(EXEC) $(OBJ)
+	rm -f  $(EXEC) $(OBJ) *.gch

@@ -1,7 +1,9 @@
+#ifndef _MAVLINK_PERSO_TYPES_H_
+#define _MAVLINK_PERSO_TYPES_H_
+
 #include <stdlib.h>
 #include <fcntl.h>
-#include <mavlink.h>
-
+#include "./include/ardupilotmega/mavlink.h"
 
 /**
  * @brief      mavlink enumeration
@@ -44,3 +46,5 @@ typedef struct vehicle {
 	mavlink_named_value_int_t named_value_int;
 	mavlink_statustext_t statustext;
 } Vehicle;
+
+#endif
