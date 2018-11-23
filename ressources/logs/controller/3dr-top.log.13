@@ -1,0 +1,68 @@
+
+2018-11-19 15:31:03,272 proc_top starting
+
+2018-11-19 15:31:13,272
+   pid name                  utime  stime  pct
+   821 (python)                 30      8   4%
+    62 (kworker/0:2)             0     29   3%
+   804 (hostapd)                12      6   2%
+    18 (kworker/u2:1)            0     14   1%
+
+2018-11-19 15:31:23,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                5     35   4%
+    62 (kworker/0:2)             0     29   3%
+
+2018-11-19 15:31:33,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                3     37   4%
+    62 (kworker/0:2)             0     30   3%
+   862 (app_streamer)            0      9   1%
+
+2018-11-19 15:31:43,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                4     37   4%
+    62 (kworker/0:2)             0     29   3%
+   862 (app_streamer)            2      7   1%
+
+2018-11-19 15:31:53,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                3     37   4%
+    62 (kworker/0:2)             0     30   3%
+   862 (app_streamer)            0      9   1%
+
+2018-11-19 15:32:03,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                3     38   4%
+    62 (kworker/0:2)             0     30   3%
+   862 (app_streamer)            0      9   1%
+
+2018-11-19 15:32:13,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                4     37   4%
+    62 (kworker/0:2)             0     29   3%
+
+2018-11-19 15:32:23,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                3     38   4%
+    62 (kworker/0:2)             0     29   3%
+
+2018-11-19 15:32:33,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                3     35   4%
+    62 (kworker/0:2)             0     29   3%
+
+2018-11-19 15:32:43,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                3     35   4%
+    62 (kworker/0:2)             0     30   3%
+
+2018-11-19 15:32:53,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                3     36   4%
+    62 (kworker/0:2)             0     29   3%
+
+2018-11-19 15:33:03,272
+   pid name                  utime  stime  pct
+   835 (stm32_up)                4     37   4%
+    62 (kworker/0:2)             0     30   3%

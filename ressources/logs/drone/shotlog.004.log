@@ -1,0 +1,37 @@
+Nov 21 14:18:14 3dr_solo local2.info shot: +-+-+-+-+-+-+ Starting up v2.4.1-1 +-+-+-+-+-+-+
+Nov 21 14:18:14 3dr_solo local2.info shot: [RC] Disabling stick remapping
+Nov 21 14:18:14 3dr_solo local2.info shot: [app]: Ready for connections from app.
+Nov 21 14:18:14 3dr_solo local2.info shot: [button]: Creating a new thread to connect to Artoo.
+Nov 21 14:18:14 3dr_solo local2.info shot: [button]: read in button mappings
+Nov 21 14:18:14 3dr_solo local2.info shot: [button]: Button A - shot FLY, mode FLY: Manual
+Nov 21 14:18:14 3dr_solo local2.info shot: [button]: Button B - shot FLY, mode FLY
+Nov 21 14:18:14 3dr_solo local2.info shot: [gopro]: read enabled value from settings of 1.
+Nov 21 14:18:14 3dr_solo local2.info shot: [gopro]: sending gimbal enabled param (GMB_GP_CTRL) to 1.000000
+Nov 21 14:18:15 3dr_solo local2.info shot: [gopro]: Inited GoProManager
+Nov 21 14:18:15 3dr_solo local2.info shot: [RewindManager] Init
+Nov 21 14:18:15 3dr_solo local2.info shot: [shot]: No gimbal detected.
+Nov 21 14:18:15 3dr_solo local2.info shot: [shot]: Restart in air.
+Nov 21 14:18:15 3dr_solo local2.info shot: [RewindManager] loaded home 0.000000 0.000000, alt 0.000000
+Nov 21 14:18:15 3dr_solo local2.info shot: [app]: Can't send packet - app is not connected!
+Nov 21 14:18:15 3dr_solo local2.info shot: [app]: Connected to App. ('10.1.1.174', 39456)
+Nov 21 14:18:15 3dr_solo local2.info shot: [gopro]: sending Gopro state to app
+Nov 21 14:18:15 3dr_solo local2.info shot: [app]: App requested button mapping for 4
+Nov 21 14:18:15 3dr_solo local2.info shot: [gopro]: sending Gopro state to app
+Nov 21 14:18:15 3dr_solo local2.info shot: [app]: App requested button mapping for 5
+Nov 21 14:18:16 3dr_solo local2.info shot: [button]: Connected to Artoo.
+Nov 21 14:18:16 3dr_solo local2.info shot: [button]: sending FLY to Artoo as mode
+Nov 21 14:19:03 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to FLY.
+Nov 21 14:19:03 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to FLY: Manual.
+Nov 21 14:19:03 3dr_solo local2.info shot: [callback]: Mode changed from LOITER -> ALT_HOLD
+Nov 21 14:19:03 3dr_solo local2.info shot: [button]: sending FLY: MANUAL to Artoo as mode
+Nov 21 14:19:03 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to FLY: Manual.
+Nov 21 14:19:04 3dr_solo local2.info shot: [button]: Requested a mode change via Artoo button to FLY: Manual.
+Nov 21 14:19:57 3dr_solo local2.info shot: [button]: Data from Artoo is nil.
+Nov 21 14:19:57 3dr_solo local2.info shot: [button]: Disconnecting from Artoo.
+Nov 21 14:19:57 3dr_solo local2.info shot: [button]: Creating a new thread to connect to Artoo.
+Nov 21 14:19:57 3dr_solo local2.info shot: [RC] Enter failsafe
+Nov 21 14:20:16 3dr_solo local2.info shot: [app]: Data from client ('10.1.1.174', 39456) is nil.
+Nov 21 14:20:16 3dr_solo local2.info shot: [app]: Closing client connection with ('10.1.1.174', 39456).
+Nov 21 14:20:46 3dr_solo local2.info shot: [RC] Exit failsafe
+Nov 21 14:21:04 3dr_solo local2.info shot: [button]: Connected to Artoo.
+Nov 21 14:21:04 3dr_solo local2.info shot: [button]: sending FLY: MANUAL to Artoo as mode

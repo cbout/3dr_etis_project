@@ -1,0 +1,28 @@
+Jan  1 00:00:06 3dr_solo syslog.info syslogd started: BusyBox v1.21.1
+Jan  1 00:00:07 3dr_solo daemon.info kernel: udevd[142]: starting version 182
+Nov 21 14:45:09 3dr_solo daemon.info init: Entering runlevel: 3
+Nov 21 14:45:09 3dr_solo auth.info sshd[812]: Server listening on 0.0.0.0 port 22.
+Nov 21 14:45:09 3dr_solo auth.info sshd[812]: Server listening on :: port 22.
+Nov 21 14:45:09 3dr_solo daemon.info dnsmasq[816]: started, version 2.72 cachesize 150
+Nov 21 14:45:09 3dr_solo daemon.info dnsmasq[816]: compile time options: IPv6 GNU-getopt no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth no-DNSSEC loop-detect
+Nov 21 14:45:09 3dr_solo daemon.warn dnsmasq[816]: warning: interface wlan0-ap does not currently exist
+Nov 21 14:45:09 3dr_solo daemon.info dnsmasq-dhcp[816]: DHCP, IP range 10.1.1.100 -- 10.1.1.199, lease time 2h
+Nov 21 14:45:09 3dr_solo daemon.warn dnsmasq[816]: no servers found in /etc/resolv.conf, will retry
+Nov 21 14:45:09 3dr_solo daemon.info dnsmasq[816]: read /etc/hosts - 1 addresses
+Nov 21 14:45:11 3dr_solo daemon.info init: Switching to runlevel: 4
+Nov 21 14:45:19 3dr_solo daemon.info dnsmasq[816]: reading /etc/resolv.conf
+Nov 21 14:45:19 3dr_solo daemon.info dnsmasq[816]: using nameserver 8.8.8.8#53
+Nov 21 14:45:49 3dr_solo auth.info sshd[930]: Accepted password for root from 10.1.1.174 port 54682 ssh2
+Nov 21 14:45:49 3dr_solo auth.info sshd[931]: Accepted password for root from 10.1.1.174 port 54684 ssh2
+Nov 21 14:45:49 3dr_solo auth.info sshd[929]: Accepted password for root from 10.1.1.174 port 54680 ssh2
+Nov 21 14:45:49 3dr_solo auth.info sshd[932]: Accepted password for root from 10.1.1.174 port 54686 ssh2
+Nov 22 08:48:41 3dr_solo auth.info sshd[1179]: Accepted password for root from 10.1.1.114 port 6513 ssh2
+Nov 22 08:48:41 3dr_solo auth.info sshd[1191]: lastlog_openseek: Couldn't stat /var/log/lastlog: No such file or directory
+Nov 22 08:48:41 3dr_solo auth.info sshd[1191]: lastlog_openseek: Couldn't stat /var/log/lastlog: No such file or directory
+Nov 22 08:50:41 3dr_solo auth.info sshd[1179]: Timeout, client not responding.
+Nov 22 08:50:52 3dr_solo auth.crit sshd[1236]: fatal: Read from socket failed: Connection reset by peer [preauth]
+Nov 22 08:51:46 3dr_solo auth.info sshd[1252]: Accepted password for root from 10.1.1.114 port 6514 ssh2
+Nov 22 08:51:46 3dr_solo auth.info sshd[1263]: lastlog_openseek: Couldn't stat /var/log/lastlog: No such file or directory
+Nov 22 08:51:46 3dr_solo auth.info sshd[1263]: lastlog_openseek: Couldn't stat /var/log/lastlog: No such file or directory
+Nov 22 08:52:36 3dr_solo auth.info sshd[1252]: Received disconnect from 10.1.1.114: 11: disconnected by user
+Nov 22 08:52:57 3dr_solo auth.info sshd[1291]: Accepted password for root from 10.1.1.114 port 6515 ssh2

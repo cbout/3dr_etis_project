@@ -1,0 +1,147 @@
+Nov 21 13:07:24 3dr_solo local0.info +965 pixrc: main: built Sep 22 2016 15:30:53
+Nov 21 13:07:24 3dr_solo local0.info +981 pixrc: main: rcSourceIps: 10.1.1.1,127.0.0.1
+Nov 21 13:07:24 3dr_solo local0.info +992 pixrc: main: rcDestPort:  5005
+Nov 21 13:07:24 3dr_solo local0.info +992 pixrc: main: rcDsmDev:    /dev/ttymxc2
+Nov 21 13:07:24 3dr_solo local0.info +993 pixrc: main: Throttle PWM in  1000...2000
+Nov 21 13:07:24 3dr_solo local0.info +993 pixrc: main:          PWM out 1000...1900
+Nov 21 13:07:24 3dr_solo local0.info +993 pixrc: main: Other    PWM in  1000...2000
+Nov 21 13:07:24 3dr_solo local0.info +993 pixrc: main:          PWM out 1000...2000
+Nov 21 13:07:24 3dr_solo local0.info +994 pixrc: udp: listening on port 5005
+Nov 21 13:07:25 3dr_solo local0.info +195 pixrc: serial: started
+Nov 21 13:07:29 3dr_solo local0.info +662 pixrc: cmd: uplink attached
+Nov 21 13:07:35 3dr_solo local0.info +025 pixrc: a:20,m:80,n:496,u:0,d:0,o:0,q:4288,udp=43076,ser=21467
+Nov 21 13:07:45 3dr_solo local0.info +045 pixrc: a:20,m:40,n:500,u:0,d:1,o:0,q:0,udp=40270,ser=20825
+Nov 21 13:07:55 3dr_solo local0.info +025 pixrc: a:20,m:41,n:497,u:0,d:2,o:0,q:0,udp=40810,ser=21456
+Nov 21 13:08:05 3dr_solo local0.info +026 pixrc: a:20,m:44,n:495,u:0,d:5,o:0,q:0,udp=42443,ser=21533
+Nov 21 13:08:15 3dr_solo local0.info +031 pixrc: a:20,m:40,n:499,u:0,d:1,o:0,q:0,udp=40131,ser=21483
+Nov 21 13:08:25 3dr_solo local0.info +027 pixrc: a:20,m:31,n:500,u:0,d:0,o:0,q:0,udp=30551,ser=20944
+Nov 21 13:08:35 3dr_solo local0.info +026 pixrc: a:20,m:36,n:500,u:0,d:0,o:0,q:0,udp=36425,ser=20857
+Nov 21 13:08:45 3dr_solo local0.info +026 pixrc: a:20,m:30,n:500,u:0,d:0,o:0,q:0,udp=29620,ser=21805
+Nov 21 13:08:55 3dr_solo local0.info +026 pixrc: a:20,m:47,n:500,u:0,d:0,o:0,q:0,udp=41409,ser=21481
+Nov 21 13:09:05 3dr_solo local0.info +028 pixrc: a:20,m:62,n:496,u:0,d:3,o:0,q:0,udp=50895,ser=20785
+Nov 21 13:09:15 3dr_solo local0.info +029 pixrc: a:20,m:31,n:500,u:0,d:0,o:0,q:0,udp=31317,ser=21623
+Nov 21 13:09:25 3dr_solo local0.info +027 pixrc: a:20,m:60,n:500,u:0,d:0,o:0,q:4992,udp=50378,ser=21879
+Nov 21 13:09:35 3dr_solo local0.info +027 pixrc: a:20,m:29,n:500,u:0,d:0,o:0,q:0,udp=29359,ser=20790
+Nov 21 13:09:45 3dr_solo local0.info +027 pixrc: a:20,m:40,n:500,u:0,d:0,o:0,q:2496,udp=40194,ser=21108
+Nov 21 13:09:55 3dr_solo local0.info +031 pixrc: a:20,m:37,n:500,u:0,d:0,o:0,q:0,udp=36641,ser=21773
+Nov 21 13:10:05 3dr_solo local0.info +028 pixrc: a:20,m:29,n:500,u:0,d:0,o:0,q:0,udp=28531,ser=20983
+Nov 21 13:10:15 3dr_solo local0.info +028 pixrc: a:20,m:38,n:500,u:0,d:0,o:0,q:0,udp=38359,ser=21488
+Nov 21 13:10:25 3dr_solo local0.info +029 pixrc: a:20,m:35,n:500,u:0,d:0,o:0,q:0,udp=35382,ser=20936
+Nov 21 13:48:47 3dr_solo local0.info +579 pixrc: a:20,m:34,n:500,u:0,d:0,o:0,q:0,udp=34383,ser=21226
+Nov 21 13:48:57 3dr_solo local0.info +579 pixrc: a:20,m:41,n:499,u:0,d:1,o:0,q:0,udp=41388,ser=21765
+Nov 21 13:49:07 3dr_solo local0.info +579 pixrc: a:20,m:35,n:500,u:0,d:0,o:0,q:0,udp=34794,ser=22068
+Nov 21 13:49:17 3dr_solo local0.info +580 pixrc: a:20,m:34,n:500,u:0,d:0,o:0,q:0,udp=33916,ser=20813
+Nov 21 13:49:27 3dr_solo local0.info +580 pixrc: a:20,m:33,n:500,u:0,d:0,o:0,q:0,udp=32762,ser=20814
+Nov 21 13:49:37 3dr_solo local0.info +580 pixrc: a:20,m:33,n:500,u:0,d:0,o:0,q:0,udp=33486,ser=20577
+Nov 21 13:49:47 3dr_solo local0.info +583 pixrc: a:20,m:31,n:500,u:0,d:0,o:0,q:0,udp=31045,ser=21044
+Nov 21 13:49:57 3dr_solo local0.info +580 pixrc: a:20,m:33,n:500,u:0,d:0,o:0,q:0,udp=33350,ser=20883
+Nov 21 13:50:07 3dr_solo local0.info +580 pixrc: a:20,m:27,n:500,u:0,d:0,o:0,q:0,udp=26697,ser=21005
+Nov 21 13:50:17 3dr_solo local0.info +584 pixrc: a:20,m:38,n:500,u:0,d:0,o:0,q:0,udp=37530,ser=20928
+Nov 21 13:50:27 3dr_solo local0.info +582 pixrc: a:20,m:40,n:500,u:0,d:0,o:0,q:0,udp=39599,ser=21190
+Nov 21 13:50:37 3dr_solo local0.info +581 pixrc: a:20,m:36,n:500,u:0,d:0,o:0,q:0,udp=35944,ser=22608
+Nov 21 13:50:47 3dr_solo local0.info +581 pixrc: a:20,m:31,n:500,u:0,d:0,o:0,q:0,udp=30728,ser=20897
+Nov 21 13:50:57 3dr_solo local0.info +582 pixrc: a:20,m:42,n:499,u:0,d:1,o:0,q:0,udp=41725,ser=21316
+Nov 21 13:51:07 3dr_solo local0.info +582 pixrc: a:20,m:40,n:499,u:0,d:1,o:0,q:0,udp=40195,ser=21644
+Nov 21 13:51:17 3dr_solo local0.info +586 pixrc: a:20,m:33,n:500,u:0,d:0,o:0,q:0,udp=32687,ser=21077
+Nov 21 13:51:27 3dr_solo local0.info +583 pixrc: a:20,m:49,n:500,u:0,d:0,o:0,q:0,udp=45368,ser=21110
+Nov 21 13:51:37 3dr_solo local0.info +582 pixrc: a:20,m:32,n:500,u:0,d:0,o:0,q:0,udp=32389,ser=22006
+Nov 21 13:51:47 3dr_solo local0.info +585 pixrc: a:20,m:46,n:499,u:0,d:1,o:0,q:2496,udp=46015,ser=22107
+Nov 21 13:51:57 3dr_solo local0.info +587 pixrc: a:20,m:40,n:499,u:0,d:1,o:0,q:0,udp=39714,ser=21965
+Nov 21 13:52:07 3dr_solo local0.info +583 pixrc: a:20,m:42,n:500,u:0,d:0,o:0,q:0,udp=41585,ser=21452
+Nov 21 13:52:17 3dr_solo local0.info +586 pixrc: a:20,m:24,n:500,u:0,d:0,o:0,q:0,udp=23873,ser=21975
+Nov 21 13:52:27 3dr_solo local0.info +583 pixrc: a:20,m:48,n:500,u:0,d:0,o:0,q:0,udp=44740,ser=21140
+Nov 21 13:52:37 3dr_solo local0.info +583 pixrc: a:20,m:44,n:500,u:0,d:0,o:0,q:2496,udp=41923,ser=21314
+Nov 21 13:52:47 3dr_solo local0.info +584 pixrc: a:20,m:29,n:500,u:0,d:0,o:0,q:0,udp=28935,ser=22006
+Nov 21 13:52:57 3dr_solo local0.info +584 pixrc: a:20,m:47,n:496,u:0,d:4,o:0,q:0,udp=42696,ser=21357
+Nov 21 13:53:07 3dr_solo local0.info +584 pixrc: a:20,m:48,n:500,u:0,d:0,o:0,q:0,udp=44288,ser=21191
+Nov 21 13:53:17 3dr_solo local0.info +586 pixrc: a:20,m:24,n:500,u:0,d:0,o:0,q:0,udp=23921,ser=21384
+Nov 21 13:53:27 3dr_solo local0.info +584 pixrc: a:20,m:40,n:499,u:0,d:1,o:0,q:0,udp=40043,ser=21922
+Nov 21 13:53:37 3dr_solo local0.info +585 pixrc: a:20,m:30,n:500,u:0,d:0,o:0,q:0,udp=29695,ser=21118
+Nov 21 13:53:47 3dr_solo local0.info +585 pixrc: a:20,m:41,n:497,u:0,d:3,o:0,q:0,udp=41461,ser=21463
+Nov 21 13:53:57 3dr_solo local0.info +587 pixrc: a:21,m:85,n:483,u:0,d:13,o:0,q:0,udp=42832,ser=20574
+Nov 21 13:54:07 3dr_solo local0.info +585 pixrc: a:20,m:71,n:498,u:0,d:0,o:0,q:0,udp=43437,ser=20905
+Nov 21 13:54:17 3dr_solo local0.info +585 pixrc: a:20,m:26,n:500,u:0,d:0,o:0,q:0,udp=25998,ser=21228
+Nov 21 13:54:27 3dr_solo local0.info +586 pixrc: a:20,m:62,n:495,u:0,d:4,o:0,q:0,udp=41200,ser=20802
+Nov 21 13:54:37 3dr_solo local0.info +586 pixrc: a:20,m:65,n:487,u:0,d:11,o:0,q:0,udp=50661,ser=21111
+Nov 21 13:54:47 3dr_solo local0.info +586 pixrc: a:21,m:43,n:480,u:0,d:20,o:0,q:0,udp=42359,ser=21989
+Nov 21 13:54:57 3dr_solo local0.info +586 pixrc: a:20,m:59,n:491,u:0,d:8,o:0,q:0,udp=42356,ser=20939
+Nov 21 13:55:07 3dr_solo local0.info +606 pixrc: a:21,m:43,n:485,u:0,d:16,o:0,q:0,udp=42134,ser=22428
+Nov 21 13:55:17 3dr_solo local0.info +587 pixrc: a:21,m:80,n:472,u:0,d:25,o:0,q:2496,udp=41984,ser=20973
+Nov 21 13:55:27 3dr_solo local0.info +587 pixrc: a:21,m:62,n:481,u:0,d:17,o:0,q:0,udp=49254,ser=21022
+Nov 21 13:55:37 3dr_solo local0.info +587 pixrc: a:20,m:58,n:488,u:0,d:11,o:0,q:0,udp=47662,ser=20989
+Nov 21 13:55:47 3dr_solo local0.info +587 pixrc: a:20,m:42,n:489,u:0,d:11,o:0,q:0,udp=41323,ser=20779
+Nov 21 13:55:57 3dr_solo local0.info +589 pixrc: a:20,m:78,n:488,u:0,d:9,o:0,q:0,udp=49091,ser=28427
+Nov 21 13:56:07 3dr_solo local0.info +587 pixrc: a:21,m:61,n:477,u:0,d:19,o:0,q:2496,udp=49821,ser=21417
+Nov 21 13:56:17 3dr_solo local0.info +588 pixrc: a:23,m:122,n:425,u:0,d:52,o:0,q:0,udp=50280,ser=20696
+Nov 21 13:56:27 3dr_solo local0.info +588 pixrc: a:21,m:59,n:476,u:0,d:23,o:0,q:0,udp=48485,ser=21109
+Nov 21 13:56:37 3dr_solo local0.info +589 pixrc: a:21,m:63,n:465,u:0,d:32,o:0,q:0,udp=50241,ser=20698
+Nov 21 13:56:47 3dr_solo local0.info +590 pixrc: a:22,m:99,n:449,u:0,d:40,o:0,q:2496,udp=50148,ser=21012
+Nov 21 13:56:57 3dr_solo local0.info +589 pixrc: a:23,m:120,n:426,u:0,d:55,o:0,q:0,udp=50002,ser=20932
+Nov 21 13:57:07 3dr_solo local0.info +590 pixrc: a:22,m:80,n:459,u:0,d:32,o:0,q:2496,udp=49764,ser=20911
+Nov 21 13:57:17 3dr_solo local0.info +591 pixrc: a:20,m:62,n:490,u:0,d:9,o:0,q:0,udp=49268,ser=20715
+Nov 21 13:57:27 3dr_solo local0.info +589 pixrc: a:20,m:62,n:497,u:0,d:1,o:0,q:0,udp=49327,ser=21021
+Nov 21 13:57:37 3dr_solo local0.info +589 pixrc: a:20,m:57,n:496,u:0,d:4,o:0,q:0,udp=48321,ser=21102
+Nov 21 13:57:47 3dr_solo local0.info +591 pixrc: a:20,m:44,n:497,u:0,d:2,o:0,q:0,udp=43925,ser=20922
+Nov 21 13:57:57 3dr_solo local0.info +590 pixrc: a:20,m:34,n:500,u:0,d:0,o:0,q:0,udp=33549,ser=20773
+Nov 21 13:58:07 3dr_solo local0.info +590 pixrc: a:21,m:81,n:465,u:0,d:26,o:0,q:0,udp=48633,ser=20921
+Nov 21 13:58:17 3dr_solo local0.info +590 pixrc: a:28,m:125,n:359,u:0,d:82,o:0,q:0,udp=50070,ser=20959
+Nov 21 13:58:27 3dr_solo local0.info +591 pixrc: a:21,m:62,n:469,u:0,d:28,o:0,q:0,udp=48040,ser=20592
+Nov 21 13:58:37 3dr_solo local0.info +591 pixrc: a:23,m:85,n:442,u:0,d:44,o:0,q:0,udp=48835,ser=20936
+Nov 21 13:58:46 3dr_solo local0.info +401 pixrc: serial: failsafe start
+Nov 21 13:58:46 3dr_solo local0.info +418 pixrc: udp: failsafe start after 447 ms of inactivity
+Nov 21 13:58:47 3dr_solo local0.info +113 pixrc: udp: failsafe end after 1142 ms
+Nov 21 13:58:47 3dr_solo local0.info +115 pixrc: serial: failsafe end
+Nov 21 13:58:47 3dr_solo local0.info +610 pixrc: a:26,m:1143,n:390,u:0,d:37,o:0,q:0,udp=55024,ser=26499
+Nov 21 13:58:57 3dr_solo local0.info +591 pixrc: a:21,m:105,n:470,u:0,d:24,o:0,q:2496,udp=49987,ser=21046
+Nov 21 13:59:07 3dr_solo local0.info +577 pixrc: a:21,m:61,n:478,u:0,d:17,o:0,q:0,udp=47204,ser=22021
+Nov 21 13:59:10 3dr_solo local0.info +489 pixrc: serial: failsafe start
+Nov 21 13:59:10 3dr_solo local0.info +518 pixrc: udp: failsafe start after 447 ms of inactivity
+Nov 21 13:59:11 3dr_solo local0.info +031 pixrc: udp: failsafe end after 960 ms
+Nov 21 13:59:11 3dr_solo local0.info +047 pixrc: serial: failsafe end
+Nov 21 13:59:17 3dr_solo local0.info +591 pixrc: a:24,m:960,n:421,u:0,d:28,o:0,q:0,udp=52617,ser=26680
+Nov 21 13:59:27 3dr_solo local0.info +591 pixrc: a:22,m:80,n:460,u:0,d:28,o:0,q:0,udp=47083,ser=21873
+Nov 21 13:59:37 3dr_solo local0.info +591 pixrc: a:20,m:63,n:490,u:0,d:9,o:0,q:0,udp=46880,ser=22081
+Nov 21 13:59:47 3dr_solo local0.info +592 pixrc: a:22,m:126,n:450,u:0,d:41,o:0,q:0,udp=49987,ser=20699
+Nov 21 13:59:57 3dr_solo local0.info +593 pixrc: a:24,m:158,n:418,u:0,d:53,o:0,q:0,udp=50107,ser=22039
+Nov 21 14:00:07 3dr_solo local0.info +592 pixrc: a:22,m:178,n:452,u:0,d:34,o:0,q:0,udp=50002,ser=21832
+Nov 21 14:00:17 3dr_solo local0.info +595 pixrc: a:23,m:102,n:439,u:0,d:41,o:0,q:0,udp=49980,ser=20645
+Nov 21 14:00:27 3dr_solo local0.info +592 pixrc: a:20,m:47,n:492,u:0,d:8,o:0,q:0,udp=45196,ser=20922
+Nov 21 14:00:37 3dr_solo local0.info +593 pixrc: a:20,m:45,n:497,u:0,d:3,o:0,q:2496,udp=43175,ser=21294
+Nov 21 14:00:47 3dr_solo local0.info +594 pixrc: a:21,m:81,n:476,u:0,d:16,o:0,q:0,udp=45490,ser=21145
+Nov 21 14:00:57 3dr_solo local0.info +593 pixrc: a:20,m:58,n:496,u:0,d:3,o:0,q:0,udp=45232,ser=20696
+Nov 21 14:01:07 3dr_solo local0.info +593 pixrc: a:20,m:47,n:491,u:0,d:8,o:0,q:0,udp=44939,ser=20952
+Nov 21 14:01:17 3dr_solo local0.info +594 pixrc: a:23,m:159,n:427,u:0,d:48,o:0,q:0,udp=50070,ser=21367
+Nov 21 14:01:25 3dr_solo local0.info +536 pixrc: serial: failsafe start
+Nov 21 14:01:25 3dr_solo local0.info +558 pixrc: udp: failsafe start after 444 ms of inactivity
+Nov 21 14:01:27 3dr_solo local0.info +608 pixrc: a:24,m:140,n:309,u:0,d:45,o:0,q:2496,udp=50419,ser=24987
+Nov 21 14:01:30 3dr_solo local0.info +357 pixrc: udp: failsafe end after 5243 ms
+Nov 21 14:01:30 3dr_solo local0.info +361 pixrc: serial: failsafe end
+Nov 21 14:01:36 3dr_solo local0.info +074 pixrc: serial: failsafe start
+Nov 21 14:01:36 3dr_solo local0.info +094 pixrc: serial: failsafe end
+Nov 21 14:01:37 3dr_solo local0.info +598 pixrc: a:60,m:5243,n:208,u:0,d:61,o:0,q:2496,udp=56598,ser=24199
+Nov 21 14:01:47 3dr_solo local0.info +594 pixrc: a:22,m:123,n:457,u:0,d:33,o:0,q:0,udp=49991,ser=21506
+Nov 21 14:01:57 3dr_solo local0.info +594 pixrc: a:21,m:85,n:474,u:0,d:24,o:0,q:2496,udp=44020,ser=21269
+Nov 21 14:02:07 3dr_solo local0.info +594 pixrc: a:20,m:30,n:500,u:0,d:0,o:0,q:0,udp=29501,ser=20993
+Nov 21 14:02:17 3dr_solo local0.info +598 pixrc: a:20,m:41,n:499,u:0,d:1,o:0,q:0,udp=40618,ser=21456
+Nov 21 14:02:27 3dr_solo local0.info +595 pixrc: a:20,m:61,n:494,u:0,d:5,o:0,q:0,udp=43023,ser=22020
+Nov 21 14:02:37 3dr_solo local0.info +575 pixrc: a:20,m:41,n:498,u:0,d:1,o:0,q:0,udp=40964,ser=21552
+Nov 21 14:02:47 3dr_solo local0.info +577 pixrc: a:21,m:82,n:466,u:0,d:26,o:0,q:0,udp=43282,ser=21833
+Nov 21 14:02:57 3dr_solo local0.info +576 pixrc: a:24,m:122,n:422,u:0,d:55,o:0,q:0,udp=50733,ser=20960
+Nov 21 14:03:07 3dr_solo local0.info +576 pixrc: a:22,m:120,n:456,u:0,d:29,o:0,q:0,udp=50377,ser=21423
+Nov 21 14:03:17 3dr_solo local0.info +576 pixrc: a:21,m:60,n:463,u:0,d:33,o:0,q:2496,udp=42304,ser=20837
+Nov 21 14:03:27 3dr_solo local0.info +576 pixrc: a:20,m:42,n:489,u:0,d:11,o:0,q:0,udp=42151,ser=20974
+Nov 21 14:03:37 3dr_solo local0.info +578 pixrc: a:22,m:80,n:459,u:0,d:32,o:0,q:0,udp=50426,ser=21050
+Nov 21 14:03:47 3dr_solo local0.info +577 pixrc: a:21,m:61,n:471,u:0,d:24,o:0,q:2496,udp=50388,ser=21052
+Nov 21 14:03:57 3dr_solo local0.info +577 pixrc: a:20,m:39,n:500,u:0,d:0,o:0,q:0,udp=38946,ser=20880
+Nov 21 14:04:07 3dr_solo local0.info +577 pixrc: a:20,m:41,n:500,u:0,d:0,o:0,q:2496,udp=40696,ser=21439
+Nov 21 14:04:17 3dr_solo local0.info +577 pixrc: a:20,m:32,n:500,u:0,d:0,o:0,q:0,udp=32233,ser=21091
+Nov 21 14:04:27 3dr_solo local0.info +577 pixrc: a:20,m:33,n:500,u:0,d:0,o:0,q:0,udp=33062,ser=21085
+Nov 21 14:04:37 3dr_solo local0.info +577 pixrc: a:20,m:39,n:500,u:0,d:0,o:0,q:0,udp=38717,ser=21226
+Nov 21 14:04:47 3dr_solo local0.info +578 pixrc: a:20,m:23,n:500,u:0,d:0,o:0,q:0,udp=23218,ser=21712
+Nov 21 14:04:57 3dr_solo local0.info +578 pixrc: a:20,m:24,n:500,u:0,d:0,o:0,q:0,udp=24455,ser=21395
+Nov 21 14:05:07 3dr_solo local0.info +579 pixrc: a:20,m:55,n:500,u:0,d:0,o:0,q:2496,udp=50308,ser=22082
+Nov 21 14:05:17 3dr_solo local0.info +579 pixrc: a:20,m:61,n:500,u:0,d:0,o:0,q:0,udp=45329,ser=21390
+Nov 21 14:05:27 3dr_solo local0.info +578 pixrc: a:20,m:49,n:500,u:0,d:0,o:0,q:2496,udp=49079,ser=21082
+Nov 21 14:05:34 3dr_solo local0.info +536 pixrc: serial: failsafe start
+Nov 21 14:05:34 3dr_solo local0.info +568 pixrc: udp: failsafe start after 449 ms of inactivity
+Nov 21 14:05:37 3dr_solo local0.info +618 pixrc: a:20,m:63,n:327,u:0,d:0,o:0,q:4992,udp=55915,ser=26924

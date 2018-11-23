@@ -193,6 +193,37 @@ mavlink_msg_command_long_pack(255, 0, &msg, 1, 0, MAV_CMD_COMPONENT_ARM_DISARM, 
 \end{lstlisting}
 
 
+\subsection*{Send mavlink mission}
+\label{sec:mission}
+
+\paragraph{MISSION COUNT} First of all, you have to send a MAVLINK\_MSG\_ID\_MISSION\_COUNT. This message contains : the count which represent the number of mission items in the sequence, the target\_system ID and the target\_component ID.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.6]{./images/MAVLINK_MSG_ID_MISSION_COUNT.png}
+		\caption{Show how a mission count frame is built}
+	\label{fig:MISSION_COUNT}
+\end{figure}
+
+\begin{lstlisting}
+
+\end{lstlisting}
+
+
+\paragraph{MISSION ITEM}  Next, you send some MAVLINK\_MSG\_ID\_MISSION\_ITEM...
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.5]{./images/MAVLINK_MSG_ID_MISSION_ITEM.png}
+		\caption{Show how a mission item frame is built}
+	\label{fig:MISSION_ITEM}
+\end{figure}
+
+\begin{lstlisting}
+
+\end{lstlisting}
+
+
 
 \subsection*{Sources}
 \label{sec:Sources}

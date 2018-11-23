@@ -1,0 +1,295 @@
+Nov 21 14:05:24 3dr_solo local3.info rssi_send: main: built Sep 22 2016 15:30:56
+Nov 21 14:05:25 3dr_solo local3.info rssi_send: station sig=-31 txr=117.0 rxr=130.0 ret=5 err=0
+Nov 21 14:05:25 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=1629 busy=1036 ext_busy=0 rx=984 tx=8
+Nov 21 14:05:26 3dr_solo local3.info rssi_send: station sig=-32 txr=65.0 rxr=130.0 ret=0 err=0
+Nov 21 14:05:26 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=301 ext_busy=0 rx=288 tx=0
+Nov 21 14:06:39 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=18 err=0
+Nov 21 14:06:39 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=63 ext_busy=0 rx=52 tx=3
+Nov 21 14:06:40 3dr_solo local3.info rssi_send: station sig=-31 txr=130.0 rxr=130.0 ret=16 err=0
+Nov 21 14:06:40 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=512 ext_busy=0 rx=485 tx=2
+Nov 21 14:06:41 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=2 err=0
+Nov 21 14:06:41 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=839 ext_busy=0 rx=798 tx=1
+Nov 21 14:06:42 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=8 err=0
+Nov 21 14:06:42 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=379 ext_busy=0 rx=355 tx=3
+Nov 21 14:06:43 3dr_solo local3.info rssi_send: station sig=-37 txr=130.0 rxr=130.0 ret=9 err=0
+Nov 21 14:06:43 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=123 ext_busy=0 rx=113 tx=3
+Nov 21 14:06:44 3dr_solo local3.info rssi_send: station sig=-35 txr=130.0 rxr=130.0 ret=5 err=0
+Nov 21 14:06:44 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=461 ext_busy=0 rx=437 tx=2
+Nov 21 14:06:45 3dr_solo local3.info rssi_send: station sig=-34 txr=144.4 rxr=130.0 ret=3 err=0
+Nov 21 14:06:45 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=311 ext_busy=0 rx=294 tx=2
+Nov 21 14:06:46 3dr_solo local3.info rssi_send: station sig=-34 txr=115.6 rxr=117.0 ret=98 err=0
+Nov 21 14:06:46 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=97 ext_busy=0 rx=83 tx=5
+Nov 21 14:06:47 3dr_solo local3.info rssi_send: station sig=-34 txr=115.6 rxr=117.0 ret=2 err=0
+Nov 21 14:06:47 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=435 ext_busy=0 rx=412 tx=1
+Nov 21 14:06:48 3dr_solo local3.info rssi_send: station sig=-34 txr=115.6 rxr=117.0 ret=1 err=0
+Nov 21 14:06:48 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=327 ext_busy=0 rx=308 tx=2
+Nov 21 14:06:49 3dr_solo local3.info rssi_send: station sig=-34 txr=115.6 rxr=117.0 ret=1 err=0
+Nov 21 14:06:49 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=394 ext_busy=0 rx=376 tx=1
+Nov 21 14:06:50 3dr_solo local3.info rssi_send: station sig=-34 txr=115.6 rxr=117.0 ret=0 err=0
+Nov 21 14:06:50 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=329 ext_busy=0 rx=312 tx=2
+Nov 21 14:06:51 3dr_solo local3.info rssi_send: station sig=-34 txr=115.6 rxr=117.0 ret=4 err=0
+Nov 21 14:06:51 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=363 ext_busy=0 rx=341 tx=2
+Nov 21 14:06:52 3dr_solo local3.info rssi_send: station sig=-33 txr=115.6 rxr=117.0 ret=2 err=0
+Nov 21 14:06:52 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=310 ext_busy=0 rx=295 tx=1
+Nov 21 14:06:53 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=117.0 ret=56 err=0
+Nov 21 14:06:53 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=409 ext_busy=0 rx=387 tx=3
+Nov 21 14:06:54 3dr_solo local3.info rssi_send: station sig=-33 txr=104.0 rxr=117.0 ret=11 err=0
+Nov 21 14:06:54 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=656 ext_busy=0 rx=626 tx=2
+Nov 21 14:06:55 3dr_solo local3.info rssi_send: station sig=-33 txr=86.7 rxr=117.0 ret=71 err=0
+Nov 21 14:06:55 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=362 ext_busy=0 rx=341 tx=4
+Nov 21 14:06:56 3dr_solo local3.info rssi_send: station sig=-33 txr=115.6 rxr=117.0 ret=2 err=0
+Nov 21 14:06:56 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=92 ext_busy=0 rx=84 tx=2
+Nov 21 14:06:57 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=117.0 ret=24 err=0
+Nov 21 14:06:57 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=394 ext_busy=0 rx=373 tx=3
+Nov 21 14:06:58 3dr_solo local3.info rssi_send: station sig=-32 txr=117.0 rxr=117.0 ret=84 err=0
+Nov 21 14:06:58 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=300 ext_busy=0 rx=280 tx=3
+Nov 21 14:06:59 3dr_solo local3.info rssi_send: station sig=-32 txr=117.0 rxr=52.0 ret=2 err=0
+Nov 21 14:06:59 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=356 ext_busy=0 rx=335 tx=2
+Nov 21 14:07:00 3dr_solo local3.info rssi_send: station sig=-34 txr=117.0 rxr=117.0 ret=1 err=0
+Nov 21 14:07:00 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=693 ext_busy=0 rx=657 tx=2
+Nov 21 14:07:01 3dr_solo local3.info rssi_send: station sig=-33 txr=117.0 rxr=117.0 ret=2 err=0
+Nov 21 14:07:01 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=799 ext_busy=0 rx=758 tx=1
+Nov 21 14:07:02 3dr_solo local3.info rssi_send: station sig=-33 txr=117.0 rxr=117.0 ret=1 err=0
+Nov 21 14:07:02 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=359 ext_busy=0 rx=337 tx=2
+Nov 21 14:07:03 3dr_solo local3.info rssi_send: station sig=-33 txr=117.0 rxr=117.0 ret=1 err=0
+Nov 21 14:07:03 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=50 ext_busy=0 rx=43 tx=2
+Nov 21 14:07:04 3dr_solo local3.info rssi_send: station sig=-32 txr=117.0 rxr=117.0 ret=2 err=0
+Nov 21 14:07:04 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=459 ext_busy=0 rx=434 tx=1
+Nov 21 14:07:05 3dr_solo local3.info rssi_send: station sig=-31 txr=130.0 rxr=117.0 ret=4 err=0
+Nov 21 14:07:05 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=272 ext_busy=0 rx=256 tx=2
+Nov 21 14:07:06 3dr_solo local3.info rssi_send: station sig=-31 txr=130.0 rxr=117.0 ret=2 err=0
+Nov 21 14:07:06 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=1000 busy=377 ext_busy=0 rx=356 tx=2
+Nov 21 14:07:07 3dr_solo local3.info rssi_send: station sig=-31 txr=130.0 rxr=117.0 ret=0 err=0
+Nov 21 14:07:07 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=998 busy=293 ext_busy=0 rx=274 tx=1
+Nov 21 14:07:08 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=117.0 ret=3 err=0
+Nov 21 14:07:08 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=423 ext_busy=0 rx=399 tx=1
+Nov 21 14:07:09 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=117.0 ret=4 err=0
+Nov 21 14:07:09 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=323 ext_busy=0 rx=303 tx=2
+Nov 21 14:07:10 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=117.0 ret=1 err=0
+Nov 21 14:07:10 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=423 ext_busy=0 rx=402 tx=1
+Nov 21 14:07:11 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=117.0 ret=3 err=0
+Nov 21 14:07:11 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=743 ext_busy=0 rx=706 tx=2
+Nov 21 14:07:12 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=5 err=0
+Nov 21 14:07:12 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=792 ext_busy=0 rx=750 tx=2
+Nov 21 14:07:13 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=0 err=0
+Nov 21 14:07:13 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=347 ext_busy=0 rx=328 tx=2
+Nov 21 14:07:14 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=6 err=0
+Nov 21 14:07:14 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=81 ext_busy=0 rx=73 tx=2
+Nov 21 14:07:15 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=5 err=0
+Nov 21 14:07:15 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=518 ext_busy=0 rx=492 tx=2
+Nov 21 14:07:16 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=5 err=0
+Nov 21 14:07:16 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=836 ext_busy=0 rx=795 tx=2
+Nov 21 14:07:17 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=3 err=0
+Nov 21 14:07:17 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=754 ext_busy=0 rx=696 tx=2
+Nov 21 14:07:18 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=28.9 ret=10 err=0
+Nov 21 14:07:18 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=673 ext_busy=0 rx=637 tx=2
+Nov 21 14:07:19 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=5 err=0
+Nov 21 14:07:19 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=758 ext_busy=0 rx=720 tx=2
+Nov 21 14:07:20 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=117.0 ret=16 err=0
+Nov 21 14:07:20 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=333 ext_busy=0 rx=315 tx=1
+Nov 21 14:07:21 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=12 err=0
+Nov 21 14:07:21 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=103 ext_busy=0 rx=94 tx=2
+Nov 21 14:07:22 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=7 err=0
+Nov 21 14:07:22 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=83 ext_busy=0 rx=74 tx=2
+Nov 21 14:07:23 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=4 err=0
+Nov 21 14:07:23 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=430 ext_busy=0 rx=407 tx=2
+Nov 21 14:07:24 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=117.0 ret=3 err=0
+Nov 21 14:07:24 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=780 ext_busy=0 rx=739 tx=2
+Nov 21 14:07:25 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=117.0 ret=1 err=0
+Nov 21 14:07:25 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=348 ext_busy=0 rx=328 tx=1
+Nov 21 14:07:26 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=117.0 ret=0 err=0
+Nov 21 14:07:26 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=58 ext_busy=0 rx=50 tx=2
+Nov 21 14:07:27 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=117.0 ret=52 err=0
+Nov 21 14:07:27 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=415 ext_busy=0 rx=388 tx=3
+Nov 21 14:07:28 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=79 err=0
+Nov 21 14:07:28 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=369 ext_busy=0 rx=345 tx=5
+Nov 21 14:07:29 3dr_solo local3.info rssi_send: station sig=-34 txr=104.0 rxr=130.0 ret=3 err=0
+Nov 21 14:07:29 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=413 ext_busy=0 rx=390 tx=2
+Nov 21 14:07:30 3dr_solo local3.info rssi_send: station sig=-34 txr=104.0 rxr=130.0 ret=8 err=0
+Nov 21 14:07:30 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=739 ext_busy=0 rx=690 tx=2
+Nov 21 14:07:31 3dr_solo local3.info rssi_send: station sig=-33 txr=104.0 rxr=130.0 ret=3 err=0
+Nov 21 14:07:31 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=754 ext_busy=0 rx=709 tx=1
+Nov 21 14:07:32 3dr_solo local3.info rssi_send: station sig=-33 txr=104.0 rxr=130.0 ret=0 err=0
+Nov 21 14:07:32 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=805 ext_busy=0 rx=764 tx=1
+Nov 21 14:07:33 3dr_solo local3.info rssi_send: station sig=-33 txr=115.6 rxr=130.0 ret=7 err=0
+Nov 21 14:07:33 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=811 ext_busy=0 rx=770 tx=2
+Nov 21 14:07:34 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=3 err=0
+Nov 21 14:07:34 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=362 ext_busy=0 rx=343 tx=2
+Nov 21 14:07:35 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=57.8 ret=2 err=0
+Nov 21 14:07:35 3dr_solo local3.info rssi_send: survey freq=2432 noise=-93 active=999 busy=117 ext_busy=0 rx=106 tx=1
+Nov 21 14:07:36 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=3 err=0
+Nov 21 14:07:36 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=1000 busy=64 ext_busy=0 rx=55 tx=2
+Nov 21 14:07:37 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=18 err=0
+Nov 21 14:07:37 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=998 busy=120 ext_busy=0 rx=108 tx=2
+Nov 21 14:07:38 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=5 err=0
+Nov 21 14:07:38 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=112 ext_busy=0 rx=103 tx=2
+Nov 21 14:07:39 3dr_solo local3.info rssi_send: station sig=-32 txr=117.0 rxr=130.0 ret=28 err=0
+Nov 21 14:07:39 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=118 ext_busy=0 rx=105 tx=3
+Nov 21 14:07:40 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=93 err=0
+Nov 21 14:07:40 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=106 ext_busy=0 rx=91 tx=4
+Nov 21 14:07:41 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=130.0 ret=2 err=0
+Nov 21 14:07:41 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=518 ext_busy=0 rx=487 tx=2
+Nov 21 14:07:42 3dr_solo local3.info rssi_send: station sig=-34 txr=72.2 rxr=130.0 ret=107 err=0
+Nov 21 14:07:42 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=715 ext_busy=0 rx=674 tx=5
+Nov 21 14:07:43 3dr_solo local3.info rssi_send: station sig=-33 txr=65.0 rxr=65.0 ret=28 err=0
+Nov 21 14:07:43 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=612 ext_busy=0 rx=579 tx=2
+Nov 21 14:07:44 3dr_solo local3.info rssi_send: station sig=-34 txr=72.2 rxr=65.0 ret=3 err=0
+Nov 21 14:07:44 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=366 ext_busy=0 rx=345 tx=2
+Nov 21 14:07:45 3dr_solo local3.info rssi_send: station sig=-35 txr=117.0 rxr=65.0 ret=2 err=0
+Nov 21 14:07:45 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=132 ext_busy=0 rx=121 tx=2
+Nov 21 14:07:46 3dr_solo local3.info rssi_send: station sig=-36 txr=117.0 rxr=11.0 ret=1 err=0
+Nov 21 14:07:46 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=501 ext_busy=0 rx=475 tx=2
+Nov 21 14:07:47 3dr_solo local3.info rssi_send: station sig=-34 txr=117.0 rxr=65.0 ret=16 err=0
+Nov 21 14:07:47 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=776 ext_busy=0 rx=737 tx=2
+Nov 21 14:07:48 3dr_solo local3.info rssi_send: station sig=-37 txr=117.0 rxr=65.0 ret=17 err=0
+Nov 21 14:07:48 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=698 ext_busy=0 rx=660 tx=2
+Nov 21 14:07:49 3dr_solo local3.info rssi_send: station sig=-35 txr=117.0 rxr=65.0 ret=6 err=0
+Nov 21 14:07:49 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=310 ext_busy=0 rx=293 tx=2
+Nov 21 14:07:50 3dr_solo local3.info rssi_send: station sig=-35 txr=117.0 rxr=65.0 ret=10 err=0
+Nov 21 14:07:50 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=102 ext_busy=0 rx=94 tx=1
+Nov 21 14:07:51 3dr_solo local3.info rssi_send: station sig=-37 txr=117.0 rxr=65.0 ret=8 err=0
+Nov 21 14:07:51 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=524 ext_busy=0 rx=496 tx=2
+Nov 21 14:07:52 3dr_solo local3.info rssi_send: station sig=-37 txr=117.0 rxr=65.0 ret=4 err=0
+Nov 21 14:07:52 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=771 ext_busy=0 rx=734 tx=2
+Nov 21 14:07:53 3dr_solo local3.info rssi_send: station sig=-37 txr=117.0 rxr=65.0 ret=2 err=0
+Nov 21 14:07:53 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=385 ext_busy=0 rx=364 tx=1
+Nov 21 14:07:54 3dr_solo local3.info rssi_send: station sig=-37 txr=117.0 rxr=65.0 ret=3 err=0
+Nov 21 14:07:54 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=119 ext_busy=0 rx=101 tx=2
+Nov 21 14:07:55 3dr_solo local3.info rssi_send: station sig=-36 txr=117.0 rxr=65.0 ret=3 err=0
+Nov 21 14:07:55 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=476 ext_busy=0 rx=450 tx=1
+Nov 21 14:07:56 3dr_solo local3.info rssi_send: station sig=-37 txr=117.0 rxr=65.0 ret=1 err=0
+Nov 21 14:07:56 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=765 ext_busy=0 rx=727 tx=2
+Nov 21 14:07:57 3dr_solo local3.info rssi_send: station sig=-38 txr=130.0 rxr=65.0 ret=11 err=0
+Nov 21 14:07:57 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=774 ext_busy=0 rx=739 tx=2
+Nov 21 14:07:58 3dr_solo local3.info rssi_send: station sig=-38 txr=130.0 rxr=65.0 ret=4 err=0
+Nov 21 14:07:58 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=613 ext_busy=0 rx=584 tx=1
+Nov 21 14:07:59 3dr_solo local3.info rssi_send: station sig=-39 txr=144.4 rxr=65.0 ret=5 err=0
+Nov 21 14:07:59 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=321 ext_busy=0 rx=305 tx=2
+Nov 21 14:08:00 3dr_solo local3.info rssi_send: station sig=-39 txr=144.4 rxr=65.0 ret=1 err=0
+Nov 21 14:08:00 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=95 ext_busy=0 rx=87 tx=1
+Nov 21 14:08:01 3dr_solo local3.info rssi_send: station sig=-38 txr=144.4 rxr=65.0 ret=1 err=0
+Nov 21 14:08:01 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=519 ext_busy=0 rx=487 tx=1
+Nov 21 14:08:02 3dr_solo local3.info rssi_send: station sig=-37 txr=144.4 rxr=65.0 ret=3 err=0
+Nov 21 14:08:02 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=740 ext_busy=0 rx=704 tx=2
+Nov 21 14:08:03 3dr_solo local3.info rssi_send: station sig=-34 txr=144.4 rxr=65.0 ret=3 err=0
+Nov 21 14:08:03 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=315 ext_busy=0 rx=299 tx=2
+Nov 21 14:08:04 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=26.0 ret=6 err=0
+Nov 21 14:08:04 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=72 ext_busy=0 rx=65 tx=2
+Nov 21 14:08:05 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=26.0 ret=5 err=0
+Nov 21 14:08:05 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=498 ext_busy=0 rx=473 tx=1
+Nov 21 14:08:06 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=65.0 ret=12 err=0
+Nov 21 14:08:06 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=690 ext_busy=0 rx=654 tx=2
+Nov 21 14:08:07 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=65.0 ret=16 err=0
+Nov 21 14:08:07 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=671 ext_busy=0 rx=640 tx=2
+Nov 21 14:08:08 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=65.0 ret=5 err=0
+Nov 21 14:08:08 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=1000 busy=323 ext_busy=0 rx=307 tx=1
+Nov 21 14:08:09 3dr_solo local3.info rssi_send: station sig=-33 txr=115.6 rxr=65.0 ret=18 err=0
+Nov 21 14:08:09 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=998 busy=95 ext_busy=0 rx=85 tx=2
+Nov 21 14:08:10 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=65.0 ret=24 err=0
+Nov 21 14:08:10 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=365 ext_busy=0 rx=347 tx=2
+Nov 21 14:08:11 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=65.0 ret=3 err=0
+Nov 21 14:08:11 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=325 ext_busy=0 rx=307 tx=2
+Nov 21 14:08:12 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=65.0 ret=14 err=0
+Nov 21 14:08:12 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=421 ext_busy=0 rx=397 tx=2
+Nov 21 14:08:13 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=65.0 ret=28 err=0
+Nov 21 14:08:13 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=351 ext_busy=0 rx=332 tx=3
+Nov 21 14:08:14 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=65.0 ret=42 err=0
+Nov 21 14:08:14 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=499 ext_busy=0 rx=472 tx=2
+Nov 21 14:08:15 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=65.0 ret=22 err=0
+Nov 21 14:08:15 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=732 ext_busy=0 rx=696 tx=2
+Nov 21 14:08:16 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=65.0 ret=18 err=0
+Nov 21 14:08:16 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=282 ext_busy=0 rx=265 tx=2
+Nov 21 14:08:17 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=65.0 ret=7 err=0
+Nov 21 14:08:17 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=502 ext_busy=0 rx=475 tx=2
+Nov 21 14:08:18 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=65.0 ret=5 err=0
+Nov 21 14:08:18 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=645 ext_busy=0 rx=615 tx=1
+Nov 21 14:08:19 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=65.0 ret=8 err=0
+Nov 21 14:08:19 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=759 ext_busy=0 rx=720 tx=2
+Nov 21 14:08:20 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=65.0 ret=7 err=0
+Nov 21 14:08:20 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=318 ext_busy=0 rx=302 tx=2
+Nov 21 14:08:21 3dr_solo local3.info rssi_send: station sig=-32 txr=130.0 rxr=65.0 ret=7 err=0
+Nov 21 14:08:21 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=86 ext_busy=0 rx=77 tx=2
+Nov 21 14:08:22 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=65.0 ret=17 err=0
+Nov 21 14:08:22 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=439 ext_busy=0 rx=414 tx=2
+Nov 21 14:08:23 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=104.0 ret=17 err=0
+Nov 21 14:08:23 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=727 ext_busy=0 rx=688 tx=2
+Nov 21 14:08:24 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=104.0 ret=29 err=0
+Nov 21 14:08:24 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=758 ext_busy=0 rx=720 tx=2
+Nov 21 14:08:25 3dr_solo local3.info rssi_send: station sig=-33 txr=130.0 rxr=104.0 ret=14 err=0
+Nov 21 14:08:25 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=1000 busy=571 ext_busy=0 rx=538 tx=2
+Nov 21 14:08:26 3dr_solo local3.info rssi_send: station sig=-35 txr=130.0 rxr=104.0 ret=3 err=0
+Nov 21 14:08:26 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=998 busy=559 ext_busy=0 rx=531 tx=2
+Nov 21 14:08:27 3dr_solo local3.info rssi_send: station sig=-37 txr=130.0 rxr=104.0 ret=5 err=0
+Nov 21 14:08:27 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=307 ext_busy=0 rx=291 tx=2
+Nov 21 14:08:28 3dr_solo local3.info rssi_send: station sig=-37 txr=130.0 rxr=104.0 ret=4 err=0
+Nov 21 14:08:28 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=70 ext_busy=0 rx=62 tx=1
+Nov 21 14:08:29 3dr_solo local3.info rssi_send: station sig=-37 txr=130.0 rxr=104.0 ret=2 err=0
+Nov 21 14:08:29 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=507 ext_busy=0 rx=478 tx=2
+Nov 21 14:08:30 3dr_solo local3.info rssi_send: station sig=-37 txr=144.4 rxr=104.0 ret=7 err=0
+Nov 21 14:08:30 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=729 ext_busy=0 rx=691 tx=2
+Nov 21 14:08:31 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=104.0 ret=4 err=0
+Nov 21 14:08:31 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=392 ext_busy=0 rx=369 tx=2
+Nov 21 14:08:32 3dr_solo local3.info rssi_send: station sig=-37 txr=144.4 rxr=104.0 ret=4 err=0
+Nov 21 14:08:32 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=61 ext_busy=0 rx=54 tx=2
+Nov 21 14:08:33 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=104.0 ret=9 err=0
+Nov 21 14:08:33 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=470 ext_busy=0 rx=443 tx=2
+Nov 21 14:08:34 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=104.0 ret=3 err=0
+Nov 21 14:08:34 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=337 ext_busy=0 rx=317 tx=1
+Nov 21 14:08:35 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=104.0 ret=0 err=0
+Nov 21 14:08:35 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=70 ext_busy=0 rx=61 tx=1
+Nov 21 14:08:36 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=104.0 ret=0 err=0
+Nov 21 14:08:36 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=361 ext_busy=0 rx=338 tx=2
+Nov 21 14:08:37 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=104.0 ret=6 err=0
+Nov 21 14:08:37 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=624 ext_busy=0 rx=589 tx=2
+Nov 21 14:08:38 3dr_solo local3.info rssi_send: station sig=-35 txr=144.4 rxr=104.0 ret=30 err=0
+Nov 21 14:08:38 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=527 ext_busy=0 rx=499 tx=2
+Nov 21 14:08:39 3dr_solo local3.info rssi_send: station sig=-35 txr=130.0 rxr=104.0 ret=9 err=0
+Nov 21 14:08:39 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=273 ext_busy=0 rx=256 tx=2
+Nov 21 14:08:40 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=104.0 ret=2 err=0
+Nov 21 14:08:40 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=64 ext_busy=0 rx=55 tx=1
+Nov 21 14:08:41 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=104.0 ret=4 err=0
+Nov 21 14:08:41 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=427 ext_busy=0 rx=402 tx=2
+Nov 21 14:08:42 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=57.8 ret=3 err=0
+Nov 21 14:08:42 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=281 ext_busy=0 rx=263 tx=2
+Nov 21 14:08:43 3dr_solo local3.info rssi_send: station sig=-37 txr=130.0 rxr=104.0 ret=10 err=0
+Nov 21 14:08:43 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=76 ext_busy=0 rx=68 tx=2
+Nov 21 14:08:44 3dr_solo local3.info rssi_send: station sig=-36 txr=130.0 rxr=104.0 ret=5 err=0
+Nov 21 14:08:44 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=433 ext_busy=0 rx=407 tx=2
+Nov 21 14:08:45 3dr_solo local3.info rssi_send: station sig=-37 txr=144.4 rxr=104.0 ret=4 err=0
+Nov 21 14:08:45 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=361 ext_busy=0 rx=338 tx=1
+Nov 21 14:08:46 3dr_solo local3.info rssi_send: station sig=-34 txr=144.4 rxr=115.6 ret=17 err=0
+Nov 21 14:08:46 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=114 ext_busy=0 rx=98 tx=4
+Nov 21 14:08:47 3dr_solo local3.info rssi_send: station sig=-35 txr=144.4 rxr=130.0 ret=21 err=0
+Nov 21 14:08:47 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=136 ext_busy=0 rx=120 tx=3
+Nov 21 14:08:48 3dr_solo local3.info rssi_send: station sig=-36 txr=130.0 rxr=130.0 ret=10 err=0
+Nov 21 14:08:48 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=83 ext_busy=0 rx=73 tx=2
+Nov 21 14:08:49 3dr_solo local3.info rssi_send: station sig=-36 txr=130.0 rxr=130.0 ret=1 err=0
+Nov 21 14:08:49 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=385 ext_busy=0 rx=363 tx=1
+Nov 21 14:08:50 3dr_solo local3.info rssi_send: station sig=-37 txr=130.0 rxr=130.0 ret=7 err=0
+Nov 21 14:08:50 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=679 ext_busy=0 rx=642 tx=1
+Nov 21 14:08:51 3dr_solo local3.info rssi_send: station sig=-41 txr=144.4 rxr=130.0 ret=7 err=0
+Nov 21 14:08:51 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=688 ext_busy=0 rx=653 tx=2
+Nov 21 14:08:52 3dr_solo local3.info rssi_send: station sig=-38 txr=144.4 rxr=130.0 ret=16 err=0
+Nov 21 14:08:52 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=331 ext_busy=0 rx=313 tx=2
+Nov 21 14:08:53 3dr_solo local3.info rssi_send: station sig=-37 txr=144.4 rxr=130.0 ret=8 err=0
+Nov 21 14:08:53 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=70 ext_busy=0 rx=62 tx=1
+Nov 21 14:08:54 3dr_solo local3.info rssi_send: station sig=-37 txr=144.4 rxr=130.0 ret=0 err=0
+Nov 21 14:08:54 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=447 ext_busy=0 rx=420 tx=1
+Nov 21 14:08:55 3dr_solo local3.info rssi_send: station sig=-36 txr=144.4 rxr=130.0 ret=0 err=0
+Nov 21 14:08:55 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=309 ext_busy=0 rx=287 tx=1
+Nov 21 14:08:56 3dr_solo local3.info rssi_send: station sig=-37 txr=144.4 rxr=130.0 ret=0 err=0
+Nov 21 14:08:56 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=53 ext_busy=0 rx=46 tx=1
+Nov 21 14:08:57 3dr_solo local3.info rssi_send: station sig=-36 txr=130.0 rxr=130.0 ret=10 err=0
+Nov 21 14:08:57 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=1000 busy=73 ext_busy=0 rx=64 tx=1
+Nov 21 14:08:58 3dr_solo local3.info rssi_send: station sig=-35 txr=117.0 rxr=130.0 ret=20 err=0
+Nov 21 14:08:58 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=998 busy=436 ext_busy=0 rx=411 tx=2
+Nov 21 14:08:59 3dr_solo local3.info rssi_send: station sig=-36 txr=117.0 rxr=130.0 ret=2 err=0
+Nov 21 14:08:59 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=560 ext_busy=0 rx=529 tx=2
+Nov 21 14:09:00 3dr_solo local3.info rssi_send: station sig=-35 txr=130.0 rxr=130.0 ret=4 err=0
+Nov 21 14:09:00 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=320 ext_busy=0 rx=298 tx=1
+Nov 21 14:09:01 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=130.0 ret=5 err=0
+Nov 21 14:09:01 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=77 ext_busy=0 rx=67 tx=1
+Nov 21 14:09:02 3dr_solo local3.info rssi_send: station sig=-33 txr=144.4 rxr=130.0 ret=6 err=0
+Nov 21 14:09:02 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=382 ext_busy=0 rx=361 tx=2
+Nov 21 14:09:03 3dr_solo local3.info rssi_send: station sig=-32 txr=144.4 rxr=130.0 ret=3 err=0
+Nov 21 14:09:03 3dr_solo local3.info rssi_send: survey freq=2432 noise=-92 active=999 busy=281 ext_busy=0 rx=263 tx=1

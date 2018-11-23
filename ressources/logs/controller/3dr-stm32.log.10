@@ -1,0 +1,72 @@
+Nov 19 15:45:02 3dr_controller local0.info +425 stm32: main: starting: built Sep 22 2016 15:30:56
+Nov 19 15:45:02 3dr_controller local0.info +434 stm32: logging telemetry gaps >= 1000 msec
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5005
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5015
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5012
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5013
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5014
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5011
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5010
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5024
+Nov 19 15:45:02 3dr_controller local0.info +435 stm32: pkt: opened port 5022
+Nov 19 15:45:02 3dr_controller local0.info +436 stm32: pkt: opened port 5016
+Nov 19 15:45:02 3dr_controller local0.info +448 stm32: pkt: opened port 5021
+Nov 19 15:45:02 3dr_controller local0.info +449 stm32: pkt: opened port 5017
+Nov 19 15:45:02 3dr_controller local0.info +449 stm32: pkt: opened port 5018
+Nov 19 15:45:02 3dr_controller local0.info +449 stm32: pkt: opened port 5019
+Nov 19 15:45:02 3dr_controller local0.info +449 stm32: pkt: opened port 5020
+Nov 19 15:45:02 3dr_controller local0.info +449 stm32: pkt: opened port 5026
+Nov 19 15:45:02 3dr_controller local0.info +450 stm32: opened serial port /dev/ttymxc1
+Nov 19 15:45:02 3dr_controller local0.info +508 stm32: ButtonEvent downstream_thread: starting
+Nov 19 15:45:02 3dr_controller local0.info +508 stm32: ButtonEvent listen_thread: starting
+Nov 19 15:45:02 3dr_controller local0.info +508 stm32: InputReport downstream_thread: starting
+Nov 19 15:45:02 3dr_controller local0.info +509 stm32: InputReport listen_thread: starting
+Nov 19 15:45:02 3dr_controller local0.info +532 stm32: slip - initial sync
+Nov 19 15:45:02 3dr_controller local0.info +552 stm32: sys: unique id: 36:ff:d8:05:46:57:32:32:18:85:02:43
+Nov 19 15:45:02 3dr_controller local0.info +552 stm32: sys: hardware ver: 3
+Nov 19 15:45:02 3dr_controller local0.info +552 stm32: sys: software ver: v1.2.11
+Nov 19 15:45:02 3dr_controller local0.info +552 stm32: sys: (try 2)
+Nov 19 15:45:12 3dr_controller local0.info +555 stm32: up 1:504 3:11 14:505 0 B 0.00 KB/s dn 0 B 0.00 KB/s
+Nov 19 15:45:13 3dr_controller local0.info +555 stm32: got solo ip: 10.1.1.10
+Nov 19 15:45:17 3dr_controller local0.info +396 stm32: ButtonEvent listen_thread: adding client 29 at 10.1.1.10:46975
+Nov 19 15:45:22 3dr_controller local0.info +558 stm32: up 1:499 3:10 14:499 11674 B 1.14 KB/s dn 50607 B 4.94 KB/s
+Nov 19 15:45:32 3dr_controller local0.info +560 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 30367 B 2.96 KB/s
+Nov 19 15:45:42 3dr_controller local0.info +563 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 30566 B 2.98 KB/s
+Nov 19 15:45:52 3dr_controller local0.info +565 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 30664 B 2.99 KB/s
+Nov 19 15:45:59 3dr_controller local0.info +029 stm32: app connected message going down
+Nov 19 15:46:02 3dr_controller local0.info +567 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 41740 B 4.08 KB/s
+Nov 19 15:46:12 3dr_controller local0.info +570 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27586 B 2.69 KB/s
+Nov 19 15:46:22 3dr_controller local0.info +572 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27688 B 2.70 KB/s
+Nov 19 15:46:32 3dr_controller local0.info +575 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27137 B 2.65 KB/s
+Nov 19 15:46:42 3dr_controller local0.info +577 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27794 B 2.71 KB/s
+Nov 19 15:46:52 3dr_controller local0.info +580 stm32: up 1:501 3:10 14:501 13026 B 1.27 KB/s dn 27738 B 2.71 KB/s
+Nov 19 15:47:02 3dr_controller local0.info +582 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27135 B 2.65 KB/s
+Nov 19 15:47:12 3dr_controller local0.info +585 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27688 B 2.70 KB/s
+Nov 19 15:47:22 3dr_controller local0.info +587 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27738 B 2.71 KB/s
+Nov 19 15:47:32 3dr_controller local0.info +590 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27649 B 2.70 KB/s
+Nov 19 15:47:42 3dr_controller local0.info +592 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27074 B 2.64 KB/s
+Nov 19 15:47:52 3dr_controller local0.info +595 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27682 B 2.70 KB/s
+Nov 19 15:48:02 3dr_controller local0.info +597 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27688 B 2.70 KB/s
+Nov 19 15:48:12 3dr_controller local0.info +599 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27695 B 2.70 KB/s
+Nov 19 15:48:22 3dr_controller local0.info +602 stm32: up 1:501 3:10 14:500 13026 B 1.27 KB/s dn 27147 B 2.65 KB/s
+Nov 19 15:48:32 3dr_controller local0.info +604 stm32: up 1:500 3:10 14:501 13000 B 1.27 KB/s dn 27738 B 2.71 KB/s
+Nov 21 13:04:59 3dr_controller local0.info +369 stm32: up 1:498 3:10 14:498 12948 B 1.26 KB/s dn 28545 B 2.79 KB/s
+Nov 21 13:05:08 3dr_controller local0.info +159 stm32: app connected message going down
+Nov 21 13:05:09 3dr_controller local0.info +371 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 28943 B 2.83 KB/s
+Nov 21 13:05:19 3dr_controller local0.info +373 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 27926 B 2.73 KB/s
+Nov 21 13:05:22 3dr_controller local0.info +146 stm32: app connected message going down
+Nov 21 13:05:29 3dr_controller local0.info +377 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 41794 B 4.08 KB/s
+Nov 21 13:05:39 3dr_controller local0.info +379 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 28722 B 2.80 KB/s
+Nov 21 13:05:49 3dr_controller local0.info +382 stm32: up 1:499 3:10 14:499 12974 B 1.27 KB/s dn 29073 B 2.84 KB/s
+Nov 21 13:05:59 3dr_controller local0.info +384 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 29041 B 2.84 KB/s
+Nov 21 13:06:09 3dr_controller local0.info +387 stm32: up 1:501 3:10 14:501 13026 B 1.27 KB/s dn 28454 B 2.78 KB/s
+Nov 21 13:06:19 3dr_controller local0.info +389 stm32: up 1:499 3:10 14:499 12974 B 1.27 KB/s dn 29104 B 2.84 KB/s
+Nov 21 13:06:29 3dr_controller local0.info +392 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 28810 B 2.81 KB/s
+Nov 21 13:06:39 3dr_controller local0.info +394 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 29038 B 2.83 KB/s
+Nov 21 13:06:49 3dr_controller local0.info +397 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 28143 B 2.75 KB/s
+Nov 21 13:06:59 3dr_controller local0.info +399 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 29428 B 2.87 KB/s
+Nov 21 13:07:09 3dr_controller local0.info +402 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 28863 B 2.82 KB/s
+Nov 21 13:07:19 3dr_controller local0.info +404 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 28377 B 2.77 KB/s
+Nov 21 13:07:29 3dr_controller local0.info +407 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 28526 B 2.79 KB/s
+Nov 21 13:07:39 3dr_controller local0.info +409 stm32: up 1:501 3:10 13:2 14:501 13026 B 1.27 KB/s dn 17006 B 1.66 KB/s
+Nov 21 13:07:41 3dr_controller local0.info +794 stm32: STM32 requested shutdown

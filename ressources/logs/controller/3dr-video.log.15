@@ -1,0 +1,15 @@
+Nov 19 15:28:18 3dr_controller local3.info streamer: starting: built Sep 22 2016 15:31:07
+Nov 19 15:28:18 3dr_controller local3.info hdmi: Waiting for an HDMI connection
+Nov 19 15:28:28 3dr_controller local3.info streamer: pkts=55 bytes=2600 drops=0
+Nov 19 15:28:38 3dr_controller local3.info streamer: pkts=71 bytes=3006 drops=0
+Nov 19 15:28:48 3dr_controller local3.info streamer: pkts=72 bytes=3006 drops=0
+Nov 19 15:28:58 3dr_controller local3.info streamer: pkts=71 bytes=3006 drops=0
+Nov 19 15:29:08 3dr_controller local3.info streamer: pkts=72 bytes=3006 drops=0
+Nov 19 15:29:18 3dr_controller local3.info streamer: pkts=72 bytes=3006 drops=0
+Nov 19 15:29:28 3dr_controller local3.info streamer: pkts=72 bytes=3006 drops=0
+Nov 19 15:29:38 3dr_controller local3.info streamer: pkts=65 bytes=3009 drops=4273
+Nov 19 15:29:48 3dr_controller local3.info streamer: pkts=68 bytes=3351 drops=112036
+Nov 19 15:29:58 3dr_controller local3.info streamer: pkts=70 bytes=2842 drops=0
+Nov 19 15:30:08 3dr_controller local3.info streamer: pkts=71 bytes=2958 drops=5539
+Nov 19 15:30:18 3dr_controller local3.info streamer: pkts=69 bytes=2836 drops=9666
+Nov 19 15:30:28 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0

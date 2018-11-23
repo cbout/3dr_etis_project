@@ -1,0 +1,361 @@
+Nov 21 13:07:02 3dr_solo local1.info pix: pixhawk.py starting
+Nov 21 13:07:02 3dr_solo local1.info pix: checking baud...
+Nov 21 13:07:02 3dr_solo local1.info pix: found at 921600
+Nov 21 13:07:02 3dr_solo local1.info pix: no new firmware file
+Nov 21 13:07:02 3dr_solo local1.info pix: build version build=1.3.1 ardupilot=7e9206cc px4=5e693274 nuttx=d48fa307
+Nov 21 13:07:02 3dr_solo local1.info pix: now running:
+Nov 21 13:07:02 3dr_solo local1.info pix: build_version        1.3.1
+Nov 21 13:07:02 3dr_solo local1.info pix: ardupilot_git_hash   7e9206cc
+Nov 21 13:07:02 3dr_solo local1.info pix: px4_git_hash         5e693274
+Nov 21 13:07:02 3dr_solo local1.info pix: nuttx_git_hash       d48fa307
+Nov 21 13:07:02 3dr_solo local1.info pix: pixhawk status: ready
+Nov 21 13:07:02 3dr_solo local1.info pix: pixhawk.py finished
+Nov 21 13:07:09 3dr_solo local1.info unlock: built Sep 22 2016 15:31:09
+Nov 21 13:07:09 3dr_solo local1.info unlock: rc is not locked
+Nov 21 13:07:09 3dr_solo local1.info pair: pair_solo.py starting
+Nov 21 13:07:09 3dr_solo local1.info pair: using default check_versions=True
+Nov 21 13:07:09 3dr_solo local1.info pair: sololink version "2.4.2"
+Nov 21 13:07:09 3dr_solo local1.info pair: firmware version "1.3.1"
+Nov 21 13:07:09 3dr_solo local1.info pair: pairing using wlan0
+Nov 21 13:07:09 3dr_solo local1.info pair: bringing up network...
+Nov 21 13:07:24 3dr_solo local1.info pair: ip address 10.1.1.10 netmask 255.255.255.0
+Nov 21 13:07:24 3dr_solo local1.info pair: network is up
+Nov 21 13:07:24 3dr_solo local1.info pair: establishing connection...
+Nov 21 13:07:24 3dr_solo local1.info pair: controller version "2.4.2"; firmware "1.2.11"
+Nov 21 13:07:24 3dr_solo local1.info pair: switching to runlevel.READY
+Nov 21 13:07:24 3dr_solo local1.info dl: dataflash_logger starting: built Sep 22 2016 15:30:50
+Nov 21 13:07:24 3dr_solo local1.info dl: df-tfc: connecting to telem-forwarder at 10.1.1.10:14560
+Nov 21 13:07:25 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:07:25 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 21 13:07:25 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/115.BIN)
+Nov 21 13:07:25 3dr_solo local1.err dl: mh-dfl: long time between messages (39753138)
+Nov 21 13:07:26 3dr_solo local1.info dl: mh-dfl: Current log size: 20000
+Nov 21 13:07:36 3dr_solo local1.info dl: mh-dfl: Current log size: 160000
+Nov 21 13:07:47 3dr_solo local1.info dl: mh-dfl: Current log size: 300000
+Nov 21 13:07:58 3dr_solo local1.info dl: mh-dfl: Current log size: 440000
+Nov 21 13:08:09 3dr_solo local1.info dl: mh-dfl: Current log size: 580000
+Nov 21 13:08:20 3dr_solo local1.info dl: mh-dfl: Current log size: 720000
+Nov 21 13:08:31 3dr_solo local1.info dl: mh-dfl: Current log size: 860000
+Nov 21 13:08:42 3dr_solo local1.info dl: mh-dfl: Current log size: 1000000
+Nov 21 13:08:53 3dr_solo local1.info dl: mh-dfl: Current log size: 1140000
+Nov 21 13:09:04 3dr_solo local1.info dl: mh-dfl: Current log size: 1280000
+Nov 21 13:09:16 3dr_solo local1.info dl: mh-dfl: Current log size: 1420000
+Nov 21 13:09:27 3dr_solo local1.info dl: mh-dfl: Current log size: 1560000
+Nov 21 13:09:38 3dr_solo local1.info dl: mh-dfl: Current log size: 1700000
+Nov 21 13:09:49 3dr_solo local1.info dl: mh-dfl: Current log size: 1840000
+Nov 21 13:10:00 3dr_solo local1.info dl: mh-dfl: Current log size: 1980000
+Nov 21 13:10:11 3dr_solo local1.info dl: mh-dfl: Current log size: 2120000
+Nov 21 13:10:22 3dr_solo local1.info dl: mh-dfl: Current log size: 2260000
+Nov 21 13:48:45 3dr_solo local1.info dl: mh-dfl: Current log size: 2400000
+Nov 21 13:48:56 3dr_solo local1.info dl: mh-dfl: Current log size: 2540000
+Nov 21 13:49:07 3dr_solo local1.info dl: mh-dfl: Current log size: 2680000
+Nov 21 13:49:18 3dr_solo local1.info dl: mh-dfl: Current log size: 2820000
+Nov 21 13:49:30 3dr_solo local1.info dl: mh-dfl: Current log size: 2960000
+Nov 21 13:49:41 3dr_solo local1.info dl: mh-dfl: Current log size: 3100000
+Nov 21 13:49:52 3dr_solo local1.info dl: mh-dfl: Current log size: 3240000
+Nov 21 13:50:03 3dr_solo local1.info dl: mh-dfl: Current log size: 3380000
+Nov 21 13:50:14 3dr_solo local1.info dl: mh-dfl: Current log size: 3520000
+Nov 21 13:50:25 3dr_solo local1.info dl: mh-dfl: Current log size: 3660000
+Nov 21 13:50:36 3dr_solo local1.info dl: mh-dfl: Current log size: 3800000
+Nov 21 13:50:47 3dr_solo local1.info dl: mh-dfl: Current log size: 3940000
+Nov 21 13:50:58 3dr_solo local1.info dl: mh-dfl: Current log size: 4080000
+Nov 21 13:51:09 3dr_solo local1.info dl: mh-dfl: Current log size: 4220000
+Nov 21 13:51:20 3dr_solo local1.info dl: mh-dfl: Current log size: 4360000
+Nov 21 13:51:31 3dr_solo local1.info dl: mh-dfl: Current log size: 4500000
+Nov 21 13:51:42 3dr_solo local1.info dl: mh-dfl: Current log size: 4640000
+Nov 21 13:51:53 3dr_solo local1.info dl: mh-dfl: Current log size: 4780000
+Nov 21 13:52:04 3dr_solo local1.info dl: mh-dfl: Current log size: 4920000
+Nov 21 13:52:15 3dr_solo local1.info dl: mh-dfl: Current log size: 5060000
+Nov 21 13:52:26 3dr_solo local1.info dl: mh-dfl: Current log size: 5200000
+Nov 21 13:52:37 3dr_solo local1.info dl: mh-dfl: Current log size: 5340000
+Nov 21 13:52:48 3dr_solo local1.info dl: mh-dfl: Current log size: 5480000
+Nov 21 13:52:59 3dr_solo local1.info dl: mh-dfl: Current log size: 5620000
+Nov 21 13:53:11 3dr_solo local1.info dl: mh-dfl: Current log size: 5760000
+Nov 21 13:53:22 3dr_solo local1.info dl: mh-dfl: Current log size: 5900000
+Nov 21 13:53:34 3dr_solo local1.info dl: mh-dfl: Current log size: 6040000
+Nov 21 13:53:53 3dr_solo local1.info dl: mh-dfl: No data packets received for some time (now=535452964 last=525363140).  Closing log.  Final log size: 6140000
+Nov 21 13:53:53 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:53:53 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:53:54 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:53:54 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:53:55 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:53:55 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:53:56 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:53:56 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:53:58 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:53:58 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:53:58 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:53:59 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 21 13:53:59 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/116.BIN)
+Nov 21 13:53:59 3dr_solo local1.err dl: mh-dfl: long time between messages (16089271)
+Nov 21 13:54:00 3dr_solo local1.info dl: mh-dfl: Current log size: 9600
+Nov 21 13:54:10 3dr_solo local1.err dl: mh-dfl: long time between messages (520201)
+Nov 21 13:54:10 3dr_solo local1.info dl: mh-dfl: Current log size: 149600
+Nov 21 13:54:21 3dr_solo local1.info dl: mh-dfl: Current log size: 289600
+Nov 21 13:54:32 3dr_solo local1.info dl: mh-dfl: Current log size: 429600
+Nov 21 13:54:44 3dr_solo local1.info dl: mh-dfl: Current log size: 569600
+Nov 21 13:54:55 3dr_solo local1.info dl: mh-dfl: Current log size: 709600
+Nov 21 13:55:06 3dr_solo local1.info dl: mh-dfl: Current log size: 849600
+Nov 21 13:55:18 3dr_solo local1.info dl: mh-dfl: Current log size: 989600
+Nov 21 13:55:29 3dr_solo local1.info dl: mh-dfl: Current log size: 1129600
+Nov 21 13:55:40 3dr_solo local1.info dl: mh-dfl: Current log size: 1269600
+Nov 21 13:55:42 3dr_solo local1.err dl: mh-dfl: long time between messages (133884)
+Nov 21 13:55:42 3dr_solo local1.err dl: mh-dfl: long time between messages (130849)
+Nov 21 13:55:53 3dr_solo local1.info dl: mh-dfl: No data packets received for some time (now=655254921 last=645060259).  Closing log.  Final log size: 1289600
+Nov 21 13:55:53 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:55:53 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:55:54 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:55:54 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:55:55 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:55:55 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:55:56 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:55:56 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:55:57 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:55:57 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:55:58 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:55:58 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:55:59 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:01 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:56:01 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:01 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:02 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:02 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:03 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:03 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:04 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:04 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:05 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:07 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:56:07 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:07 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:08 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:08 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:09 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:09 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:10 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:10 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:11 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:13 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:56:13 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 21 13:56:13 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/117.BIN)
+Nov 21 13:56:13 3dr_solo local1.err dl: mh-dfl: long time between messages (30256217)
+Nov 21 13:56:14 3dr_solo local1.info pair: timeout waiting for ack
+Nov 21 13:56:14 3dr_solo local1.info pair: ack received after timeout
+Nov 21 13:56:18 3dr_solo local1.err dl: mh-dfl: long time between messages (4912254)
+Nov 21 13:56:28 3dr_solo local1.info dl: mh-dfl: No data packets received for some time (now=690267061 last=680265004).  Closing log.  Final log size: 0
+Nov 21 13:56:28 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:28 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:29 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:29 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:30 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:30 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:31 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:31 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:34 3dr_solo local1.err dl: 4 messages supressed
+Nov 21 13:56:34 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:34 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:35 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:35 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:36 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:36 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:37 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:37 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:38 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:40 3dr_solo local1.err dl: 4 messages supressed
+Nov 21 13:56:40 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:40 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:41 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:41 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:42 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:42 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:43 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:43 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:44 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:46 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:56:46 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:46 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:47 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:47 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:48 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:48 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:49 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:49 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:50 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:52 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:56:52 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:52 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:53 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:53 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:54 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:54 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:55 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:55 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:56 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:58 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:56:58 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:58 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:56:59 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:56:59 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:00 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:00 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:01 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:01 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:02 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:04 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:57:04 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:04 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:05 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:05 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:06 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:06 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:07 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:07 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:08 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:10 3dr_solo local1.err dl: 4 messages supressed
+Nov 21 13:57:10 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:10 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:11 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:11 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:12 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:12 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:13 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:13 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:14 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:16 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 13:57:16 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:16 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:17 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:17 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:18 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:18 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:19 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:19 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:20 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:20 3dr_solo local1.err dl: 1 messages supressed
+Nov 21 13:57:20 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 21 13:57:20 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/118.BIN)
+Nov 21 13:57:20 3dr_solo local1.err dl: mh-dfl: long time between messages (62579360)
+Nov 21 13:57:21 3dr_solo local1.info dl: mh-dfl: Current log size: 16600
+Nov 21 13:57:37 3dr_solo local1.info dl: mh-dfl: No data packets received for some time (now=759054671 last=749032975).  Closing log.  Final log size: 76600
+Nov 21 13:57:37 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:37 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:38 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:38 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:39 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:39 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:40 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:40 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:43 3dr_solo local1.err dl: 4 messages supressed
+Nov 21 13:57:43 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:43 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:44 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:44 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:45 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:45 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:45 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 21 13:57:45 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/119.BIN)
+Nov 21 13:57:45 3dr_solo local1.err dl: mh-dfl: long time between messages (18737436)
+Nov 21 13:57:55 3dr_solo local1.info dl: mh-dfl: No data packets received for some time (now=777854399 last=767772923).  Closing log.  Final log size: 0
+Nov 21 13:57:56 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:56 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:57 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 13:57:57 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 13:57:58 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 21 13:57:58 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/120.BIN)
+Nov 21 13:57:58 3dr_solo local1.err dl: mh-dfl: long time between messages (12622744)
+Nov 21 13:57:58 3dr_solo local1.info dl: mh-dfl: Current log size: 5000
+Nov 21 13:58:09 3dr_solo local1.err dl: mh-dfl: long time between messages (518844)
+Nov 21 13:58:10 3dr_solo local1.info dl: mh-dfl: Current log size: 145000
+Nov 21 13:58:21 3dr_solo local1.info dl: mh-dfl: Current log size: 285000
+Nov 21 13:58:33 3dr_solo local1.info dl: mh-dfl: Current log size: 425000
+Nov 21 13:58:44 3dr_solo local1.info dl: mh-dfl: Current log size: 565000
+Nov 21 13:58:46 3dr_solo local1.err dl: mh-dfl: long time between messages (125466)
+Nov 21 13:58:47 3dr_solo local1.info pair: timeout waiting for ack
+Nov 21 13:58:48 3dr_solo local1.info pair: ack received after timeout
+Nov 21 13:58:55 3dr_solo local1.info dl: mh-dfl: Current log size: 685000
+Nov 21 13:59:06 3dr_solo local1.info dl: mh-dfl: Current log size: 825000
+Nov 21 13:59:10 3dr_solo local1.err dl: mh-dfl: long time between messages (104781)
+Nov 21 13:59:12 3dr_solo local1.info pair: timeout waiting for ack
+Nov 21 13:59:13 3dr_solo local1.info pair: ack received after timeout
+Nov 21 13:59:18 3dr_solo local1.info dl: mh-dfl: Current log size: 965000
+Nov 21 13:59:29 3dr_solo local1.info dl: mh-dfl: Current log size: 1105000
+Nov 21 13:59:40 3dr_solo local1.info dl: mh-dfl: Current log size: 1225000
+Nov 21 13:59:45 3dr_solo local1.err dl: mh-dfl: long time between messages (116435)
+Nov 21 13:59:50 3dr_solo local1.info dl: mh-dfl: Current log size: 1345000
+Nov 21 13:59:59 3dr_solo local1.err dl: mh-dfl: long time between messages (131096)
+Nov 21 14:00:10 3dr_solo local1.info dl: mh-dfl: No data packets received for some time (now=912053530 last=901864819).  Closing log.  Final log size: 1445000
+Nov 21 14:00:10 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:10 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:11 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:11 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:12 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:12 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:13 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:13 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:14 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:14 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:15 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 21 14:00:15 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/121.BIN)
+Nov 21 14:00:15 3dr_solo local1.err dl: mh-dfl: long time between messages (15536366)
+Nov 21 14:00:18 3dr_solo local1.err dl: mh-dfl: long time between messages (3527793)
+Nov 21 14:00:27 3dr_solo local1.err dl: mh-dfl: long time between messages (8549044)
+Nov 21 14:00:37 3dr_solo local1.info dl: mh-dfl: No data packets received for some time (now=939653096 last=929485491).  Closing log.  Final log size: 0
+Nov 21 14:00:37 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:37 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:38 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:38 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:39 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:39 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:40 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:40 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:43 3dr_solo local1.err dl: 5 messages supressed
+Nov 21 14:00:43 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:43 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:44 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:44 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:45 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:45 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:46 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:46 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:47 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:49 3dr_solo local1.err dl: 3 messages supressed
+Nov 21 14:00:49 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:49 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:50 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:50 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:51 3dr_solo local1.info dl: mh-dfl: sending stop packet to (1/155)
+Nov 21 14:00:51 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 21 14:00:52 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 21 14:00:52 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/122.BIN)
+Nov 21 14:00:52 3dr_solo local1.err dl: mh-dfl: long time between messages (24868743)
+Nov 21 14:01:00 3dr_solo local1.err dl: mh-dfl: long time between messages (8156226)
+Nov 21 14:01:00 3dr_solo local1.info dl: mh-dfl: Current log size: 11200
+Nov 21 14:01:11 3dr_solo local1.err dl: mh-dfl: long time between messages (518817)
+Nov 21 14:01:12 3dr_solo local1.info dl: mh-dfl: Current log size: 151200
+Nov 21 14:01:23 3dr_solo local1.info dl: mh-dfl: Current log size: 291200
+Nov 21 14:01:25 3dr_solo local1.info pair: timeout waiting for ack
+Nov 21 14:01:31 3dr_solo local1.info pair: ack received after timeout
+Nov 21 14:01:34 3dr_solo local1.info dl: mh-dfl: Current log size: 431200
+Nov 21 14:01:45 3dr_solo local1.info dl: mh-dfl: Current log size: 571200
+Nov 21 14:01:55 3dr_solo local1.info dl: mh-dfl: Current log size: 691200
+Nov 21 14:02:07 3dr_solo local1.info dl: mh-dfl: Current log size: 831200
+Nov 21 14:02:17 3dr_solo local1.info dl: mh-dfl: Current log size: 951200
+Nov 21 14:02:28 3dr_solo local1.info dl: mh-dfl: Current log size: 1091200
+Nov 21 14:02:40 3dr_solo local1.info dl: mh-dfl: Current log size: 1231200
+Nov 21 14:02:51 3dr_solo local1.info dl: mh-dfl: Current log size: 1371200
+Nov 21 14:03:02 3dr_solo local1.info dl: mh-dfl: Current log size: 1511200
+Nov 21 14:03:14 3dr_solo local1.info dl: mh-dfl: Current log size: 1651200
+Nov 21 14:03:25 3dr_solo local1.info dl: mh-dfl: Current log size: 1791200
+Nov 21 14:03:37 3dr_solo local1.info dl: mh-dfl: Current log size: 1931200
+Nov 21 14:03:48 3dr_solo local1.info dl: mh-dfl: Current log size: 2071200
+Nov 21 14:03:58 3dr_solo local1.info dl: mh-dfl: Current log size: 2191200
+Nov 21 14:04:09 3dr_solo local1.info dl: mh-dfl: Current log size: 2331200
+Nov 21 14:04:21 3dr_solo local1.info dl: mh-dfl: Current log size: 2471200
+Nov 21 14:04:32 3dr_solo local1.info dl: mh-dfl: Current log size: 2611200
+Nov 21 14:04:44 3dr_solo local1.info dl: mh-dfl: Current log size: 2751200
+Nov 21 14:04:55 3dr_solo local1.info dl: mh-dfl: Current log size: 2891200
+Nov 21 14:05:07 3dr_solo local1.info dl: mh-dfl: Current log size: 3031200
+Nov 21 14:05:18 3dr_solo local1.info dl: mh-dfl: Current log size: 3171200
+Nov 21 14:05:30 3dr_solo local1.info dl: mh-dfl: Current log size: 3311200
+Nov 21 14:05:35 3dr_solo local1.info pair: timeout waiting for ack
+Nov 21 14:05:37 3dr_solo local1.err dl: mh-dfl: long time between messages (107143)

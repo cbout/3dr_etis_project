@@ -1,0 +1,18 @@
+Thu Jan  1 00:00:03 1970: bootlogd.
+Thu Jan  1 00:00:04 1970: max_dgram_qlen=100
+Thu Jan  1 00:00:05 1970: Starting syslogd/klogd: done
+Thu Jan  1 00:00:05 1970: Initializing AP Interface: wlan0-ap.
+Thu Jan  1 00:00:06 1970: Configuring network interfaces... done.
+Thu Jan  1 00:00:07 1970: rotating 3dr logs
+Thu Jan  1 00:00:07 1970: net.core.rmem_max = 1048576
+Mon Nov 19 14:46:00 2018: Mon Nov 19 14:46:00 UTC 2018
+Mon Nov 19 14:46:00 2018: INIT: Entering runlevel: 3
+Mon Nov 19 14:46:00 2018: Starting OpenBSD Secure Shell server: sshd
+Mon Nov 19 14:46:00 2018: done.
+Mon Nov 19 14:46:00 2018: starting DNS forwarder and DHCP server: dnsmasq... done.
+Mon Nov 19 14:46:01 2018: Starting HOSTAP Daemon: Configuration file: /etc/hostapd.conf
+Mon Nov 19 14:46:02 2018: rfkill: Cannot open RFKILL control device
+Mon Nov 19 14:46:02 2018: wlan0-ap: interface state UNINITIALIZED->COUNTRY_UPDATE
+Mon Nov 19 14:46:02 2018: hostapd.
+Mon Nov 19 14:46:02 2018: Running local boot scripts (/etc/rc.local).
+Mon Nov 19 14:46:02 2018: 

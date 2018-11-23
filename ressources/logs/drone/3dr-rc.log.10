@@ -1,0 +1,27 @@
+Nov 21 14:05:24 3dr_solo local0.info +926 pixrc: main: built Sep 22 2016 15:30:53
+Nov 21 14:05:24 3dr_solo local0.info +967 pixrc: main: rcSourceIps: 10.1.1.1,127.0.0.1
+Nov 21 14:05:24 3dr_solo local0.info +975 pixrc: main: rcDestPort:  5005
+Nov 21 14:05:24 3dr_solo local0.info +975 pixrc: main: rcDsmDev:    /dev/ttymxc2
+Nov 21 14:05:24 3dr_solo local0.info +975 pixrc: main: Throttle PWM in  1000...2000
+Nov 21 14:05:24 3dr_solo local0.info +975 pixrc: main:          PWM out 1000...1900
+Nov 21 14:05:24 3dr_solo local0.info +975 pixrc: main: Other    PWM in  1000...2000
+Nov 21 14:05:24 3dr_solo local0.info +975 pixrc: main:          PWM out 1000...2000
+Nov 21 14:05:24 3dr_solo local0.info +976 pixrc: udp: listening on port 5005
+Nov 21 14:05:25 3dr_solo local0.info +452 pixrc: udp: failsafe start after 446 ms of inactivity
+Nov 21 14:05:25 3dr_solo local0.info +456 pixrc: serial: started
+Nov 21 14:05:25 3dr_solo local0.info +456 pixrc: serial: failsafe start
+Nov 21 14:06:41 3dr_solo local0.info +427 pixrc: cmd: uplink attached
+Nov 21 14:06:46 3dr_solo local0.info +820 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=51317,ser=20977
+Nov 21 14:06:56 3dr_solo local0.info +821 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50448,ser=21674
+Nov 21 14:07:06 3dr_solo local0.info +820 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50085,ser=20480
+Nov 21 14:07:16 3dr_solo local0.info +820 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50238,ser=21835
+Nov 21 14:07:26 3dr_solo local0.info +821 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50097,ser=20836
+Nov 21 14:07:36 3dr_solo local0.info +820 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50246,ser=21609
+Nov 21 14:07:46 3dr_solo local0.info +821 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50083,ser=20878
+Nov 21 14:07:56 3dr_solo local0.info +821 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50173,ser=21991
+Nov 21 14:08:06 3dr_solo local0.info +821 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50089,ser=21723
+Nov 21 14:08:16 3dr_solo local0.info +821 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50156,ser=21783
+Nov 21 14:08:26 3dr_solo local0.info +821 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50204,ser=20504
+Nov 21 14:08:36 3dr_solo local0.info +820 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=50109,ser=21350
+Nov 21 14:08:46 3dr_solo local0.info +820 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=51320,ser=20889
+Nov 21 14:08:56 3dr_solo local0.info +821 pixrc: a:0,m:0,n:0,u:0,d:0,o:0,q:0,udp=51707,ser=21605

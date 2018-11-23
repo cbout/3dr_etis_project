@@ -1,0 +1,510 @@
+Wed Nov 21 14:45:11 UTC 2018
+>>> PreArm: inconsistent compasses
+>>> APM:Copter solo-1.3.1 (7e9206cc)
+>>> PX4: 5e693274 NuttX: d48fa307
+>>> Frame: QUAD
+>>> PX4v2 00200022 33345117 32383433
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> APM:Copter solo-1.3.1 (7e9206cc)
+>>> PX4: 5e693274 NuttX: d48fa307
+>>> Frame: QUAD
+>>> PX4v2 00200022 33345117 32383433
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> APM:Copter solo-1.3.1 (7e9206cc)
+>>> PX4: 5e693274 NuttX: d48fa307
+>>> Frame: QUAD
+>>> PX4v2 00200022 33345117 32383433
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: Check mag field
+>>> PreArm: inconsistent compasses

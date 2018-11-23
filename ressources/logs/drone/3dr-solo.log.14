@@ -1,0 +1,40 @@
+Nov 19 15:26:02 3dr_solo local1.info pix: pixhawk.py starting
+Nov 19 15:26:02 3dr_solo local1.info pix: checking baud...
+Nov 19 15:26:02 3dr_solo local1.info pix: found at 921600
+Nov 19 15:26:02 3dr_solo local1.info pix: no new firmware file
+Nov 19 15:26:02 3dr_solo local1.info pix: build version build=1.3.1 ardupilot=7e9206cc px4=5e693274 nuttx=d48fa307
+Nov 19 15:26:02 3dr_solo local1.info pix: now running:
+Nov 19 15:26:02 3dr_solo local1.info pix: build_version        1.3.1
+Nov 19 15:26:02 3dr_solo local1.info pix: ardupilot_git_hash   7e9206cc
+Nov 19 15:26:02 3dr_solo local1.info pix: px4_git_hash         5e693274
+Nov 19 15:26:02 3dr_solo local1.info pix: nuttx_git_hash       d48fa307
+Nov 19 15:26:02 3dr_solo local1.info pix: pixhawk status: ready
+Nov 19 15:26:02 3dr_solo local1.info pix: pixhawk.py finished
+Nov 19 15:26:09 3dr_solo local1.info unlock: built Sep 22 2016 15:31:09
+Nov 19 15:26:09 3dr_solo local1.info unlock: rc is not locked
+Nov 19 15:26:09 3dr_solo local1.info pair: pair_solo.py starting
+Nov 19 15:26:09 3dr_solo local1.info pair: using default check_versions=True
+Nov 19 15:26:09 3dr_solo local1.info pair: sololink version "2.4.2"
+Nov 19 15:26:09 3dr_solo local1.info pair: firmware version "1.3.1"
+Nov 19 15:26:09 3dr_solo local1.info pair: pairing using wlan0
+Nov 19 15:26:09 3dr_solo local1.info pair: bringing up network...
+Nov 19 15:26:19 3dr_solo local1.info pair: ip address 10.1.1.10 netmask 255.255.255.0
+Nov 19 15:26:19 3dr_solo local1.info pair: network is up
+Nov 19 15:26:19 3dr_solo local1.info pair: establishing connection...
+Nov 19 15:26:19 3dr_solo local1.info pair: controller version "2.4.2"; firmware "1.2.11"
+Nov 19 15:26:19 3dr_solo local1.info pair: switching to runlevel.READY
+Nov 19 15:26:19 3dr_solo local1.info dl: dataflash_logger starting: built Sep 22 2016 15:30:50
+Nov 19 15:26:19 3dr_solo local1.info dl: df-tfc: connecting to telem-forwarder at 10.1.1.10:14560
+Nov 19 15:26:19 3dr_solo local1.info dl: mh-dfl: sending start packet to (0/0)
+Nov 19 15:26:19 3dr_solo local1.info dl: mh-dfl: Starting log, target is (1/155), I am (57/57)
+Nov 19 15:26:19 3dr_solo local1.info dl: mh-dfl: Opened log file (/log/dataflash/112.BIN)
+Nov 19 15:26:19 3dr_solo local1.err dl: mh-dfl: long time between messages (33273737)
+Nov 19 15:26:20 3dr_solo local1.info dl: mh-dfl: Current log size: 20000
+Nov 19 15:26:31 3dr_solo local1.info dl: mh-dfl: Current log size: 160000
+Nov 19 15:26:41 3dr_solo local1.info dl: mh-dfl: Current log size: 280000
+Nov 19 15:26:52 3dr_solo local1.info dl: mh-dfl: Current log size: 420000
+Nov 19 15:27:04 3dr_solo local1.info dl: mh-dfl: Current log size: 560000
+Nov 19 15:27:15 3dr_solo local1.info dl: mh-dfl: Current log size: 700000
+Nov 19 15:27:25 3dr_solo local1.info dl: mh-dfl: Current log size: 820000
+Nov 19 15:27:36 3dr_solo local1.info dl: mh-dfl: Current log size: 960000
+Nov 19 15:27:47 3dr_solo local1.info dl: mh-dfl: Current log size: 1100000

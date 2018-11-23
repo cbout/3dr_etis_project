@@ -1,0 +1,55 @@
+Jan  1 00:00:05 3dr_controller syslog.info syslogd started: BusyBox v1.21.1
+Jan  1 00:00:05 3dr_controller daemon.info kernel: udevd[141]: starting version 182
+Nov 21 14:51:00 3dr_controller daemon.info init: Entering runlevel: 3
+Nov 21 14:51:00 3dr_controller auth.info sshd[725]: Server listening on 0.0.0.0 port 22.
+Nov 21 14:51:00 3dr_controller auth.info sshd[725]: Server listening on :: port 22.
+Nov 21 14:51:00 3dr_controller daemon.info dnsmasq[730]: started, version 2.72 cachesize 150
+Nov 21 14:51:00 3dr_controller daemon.info dnsmasq[730]: compile time options: IPv6 GNU-getopt no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth no-DNSSEC loop-detect
+Nov 21 14:51:00 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCP, IP range 10.1.1.100 -- 10.1.1.199, lease time 2h
+Nov 21 14:51:00 3dr_controller daemon.warn dnsmasq[730]: no servers found in /etc/resolv.conf, will retry
+Nov 21 14:51:00 3dr_controller daemon.info dnsmasq[730]: read /etc/hosts - 1 addresses
+Nov 21 14:51:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: authenticated
+Nov 21 14:51:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 IEEE 802.11: associated (aid 1)
+Nov 21 14:51:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 RADIUS: starting accounting session 5BF570E0-00000000
+Nov 21 14:51:14 3dr_controller daemon.info hostapd: wlan0-ap: STA 88:dc:96:3b:69:c3 WPA: pairwise key handshake completed (RSN)
+Nov 21 14:51:15 3dr_controller daemon.info init: Switching to runlevel: 4
+Nov 22 08:47:42 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a IEEE 802.11: authenticated
+Nov 22 08:47:45 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a IEEE 802.11: authenticated
+Nov 22 08:47:45 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a IEEE 802.11: associated (aid 2)
+Nov 22 08:47:45 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a RADIUS: starting accounting session 5BF570E0-00000001
+Nov 22 08:47:45 3dr_controller daemon.info hostapd: wlan0-ap: STA 78:31:c1:b7:4b:8a WPA: pairwise key handshake completed (RSN)
+Nov 22 08:47:52 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPDISCOVER(wlan0-ap) 78:31:c1:b7:4b:8a 
+Nov 22 08:47:52 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPOFFER(wlan0-ap) 10.1.1.114 78:31:c1:b7:4b:8a 
+Nov 22 08:47:52 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPDISCOVER(wlan0-ap) 78:31:c1:b7:4b:8a 
+Nov 22 08:47:52 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPOFFER(wlan0-ap) 10.1.1.114 78:31:c1:b7:4b:8a 
+Nov 22 08:47:53 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPREQUEST(wlan0-ap) 10.1.1.114 78:31:c1:b7:4b:8a 
+Nov 22 08:47:53 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPACK(wlan0-ap) 10.1.1.114 78:31:c1:b7:4b:8a MBP-de-Raphael
+Nov 22 08:50:27 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 IEEE 802.11: authenticated
+Nov 22 08:50:27 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 IEEE 802.11: associated (aid 3)
+Nov 22 08:50:27 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 RADIUS: starting accounting session 5BF570E0-00000002
+Nov 22 08:50:27 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 WPA: pairwise key handshake completed (RSN)
+Nov 22 08:50:27 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPDISCOVER(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 
+Nov 22 08:50:27 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPOFFER(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 
+Nov 22 08:50:27 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPREQUEST(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 
+Nov 22 08:50:27 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPACK(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 neuro
+Nov 22 08:51:42 3dr_controller auth.info sshd[2384]: Connection closed by 10.1.1.193 [preauth]
+Nov 22 08:51:52 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 IEEE 802.11: disassociated
+Nov 22 08:51:53 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 IEEE 802.11: deauthenticated due to inactivity (timer DEAUTH/REMOVE)
+Nov 22 08:51:59 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 IEEE 802.11: authenticated
+Nov 22 08:51:59 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 IEEE 802.11: associated (aid 3)
+Nov 22 08:51:59 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 RADIUS: starting accounting session 5BF570E0-00000003
+Nov 22 08:51:59 3dr_controller daemon.info hostapd: wlan0-ap: STA 08:6a:0a:64:05:45 WPA: pairwise key handshake completed (RSN)
+Nov 22 08:51:59 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPREQUEST(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 
+Nov 22 08:51:59 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPACK(wlan0-ap) 10.1.1.193 08:6a:0a:64:05:45 neuro
+Nov 22 08:53:21 3dr_controller auth.crit sshd[2969]: fatal: Read from socket failed: Connection reset by peer [preauth]
+Nov 22 08:54:34 3dr_controller daemon.info hostapd: wlan0-ap: STA f0:0f:ec:bd:ec:46 IEEE 802.11: authenticated
+Nov 22 08:54:34 3dr_controller daemon.info hostapd: wlan0-ap: STA f0:0f:ec:bd:ec:46 IEEE 802.11: associated (aid 4)
+Nov 22 08:54:34 3dr_controller daemon.info hostapd: wlan0-ap: STA f0:0f:ec:bd:ec:46 RADIUS: starting accounting session 5BF570E0-00000004
+Nov 22 08:54:34 3dr_controller daemon.info hostapd: wlan0-ap: STA f0:0f:ec:bd:ec:46 WPA: pairwise key handshake completed (RSN)
+Nov 22 08:54:36 3dr_controller daemon.info hostapd: wlan0-ap: STA f0:0f:ec:bd:ec:46 IEEE 802.11: disassociated
+Nov 22 08:54:37 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPDISCOVER(wlan0-ap) f0:0f:ec:bd:ec:46 
+Nov 22 08:54:37 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPOFFER(wlan0-ap) 10.1.1.174 f0:0f:ec:bd:ec:46 
+Nov 22 08:54:37 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPDISCOVER(wlan0-ap) f0:0f:ec:bd:ec:46 
+Nov 22 08:54:37 3dr_controller daemon.info dnsmasq-dhcp[730]: DHCPOFFER(wlan0-ap) 10.1.1.174 f0:0f:ec:bd:ec:46 
+Nov 22 08:54:37 3dr_controller daemon.info hostapd: wlan0-ap: STA f0:0f:ec:bd:ec:46 IEEE 802.11: deauthenticated due to inactivity (timer DEAUTH/REMOVE)
+Nov 22 08:55:01 3dr_controller auth.info sshd[3589]: Accepted password for root from 10.1.1.114 port 6516 ssh2

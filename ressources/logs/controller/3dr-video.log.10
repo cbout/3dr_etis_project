@@ -1,0 +1,42 @@
+Nov 19 15:45:13 3dr_controller local3.info streamer: starting: built Sep 22 2016 15:31:07
+Nov 19 15:45:13 3dr_controller local3.info hdmi: Waiting for an HDMI connection
+Nov 19 15:45:23 3dr_controller local3.info streamer: pkts=50 bytes=2836 drops=119118
+Nov 19 15:45:33 3dr_controller local3.info streamer: pkts=71 bytes=2868 drops=1
+Nov 19 15:45:43 3dr_controller local3.info streamer: pkts=72 bytes=2877 drops=0
+Nov 19 15:45:53 3dr_controller local3.info streamer: pkts=72 bytes=2882 drops=0
+Nov 19 15:45:59 3dr_controller local3.info streamer: app connected at 10.1.1.193
+Nov 19 15:46:03 3dr_controller local3.info streamer: pkts=71 bytes=2871 drops=0
+Nov 19 15:46:13 3dr_controller local3.info streamer: pkts=71 bytes=2874 drops=1
+Nov 19 15:46:23 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 19 15:46:33 3dr_controller local3.info streamer: pkts=70 bytes=2970 drops=53932
+Nov 19 15:46:43 3dr_controller local3.info streamer: pkts=69 bytes=3271 drops=2605
+Nov 19 15:46:53 3dr_controller local3.info streamer: pkts=65 bytes=3742 drops=100968
+Nov 19 15:47:03 3dr_controller local3.info streamer: pkts=71 bytes=2865 drops=39303
+Nov 19 15:47:13 3dr_controller local3.info streamer: pkts=68 bytes=2818 drops=1616
+Nov 19 15:47:23 3dr_controller local3.info streamer: pkts=70 bytes=2935 drops=24222
+Nov 19 15:47:33 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 19 15:47:43 3dr_controller local3.info streamer: pkts=72 bytes=2876 drops=0
+Nov 19 15:47:53 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 19 15:48:03 3dr_controller local3.info streamer: pkts=72 bytes=2876 drops=0
+Nov 19 15:48:13 3dr_controller local3.info streamer: pkts=69 bytes=3022 drops=35774
+Nov 19 15:48:23 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 19 15:48:33 3dr_controller local3.info streamer: pkts=69 bytes=2830 drops=16115
+Nov 21 13:05:00 3dr_controller local3.info streamer: pkts=70 bytes=3028 drops=25008
+Nov 21 13:05:08 3dr_controller local3.info streamer: app disconnected
+Nov 21 13:05:10 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 21 13:05:20 3dr_controller local3.info streamer: pkts=71 bytes=2873 drops=2
+Nov 21 13:05:22 3dr_controller local3.info streamer: app connected at 10.1.1.193
+Nov 21 13:05:30 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 21 13:05:40 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 21 13:05:50 3dr_controller local3.info streamer: pkts=72 bytes=2877 drops=0
+Nov 21 13:06:00 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 21 13:06:10 3dr_controller local3.info streamer: pkts=72 bytes=2877 drops=0
+Nov 21 13:06:20 3dr_controller local3.info streamer: pkts=69 bytes=2835 drops=18418
+Nov 21 13:06:30 3dr_controller local3.info streamer: pkts=71 bytes=2876 drops=0
+Nov 21 13:06:40 3dr_controller local3.info streamer: pkts=69 bytes=2834 drops=29104
+Nov 21 13:06:50 3dr_controller local3.info streamer: pkts=71 bytes=2592 drops=3
+Nov 21 13:07:00 3dr_controller local3.info streamer: pkts=71 bytes=2871 drops=0
+Nov 21 13:07:10 3dr_controller local3.info streamer: pkts=72 bytes=2882 drops=0
+Nov 21 13:07:20 3dr_controller local3.info streamer: pkts=71 bytes=2687 drops=2
+Nov 21 13:07:30 3dr_controller local3.info streamer: pkts=71 bytes=2875 drops=0
+Nov 21 13:07:40 3dr_controller local3.info streamer: pkts=36 bytes=1438 drops=0

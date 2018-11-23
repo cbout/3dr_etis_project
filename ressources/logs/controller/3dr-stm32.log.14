@@ -1,0 +1,37 @@
+Nov 19 15:30:03 3dr_controller local0.info +417 stm32: main: starting: built Sep 22 2016 15:30:56
+Nov 19 15:30:03 3dr_controller local0.info +431 stm32: logging telemetry gaps >= 1000 msec
+Nov 19 15:30:03 3dr_controller local0.info +431 stm32: pkt: opened port 5005
+Nov 19 15:30:03 3dr_controller local0.info +431 stm32: pkt: opened port 5015
+Nov 19 15:30:03 3dr_controller local0.info +432 stm32: pkt: opened port 5012
+Nov 19 15:30:03 3dr_controller local0.info +432 stm32: pkt: opened port 5013
+Nov 19 15:30:03 3dr_controller local0.info +438 stm32: pkt: opened port 5014
+Nov 19 15:30:03 3dr_controller local0.info +438 stm32: pkt: opened port 5011
+Nov 19 15:30:03 3dr_controller local0.info +438 stm32: pkt: opened port 5010
+Nov 19 15:30:03 3dr_controller local0.info +438 stm32: pkt: opened port 5024
+Nov 19 15:30:03 3dr_controller local0.info +439 stm32: pkt: opened port 5022
+Nov 19 15:30:03 3dr_controller local0.info +439 stm32: pkt: opened port 5016
+Nov 19 15:30:03 3dr_controller local0.info +441 stm32: pkt: opened port 5021
+Nov 19 15:30:03 3dr_controller local0.info +441 stm32: pkt: opened port 5017
+Nov 19 15:30:03 3dr_controller local0.info +441 stm32: pkt: opened port 5018
+Nov 19 15:30:03 3dr_controller local0.info +442 stm32: pkt: opened port 5019
+Nov 19 15:30:03 3dr_controller local0.info +442 stm32: pkt: opened port 5020
+Nov 19 15:30:03 3dr_controller local0.info +442 stm32: pkt: opened port 5026
+Nov 19 15:30:03 3dr_controller local0.info +442 stm32: opened serial port /dev/ttymxc1
+Nov 19 15:30:03 3dr_controller local0.info +508 stm32: ButtonEvent downstream_thread: starting
+Nov 19 15:30:03 3dr_controller local0.info +508 stm32: ButtonEvent listen_thread: starting
+Nov 19 15:30:03 3dr_controller local0.info +508 stm32: InputReport downstream_thread: starting
+Nov 19 15:30:03 3dr_controller local0.info +509 stm32: InputReport listen_thread: starting
+Nov 19 15:30:03 3dr_controller local0.info +533 stm32: slip - initial sync
+Nov 19 15:30:03 3dr_controller local0.info +542 stm32: sys: unique id: 36:ff:d8:05:46:57:32:32:18:85:02:43
+Nov 19 15:30:03 3dr_controller local0.info +542 stm32: sys: hardware ver: 3
+Nov 19 15:30:03 3dr_controller local0.info +542 stm32: sys: software ver: v1.2.11
+Nov 19 15:30:03 3dr_controller local0.info +542 stm32: sys: (try 2)
+Nov 19 15:30:13 3dr_controller local0.info +547 stm32: up 1:504 3:11 14:505 0 B 0.00 KB/s dn 0 B 0.00 KB/s
+Nov 19 15:30:23 3dr_controller local0.info +551 stm32: up 1:501 3:10 14:501 0 B 0.00 KB/s dn 0 B 0.00 KB/s
+Nov 19 15:30:27 3dr_controller local0.info +553 stm32: got solo ip: 10.1.1.10
+Nov 19 15:30:32 3dr_controller local0.info +713 stm32: ButtonEvent listen_thread: adding client 29 at 10.1.1.10:38736
+Nov 19 15:30:33 3dr_controller local0.info +555 stm32: up 1:498 3:10 14:498 7748 B 0.76 KB/s dn 36552 B 3.57 KB/s
+Nov 19 15:30:43 3dr_controller local0.info +558 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 36182 B 3.53 KB/s
+Nov 19 15:30:53 3dr_controller local0.info +560 stm32: up 1:497 3:10 14:497 12922 B 1.26 KB/s dn 30344 B 2.96 KB/s
+Nov 19 15:31:03 3dr_controller local0.info +563 stm32: up 1:500 3:10 14:500 13000 B 1.27 KB/s dn 30707 B 3.00 KB/s
+Nov 19 15:31:09 3dr_controller local0.info +455 stm32: STM32 requested shutdown
