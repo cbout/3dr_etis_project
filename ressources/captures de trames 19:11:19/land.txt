@@ -1,4 +1,4 @@
 MAVLINK_MSG_ID_SET_MODE 11 = 0x0b
 	
-	Data: fe06cbff000b0900000001d9b35e
-	Data: fe06cbff000b0900000001d9b35e
+	Data: fe06cbff000b	09000000 01 d9	b35e
+	Data: fe06cbff000b	09000000 01 d9	b35e
