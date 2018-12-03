@@ -57,8 +57,8 @@ GMainLoop *loop;
 /**
  * @brief      Main
  *
- * @param][in]      argc        number of argement
- * @param [in]     argv        help and port
+ * @param [in]      argc        number of argement
+ * @param [in]		argv        help and port
  *
  * @return     0
  */
