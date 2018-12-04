@@ -78,6 +78,28 @@ connect (s, (struct sockaddr *)&serv_addr, sizeof serv_addr);
 \end{lstlisting}
 
 
+\subsection*{Protocol}
+\label{sec:Protocol}
+
+\paragraph{} As previously said, the video stream is broadcast using the UDP protocol. In our case, we listen packets from 10.1.1.1 (controller IP address) on the port 5600. The format of a UDP frame is in the following form :
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.5]{./images/UDP_Construction.png}
+		\caption{Construction of an UDP frame}
+	\label{fig:UDP_Construction}
+\end{figure}
+
+\paragraph{} Encapsulated into this protocol we find the RTP/AVP protocol. This one is done for delivering audio and video. In our case we only deliver video, so we use a payload of type dynamic for only video (H264 AVC) which matches with the MPEG-4 format. More, the clock rate is of 90000 Hz.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.3]{./images/RTP_Construction.png}
+		\caption{Construction of an RTP frame}
+	\label{fig:RTP_Construction}
+\end{figure}
+
+
 \subsection*{Get video stream}
 \label{sec:stream}
 
@@ -131,29 +153,25 @@ g_main_loop_run(loop);
 \end{lstlisting}
 
 
-\subsection*{Protocol}
-\label{sec:Protocol}
+\subsection*{Save video stream}
+\label{sec:savestream}
 
-\paragraph{} As previously said, the video stream is broadcast using the UDP protocol. In our case, we listen packets from 10.1.1.1 (controller IP address) on the port 5600. The format of a UDP frame is in the following form :
+\paragraph{} In order to reuse or interpret video stream, we give the posibility to save it in two forms.
 
-\begin{figure}[H]
-	\centering
-		\includegraphics[scale=0.5]{./images/UDP_Construction.png}
-		\caption{Construction of an UDP frame}
-	\label{fig:UDP_Construction}
-\end{figure}
+\paragraph{Video file} First solution, register it in a video file (.avi in this case). To be done, we use again the library gstreamer where we redirect the input flow (udpsrc) to a file with the following sequence : "! queue ! avimux ! filesink location=capture.avi". Thus the string to put in gst\_parse\_launch become : 
 
-\paragraph{} Encapsulated into this protocol we find the RTP/AVP protocol. This one is done for delivering audio and video. In our case we only deliver video, so we use a payload of type dynamic for only video (H264 AVC) which matches with the MPEG-4 format. More, the clock rate is of 90000 Hz.
+\begin{lstlisting}
+/* Build the pipeline */
+pipeline = gst_parse_launch("-v udpsrc port=5600 caps = \"application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96\" ! rtph264depay ! decodebin  ! tee name=t ! queue ! videoconvert ! autovideosink t. ! queue ! avimux ! filesink location=capture.avi", NULL);
+\end{lstlisting}
 
-\begin{figure}[H]
-	\centering
-		\includegraphics[scale=0.3]{./images/RTP_Construction.png}
-		\caption{Construction of an RTP frame}
-	\label{fig:RTP_Construction}
-\end{figure}
+\paragraph{Pictures files} Second possibility which completed the first one, save each frame of the video stream on pictures. To do this, we redirect again the input flow (udpsrc) with gstreamer but in this case in multiple files as shown this code : "! queue ! videorate ! jpegenc ! multifilesink location="frame/jpg/frame\%06d.jpg"". Note that in this example we write frames on .jpg files but we can change the format to .bmp for example replacing "jpegenc" by "avenc\_bmp". Thus the final string to put in gst\_parse\_launch become :
 
-
-
+\begin{lstlisting}
+/* Build the pipeline */
+//.jpg files
+pipeline = gst_parse_launch("-v udpsrc port=5600 caps = \"application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96\" ! rtph264depay ! decodebin  ! tee name=t ! queue ! videorate ! jpegenc ! multifilesink location=\"frame/jpg/frame%06d.jpg\" t. ! queue ! videoconvert ! autovideosink t. ! queue ! avimux ! filesink location=capture.avi", NULL);
+\end{lstlisting}
 
 
 \subsection*{Sources}
@@ -168,6 +186,8 @@ g_main_loop_run(loop);
 \item GStreamer documentation : https://gstreamer.freedesktop.org/documentation/index.html
 \item Get video stream with GStreamer in the command line : https://gist.github.com/esrever10/7d39fe2d4163c5b2d7006495c3c911bb
 \item Get video stream with GStreamer in a program c : https://stackoverflow.com/questions/41698656/convert-gstreamer-command-to-c-code
+\item To register video stream in a file with gstreamer : https://www.raspberrypi.org/forums/viewtopic.php?t=65187
+\item To register video stream frames in files with gstreamer : http://www.tal.org/tutorials/timelapse-video-gstreamer
 \end{itemize}
 
 
