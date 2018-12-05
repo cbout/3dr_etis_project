@@ -4,7 +4,8 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <arpa/inet.h>
-#include "../include/ardupilotmega/mavlink.h"
+#include <mavlink.h>
+#include <gst/gst.h>
 
 #define BUFFER_LENGTH 2041
 
@@ -41,12 +42,13 @@ typedef struct vehicle {
 
 typedef struct mavlink_thread_arg
 {
+	vehicle_t vehicle;
 	pthread_mutex_t mutex;
 	int sock;
 	struct sockaddr_in locAddr;
 	struct sockaddr_in targetAddr;
 	int run;
-	vehicle_t vehicle;
+	GMainLoop *loop;
 }mavlink_thread_arg_t;
 
 

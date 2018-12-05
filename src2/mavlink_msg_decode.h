@@ -2,7 +2,7 @@
 #define _DECODE_H_
 // A completer
 
-#include "../include/ardupilotmega/mavlink.h"
+#include <mavlink.h>
 #include "mavlink_perso_types.h"
 
 /**

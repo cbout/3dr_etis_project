@@ -3,7 +3,7 @@
 // A completer
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/ardupilotmega/mavlink.h"
+#include <mavlink.h>
 #include "mavlink_display.h"
 /**
  * @brief      Order for the drone

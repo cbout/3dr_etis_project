@@ -44,6 +44,45 @@ void* threadReciving (void* arg){
 	pthread_exit(NULL); /* End of the thread */
 }
 
+void* threadRecivingUART (void* arg){
+
+	mavlink_thread_arg_t* args = (mavlink_thread_arg_t*) arg; 
+
+	uint8_t buf[BUFFER_LENGTH];
+	ssize_t recsize;
+	socklen_t fromlen;
+	mavlink_channel_t chan = MAVLINK_COMM_0;
+
+	while (args->run){
+		memset(buf, 0, BUFFER_LENGTH);
+
+		recsize = recvfrom(args->sock, (void *)buf, BUFFER_LENGTH, 0, (struct sockaddr *)&args->targetAddr, &fromlen);
+		if (recsize > 0)
+		{
+			// Something received
+			mavlink_message_t msg;
+			mavlink_status_t status;
+			int i;
+			pthread_mutex_lock (&args->mutex);
+			for (i = 0; i < recsize; ++i)
+			{
+				if (mavlink_parse_char(chan, buf[i], &msg, &status))
+				{
+					if(mavlink_msg_decode_broadcast(msg, &args->vehicle)==-1){
+						//If this is not a broadcast message
+						mavlink_msg_decode_answer(msg);
+					}
+				}
+			}
+			pthread_mutex_unlock (&args->mutex);
+		}
+
+		sleep(1); // Sleep one second
+	}
+
+	pthread_exit(NULL); /* End of the thread */
+}
+
 
 /**
  * @brief      Ping heartbeat
@@ -190,7 +229,7 @@ void* threadSending (void* arg){
 		//Quit the prog
 		if(strcmp(&order, "e") == 0){
 			args->run = 0;
-			// g_main_loop_quit(loop); 
+			g_main_loop_quit(args->loop);
 			break;
 		}
 
@@ -213,4 +252,83 @@ void* threadSending (void* arg){
 
 	//End of the thread
 	pthread_exit(NULL);
+}
+
+
+/**
+ * @brief      Function where we get and display the video stream from the GoPro
+ *             with GStreamer library
+ *
+ * @param      args  The arguments
+ *
+ * @return     0 if it finishes normally, else -1
+ */
+int goProVideoStream (mavlink_thread_arg_t* args){
+
+	GstElement *pipeline;
+    GstBus *bus;
+	GstStateChangeReturn ret;
+	GMainLoop *loop = args->loop;
+
+	
+	
+	/* Initialize GStreamer */
+    gst_init(NULL, NULL);
+
+	/* Build the pipeline */
+    pipeline = gst_parse_launch("-v udpsrc port=5600 caps = \"application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96\" ! rtph264depay ! decodebin ! videoconvert ! autovideosink", NULL);
+	bus = gst_element_get_bus(pipeline);
+	
+	/* Start playing */
+	ret = gst_element_set_state(pipeline, GST_STATE_PLAYING);
+    if (ret == GST_STATE_CHANGE_FAILURE) {
+      g_printerr ("Unable to set the pipeline to the playing state.\n");
+      gst_object_unref (pipeline);
+      args->run = 0;
+	  return -1;
+    }
+	
+	/* Loop */
+	loop = g_main_loop_new(NULL, FALSE);
+    g_main_loop_run(loop);
+	
+	/* Free resources */
+	g_main_loop_unref (loop);
+	gst_object_unref (bus);
+	gst_element_set_state (pipeline, GST_STATE_NULL);
+	gst_object_unref (pipeline);
+	
+	
+	return 0;
+}
+
+
+
+/**
+ * @brief      Change keyboard entry
+ *
+ * @param[in]  activate  1 to activate the mode, 0 deactivate it
+ */
+void mode_raw(int activate)
+{
+    static struct termios cooked;
+    static int raw_activate = 0;
+
+    if (raw_activate == activate)
+        return;
+
+    if (activate)
+    {
+        struct termios raw;
+
+        tcgetattr(STDIN_FILENO, &cooked);
+
+        raw = cooked;
+        cfmakeraw(&raw);
+        tcsetattr(STDIN_FILENO, TCSANOW, &raw);
+    }
+    else
+        tcsetattr(STDIN_FILENO, TCSANOW, &cooked);
+
+    raw_activate = activate;
 }

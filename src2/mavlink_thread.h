@@ -1,3 +1,5 @@
+#ifndef _MAV_THREAD_
+#define _MAV_THREAD_
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -9,6 +11,8 @@
 #include <time.h>
 #include <arpa/inet.h>
 #include <pthread.h>
+#include <gst/gst.h>
+#include <termios.h>
 #include "mavlink_msg_decode.h"
 #include "mavlink_display.h"
 #include "mavlink_msg_order.h"
@@ -38,3 +42,21 @@ void* threadHeartbeatPing(void* arg);
  *
  */
 void* threadSending (void* arg);
+
+/**
+ * @brief      { function_description }
+ *
+ * @param      args  The arguments
+ *
+ * @return     { description_of_the_return_value }
+ */
+int goProVideoStream (mavlink_thread_arg_t* args);
+
+/**
+ * @brief      Change keyboard
+ *
+ * @param[in]  activate  The activate
+ */
+void mode_raw(int activate);
+
+#endif
