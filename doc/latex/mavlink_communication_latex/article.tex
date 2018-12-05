@@ -196,7 +196,16 @@ mavlink_msg_command_long_pack(255, 0, &msg, 1, 0, MAV_CMD_COMPONENT_ARM_DISARM, 
 \subsection*{Send mavlink mission}
 \label{sec:mission}
 
-\paragraph{MISSION COUNT} First of all, you have to send a MAVLINK\_MSG\_ID\_MISSION\_COUNT. This message contains : the count which represent the number of mission items in the sequence, the target\_system ID and the target\_component ID.
+\noindent In this section we will describe how a mission is made and how to prepare and send one to the drone.
+
+
+\paragraph{-Mission count} First of all, you have to send a MAVLINK\_MSG\_ID\_MISSION\_COUNT. The contents of the different fields of the message are : 
+
+\begin{itemize}
+\item count = (2 or 4 or ...), represents the number of mission items in the sequence
+\item target\_system = 1 (0x01), the ID of the target system.
+\item target\_component = 190 (0xbe), the ID of the target component
+\end{itemize}
 
 \begin{figure}[H]
 	\centering
@@ -205,12 +214,30 @@ mavlink_msg_command_long_pack(255, 0, &msg, 1, 0, MAV_CMD_COMPONENT_ARM_DISARM, 
 	\label{fig:MISSION_COUNT}
 \end{figure}
 
-\begin{lstlisting}
+\noindent Example of function call for packing a mission count message :
 
+\begin{lstlisting}
+mavlink_msg_mission_count_pack(255, 0, &msg, 1, 190, 2);	//MISSION_COUNT
 \end{lstlisting}
 
 
-\paragraph{MISSION ITEM}  Next, you send some MAVLINK\_MSG\_ID\_MISSION\_ITEM...
+\paragraph{-Mission item} Next, you send some MAVLINK\_MSG\_ID\_MISSION\_ITEM depending on the mission you want to perform. The contents of the different fields of the message are :
+\begin{itemize}
+\item param1 = depends on the command, see in MAV\_CMD enum.
+\item param2 = depends on the command, see in MAV\_CMD enum.
+\item param3 = depends on the command, see in MAV\_CMD enum.
+\item param4 = depends on the command, see in MAV\_CMD enum.
+\item x = depends on the command, local: X coordinate, global: latitude.
+\item y = depends on the command, local: Y coordinate, global: longitude.
+\item z = depends on the command, local: Z coordinate, global: altitude (relative or absolute, depending on frame).
+\item seq = sequence (0, 1, 2, 3, ...).
+\item command = MAV\_CMD\_NAV\_WAYPOINT (0x0010 = 16) or MAV\_CMD\_NAV\_TAKEOFF (0x0016 = 22) or MAV\_CMD\_DO\_CHANGE\_SPEED (0x00b2 = 178) or ...
+\item target\_system = 1 (0x01), the ID of the target system.
+\item target\_component = 190 (0xbe), the ID of the target component.
+\item frame = MAV\_FRAME\_GLOBAL (0x0000 = 0) or MAV\_FRAME\_GLOBAL\_RELATIVE\_ALT (0x0003 = 3) or MAV\_FRAME\_MISSION (0x0002 = 2) or ..., see more in MAV\_FRAME enum. The coordinate system of the waypoint.
+\item current = 1 for the first item, 0 for the following items.
+\item autocontinue = 1, autocontinue to next waypoint.
+\end{itemize}
 
 \begin{figure}[H]
 	\centering
@@ -219,10 +246,65 @@ mavlink_msg_command_long_pack(255, 0, &msg, 1, 0, MAV_CMD_COMPONENT_ARM_DISARM, 
 	\label{fig:MISSION_ITEM}
 \end{figure}
 
-\begin{lstlisting}
+\noindent Examples of function call for packing a mission item message :
 
+\begin{lstlisting}
+mavlink_msg_mission_item_pack(255, 0, &msg, 1, 190, 0, MAV_FRAME_GLOBAL, MAV_CMD_NAV_WAYPOINT, 1, 1, 0, 0, 0, 0, gps_raw_int.lat, gps_raw_int.lon, gps_raw_int.alt);	//MISSION ITEM WAYPOINT
+...
+mavlink_msg_mission_item_pack(255, 0, &msg, 1, 190, 1, MAV_FRAME_GLOBAL_RELATIVE_ALT, MAV_CMD_NAV_TAKEOFF, 0, 1, 15, 0, 0, 0, 0, 0, 1);	//MISSION ITEM TAKEOFF 1m
 \end{lstlisting}
 
+
+\paragraph{-Set mode} Then, you send a MAVLINK\_MSG\_ID\_SET\_MODE in order to put the drone in guided mode. The contents of the different fields of the message are :
+\begin{itemize}
+\item target\_system = 1, the ID of the target system.
+\item custom\_mode = COPTER\_MODE\_GUIDED (0x0004 = 4) or COPTER\_MODE\_LAND (0x0009 = 9), see more in COPTER\_MODE enum.
+\item base\_mode = MAV\_MODE\_GUIDED\_DISARMED+MAV\_MODE\_FLAG\_CUSTOM\_MODE\_ENABLED (0x59 = 89) or MAV\_MODE\_GUIDED\_ARMED+MAV\_MODE\_FLAG\_CUSTOM\_MODE\_ENABLED (OxD9 = 217), see more in MAV\_MODE and MODE\_FLAG enum.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.5]{./images/MAVLINK_MSG_ID_SET_MODE.png}
+		\caption{Show how a set mode frame is built}
+	\label{fig:SET_MODE}
+\end{figure}
+
+\noindent Example of function call for packing a set mode message :
+
+\begin{lstlisting}
+mavlink_msg_set_mode_pack(255, 0, &msg, 1, MAV_MODE_GUIDED_DISARMED+MAV_MODE_FLAG_CUSTOM_MODE_ENABLED, COPTER_MODE_GUIDED); // Request change flight mode
+\end{lstlisting}
+
+
+\paragraph{-Command long}  Then, you send 2 MAVLINK\_MSG\_ID\_COMMAND\_LONG in order to arm and to start the mission. The contents of the different fields of the message are :
+\begin{itemize}
+\item param1 = 1 or 0, depends on the command, see in MAV\_CMD enum
+\item param2 = depends on the command, see in MAV\_CMD enum
+\item param3 = depends on the command, see in MAV\_CMD enum
+\item param4 = depends on the command, see in MAV\_CMD enum
+\item param5 = depends on the command, see in MAV\_CMD enum
+\item param6 = depends on the command, see in MAV\_CMD enum
+\item param7 = depends on the command, see in MAV\_CMD enum
+\item command = MAV\_CMD\_COMPONENT\_ARM\_DISARM (0x0190 = 400) or MAV\_CMD\_MISSION\_START (0x012C = 300)
+\item target\_system = 1, the ID of the target system.
+\item target\_component = 1, the ID of the target component.
+\item confirmation = 0 : first transmission of this command, 1-255 : confirmation transmissions.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.5]{./images/MAVLINK_MSG_ID_COMMAND_LONG.png}
+		\caption{Show how a command long frame is built}
+	\label{fig:COMMAND_LONG}
+\end{figure}
+
+\noindent Example of function call for packing a command long message :
+
+\begin{lstlisting}
+mavlink_msg_command_long_pack(255, 0, &msg, 1, 1, MAV_CMD_COMPONENT_ARM_DISARM, 0, 1, 0, 0, 0, 0, 0, 0);	//Request arm motors
+...
+mavlink_msg_command_long_pack(255, 0, &msg, 1, 1, MAV_CMD_MISSION_START, 0, 0, 0, 0, 0, 0, 0, 0);	//Request start mission
+\end{lstlisting}
 
 
 \subsection*{Sources}

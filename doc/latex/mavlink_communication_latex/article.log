@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.5)  22 NOV 2018 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.5)  3 DEC 2018 18:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -517,56 +517,101 @@ Overfull \hbox (56.68234pt too wide) in paragraph at lines 189--190
 k func-tion" which is cal-led is "mav-link_msg_command_long_pack".
  []
 
-<./images/MAVLINK_MSG_ID_MISSION_COUNT.png, id=16, 231.86626pt x 156.585pt>
+[3]
+<./images/MAVLINK_MSG_ID_MISSION_COUNT.png, id=19, 231.86626pt x 156.585pt>
 File: ./images/MAVLINK_MSG_ID_MISSION_COUNT.png Graphic file (type png)
 
 <use ./images/MAVLINK_MSG_ID_MISSION_COUNT.png>
 Package pdftex.def Info: ./images/MAVLINK_MSG_ID_MISSION_COUNT.png used on inpu
-t line 203.
+t line 212.
 (pdftex.def)             Requested size: 139.12082pt x 93.95172pt.
- [3]
+
+Overfull \hbox (6.21507pt too wide) in paragraph at lines 234--235
+[]\T1/cmr/m/n/10.95 command = MAV_CMD_NAV_WAYPOINT (0x0010 = 16) or MAV_CMD_NAV
+_TAKEOFF
+ []
+
+
+Overfull \hbox (21.03268pt too wide) in paragraph at lines 237--238
+[]\T1/cmr/m/n/10.95 frame = MAV_FRAME_GLOBAL (0x0000 = 0) or MAV_FRAME_GLOBAL_R
+ELATIVE_ALT
+ []
+
 <./images/MAVLINK_MSG_ID_MISSION_ITEM.png, id=21, 1044.90375pt x 153.57375pt>
 File: ./images/MAVLINK_MSG_ID_MISSION_ITEM.png Graphic file (type png)
 
 <use ./images/MAVLINK_MSG_ID_MISSION_ITEM.png>
 Package pdftex.def Info: ./images/MAVLINK_MSG_ID_MISSION_ITEM.png used on input
- line 217.
+ line 244.
 (pdftex.def)             Requested size: 522.45059pt x 76.78668pt.
 
-Overfull \hbox (38.75372pt too wide) in paragraph at lines 217--218
+Overfull \hbox (38.75372pt too wide) in paragraph at lines 244--245
  [][] 
  []
 
+[4 <./images/MAVLINK_MSG_ID_MISSION_COUNT.png> <./images/MAVLINK_MSG_ID_MISSION
+_ITEM.png>]
+Overfull \hbox (84.09612pt too wide) in paragraph at lines 262--263
+[]\T1/cmr/m/n/10.95 base_mode = MAV_MODE_GUIDED_DISARMED+MAV_MODE_FLAG_CUSTOM_M
+ODE_ENABLED
+ []
 
-Overfull \hbox (10.89087pt too wide) in paragraph at lines 236--238
+
+Overfull \hbox (66.9641pt too wide) in paragraph at lines 262--263
+\T1/cmr/m/n/10.95 (0x59 = 89) or MAV_MODE_GUIDED_ARMED+MAV_MODE_FLAG_CUSTOM_MOD
+E_ENABLED
+ []
+
+<./images/MAVLINK_MSG_ID_SET_MODE.png, id=28, 249.93375pt x 136.51pt>
+File: ./images/MAVLINK_MSG_ID_SET_MODE.png Graphic file (type png)
+
+<use ./images/MAVLINK_MSG_ID_SET_MODE.png>
+Package pdftex.def Info: ./images/MAVLINK_MSG_ID_SET_MODE.png used on input lin
+e 267.
+(pdftex.def)             Requested size: 124.96657pt x 68.25482pt.
+
+Overfull \hbox (85.74033pt too wide) in paragraph at lines 288--289
+[]\T1/cmr/m/n/10.95 command = MAV_CMD_COMPONENT_ARM_DISARM (0x0190 = 400) or MA
+V_CMD_MISSION_START
+ []
+
+<./images/MAVLINK_MSG_ID_COMMAND_LONG.png, id=29, 894.34125pt x 153.57375pt>
+File: ./images/MAVLINK_MSG_ID_COMMAND_LONG.png Graphic file (type png)
+
+<use ./images/MAVLINK_MSG_ID_COMMAND_LONG.png>
+Package pdftex.def Info: ./images/MAVLINK_MSG_ID_COMMAND_LONG.png used on input
+ line 296.
+(pdftex.def)             Requested size: 447.16953pt x 76.78668pt.
+ [5 <./images/MAVLINK_MSG_ID_SET_MODE.png> <./images/MAVLINK_MSG_ID_COMMAND_LON
+G.png>]
+Overfull \hbox (10.89087pt too wide) in paragraph at lines 318--320
 []\T1/cmr/m/n/10.95 Message ID ma-cro and va-lues : https ://-groups.google.com
 /forum/# !topic/mavlink/1zgHUM67E-
  []
 
-[4 <./images/MAVLINK_MSG_ID_MISSION_COUNT.png> <./images/MAVLINK_MSG_ID_MISSION
-_ITEM.png>] (./article.aux) ) 
+[6] (./article.aux) ) 
 Here is how much of TeX's memory you used:
- 7363 strings out of 492995
- 100105 string characters out of 6132704
+ 7401 strings out of 492995
+ 101119 string characters out of 6132704
  238822 words of memory out of 5000000
- 10788 multiletter control sequences out of 15000+600000
+ 10824 multiletter control sequences out of 15000+600000
  14254 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,7n,49p,778b,1329s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvip
-s/cm-super/cm-super-t1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/
-cm-super/cm-super-ts1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
-/cm-super/sfbx1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/c
-m-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-
-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-su
-per/sfcc1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-supe
-r/sfrm1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
-sftt1095.pfb>
-Output written on article.pdf (4 pages, 160176 bytes).
+ 42i,7n,49p,778b,1604s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-sup
+er/cm-super-t1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super
+/cm-super-ts1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-supe
+r/sfbx1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
+sfbx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sf
+bx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfcc
+1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm10
+95.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1095
+.pfb>
+Output written on article.pdf (6 pages, 178281 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 64 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
