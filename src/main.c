@@ -285,7 +285,7 @@ int run_uart(int argc, char* argv[])
 	int fd = init_uart(argc, argv);
 	char buf[BUFFER_LENGTH];
 	memset(buf, 0, BUFFER_LENGTH * sizeof(char));
-	
+	int count = 0;
 	ssize_t recsize;
 	// recsize = serialport_read(fd, buf, BUFFER_LENGTH, 5);
 
@@ -307,14 +307,12 @@ int run_uart(int argc, char* argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	memset(buf, 0, BUFFER_LENGTH);
-	sleep(1);
-
-	while(1)
+	while(count < 25)
 	{
 		recsize = read_message(&msg, fd);
 		if (recsize)
 		{
+			count++;
 			printf("Received packet: SYS: %d, COMP: %d, PAYLOAD LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
 		}
 	}
