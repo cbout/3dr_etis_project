@@ -1,36 +1,34 @@
-DEBUG=yes
+DEBUG=no
 CC=gcc
+CFLAGS = -std=c99 -Wall
 
 ifeq ($(DEBUG),yes)
-	CFLAGS=-std=c99 -Wall -g 
+	CFLAGS+= -g -I ../include/mavlink/ardupilotmega
 else
-	CFLAGS=-std=c99 -Wall 
+	CFLAGS+= -I ../include/mavlink/ardupilotmega
 endif
 
 CFLAGS+= `pkg-config --cflags gstreamer-1.0`
-CFLAGSGSTREAMER=`pkg-config --cflags gstreamer-1.0`
-LDFLAGS=-lpthread
-LDFLAGS+= `pkg-config --libs gstreamer-1.0`
+
+LDFLAGS=-lpthread `pkg-config --libs gstreamer-1.0`
 
 EXEC=mavlink_udp
 SRC= $(wildcard *.c)
 LIB= $(wildcard *.h)
 OBJ= $(SRC:.c=.o)
 
-all : $(EXEC)
+all : git_submodule $(EXEC)
 ifeq ($(DEBUG),yes)
 	@echo "Génération en mode debug"
-else
-	@echo "Génération en mode release"
 endif
-
-$(OBJ):$(SRC)
-	$(CC) $(CFLAGS) -c $^
 
 $(EXEC) : $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
+git_submodule:
+	git submodule update --init --recursive
+
 .PHONY: clean
 
 clean :
-	rm -f  $(EXEC) $(OBJ) *.gch
+	rm -f  $(EXEC) $(OBJ)

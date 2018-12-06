@@ -1,21 +1,13 @@
-#ifndef _MAVLINK_PERSO_TYPES_H_
-#define _MAVLINK_PERSO_TYPES_H_
+#ifndef _PERSO_TYPES
+#define _PERSO_TYPES
 
 #include <stdlib.h>
 #include <fcntl.h>
-#include "./include/ardupilotmega/mavlink.h"
+#include <arpa/inet.h>
+#include <mavlink.h>
+#include <gst/gst.h>
 
-/**
- * @brief      mavlink enumeration
- *
- */
-typedef enum MAV_ENUM
-{
-	ENUM_MAV_CMD_ACK=0,
-	ENUM_MAV_CMD,
-	ENUM_MAV_PARAM_TYPE
-} MAV_ENUM;
-
+#define BUFFER_LENGTH 2041
 
 /**
  * @brief      Contains all informations of the vehicle
@@ -45,6 +37,19 @@ typedef struct vehicle {
 	mavlink_scaled_pressure2_t scaled_pressure2;
 	mavlink_named_value_int_t named_value_int;
 	mavlink_statustext_t statustext;
-} Vehicle;
+} vehicle_t;
+
+
+typedef struct mavlink_thread_arg_udp
+{
+	vehicle_t vehicle;
+	pthread_mutex_t mutex;
+	int sock;
+	struct sockaddr_in locAddr;
+	struct sockaddr_in targetAddr;
+	int run;
+	GMainLoop *loop;
+}mavlink_thread_arg_udp_t;
+
 
 #endif

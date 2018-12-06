@@ -60,7 +60,11 @@ int main(int argc, char* argv[])
 	//The prog is running
 	int run = 1;
 	menu(argc, argv);
-	if (strcmp(argv[1], "--udp") == 0)
+	if (argc == 1)
+	{
+		fprintf(stderr, "Unvalid args, see: %s --help for more details\n", argv[0]);
+	}
+	else if (strcmp(argv[1], "--udp") == 0)
 	{
 		run_udp(argc-1, argv+1);
 	}else if (strcmp(argv[1], "--uart") == 0)
@@ -68,7 +72,7 @@ int main(int argc, char* argv[])
 		init_uart();
 	}else
 	{
-		fprintf(stderr, "Unvalid args, see: %s --help for more detail\n", argv[0]);
+		fprintf(stderr, "Unvalid args, see: %s --help for more details\n", argv[0]);
 	}
 	/*----- Main option parsing -----*/
 
@@ -270,6 +274,11 @@ void init_connection(int argc, char* argv [], struct sockaddr_in* targetAddr, st
 	}
 
 	return;
+}
+
+int run_uart(int argc, char* argv[])
+{
+	return 1;
 }
 
 void init_uart(int argc, char* argv[])

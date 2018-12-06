@@ -1,16 +1,4 @@
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <netinet/in.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <time.h>
-#include "./include/ardupilotmega/mavlink.h"
-#include "mavlink_perso_lib.h"
-
+#include "mavlink_msg_order.h"
 
 /**
  * @brief      Order for the drone
@@ -125,7 +113,7 @@ int mavlink_msg_order_drone(char order, mavlink_system_t source_sys, mavlink_sys
  *
  * @return     0 if the exist -1 else
  */
-int mavlink_display_order(int order, Vehicle vehicle){
+int mavlink_display_order(int order, vehicle_t vehicle){
 
 	switch (order) {
 

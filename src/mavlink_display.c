@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include "./include/ardupilotmega/mavlink.h"
-#include "mavlink_perso_types.h"
-
+#include "mavlink_display.h"
 
 /**
  * @brief      Display an information from the vehicle with the id
@@ -9,7 +6,7 @@
  * @param[in]  id       The identifier
  * @param[in]  vehicle  The vehicle
  */
-void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
+void mavlink_display_info_vehicle_by_id(int id, vehicle_t vehicle){
 
 	switch (id) {
 
@@ -179,7 +176,7 @@ void mavlink_display_info_vehicle_by_id(int id, Vehicle vehicle){
  *
  * @param[in]  vehicle  The vehicle
  */
-void mavlink_display_info_vehicle_all(Vehicle vehicle){
+void mavlink_display_info_vehicle_all(vehicle_t vehicle){
 	mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_HEARTBEAT, vehicle);
 	mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SYS_STATUS, vehicle);
 	mavlink_display_info_vehicle_by_id(MAVLINK_MSG_ID_SYSTEM_TIME, vehicle);
