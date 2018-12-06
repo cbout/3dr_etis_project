@@ -122,7 +122,7 @@ int run_udp(int argc, char* argv[])
 
 	//Mutex to protect vehicle_t
 	pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-	mavlink_thread_arg_t thread_arguments;
+	mavlink_thread_arg_udp_t thread_arguments;
 	pthread_t myThreadReciving;
 	pthread_t myThreadHeartbeatPing;
 	pthread_t myThreadSending;

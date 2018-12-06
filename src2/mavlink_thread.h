@@ -50,7 +50,7 @@ void* threadSending (void* arg);
  *
  * @return     { description_of_the_return_value }
  */
-int goProVideoStream (mavlink_thread_arg_t* args);
+int goProVideoStream (mavlink_thread_arg_udp_t* args);
 
 /**
  * @brief      Change keyboard

@@ -7,7 +7,7 @@
  */
 void* threadReciving (void* arg){
 
-	mavlink_thread_arg_t* args = (mavlink_thread_arg_t*) arg; 
+	mavlink_thread_arg_udp_t* args = (mavlink_thread_arg_udp_t*) arg; 
 
 	uint8_t buf[BUFFER_LENGTH];
 	ssize_t recsize;
@@ -46,7 +46,7 @@ void* threadReciving (void* arg){
 
 void* threadRecivingUART (void* arg){
 
-	mavlink_thread_arg_t* args = (mavlink_thread_arg_t*) arg; 
+	mavlink_thread_arg_udp_t* args = (mavlink_thread_arg_udp_t*) arg; 
 
 	uint8_t buf[BUFFER_LENGTH];
 	ssize_t recsize;
@@ -93,7 +93,7 @@ void* threadRecivingUART (void* arg){
  */
 void* threadHeartbeatPing(void* arg){
 
-	mavlink_thread_arg_t* args = (mavlink_thread_arg_t*) arg; 
+	mavlink_thread_arg_udp_t* args = (mavlink_thread_arg_udp_t*) arg; 
 	
 	uint8_t buf[BUFFER_LENGTH];
 	int bytes_sent;
@@ -127,7 +127,7 @@ void* threadHeartbeatPing(void* arg){
  */
 void* threadSending (void* arg){
 
-	mavlink_thread_arg_t* args = (mavlink_thread_arg_t*) arg; 
+	mavlink_thread_arg_udp_t* args = (mavlink_thread_arg_udp_t*) arg; 
 
 	uint8_t buf[BUFFER_LENGTH];
 	int bytes_sent;
@@ -263,7 +263,7 @@ void* threadSending (void* arg){
  *
  * @return     0 if it finishes normally, else -1
  */
-int goProVideoStream (mavlink_thread_arg_t* args){
+int goProVideoStream (mavlink_thread_arg_udp_t* args){
 
 	GstElement *pipeline;
     GstBus *bus;

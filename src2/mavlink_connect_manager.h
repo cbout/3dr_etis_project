@@ -25,5 +25,15 @@
  */
 int init_mavlink_udp_connect(int* sock, struct sockaddr_in* locAddr, int local_port, struct sockaddr_in* targetAddr, char* target_ip, int timeout);
 
+/**
+ * @brief      Init video stream connection for a solo 3dr
+ *
+ * @param      sock       The sock
+ * @param      serv_addr  The serv address
+ * @param[in]  port       The port
+ * @param      target_ip  The target ip
+ *
+ * @return     0 if success, -1 otherwise
+ */
 int init_solo_3dr_video_stream_connect(int* sock, struct sockaddr_in* serv_addr, int port, char* target_ip);
 #endif

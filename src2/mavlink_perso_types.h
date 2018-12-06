@@ -40,7 +40,7 @@ typedef struct vehicle {
 } vehicle_t;
 
 
-typedef struct mavlink_thread_arg
+typedef struct mavlink_thread_arg_udp
 {
 	vehicle_t vehicle;
 	pthread_mutex_t mutex;
@@ -49,7 +49,7 @@ typedef struct mavlink_thread_arg
 	struct sockaddr_in targetAddr;
 	int run;
 	GMainLoop *loop;
-}mavlink_thread_arg_t;
+}mavlink_thread_arg_udp_t;
 
 
 #endif
