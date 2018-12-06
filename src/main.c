@@ -46,7 +46,11 @@ void menu(int argc, char* argv[]);
 
 void init_connection(int argc, char* argv [], struct sockaddr_in* targetAddr, struct sockaddr_in* locAddr, struct sockaddr_in* servAddr, int* discuss_socket, int* video_socket, int* video_stream_enable);
 
-void init_uart();
+int run_udp(int argc, char* argv[]);
+
+int init_uart(int argc, char* argv[]);
+
+int run_uart(int argc, char* argv[]);
 /**
  * @brief      Main
  *
@@ -66,10 +70,10 @@ int main(int argc, char* argv[])
 	}
 	else if (strcmp(argv[1], "--udp") == 0)
 	{
-		run_udp(argc-1, argv+1);
+		run_udp(argc, argv);
 	}else if (strcmp(argv[1], "--uart") == 0)
 	{
-		init_uart();
+		run_uart(argc, argv);
 	}else
 	{
 		fprintf(stderr, "Unvalid args, see: %s --help for more details\n", argv[0]);
@@ -278,22 +282,7 @@ void init_connection(int argc, char* argv [], struct sockaddr_in* targetAddr, st
 
 int run_uart(int argc, char* argv[])
 {
-	return 1;
-}
-
-void init_uart(int argc, char* argv[])
-{
-	char* port = "/dev/ttyACM0";
-	int baud = 57600;
-	int fd, state;
-	open_serial(&fd, port, baud, &state);
-
-	if (fd == -1)
-	{
-		perror("Openning ttyACM0");
-		exit(EXIT_FAILURE);
-	}
-
+	int fd = init_uart(argc, argv);
 	char buf[BUFFER_LENGTH];
 	memset(buf, 0, BUFFER_LENGTH * sizeof(char));
 	
@@ -303,6 +292,24 @@ void init_uart(int argc, char* argv[])
 	mavlink_message_t msg;
 	mavlink_status_t status;
 
+
+	int bytes_sent;
+	uint16_t len;
+	mavlink_system_t localSysId;
+	localSysId.sysid = 255;
+	localSysId.compid = 0;
+
+	mavlink_msg_heartbeat_pack(255,0,&msg,MAV_TYPE_GCS,MAV_AUTOPILOT_ARDUPILOTMEGA,0xc0,0x0,MAV_STATE_ACTIVE);
+	len = mavlink_msg_to_send_buffer(buf, &msg);
+	bytes_sent = write(fd, (void*) buf, len);
+	if (bytes_sent==-1) {
+		perror("Sending Heartbeat in thread");
+		exit(EXIT_FAILURE);
+	}
+
+	memset(buf, 0, BUFFER_LENGTH);
+	sleep(1);
+
 	while(1)
 	{
 		recsize = read_message(&msg, fd);
@@ -311,10 +318,51 @@ void init_uart(int argc, char* argv[])
 			printf("Received packet: SYS: %d, COMP: %d, PAYLOAD LEN: %d, MSG ID: %d\n", msg.sysid, msg.compid, msg.len, msg.msgid);
 		}
 	}
-	// 	}
-	// }
-	
 	printf("\n");
-	close(fd);
-	exit(EXIT_FAILURE);
+	return 1;
+}
+
+int init_uart(int argc, char* argv[])
+{
+	/* Default setting */
+	char* port = "/dev/ttyACM0";
+	int baud = 57600;
+	int fd, state;
+	int i;
+	/* Setting UART connection */
+	for (i = 0; i < argc; i++)
+	{
+		if (strcmp(argv[i], "-P") == 0)
+		{
+			if (i+1 >= argc)
+			{
+				fprintf(stderr, "%s\n", "Invalid arguments");
+				exit(EXIT_FAILURE);
+			}
+			else
+			{
+				strcpy(port, argv[i+1]);
+			}
+		} else if (strcmp(argv[i], "-B") == 0)
+		{
+			if (i+1 >= argc)
+			{
+				fprintf(stderr, "%s\n", "Invalid arguments");
+				exit(EXIT_FAILURE);
+			}
+			else
+			{
+				baud = atoi(argv[i+1]);
+			}
+		}
+	}
+	/* Openning file descriptor */
+	open_serial(&fd, port, baud, &state);
+
+	if (fd == -1)
+	{
+		perror("Openning ttyACM0");
+		exit(EXIT_FAILURE);
+	}
+	return fd;
 }
