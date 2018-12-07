@@ -156,7 +156,8 @@ g_main_loop_run(loop);
 \subsection*{Save video stream}
 \label{sec:savestream}
 
-\paragraph{} In order to reuse or interpret video stream, we give the posibility to save it in two forms.
+\paragraph{} In order to reuse or interpret video stream, we give the posibility to save it in three forms.
+
 
 \paragraph{Video file} First solution, register it in a video file (.avi in this case). To be done, we use again the library gstreamer where we redirect the input flow (udpsrc) to a file with the following sequence : "! queue ! avimux ! filesink location=capture.avi". Thus the string to put in gst\_parse\_launch become : 
 
@@ -165,12 +166,49 @@ g_main_loop_run(loop);
 pipeline = gst_parse_launch("-v udpsrc port=5600 caps = \"application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96\" ! rtph264depay ! decodebin  ! tee name=t ! queue ! videoconvert ! autovideosink t. ! queue ! avimux ! filesink location=capture.avi", NULL);
 \end{lstlisting}
 
+
 \paragraph{Pictures files} Second possibility which completed the first one, save each frame of the video stream on pictures. To do this, we redirect again the input flow (udpsrc) with gstreamer but in this case in multiple files as shown this code : "! queue ! videorate ! jpegenc ! multifilesink location="frame/jpg/frame\%06d.jpg"". Note that in this example we write frames on .jpg files but we can change the format to .bmp for example replacing "jpegenc" by "avenc\_bmp". Thus the final string to put in gst\_parse\_launch become :
 
 \begin{lstlisting}
 /* Build the pipeline */
 //.jpg files
 pipeline = gst_parse_launch("-v udpsrc port=5600 caps = \"application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96\" ! rtph264depay ! decodebin  ! tee name=t ! queue ! videorate ! jpegenc ! multifilesink location=\"frame/jpg/frame%06d.jpg\" t. ! queue ! videoconvert ! autovideosink t. ! queue ! avimux ! filesink location=capture.avi", NULL);
+\end{lstlisting}
+
+
+\paragraph{Memory buffer} Last possibility which replace the second one, register each frames of the stream in a memory during the program execution. To do this, we redirect again the input flow (udpsrc) with gstreamer but in this case in a char table. To do this we have first to change the string to parse adding the following fileds : "! queue ! appsink name=sink emit-signals=true sync=false max-buffers=1 drop=true". \\
+\noindent Then we have to get the sink before playing the pipeline. After that we do the following instructions :
+
+\begin{enumerate}
+\item Get the sample and the buffer
+\item Get the capture, the structure, and so the width and the height
+\item Get the map and the image matrix
+\end{enumerate}
+
+\noindent The code of previous instructions is :
+
+\begin{lstlisting}
+/* Build the pipeline */
+pipeline = gst_parse_launch("-v udpsrc port=5600 caps = \"application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, payload=(int)96\" ! rtph264depay ! decodebin  ! tee name=t ! queue ! videoconvert ! autovideosink t. ! queue ! avimux ! filesink location=capture.avi t. ! queue ! appsink name=sink emit-signals=true sync=false max-buffers=1 drop=true", NULL);
+	
+/* Get sink */
+sink = gst_bin_get_by_name(GST_BIN(pipeline), "sink");
+
+/* Get sample and buffer */
+sample = gst_app_sink_pull_sample ((GstAppSink *)sink);
+buffer = gst_sample_get_buffer(sample);
+	
+/* Get capture, structure, width and height */
+caps = gst_sample_get_caps(sample);
+structure = gst_caps_get_structure(caps, 0);
+width = g_value_get_int(gst_structure_get_value(structure, "width"));
+height = g_value_get_int(gst_structure_get_value(structure, "height"));
+//printf("%d, %d\n", width, height);	//Width and height of the video
+	
+/* Get map and image matrix */
+gst_buffer_map(buffer, &map, GST_MAP_READ);
+gst_image = malloc(map.size * sizeof(unsigned char));
+memcpy(gst_image, (char*)map.data, map.size);
 \end{lstlisting}
 
 
