@@ -1,6 +1,5 @@
 #ifndef _DISPLAY_H_
 #define _DISPLAY_H_
-// TODO: Includes
 #include <stdio.h>
 #include <stdlib.h>
 #include "mavlink_perso_types.h"

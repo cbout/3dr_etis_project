@@ -3,9 +3,9 @@ CC=gcc
 CFLAGS = -std=c99 -Wall
 
 ifeq ($(DEBUG),yes)
-	CFLAGS+= -g -I ../include/mavlink/ardupilotmega
+	CFLAGS+=-g -I ../include/mavlink/ardupilotmega
 else
-	CFLAGS+= -I ../include/mavlink/ardupilotmega
+	CFLAGS+=-I ../include/mavlink/ardupilotmega
 endif
 
 CFLAGS+= `pkg-config --cflags gstreamer-1.0`
